@@ -5,30 +5,63 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Alpha"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+  }) }}
+
+  <!--{{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
-  }) }}
+}) }}-->
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
 
-      <h1 class="govuk-heading-l">
-        Heading goes here
-      </h1>
+      <p class="govuk-body-s"><img src="/public/img/icon-important.svg" alt="Important icon" style="margin-right:10px;vertical-align: middle;"> The Cabinet Office Grant Management Function is not responsible for the accuracy of the information received from data sources</p>
+      
+      <div class="govuk-grid-column-one-third">
+        <img src="/public/img/threats.svg" width="100%" alt="Threats image">
+        <p class="govuk-body govuk-!-margin-top-3">View and manage national security threat and vulnerability risk</p>
+        {% from "govuk/components/button/macro.njk" import govukButton %}
 
-      <p>
-        This is a paragraph of text. It explains in more detail what has happened and wraps across several lines.
-      </p>
+        {{ govukButton({
+          text: "Continue to threats",
+          classes: "govuk-button--secondary"
+        }) }}
+      </div>
+      
+      <div class="govuk-grid-column-one-third">
+        <img src="/public/img/grants.svg" width="100%" alt="Grants image">
+        <p class="govuk-body govuk-!-margin-top-3">View and manage your grant schemes and applicants</p>
+        {% from "govuk/components/button/macro.njk" import govukButton %}
 
-      <p>
-        Read more <a href="/path/of/page">about this topic</a>.
-      </p>
+        {{ govukButton({
+          text: "Continue to grants",
+          classes: "govuk-button--secondary"
+        }) }}
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <img src="/public/img/contracts.svg" width="100%" alt="Contracts image">
+        <p class="govuk-body govuk-!-margin-top-3">View and manage your contracts and suppliers</p>
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Continue to contracts",
+          classes: "govuk-button--secondary"
+        }) }}
+      </div>
 
     </div>
+
   </div>
 
 {% endblock %}
