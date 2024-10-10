@@ -13,7 +13,18 @@
       {{ serviceName }}
     </h1>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+    <!--{% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}-->
+
+    <p>Coming in October 2024</p>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Start prototype 1",
+      href: "/prototype-1/index",
+      isStartButton: true
+    }) }}
+
   </div>
 </div>
 
