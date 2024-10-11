@@ -1,0 +1,53 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        How many organisations do you want to check?
+      </h1>
+
+      <form class="form" action="/how-many-orgs" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          name: "how-many-orgs",
+          items: [
+            {
+              value: "one",
+              text: "One"
+            },
+            {
+              value: "two-or-more",
+              text: "Two or more",
+              hint: {
+                text: "To conduct two or more checks. we'll ask you to upload a spreadsheet containing appropriate data"
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

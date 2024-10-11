@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Financial crime checks
+      </h1>
+
+      <form class="form" action="/prototype-1/results" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "Organisation name",
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "Enter the organisation's full registered name, as displayed on the application form."
+          },
+          id: "organisation-name",
+          name: "organisationName"
+        }) }}
+
+
+        {{ govukInput({
+          label: {
+            text: "Charity Commission registered number",
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "Enter the organisation's Charity Commission registered number, if applicable."
+          },
+          id: "charity-commission-registered-number",
+          name: "charityCommissionRegisteredNumber"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Company's House registered number",
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "Enter the organisation's Companies House registered number, if applicable."
+          },
+          id: "companys-house-registered-number",
+          name: "companysHouseRegisteredNumber"
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
