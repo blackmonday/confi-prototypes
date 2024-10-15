@@ -17,16 +17,21 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Checks for grants funding
+        National Security Risks
       </h1>
 
-      <p>
-        This is not included in this design prototype.
-      </p>
+      <div style="background-color: #f3f2f1; text-align:center;padding-top:60px;padding-bottom:60px; margin-bottom:30px">
+        <p>
+          [history]
+        </p>
+      </div>
 
-      <p>
-        <a href="/prototype-1/checks">Return to previous page</a>
-      </p>
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Run new check",
+        href: "/prototype-1/threats"
+      }) }}
 
     </div>
   </div>

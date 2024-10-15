@@ -22,19 +22,79 @@
 
       <form class="form" action="/which-check-answer" method="post">
 
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        <!--{% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
           name: "which-check",
           items: [
             {
               value: "grants",
-              text: "Checks for grants funding
-              "
+              text: "Checks for grants funding"
             },
             {
               value: "contracts",
               text: "Checks for contracts"
+            },
+            {
+              value: "threats",
+              text: "Other ?? NS casework ??"
+            }
+          ]
+      }) }}-->
+
+
+
+
+
+
+
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {% set grantsHtml %}
+        {{ govukInput({
+          id: "grants-scheme-detail",
+          name: "grantsSchemeDetail",
+          type: "text",
+          autocomplete: "text",
+          spellcheck: false,
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Which grant scheme does this apply to?"
+          }
+        }) }}
+        {% endset -%}
+
+        {% set contractsHtml %}
+        {{ govukInput({
+          id: "contracts-detail",
+          name: "contractsDetail",
+          type: "tel",
+          autocomplete: "tel",
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Which contract does this apply to?"
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          name: "which-check",
+          items: [
+            {
+              value: "grants",
+              text: "Checks for grants funding",
+              conditional: {
+                html: grantsHtml
+              }
+            },
+            {
+              value: "contracts",
+              text: "Checks for contracts",
+              conditional: {
+                html: contractsHtml
+              }
             },
             {
               value: "threats",

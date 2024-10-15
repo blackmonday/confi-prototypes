@@ -17,8 +17,30 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Financial crime checks
+        Economic crime checks
       </h1>
+
+      {% if (data['grantsSchemeDetail'] != "") %}
+        <div class="parent" style="width:100%;height:25px;margin-bottom:30px;display:flex">
+          <div class="child1" style="width: 370px;">
+            <p class="govuk-heading-s">Grant scheme</p>
+          </div>
+          <div class="child2">
+              <p class="govuk-body">{{ data['grantsSchemeDetail'] }}</p>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if (data['contractsDetail'] != "") %}
+        <div class="parent" style="width:100%;height:25px;margin-bottom:30px;display:flex">
+          <div class="child1" style="width: 370px;">
+            <p class="govuk-heading-s">Contract</p>
+          </div>
+          <div class="child2">
+              <p class="govuk-body">{{ data['contractsDetail'] }}</p>
+          </div>
+        </div>
+      {% endif %}
 
       <form class="form" action="/prototype-1/results" method="post">
 
