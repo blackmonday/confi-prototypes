@@ -153,13 +153,32 @@ router.post('/economic-crime-checks', function (req, res) {
 
     // Make a variable and give it the value from 'which-check'
     var whichCheck = req.session.data['which-check']
+    var organisationNameInput = req.session.data['organisationName']
+    var charityCommissionInput = req.session.data['charityCommissionRegisteredNumber']
+    var CompanysHouseInput = req.session.data['companysHouseRegisteredNumber']
 
     // Check whether the variable matches a condition
+    if (organisationNameInput == "" && charityCommissionInput == "" && CompanysHouseInput == ""){
+      res.redirect('/prototype-1/economic-crime-checks-errors-1')
+    } else if (charityCommissionInput == "" && CompanysHouseInput == ""){
+      res.redirect('/prototype-1/economic-crime-checks-errors-2')
+    } else if (organisationNameInput == ""){
+      res.redirect('/prototype-1/economic-crime-checks-errors-3')
+    } else {
+      if (whichCheck == "threats"){
+        res.redirect('/prototype-1/results-threats')
+      } else {
+          res.redirect('/prototype-1/results')
+      }  
+    }
+
+    /*
     if (whichCheck == "threats"){
       res.redirect('/prototype-1/results-threats')
     } else {
         res.redirect('/prototype-1/results')
     }
+    */
 
   }
   //
