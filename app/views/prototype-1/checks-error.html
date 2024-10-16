@@ -1,0 +1,136 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Select what the checks are for",
+            href: "#which-check-input"
+          }
+        ]
+      }) }}
+
+
+      <h1 class="govuk-heading-l">
+        What are the checks for?
+      </h1>
+
+      <form class="form" action="/which-check-answer" method="post" id="which-check-input">
+
+        <!--{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          name: "which-check",
+          items: [
+            {
+              value: "grants",
+              text: "Grants applicants"
+            },
+            {
+              value: "contracts",
+              text: "Contract applicants"
+            },
+            {
+              value: "threats",
+              text: "National Security Casework"
+            }
+          ]
+      }) }}-->
+
+
+
+
+
+
+
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {% set grantsHtml %}
+        {{ govukInput({
+          id: "grants-scheme-detail",
+          name: "grantsSchemeDetail",
+          type: "text",
+          autocomplete: "text",
+          spellcheck: false,
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Which grant scheme does this apply to?"
+          }
+        }) }}
+        {% endset -%}
+
+        {% set contractsHtml %}
+        {{ govukInput({
+          id: "contracts-detail",
+          name: "contractsDetail",
+          type: "tel",
+          autocomplete: "tel",
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Which contract does this apply to?"
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          name: "which-check",
+          items: [
+            {
+              value: "grants",
+              text: "Grants applicants",
+              conditional: {
+                html: grantsHtml
+              }
+            },
+            {
+              value: "contracts",
+              text: "Contracts applicants",
+              conditional: {
+                html: contractsHtml
+              }
+            },
+            {
+              value: "threats",
+              text: "National Security Casework",
+              hint: {
+                text: "For example casework related to NSIA notifications, export licences, Foreign Direct Investment"
+              }
+            }
+          ],
+          errorMessage: {
+            text: "Select what the checks are for"
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+  <p class="govuk-body-s" style="font-size: 9px; color:	#b1b4b6">PROTOTYPE VERSION: {{ data['which-prototype'] }}</p>
+
+{% endblock %}

@@ -49,8 +49,10 @@ router.post('/threats-type-answer', function (req, res) {
       res.redirect('/prototype-1/sanctions')
     } else if (whichThreat == "economic-crime"){
       res.redirect('/prototype-1/checks')
-    } else {
+    } else  if (whichThreat == "community-engagement-principles"){
         res.redirect('/prototype-1/community-engagement-principles')
+    } else {
+      res.redirect('/prototype-1/threats-error')
     }
   
   } 
@@ -75,16 +77,26 @@ router.post('/which-check-answer', function (req, res) {
   
     // Make a variable and give it the value from 'which-threat'
     var whichCheck = req.session.data['which-check']
+    var whichGrantScheme = req.session.data['grantsSchemeDetail']
+    var whichContract = req.session.data['contractsDetail']
   
     // Check whether the variable matches a condition
     if (whichCheck == "grants"){
-      res.redirect('/prototype-1/how-many-orgs')
-      /*res.redirect('/prototype-1/check-grants')*/
-    } else if (whichCheck == "contracts"){
-      res.redirect('/prototype-1/how-many-orgs')
-      /*res.redirect('/prototype-1/check-contracts')*/
-    } else {
+      if (whichGrantScheme == ""){
+        res.redirect('/prototype-1/checks-grants-error')
+      } else {
         res.redirect('/prototype-1/how-many-orgs')
+      }
+    } else if (whichCheck == "contracts"){
+      if (whichContract == ""){
+        res.redirect('/prototype-1/checks-contracts-error')
+      } else {
+        res.redirect('/prototype-1/how-many-orgs')
+      }
+    } else if (whichCheck == "threats") {
+        res.redirect('/prototype-1/how-many-orgs')
+    } else {
+      res.redirect('/prototype-1/checks-error')
     }
   
   }
@@ -113,8 +125,10 @@ router.post('/how-many-orgs', function (req, res) {
     // Check whether the variable matches a condition
     if (howManyOrgs == "one"){
       res.redirect('/prototype-1/economic-crime-checks')
-    } else {
+    } else if (howManyOrgs == "two-or-more"){
         res.redirect('/prototype-1/two-or-more')
+    } else {
+      res.redirect('/prototype-1/how-many-orgs-error')
     }
   
   }
