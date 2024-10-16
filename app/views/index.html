@@ -19,13 +19,42 @@
 
     <p>Select an active protype from the links below:</p>
 
-    {% from "govuk/components/button/macro.njk" import govukButton %}
+    <!--{% from "govuk/components/button/macro.njk" import govukButton %}
 
     {{ govukButton({
       text: "Start prototype 1",
       href: "/prototype-1/index",
       isStartButton: true
-    }) }}
+  }) }}-->
+
+
+
+    <form class="form" action="/which-prototype" method="post">
+
+      <p>
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          name: "which-prototype",
+          items: [
+            {
+              value: "1.0",
+              text: "Prototype one"
+            },
+            {
+              value: "2.0",
+              text: "Prototype two"
+            }
+          ]
+        }) }}
+      </p>
+
+      {{ govukButton({
+        text: "Start prototype",
+        isStartButton: true
+      }) }}
+
+    </form>
 
   </div>
 </div>
