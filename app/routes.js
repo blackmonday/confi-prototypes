@@ -20,7 +20,7 @@ router.post('/which-prototype', function (req, res) {
   if (whichPrototype == "1.0"){
     res.redirect('/prototype-1/index')
   } else {
-    res.redirect('/index')
+    res.redirect('/index-error')
   }
 
 })

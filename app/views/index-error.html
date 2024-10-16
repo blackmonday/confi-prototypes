@@ -7,6 +7,24 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+        {
+          text: "Select the prototype you would like to start",
+          href: "#which-prototype-input"
+        }
+      ]
+    }) }}
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
     <!--{% include "govuk-prototype-kit/includes/homepage-top.njk" %}-->
 
     <!--<h1 class="govuk-heading-xl">
@@ -19,7 +37,17 @@
 
     <p>Select a protoype:</p>
 
-    <form class="form" action="/which-prototype" method="post">
+    <!--{% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Start prototype 1",
+      href: "/prototype-1/index",
+      isStartButton: true
+  }) }}-->
+
+
+
+    <form class="form" action="/which-prototype" method="post" id="which-prototype-input">
 
       <p>
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -31,7 +59,10 @@
               value: "1.0",
               text: "Prototype one"
             }
-          ]
+          ],
+          errorMessage: {
+            text: "Select the prototype you would like to start"
+          }
         }) }}
       </p>
 
@@ -43,6 +74,7 @@
     </form>
 
   </div>
+
   <div class="govuk-grid-column-one-third">
 
     {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
@@ -58,7 +90,7 @@
       html: html
     }) }}
   </div>
-
+  
 </div>
 
 {% endblock %}
