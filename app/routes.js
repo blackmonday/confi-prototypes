@@ -22,7 +22,7 @@ router.post('/threats-type-answer', function (req, res) {
     } else if (whichThreat == "economic-crime"){
       res.redirect('/prototype-1/checks')
     } else {
-        res.redirect('/prototype-1/extremism-adverse-media')
+        res.redirect('/prototype-1/community-engagement-principles')
     }
   
   })
@@ -49,7 +49,7 @@ router.post('/which-check-answer', function (req, res) {
 // Run this code when a form is submitted from 'how-many-orgs'
 router.post('/how-many-orgs', function (req, res) {
 
-    // Make a variable and give it the value from 'which-threat'
+    // Make a variable and give it the value from 'how-many-orgs'
     var howManyOrgs = req.session.data['how-many-orgs']
   
     // Check whether the variable matches a condition
@@ -60,3 +60,19 @@ router.post('/how-many-orgs', function (req, res) {
     }
   
   })
+
+  
+// Run this code when a form is submitted from 'economic-crime-checks'
+router.post('/economic-crime-checks', function (req, res) {
+
+  // Make a variable and give it the value from 'which-check'
+  var whichCheck = req.session.data['which-check']
+
+  // Check whether the variable matches a condition
+  if (whichCheck == "threats"){
+    res.redirect('/prototype-1/results-threats')
+  } else {
+      res.redirect('/prototype-1/results')
+  }
+
+})

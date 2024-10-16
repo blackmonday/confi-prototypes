@@ -29,15 +29,15 @@
           items: [
             {
               value: "grants",
-              text: "Checks for grants funding"
+              text: "Grants applicants"
             },
             {
               value: "contracts",
-              text: "Checks for contracts"
+              text: "Contract applicants"
             },
             {
               value: "threats",
-              text: "Other ?? NS casework ??"
+              text: "National Security Casework"
             }
           ]
       }) }}-->
@@ -84,21 +84,24 @@
           items: [
             {
               value: "grants",
-              text: "Checks for grants funding",
+              text: "Grants applicants",
               conditional: {
                 html: grantsHtml
               }
             },
             {
               value: "contracts",
-              text: "Checks for contracts",
+              text: "Contracts applicants",
               conditional: {
                 html: contractsHtml
               }
             },
             {
               value: "threats",
-              text: "Other ?? NS casework ??"
+              text: "National Security Casework",
+              hint: {
+                text: "For example casework related to NSIA notifications, export licences, Foreign Direct Investment"
+              }
             }
           ]
         }) }}

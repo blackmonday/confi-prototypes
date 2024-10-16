@@ -17,7 +17,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Lorem ipsum...
+        What type of check would you like to run?
       </h1>
 
       <form class="form" action="/threats-type-answer" method="post">
@@ -27,9 +27,6 @@
 
           {{ govukRadios({
             name: "which-threat",
-            hint: {
-              text: "Lorem ipsum..."
-            },
             items: [
               {
                 value: "sanctions",
@@ -37,11 +34,17 @@
               },
               {
                 value: "economic-crime",
-                text: "Economic crime"
+                text: "Economic crime",
+                hint: {
+                  text: "For example, national security checks related to grants, contracts and national security casework"
+                }
               },
               {
-                value: "extremism-adverse-media",
-                text: "Extremism adverse media"
+                value: "community-engagement-principles",
+                text: "Community engagement principles",
+                hint: {
+                  text: "For example, checks related to the community engagement standards"
+                }
               }
             ]
           }) }}
