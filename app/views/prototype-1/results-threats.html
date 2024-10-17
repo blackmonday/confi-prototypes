@@ -85,22 +85,6 @@
 
     <div class="govuk-grid-column-full">
 
-      {% from "govuk/components/details/macro.njk" import govukDetails %}
-
-      {{ govukDetails({
-        summaryText: "Help with results",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum sem a sollicitudin pharetra. Nunc eu erat non lacus eleifend hendrerit dictum quis erat. Vivamus efficitur lacus et ultrices maximus. Donec interdum bibendum aliquet. Nunc rutrum est vel odio pretium pharetra. Donec et lectus a odio tempus varius et sed augue. Duis molestie viverra odio, a lobortis lorem congue vitae. Curabitur sed lacus rutrum, imperdiet neque ut, mattis ligula."
-      }) }}
-
-
-
-
-
-
-
-
-
-
       <div class="govuk-tabs" data-module="govuk-tabs">
         <h2 class="govuk-tabs__title">
           Contents
@@ -132,6 +116,13 @@
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tab1">
           <h2 class="govuk-heading-l">Know your applicant</h2>
 
+          {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+          {{ govukDetails({
+            summaryText: "Help with results",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum sem a sollicitudin pharetra. Nunc eu erat non lacus eleifend hendrerit dictum quis erat. Vivamus efficitur lacus et ultrices maximus. Donec interdum bibendum aliquet. Nunc rutrum est vel odio pretium pharetra. Donec et lectus a odio tempus varius et sed augue. Duis molestie viverra odio, a lobortis lorem congue vitae. Curabitur sed lacus rutrum, imperdiet neque ut, mattis ligula."
+          }) }}
+    
           <table class="govuk-table">
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
