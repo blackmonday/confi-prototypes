@@ -68,7 +68,7 @@
         </div>
       </div>
 
-      <div class="parent govuk-!-margin-bottom-5" style="width:100%;height:25px;display:flex">
+      <div class="parent" style="width:100%;height:25px;display:flex">
         <div class="child1" style="width: 370px;">
           <p class="govuk-heading-s">Company's House registration number</p>
         </div>
@@ -78,6 +78,24 @@
             {% else %}
               <p class="govuk-body">{{ data['companysHouseRegisteredNumber'] }}</p>
           {% endif %}
+        </div>
+      </div>
+
+      <div class="parent" style="width:100%;height:25px;display:flex">
+        <div class="child1" style="width: 370px;">
+          <p class="govuk-heading-s">Spotlight reference number for checks</p>
+        </div>
+        <div>
+          <p class="govuk-body">A-817476</p>
+        </div>
+      </div>
+
+      <div class="parent govuk-!-margin-bottom-5" style="width:100%;height:25px;display:flex">
+        <div class="child1" style="width: 370px;">
+          <p class="govuk-heading-s">Checks conducted on</p>
+        </div>
+        <div>
+          <p class="govuk-body">17 October 2024</p>
         </div>
       </div>
 
@@ -95,19 +113,83 @@
       <table class="govuk-table">
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Fictitious organisation<br /><span class="govuk-body"">The organisation identified does not match details that could portray it as operating as a fictitious organisation.</span><br /><span class="govuk-body-s" style="color: #505a5f">This RISK ID helps to identify whether an organisation may be fictitious. Purporting to be trading but has been created for deceptive or fraudulent purposes.</span></th>
+            <th scope="row" class="govuk-table__header">Fictitious organisation<br /><span class="govuk-body"">The organisation identified does not match details that could portray it as operating as a fictitious organisation.</span><br /><span class="govuk-body-s" style="color: #505a5f;">This RISK ID helps to identify whether an organisation may be fictitious. Purporting to be trading but has been created for deceptive or fraudulent purposes.</span></br>
+
+              <details class="govuk-details" style="margin-top:15px">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Help with fictiticous organisation
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p style="margin-bottom: 15px"><strong>Risk:</strong> Vivamus efficitur lacus et ultrices maximus donec interdum bibendum aliquet nunc rutrum est vel odio pretium pharetra.</p>
+                  <p style="margin-bottom: 10px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong> Consectetur adipiscing elit morbi interdum sem,</p>
+                  <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong> Bitur sed lacus rutrum imperdiet neque ut mattis.</p>
+                  <p style="margin-bottom: 10px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong> Donec interdum bibendum aliquet nunc rutrum est vel odio pretium<./p>
+                </div>
+              </details>
+
+            </th>
             <td class="govuk-table__cell" style="width:150px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong></td>
           </tr>
           <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Virtual company registration ID<br /><span class="govuk-body">The organisation is registered at an address  where there is a significant presence of other companies, this may be a virtual mailbox.</span><br /><span class="govuk-body-s" style="color: #505a5f">This RISK ID helps to define the potential thresholds indicating whether a large number of organisations are registered at the same address highlighting the possibility of a virtual mailbox being present.</span></th>
+            <th scope="row" class="govuk-table__header">Virtual company registration ID<br /><span class="govuk-body">The organisation is registered at an address  where there is a significant presence of other companies, this may be a virtual mailbox.</span><br /><span class="govuk-body-s" style="color: #505a5f">This RISK ID helps to define the potential thresholds indicating whether a large number of organisations are registered at the same address highlighting the possibility of a virtual mailbox being present.</span></br>
+
+              <details class="govuk-details" style="margin-top:15px">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Help with virtual company registration ID
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p style="margin-bottom: 15px"><strong>Risk:</strong> Vivamus efficitur lacus et ultrices maximus donec interdum bibendum aliquet nunc rutrum est vel odio pretium pharetra.</p>
+                  <p style="margin-bottom: 10px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong> Consectetur adipiscing elit morbi interdum sem,</p>
+                  <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong> Bitur sed lacus rutrum imperdiet neque ut mattis.</p>
+                  <p style="margin-bottom: 10px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong> Donec interdum bibendum aliquet nunc rutrum est vel odio pretium<./p>
+                </div>
+              </details>
+              
+            </th>
             <td class="govuk-table__cell" style="width:150px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong></td>
           </tr>
           <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Impersonation of legitimate company<br /><span class="govuk-body">This organisation is at a low risk of impersonating another organisation.</span><br /><span class="govuk-body-s" style="color: #505a5f">This RISK ID indicates whether an organisation may be attempting to impersonate an existing organisation.</span></th>
+            <th scope="row" class="govuk-table__header">Impersonation of legitimate company<br /><span class="govuk-body">This organisation is at a low risk of impersonating another organisation.</span><br /><span class="govuk-body-s" style="color: #505a5f">This RISK ID indicates whether an organisation may be attempting to impersonate an existing organisation.</span></br>
+
+              <details class="govuk-details" style="margin-top:15px">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Help with impersonation of legitimate company
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p style="margin-bottom: 15px"><strong>Risk:</strong> Vivamus efficitur lacus et ultrices maximus donec interdum bibendum aliquet nunc rutrum est vel odio pretium pharetra.</p>
+                  <p style="margin-bottom: 10px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong> Consectetur adipiscing elit morbi interdum sem,</p>
+                  <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong> Bitur sed lacus rutrum imperdiet neque ut mattis.</p>
+                  <p style="margin-bottom: 10px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong> Donec interdum bibendum aliquet nunc rutrum est vel odio pretium<./p>
+                </div>
+              </details>
+              
+            </th>
             <td class="govuk-table__cell" style="width:150px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong></td>
           </tr>
           <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Shell company indentification<br /><span class="govuk-body">This organisation may be a shell company and may be concealing important information and its true purpose and identity.</span><br /><span class="govuk-body-s" style="color: #505a5f">This RISK ID indicates whether an organisation may be a shell company. The entities could be concealing important information and its true purpose and identity.</span></th>
+            <th scope="row" class="govuk-table__header">Shell company indentification<br /><span class="govuk-body">This organisation may be a shell company and may be concealing important information and its true purpose and identity.</span><br /><span class="govuk-body-s" style="color: #505a5f">This RISK ID indicates whether an organisation may be a shell company. The entities could be concealing important information and its true purpose and identity.</span></br>
+
+              <details class="govuk-details" style="margin-top:15px">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Help with shell company indentification
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p style="margin-bottom: 15px"><strong>Risk:</strong> Vivamus efficitur lacus et ultrices maximus donec interdum bibendum aliquet nunc rutrum est vel odio pretium pharetra.</p>
+                  <p style="margin-bottom: 10px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong> Consectetur adipiscing elit morbi interdum sem,</p>
+                  <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong> Bitur sed lacus rutrum imperdiet neque ut mattis.</p>
+                  <p style="margin-bottom: 10px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong> Donec interdum bibendum aliquet nunc rutrum est vel odio pretium<./p>
+                </div>
+              </details>
+              
+            </th>
             <td class="govuk-table__cell" style="width:150px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong></td>
           </tr>
         </tbody>
