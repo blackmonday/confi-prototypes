@@ -22,15 +22,7 @@
         titleText: "There is a problem",
         errorList: [
           {
-            text: "Enter the organisation's full registered name",
-            href: "#which-check-input"
-          },
-          {
-            text: "Enter the organisation's Charity Commission or Companies House registered number - you can add both as appropriate",
-            href: "#which-check-input"
-          },
-          {
-            text: "Enter the organisation's registered address",
+            text: "Enter the organisation's registered address line 1",
             href: "#which-check-input"
           }
         ]
@@ -75,10 +67,7 @@
             text: "Enter the organisation's full registered name, as displayed on the application form."
           },
           id: "organisation-name",
-          name: "organisationName",
-          errorMessage: {
-            text: "Enter the orgainisation's full registered name"
-          }
+          name: "organisationName"
         }) }}
 
 
@@ -91,10 +80,7 @@
             text: "Enter the organisation's Charity Commission registered number, if applicable."
           },
           id: "charity-commission-registered-number",
-          name: "charityCommissionRegisteredNumber",
-          errorMessage: {
-            text: "Enter the organisation's Charity Commission registered number"
-          }
+          name: "charityCommissionRegisteredNumber"
         }) }}
 
         {{ govukInput({
@@ -106,10 +92,7 @@
             text: "Enter the organisation's Companies House registered number, if applicable."
           },
           id: "companys-house-registered-number",
-          name: "companysHouseRegisteredNumber",
-          errorMessage: {
-            text: "Enter the organisation's Companies House registered number"
-          }
+          name: "companysHouseRegisteredNumber"
         }) }}
 
 
@@ -157,9 +140,6 @@
             classes: "govuk-!-width-two-thirds",
             id: "address-town",
             name: "addressTown",
-            errorMessage: {
-              text: "Enter town or city"
-            },
             autocomplete: "address-level2",
             value: data['addressTown']
           }) }}
@@ -181,9 +161,6 @@
             classes: "govuk-input--width-10",
             id: "address-postcode",
             name: "addressPostcode",
-            errorMessage: {
-              text: "Enter postcode"
-            },
             autocomplete: "postal-code",
             value: data['addressPostcode']
           }) }}

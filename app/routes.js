@@ -185,6 +185,10 @@ router.post('/economic-crime-checks', function (req, res) {
       res.redirect('/prototype-1/economic-crime-checks-errors-6')
     } else if (organisationNameInput == "" && addressTownInput == ""){
       res.redirect('/prototype-1/economic-crime-checks-errors-8')
+    } else if (addressTownInput == ""){
+      res.redirect('/prototype-1/economic-crime-checks-errors-13')
+    } else if (addressLine1Input == ""){
+      res.redirect('/prototype-1/economic-crime-checks-errors-14')
     } else if (organisationNameInput == ""){
       res.redirect('/prototype-1/economic-crime-checks-errors-7')
     } else {

@@ -61,10 +61,10 @@
           spellcheck: false,
           classes: "govuk-!-width-one-third",
           label: {
-            text: "Which GGIS ID does this apply to?"
+            text: "Which GGIS scheme ID does this apply to?"
           },
           hint: {
-            text: "For example, AB12345678"
+            text: "For example, G2-SCH-2024-01-12345"
           }
         }) }}
         {% endset -%}
@@ -77,7 +77,10 @@
           autocomplete: "tel",
           classes: "govuk-!-width-one-third",
           label: {
-            text: "What is the contract name?"
+            text: "What is the Open Contracting ID (OCID)?"
+          },
+          hint: {
+            text: "For example, ocds-fh349f-0005"
           }
         }) }}
         {% endset -%}
