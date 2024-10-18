@@ -73,7 +73,10 @@
           spellcheck: false,
           classes: "govuk-!-width-one-third",
           label: {
-            text: "Which grant scheme does this apply to?"
+            text: "Which GGIS ID does this apply to?"
+          },
+          hint: {
+            text: "For example, AB12345678"
           }
         }) }}
         {% endset -%}
@@ -86,10 +89,10 @@
           autocomplete: "tel",
           classes: "govuk-!-width-one-third",
           label: {
-            text: "Which contract does this apply to?"
+            text: "What is the contract name?"
           },
           errorMessage: {
-            text: "Specify the contract this applies to"
+            text: "Specify the contract name this applies to"
           }
         }) }}
         {% endset -%}
