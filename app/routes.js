@@ -195,13 +195,7 @@ router.post('/economic-crime-checks', function (req, res) {
       }  
     }
 
-    /*
-    if (whichCheck == "threats"){
-      res.redirect('/prototype-1/results-threats')
-    } else {
-        res.redirect('/prototype-1/results')
-    }
-    */
+    
 
   }
   //
