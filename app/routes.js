@@ -157,13 +157,36 @@ router.post('/economic-crime-checks', function (req, res) {
     var charityCommissionInput = req.session.data['charityCommissionRegisteredNumber']
     var CompanysHouseInput = req.session.data['companysHouseRegisteredNumber']
 
+    var addressLine1Input = req.session.data['addressLine1']
+    var addressTownInput = req.session.data['addressTown']
+    var addressPostcodeInput = req.session.data['addressPostcode']
+
+
     // Check whether the variable matches a condition
-    if (organisationNameInput == "" && charityCommissionInput == "" && CompanysHouseInput == ""){
+    if (organisationNameInput == "" && charityCommissionInput == "" && CompanysHouseInput == "" && addressLine1Input == "" && addressTownInput == "" && addressPostcodeInput == ""){
       res.redirect('/prototype-1/economic-crime-checks-errors-1')
-    } else if (charityCommissionInput == "" && CompanysHouseInput == ""){
+    } else if (charityCommissionInput == "" && CompanysHouseInput == "" && addressLine1Input == "" && addressTownInput == "" && addressPostcodeInput == ""){
       res.redirect('/prototype-1/economic-crime-checks-errors-2')
-    } else if (organisationNameInput == ""){
+    } else if (organisationNameInput == "" && addressLine1Input == "" && addressTownInput == "" && addressPostcodeInput == ""){
       res.redirect('/prototype-1/economic-crime-checks-errors-3')
+    } else if (addressLine1Input == "" && addressTownInput == "" && addressPostcodeInput == ""){
+      res.redirect('/prototype-1/economic-crime-checks-errors-4')
+    } else if (addressTownInput == "" && addressPostcodeInput == ""){
+      res.redirect('/prototype-1/economic-crime-checks-errors-5')
+    } else if (organisationNameInput == "" && addressPostcodeInput == ""){
+      res.redirect('/prototype-1/economic-crime-checks-errors-9')
+    } else if (charityCommissionInput == "" && CompanysHouseInput == "" && addressPostcodeInput == ""){
+      res.redirect('/prototype-1/economic-crime-checks-errors-12')
+    } else if (charityCommissionInput == "" && CompanysHouseInput == "" && addressTownInput == ""){
+      res.redirect('/prototype-1/economic-crime-checks-errors-11')
+    } else if (charityCommissionInput == "" && CompanysHouseInput == "" && addressLine1Input == ""){
+      res.redirect('/prototype-1/economic-crime-checks-errors-10')
+    } else if (addressPostcodeInput == ""){
+      res.redirect('/prototype-1/economic-crime-checks-errors-6')
+    } else if (organisationNameInput == "" && addressTownInput == ""){
+      res.redirect('/prototype-1/economic-crime-checks-errors-8')
+    } else if (organisationNameInput == ""){
+      res.redirect('/prototype-1/economic-crime-checks-errors-7')
     } else {
       if (whichCheck == "threats"){
         res.redirect('/prototype-1/results-threats')

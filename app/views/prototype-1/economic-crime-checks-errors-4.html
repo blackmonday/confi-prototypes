@@ -22,10 +22,6 @@
         titleText: "There is a problem",
         errorList: [
           {
-            text: "Enter the organisation's Charity Commission or Companies House registered number - you can add both as appropriate",
-            href: "#which-check-input"
-          },
-          {
             text: "Enter the organisation's registered address",
             href: "#which-check-input"
           }
@@ -86,9 +82,7 @@
           },
           id: "charity-commission-registered-number",
           name: "charityCommissionRegisteredNumber",
-          errorMessage: {
-            text: "Enter the organisation's Charity Commission registered number"
-          }
+          value: data['charityCommissionRegisteredNumber']
         }) }}
 
         {{ govukInput({
@@ -101,15 +95,12 @@
           },
           id: "companys-house-registered-number",
           name: "companysHouseRegisteredNumber",
-          errorMessage: {
-            text: "Enter the organisation's Companies House registered number"
-          }
+          value: data['companysHouseRegisteredNumber']
         }) }}
 
 
 
 
-        
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
         
@@ -184,7 +175,6 @@
           }) }}
         
         {% endcall %}        
-        </fieldset>
 
 
 

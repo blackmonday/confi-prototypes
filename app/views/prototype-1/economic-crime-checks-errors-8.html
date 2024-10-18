@@ -21,15 +21,15 @@
       {{ govukErrorSummary({
         titleText: "There is a problem",
         errorList: [
-          {
-            text: "Enter the organisation's Charity Commission or Companies House registered number - you can add both as appropriate",
-            href: "#which-check-input"
-          },
-          {
-            text: "Enter the organisation's registered address",
-            href: "#which-check-input"
-          }
-        ]
+        {
+          text: "Enter the organisation's full registered name",
+          href: "#which-check-input"
+        },
+        {
+          text: "Enter the organisation's registered address town or city",
+          href: "#which-check-input"
+        }
+    ]
       }) }}
 
       <h1 class="govuk-heading-l">
@@ -72,7 +72,9 @@
           },
           id: "organisation-name",
           name: "organisationName",
-          value: data['organisationName']
+          errorMessage: {
+            text: "Enter the orgainisation's full registered name"
+          }
         }) }}
 
 
@@ -86,9 +88,7 @@
           },
           id: "charity-commission-registered-number",
           name: "charityCommissionRegisteredNumber",
-          errorMessage: {
-            text: "Enter the organisation's Charity Commission registered number"
-          }
+          value: data['charityCommissionRegisteredNumber']
         }) }}
 
         {{ govukInput({
@@ -101,15 +101,12 @@
           },
           id: "companys-house-registered-number",
           name: "companysHouseRegisteredNumber",
-          errorMessage: {
-            text: "Enter the organisation's Companies House registered number"
-          }
+          value: data['companysHouseRegisteredNumber']
         }) }}
 
 
 
 
-        
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
         
@@ -127,9 +124,6 @@
             },
             id: "address-line-1",
             name: "addressLine1",
-            errorMessage: {
-              text: "Enter address line 1"
-            },
             autocomplete: "address-line1",
             value: data['addressLine1']
           }) }}
@@ -176,16 +170,11 @@
             classes: "govuk-input--width-10",
             id: "address-postcode",
             name: "addressPostcode",
-            errorMessage: {
-              text: "Enter postcode"
-            },
             autocomplete: "postal-code",
             value: data['addressPostcode']
           }) }}
         
         {% endcall %}        
-        </fieldset>
-
 
 
 

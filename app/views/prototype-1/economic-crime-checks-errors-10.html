@@ -26,7 +26,7 @@
             href: "#which-check-input"
           },
           {
-            text: "Enter the organisation's registered address",
+            text: "Enter the organisation's registered address line 1",
             href: "#which-check-input"
           }
         ]
@@ -109,7 +109,6 @@
 
 
 
-        
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
         
@@ -152,9 +151,6 @@
             classes: "govuk-!-width-two-thirds",
             id: "address-town",
             name: "addressTown",
-            errorMessage: {
-              text: "Enter town or city"
-            },
             autocomplete: "address-level2",
             value: data['addressTown']
           }) }}
@@ -176,17 +172,11 @@
             classes: "govuk-input--width-10",
             id: "address-postcode",
             name: "addressPostcode",
-            errorMessage: {
-              text: "Enter postcode"
-            },
             autocomplete: "postal-code",
             value: data['addressPostcode']
           }) }}
         
         {% endcall %}        
-        </fieldset>
-
-
 
 
 
