@@ -37,9 +37,20 @@
 
   <div class="govuk-grid-row">
 
+    <style>
+      .linkDiv {
+          opacity: 1;
+          transition: opacity 0.3s ease;
+      }
+
+      .linkDiv:hover {
+          opacity: 0.8;
+      }
+    </style>
+
     <a href="/prototype-1/contracts" style="text-decoration: none;">
       <div class="govuk-grid-column-one-third">
-        <div style="background-color: #1d70b8; text-align:center">
+        <div class="linkDiv" style="background-color: #1d70b8; text-align:center">
           <div>
             <img src="/public/img/icon-contracts.svg" alt="Contracts icon" style="margin-top:30px">
             <p class="govuk-heading-l" style="color: #ffffff;margin-top:15px; padding-bottom:30px">Contracts</p>
@@ -63,12 +74,12 @@
           classes: "govuk-button--secondary",
           href: "contracts"
         }) }}
-        </div>
-      </a>
+      </div>
+    </a>
 
     <a href="/prototype-1/threats" style="text-decoration: none;">
       <div class="govuk-grid-column-one-third">
-        <div style="background-color: #d4351c; text-align:center">
+        <div class="linkDiv" style="background-color: #d4351c; text-align:center">
           <div>
             <img src="/public/img/icon-threats.svg" alt="Threats icon" style="margin-top:30px">
             <p class="govuk-heading-l" style="color: #ffffff;margin-top:15px; padding-bottom:30px">Threats</p>
@@ -91,36 +102,36 @@
           text: "Continue",
           classes: "govuk-button--secondary",
           href: "threats"
-      }) }}
-      </div>
-    </a>
-    
-    <a href="/prototype-1/grants" style="text-decoration: none;">
-      <div class="govuk-grid-column-one-third">
-        <div style="background-color: #00703c; text-align:center">
-          <div>
-            <img src="/public/img/icon-grants.svg" alt="Grants icon" style="margin-top:30px">
-            <p class="govuk-heading-l" style="color: #ffffff;margin-top:15px; padding-bottom:30px">Contracts</p>
-          </div>
+        }) }}
         </div>
-        <p class="govuk-body govuk-!-margin-top-3">View and manage your grant schemes and applicants</p>
-        {% from "govuk/components/button/macro.njk" import govukButton %}
-
-        <!--<div style="float:right;">
-          <div style="right:0px; background-color: #00703c; text-align:center; width:34px; height:34px">
+      </a>
+    
+      <a href="/prototype-1/grants" style="text-decoration: none;">
+        <div class="govuk-grid-column-one-third">
+          <div class="linkDiv" style="background-color: #00703c; text-align:center">
             <div>
-              <img src="/public/img/icon-small-arrow.svg" alt="Small arrow icon" style="margin-top:10px">
+              <img src="/public/img/icon-grants.svg" alt="Grants icon" style="margin-top:30px">
+              <p class="govuk-heading-l" style="color: #ffffff;margin-top:15px; padding-bottom:30px">Contracts</p>
             </div>
           </div>
-        </div>
-        <div style="height:30px;border-bottom: 4px solid #00703c">
-        </div>-->
+          <p class="govuk-body govuk-!-margin-top-3">View and manage your grant schemes and applicants</p>
+          {% from "govuk/components/button/macro.njk" import govukButton %}
 
-        {{ govukButton({
-          text: "Continue",
-          classes: "govuk-button--secondary",
-          href:"grants"
-        }) }}
+          <!--<div style="float:right;">
+            <div style="right:0px; background-color: #00703c; text-align:center; width:34px; height:34px">
+              <div>
+                <img src="/public/img/icon-small-arrow.svg" alt="Small arrow icon" style="margin-top:10px">
+              </div>
+            </div>
+          </div>
+          <div style="height:30px;border-bottom: 4px solid #00703c">
+          </div>-->
+
+          {{ govukButton({
+            text: "Continue",
+            classes: "govuk-button--secondary",
+            href:"grants"
+          }) }}
         </div>
       </a>
   </div>
