@@ -1,0 +1,206 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Enter the organisation's Charity Commission or Companies House registered number - you can add both as appropriate",
+            href: "#which-check-input"
+          },
+          {
+            text: "Enter the organisation's registered address",
+            href: "#which-check-input"
+          }
+        ]
+      }) }}
+
+      <h1 class="govuk-heading-l">
+        Economic crime checks
+      </h1>
+
+      {% if (data['grantsSchemeDetail'] != "") %}
+        <div class="parent" style="width:100%;height:25px;margin-bottom:30px;display:flex">
+          <div class="child1" style="width: 370px;">
+            <p class="govuk-heading-s">GGIS scheme ID</p>
+          </div>
+          <div class="child2">
+              <p class="govuk-body">{{ data['grantsSchemeDetail'] }}</p>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if (data['contractsDetail'] != "") %}
+        <div class="parent" style="width:100%;height:25px;margin-bottom:30px;display:flex">
+          <div class="child1" style="width: 370px;">
+            <p class="govuk-heading-s">Open Contracting ID (OCID)</p>
+          </div>
+          <div class="child2">
+              <p class="govuk-body">{{ data['contractsDetail'] }}</p>
+          </div>
+        </div>
+      {% endif %}
+
+      <form class="form" action="/economic-crime-checks" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "Organisation name",
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "Enter the organisation's full registered name, as displayed on the application form."
+          },
+          id: "organisation-name",
+          name: "organisationName",
+          value: data['organisationName']
+        }) }}
+
+
+        {{ govukInput({
+          label: {
+            text: "Charity Commission registered number",
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "Enter the organisation's Charity Commission registered number, if applicable."
+          },
+          id: "charity-commission-registered-number",
+          name: "charityCommissionRegisteredNumber",
+          errorMessage: {
+            text: "Enter the organisation's Charity Commission registered number"
+          }
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Companies House registered number",
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "Enter the organisation's Companies House registered number, if applicable."
+          },
+          id: "companys-house-registered-number",
+          name: "companysHouseRegisteredNumber",
+          errorMessage: {
+            text: "Enter the organisation's Companies House registered number"
+          }
+        }) }}
+
+
+
+
+        
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+        
+        {% call govukFieldset({
+          legend: {
+            text: "Organisations registered address",
+            classes: "govuk-fieldset__legend--s",
+            isPageHeading: false
+          }
+        }) %}
+        
+          {{ govukInput({
+            label: {
+              text: "Address line 1"
+            },
+            id: "address-line-1",
+            name: "addressLine1",
+            errorMessage: {
+              text: "Enter address line 1"
+            },
+            autocomplete: "address-line1",
+            value: data['addressLine1']
+          }) }}
+        
+          {{ govukInput({
+            label: {
+              text: "Address line 2 (optional)",
+              classes: "govuk-!-margin-top-0"
+            },
+            id: "address-line-2",
+            name: "addressLine2",
+            autocomplete: "address-line2",
+            value: data['addressLine2']
+          }) }}
+        
+          {{ govukInput({
+            label: {
+              text: "Town or city"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-town",
+            name: "addressTown",
+            errorMessage: {
+              text: "Enter town or city"
+            },
+            autocomplete: "address-level2",
+            value: data['addressTown']
+          }) }}
+        
+          {{ govukInput({
+            label: {
+              text: "County (optional)"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-county",
+            name: "addressCounty",
+            value: data['addressCounty']
+          }) }}
+        
+          {{ govukInput({
+            label: {
+              text: "Postcode"
+            },
+            classes: "govuk-input--width-10",
+            id: "address-postcode",
+            name: "addressPostcode",
+            errorMessage: {
+              text: "Enter postcode"
+            },
+            autocomplete: "postal-code",
+            value: data['addressPostcode']
+          }) }}
+        
+        {% endcall %}        
+        </fieldset>
+
+
+
+
+
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+  <p class="govuk-body-s" style="font-size: 9px; color:	#b1b4b6">PROTOTYPE VERSION: {{ data['which-prototype'] }}</p>
+
+{% endblock %}

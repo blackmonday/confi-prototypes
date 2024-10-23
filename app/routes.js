@@ -7,7 +7,6 @@ const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
 
-
 //
 //
 // Run this code when a form is submitted from 'which-prototype'
@@ -16,7 +15,7 @@ router.post('/which-prototype', function (req, res) {
   // Make a variable and give it the value from 'which-prototype'
   var whichPrototype = req.session.data['which-prototype']
 
-  // Check whether the variable matches a condition
+  // Check which prototype type version to run
   if (whichPrototype == "1.0"){
     res.redirect('/prototype-1/index')
   } else {
@@ -29,16 +28,16 @@ router.post('/which-prototype', function (req, res) {
 //
 
 
-
 //
 //
 // Run this code when a form is submitted from 'threats-type'
 router.post('/threats-type-answer', function (req, res) {
 
+  var whichPrototype = req.session.data['which-prototype']
+
   //
   // START Prototype 1 routes
   //
-  var whichPrototype = req.session.data['which-prototype']
   if (whichPrototype == "1.0"){
   
     // Make a variable and give it the value from 'which-threat'
@@ -69,10 +68,11 @@ router.post('/threats-type-answer', function (req, res) {
 // Run this code when a form is submitted from 'threats-type'
 router.post('/which-check-answer', function (req, res) {
 
+  var whichPrototype = req.session.data['which-prototype']
+
   //
   // START Prototype 1 routes
   //
-  var whichPrototype = req.session.data['which-prototype']
   if (whichPrototype == "1.0"){
   
     // Make a variable and give it the value from 'which-threat'
@@ -113,10 +113,11 @@ router.post('/which-check-answer', function (req, res) {
 // Run this code when a form is submitted from 'how-many-orgs'
 router.post('/how-many-orgs', function (req, res) {
 
+  var whichPrototype = req.session.data['which-prototype']
+
   //
   // START Prototype 1 routes
   //
-  var whichPrototype = req.session.data['which-prototype']
   if (whichPrototype == "1.0"){
 
     // Make a variable and give it the value from 'how-many-orgs'
@@ -145,10 +146,11 @@ router.post('/how-many-orgs', function (req, res) {
 // Run this code when a form is submitted from 'economic-crime-checks'
 router.post('/economic-crime-checks', function (req, res) {
 
+  var whichPrototype = req.session.data['which-prototype']
+
   //
   // START Prototype 1 routes
   //
-  var whichPrototype = req.session.data['which-prototype']
   if (whichPrototype == "1.0"){
 
     // Make a variable and give it the value from 'which-check'
@@ -197,9 +199,7 @@ router.post('/economic-crime-checks', function (req, res) {
       } else {
           res.redirect('/prototype-1/results')
       }  
-    }
-
-    
+    } 
 
   }
   //

@@ -1,0 +1,309 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Results of financial crime checks
+      </h1>
+
+      {% if (data['grantsSchemeDetail'] != "") %}
+        <div class="parent" style="width:100%;height:25px;display:flex;margin-bottom:10px">
+          <div class="child1" style="width: 370px;">
+            <p class="govuk-heading-s">GGIS ID</p>
+          </div>
+          <div class="child2">
+              <p class="govuk-body">{{ data['grantsSchemeDetail'] }}</p>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if (data['contractsDetail'] != "") %}
+        <div class="parent" style="width:100%;height:25px;display:flex;margin-bottom:10px">
+          <div class="child1" style="width: 370px;">
+            <p class="govuk-heading-s">Contract name</p>
+          </div>
+          <div class="child2">
+              <p class="govuk-body">{{ data['contractsDetail'] }}</p>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="parent" style="width:100%;height:25px;display:flex;margin-bottom:10px">
+        <div class="child1" style="width: 370px;">
+          <p class="govuk-heading-s">Organisation's name</p>
+        </div>
+        <div class="child2">
+          {% if (data['organisationName'] == "") %}
+              <p class="govuk-body">&mdash;</p>
+            {% else %}
+              <p class="govuk-body">{{ data['organisationName'] }}</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="parent" style="width:100%;height:25px;display:flex;margin-bottom:10px">
+        <div class="child1" style="width: 370px;">
+          <p class="govuk-heading-s">Charity Commission registered number</p>
+        </div>
+        <div class="child2">
+          {% if (data['charityCommissionRegisteredNumber'] == "") %}
+              <p class="govuk-body">&mdash;</p>
+            {% else %}
+              <p class="govuk-body">{{ data['charityCommissionRegisteredNumber'] }}</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="parent" style="width:100%;height:25px;display:flex;margin-bottom:10px">
+        <div class="child1" style="width: 370px;">
+          <p class="govuk-heading-s">Companies House registration number</p>
+        </div>
+        <div class="child2">
+          {% if (data['companysHouseRegisteredNumber'] == "") %}
+              <p class="govuk-body">&mdash;</p>
+            {% else %}
+              <p class="govuk-body">{{ data['companysHouseRegisteredNumber'] }}</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="parent" style="width:100%;display:flex">
+        <div class="child1" style="width: 370px;">
+          <p class="govuk-heading-s">Organsiations registered address</p>
+        </div>
+        <div class="child2">
+          <p class="govuk-body" style=";margin-bottom:10px">
+            {% if (data['addressLine1'] == "") %}
+              &mdash;
+            {% else %}
+              {{ data['addressLine1'] }}
+            {% endif %}
+            </br>
+            {% if (data['addressLine2'] == "") %}
+              &mdash;
+            {% else %}
+              {{ data['addressLine2'] }}
+            {% endif %}
+            </br>
+            {% if (data['addressTown'] == "") %}
+              &mdash;
+            {% else %}
+              {{ data['addressTown'] }}
+            {% endif %}
+            </br>
+            {% if (data['addressCounty'] == "") %}
+              &mdash;
+            {% else %}
+              {{ data['addressCounty'] }}
+            {% endif %}
+            </br>
+            {% if (data['addressPostcode'] == "") %}
+              &mdash;
+            {% else %}
+              {{ data['addressPostcode'] }}
+            {% endif %}
+          </p>
+        </div>
+      </div>
+
+      <div class="parent" style="width:100%;height:25px;display:flex;margin-bottom:10px">
+        <div class="child1" style="width: 370px;">
+          <p class="govuk-heading-s">Spotlight reference number for checks</p>
+        </div>
+        <div class="child2">
+          <p class="govuk-body">A-817476</p>
+        </div>
+      </div>
+
+      <div class="parent govuk-!-margin-bottom-5" style="width:100%;height:25px;display:flex">
+        <div class="child1" style="width: 370px;">
+          <p class="govuk-heading-s">Checks conducted on</p>
+        </div>
+        <div class="child2">
+          <p class="govuk-body">17 October 2024</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class="govuk-tabs__title">
+          Contents
+        </h2>
+
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#tab1">
+              Know your applicant
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#tab2">
+              Standard checks
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#tab3">
+              Enhanced checks
+            </a>
+          </li>
+          <!--<li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#tab4">
+              International checks
+            </a>
+          </li>-->
+        </ul>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tab1">
+          <h2 class="govuk-heading-l">Know your applicant</h2>
+    
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Fictitious organisation<br /><span class="govuk-body"">The organisation identified does not match details that could portray it as operating as a fictitious organisation.</span><br /><!--<span class="govuk-body-s" style="color: #505a5f">This RISK ID helps to identify whether an organisation may be fictitious. Purporting to be trading but has been created for deceptive or fraudulent purposes.</span></br>-->
+
+                  <details class="govuk-details" style="margin-top:15px">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Help with fictitious organisation
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p style="margin-bottom: 15px"><strong>Risk:</strong> This RISK ID helps to identify whether an organisation may be fictitious. Purporting to be trading but has been created for deceptive or fraudulent purposes.</p>
+                      <p style="margin-bottom: 10px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong> The organisation does not have similar details to any organisation that has previously applied for a grant.</p>
+                      <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong> The organisation has SOME similar details to an organisation that has previously applied for a grant.</p>
+                      <p style="margin-bottom: 10px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong> The organisation identified has the EXACT match details to an organisation that has previously applied for a grant, this could be a fictitious organisation.</p>
+                    </div>
+                  </details>
+    
+                </th>
+                <td class="govuk-table__cell" style="width:150px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Virtual company registration ID<br /><span class="govuk-body">The organisation is registered at an address where there's a large presence of other companies, this may be a virtual mailbox.</span><br /><!--<span class="govuk-body-s" style="color: #505a5f">This RISK ID helps to define the potential thresholds indicating whether a large number of organisations are registered at the same address highlighting the possibility of a virtual mailbox being present.</span></br>-->
+
+                  <details class="govuk-details" style="margin-top:15px">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Help with virtual company registration ID
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p style="margin-bottom: 15px"><strong>Risk:</strong> This RISK ID helps to define the potential thresholds indicating whether a large number of organisations are registered at the same address highlighting the possibility of a virtual mailbox being present.</p>
+                      <p style="margin-bottom: 10px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong> The organisation is registered at an address where there’s minimal chance of a virtual mailbox.</p>
+                      <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong> The organisation is registered at an address where there may be a virtual mailbox.</p>
+                      <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;HIGH/MEDIUM RISK&nbsp;&nbsp;</strong> The organisation is registered at an address where there’s a large presence of other companies, this may be a virtual mailbox.</p>
+                      <p style="margin-bottom: 10px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong> The organisation is registered at an address where there’s a significant presence of a number of companies, this may be a virtual mailbox.</p>
+                    </div>
+                  </details>
+                  
+                </th>
+                <td class="govuk-table__cell" style="width:150px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Impersonation of legitimate company<br /><span class="govuk-body">This organisation is at a low risk of impersonating another organisation.</span><br /><!--<span class="govuk-body-s" style="color: #505a5f">This RISK ID indicates whether an organisation may be attempting to impersonate an existing organisation.</span></br>-->
+
+                  <details class="govuk-details" style="margin-top:15px">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Help with impersonation of legitimate company
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p style="margin-bottom: 15px"><strong>Risk:</strong> This RISK ID indicates whether an organisation may be attempting to impersonate an existing organisation.</p>
+                      <p style="margin-bottom: 10px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong> The organisation is at low risk of attempting to clone another legitimate organisation.</p>
+                      <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong> The organisation has an EXACT or SIMILAR name to another organisation with some partial matching company details; there is a risk the organisation may be attempting to clone another legitimate company.</p>
+                      <p style="margin-bottom: 10px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong> The organisation has an EXACT or SIMILAR name to another organisation but  no other matching company details; there is a risk the organisation may be attempting to clone another legitimate organisation.</p>
+                    </div>
+                  </details>
+              
+                </th>
+                <td class="govuk-table__cell" style="width:150px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Shell company indentification<br /><span class="govuk-body">The organisation displays a significant number of characteristics associated with a  Shell company and may be concealing important information and its true purpose and identity.</span><br /><!--<span class="govuk-body-s" style="color: #505a5f">This RISK ID indicates whether an organisation may be a shell company. The entities could be concealing important information and its true purpose and identity.</span></br>-->
+
+                  <details class="govuk-details" style="margin-top:15px">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Help with shell company indentification
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p style="margin-bottom: 15px"><strong>Risk:</strong> This RISK ID indicates whether an organisation may be a shell company. The entities could be concealing important information and its true purpose and identity.</p>
+                      <p style="margin-bottom: 10px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong> The organisation has minimal characteristics that can be associated with a shell company.</p>
+                      <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong> The organisation has some of the characteristics that can be associated with a shell company.</p>
+                      <p style="margin-bottom: 10px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong> The organisation has some of the characteristics that can be associated with a shell company.</p>
+                    </div>
+                  </details>
+                  
+                </th>
+                <td class="govuk-table__cell" style="width:150px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong></td>
+              </tr>
+            </tbody>
+          </table>
+    
+          <p class="govuk-!-margin-bottom-2 govuk-heading-s">Download threat summary</p>
+          <div class="parent" style="width:100%; height=50px;display:flex">
+            <div class="child1 govuk-!-margin-right-3">
+              <img src="/public/img/icon-document.svg" alt="Document icon"">
+            </div>
+            <div class="child2">
+              <p class="govuk-body govuk-!-margin-bottom-0"><a href class="govuk-link">Download results in XLSX format</a></p>
+              <p class="govuk-body">MS Excel Spreadsheet, 2mb</p>
+            </div>
+          </div> 
+          
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Run further sanctions checks",
+            classes: "govuk-button--secondary",
+            href: "/prototype-1/sanctions"
+          }) }}
+
+        </div>
+        
+        <div class="govuk-tabs__panel" id="tab2">
+          <div style="background-color: #f3f2f1">
+            <h2 class="govuk-heading-s" style="text-align:center;padding-top:60px;padding-bottom:60px">[Standard checks]</h2>
+          </div>
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tab3">
+          <div style="background-color: #f3f2f1;">
+            <h2 class="govuk-heading-s" style="text-align:center;padding-top:60px;padding-bottom:60px">[Enhanced checks]</h2>
+          </div>
+        </div>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tab4">
+          <div style="background-color: #f3f2f1;">
+            <h2 class="govuk-heading-s" style="text-align:center;padding-top:60px;padding-bottom:60px">[International checks]</h2>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <p class="govuk-body-s" style="font-size: 9px; color:	#b1b4b6">PROTOTYPE VERSION: {{ data['which-prototype'] }}</p>
+
+{% endblock %}

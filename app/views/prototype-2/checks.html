@@ -16,24 +16,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
-
-      {{ govukErrorSummary({
-        titleText: "There is a problem",
-        errorList: [
-          {
-            text: "Specify the grant scheme this applies to",
-            href: "#which-check-input"
-          }
-        ]
-      }) }}
-
-
       <h1 class="govuk-heading-l">
         What are the checks for?
       </h1>
 
-      <form class="form" action="/which-check-answer" method="post" id="which-check-input">
+      <form class="form" action="/which-check-answer" method="post">
 
         <!--{% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -79,9 +66,6 @@
           hint: {
             text: "For example, G2-SCH-2024-01-12345"
           },
-          errorMessage: {
-            text: "Specify the GGIS scheme ID this applies to"
-          },
           classes: "govuk-input--width-10"
         }) }}
         {% endset -%}
@@ -97,7 +81,7 @@
             text: "What is the Open Contracting ID (OCID)?"
           },
           hint: {
-            text: "For example, OCDS-FH349F-0005"
+            text: "For example, ocds-fh349f-0005"
           },
           classes: "govuk-input--width-10"
         }) }}
@@ -109,7 +93,6 @@
             {
               value: "grants",
               text: "Grants applicants",
-              checked: true,
               conditional: {
                 html: grantsHtml
               }

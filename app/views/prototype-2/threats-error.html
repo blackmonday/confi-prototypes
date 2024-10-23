@@ -1,0 +1,82 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Select the check you would like to run",
+            href: "#which-threat-input"
+          }
+        ]
+      }) }}
+
+      <h1 class="govuk-heading-l">
+        What type of check would you like to run?
+      </h1>
+
+      <form class="form" action="/threats-type-answer" method="post" id="which-threat-input">
+
+        <p>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            name: "which-threat",
+            items: [
+              {
+                value: "sanctions",
+                text: "Sanctions",
+                hint: {
+                  text: "For example, international checks on organisations and individuals"
+                }
+              },
+              {
+                value: "economic-crime",
+                text: "Economic crime and national security",
+                hint: {
+                  text: "For example, national security checks related to grants, contracts and national security casework"
+                }
+              },
+              {
+                value: "community-engagement-principles",
+                text: "Community engagement principles",
+                hint: {
+                  text: "For example, checks related to the community engagement standards"
+                }
+              }
+            ],
+            errorMessage: {
+              text: "Select the check you would like to run"
+            }
+          }) }}
+        </p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+  <p class="govuk-body-s" style="font-size: 9px; color:	#b1b4b6">PROTOTYPE VERSION: {{ data['which-prototype'] }}</p>
+
+{% endblock %}
