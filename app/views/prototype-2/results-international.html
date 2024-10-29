@@ -272,13 +272,15 @@
           
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-          {% from "govuk/components/button/macro.njk" import govukButton %}
+          <div style="text-align: right">
+            {% from "govuk/components/button/macro.njk" import govukButton %}
 
-          {{ govukButton({
-            text: "Run further sanctions checks",
-            classes: "govuk-button--secondary",
-            href: "/prototype-1/sanctions"
-          }) }}
+            {{ govukButton({
+              text: "Run a sanctions check",
+              classes: "govuk-button--secondary",
+              href: "/prototype-1/sanctions"
+            }) }}
+          </div>
 
         </div>
         

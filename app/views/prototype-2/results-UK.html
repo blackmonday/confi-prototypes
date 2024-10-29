@@ -35,19 +35,6 @@
 
       <div class="parent" style="width:100%;height:25px;display:flex;margin-bottom:10px">
         <div class="child1" style="width: 370px;">
-          <p class="govuk-heading-s">Charity Commission registered number</p>
-        </div>
-        <div class="child2">
-          {% if (data['charityCommissionRegisteredNumber'] == "") %}
-              <p class="govuk-body">&mdash;</p>
-            {% else %}
-              <p class="govuk-body">{{ data['charityCommissionRegisteredNumber'] }}</p>
-          {% endif %}
-        </div>
-      </div>
-
-      <div class="parent" style="width:100%;height:25px;display:flex;margin-bottom:10px">
-        <div class="child1" style="width: 370px;">
           <p class="govuk-heading-s">Companies House registration number</p>
         </div>
         <div class="child2">
@@ -55,6 +42,19 @@
               <p class="govuk-body">&mdash;</p>
             {% else %}
               <p class="govuk-body">{{ data['companysHouseRegisteredNumber'] }}</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="parent" style="width:100%;height:25px;display:flex;margin-bottom:10px">
+        <div class="child1" style="width: 370px;">
+          <p class="govuk-heading-s">Charity Commission registered number</p>
+        </div>
+        <div class="child2">
+          {% if (data['charityCommissionRegisteredNumber'] == "") %}
+              <p class="govuk-body">&mdash;</p>
+            {% else %}
+              <p class="govuk-body">{{ data['charityCommissionRegisteredNumber'] }}</p>
           {% endif %}
         </div>
       </div>
@@ -254,11 +254,15 @@
 
           {% from "govuk/components/button/macro.njk" import govukButton %}
 
-          {{ govukButton({
-            text: "Run further sanctions checks",
-            classes: "govuk-button--secondary",
-            href: "/prototype-1/sanctions"
-          }) }}
+          <div style="text-align: right">
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+
+            {{ govukButton({
+              text: "Run a sanctions check",
+              classes: "govuk-button--secondary",
+              href: "/prototype-1/sanctions"
+            }) }}
+          </div>
 
         </div>
         

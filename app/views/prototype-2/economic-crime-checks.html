@@ -39,20 +39,6 @@
 
         {{ govukInput({
           label: {
-            text: "Charity Commission registered number",
-            classes: "govuk-label--s"
-          },
-          hint: {
-            text: "Enter the organisation's Charity Commission registered number, if applicable."
-          },
-          classes: "govuk-input--width-10",
-          id: "charity-commission-registered-number",
-          name: "charityCommissionRegisteredNumber"
-        }) }}
-
-
-        {{ govukInput({
-          label: {
             text: "Companies House registered number",
             classes: "govuk-label--s"
           },
@@ -65,7 +51,18 @@
         }) }}
 
 
-
+        {{ govukInput({
+          label: {
+            text: "Charity Commission registered number",
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "Enter the organisation's Charity Commission registered number, if applicable."
+          },
+          classes: "govuk-input--width-10",
+          id: "charity-commission-registered-number",
+          name: "charityCommissionRegisteredNumber"
+        }) }}
 
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
