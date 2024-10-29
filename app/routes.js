@@ -18,7 +18,9 @@ router.post('/which-prototype', function (req, res) {
   // Check which prototype type version to run
   if (whichPrototype == "1.0"){
     res.redirect('/prototype-1/index')
-  } else {
+  } else if (whichPrototype == "2.0"){
+    res.redirect('/prototype-2/index')
+  } else{
     res.redirect('/index-error')
   }
 
@@ -54,10 +56,26 @@ router.post('/threats-type-answer', function (req, res) {
       res.redirect('/prototype-1/threats-error')
     }
   
-  } 
   //
-  // END Prototype 1 routes
+  // START Prototype 2 routes
   //
+  } else if (whichPrototype == "2.0"){
+  
+    // Make a variable and give it the value from 'which-threat'
+    var whichThreat = req.session.data['which-threat']
+  
+    // Check whether the variable matches a condition
+    if (whichThreat == "sanctions"){
+      res.redirect('/prototype-2/sanctions')
+    } else if (whichThreat == "economic-crime"){
+      res.redirect('/prototype-2/how-many-orgs')
+    } else  if (whichThreat == "community-engagement-principles"){
+        res.redirect('/prototype-2/community-engagement-principles')
+    } else {
+      res.redirect('/prototype-2/threats-error')
+    }
+  
+  }
 
 })
 
@@ -100,9 +118,6 @@ router.post('/which-check-answer', function (req, res) {
     }
   
   }
-  //
-  // END Prototype 1 routes
-  //
 
 })
 
@@ -132,10 +147,31 @@ router.post('/how-many-orgs', function (req, res) {
       res.redirect('/prototype-1/how-many-orgs-error')
     }
   
+  //
+  // START Prototype 2 routes
+  //
+  } else if (whichPrototype == "2.0"){
+
+    // Make a variable and give it the value from 'how-many-orgs'
+    var howManyOrgs = req.session.data['how-many-orgs']
+    var orgLocation = req.session.data['org-location']
+  
+    // Check whether the variable matches a condition
+    if (howManyOrgs == "one"){
+      if (orgLocation == "uk"){
+        res.redirect('/prototype-2/economic-crime-checks')
+      } else if (orgLocation == "international") {
+        res.redirect('/prototype-2/economic-crime-checks-international')
+      } else {
+        res.redirect('/prototype-2/how-many-orgs-error-2')
+      }
+    } else if (howManyOrgs == "two-or-more"){
+        res.redirect('/prototype-2/two-or-more')
+    } else {
+      res.redirect('/prototype-2/how-many-orgs-error')
+    }
+  
   }
-  //
-  // END Prototype 1 routes
-  //
 
 })
 
@@ -201,9 +237,19 @@ router.post('/economic-crime-checks', function (req, res) {
       }  
     } 
 
-  }
   //
-  // END Prototype 1 routes
+  // START Prototype 2 routes
   //
+  } else if (whichPrototype == "2.0"){
+    // Make a variable and give it the value from 'which-check'
+    var orgLocation = req.session.data['org-location']
+
+    // Check whether the variable matches a condition
+      if (orgLocation == "uk"){
+        res.redirect('/prototype-2/results-UK')
+      } else {
+        res.redirect('/prototype-2/results-international')
+      }
+    }  
 
 })

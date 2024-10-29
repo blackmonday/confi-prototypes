@@ -16,11 +16,23 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Select if you are checking a UK registered company or an international company",
+            href: "#how-many-orgs-input"
+          }
+        ]
+      }) }}
+
       <h1 class="govuk-heading-l">
         How many organisations do you want to check?
       </h1>
 
-      <form class="form" action="/how-many-orgs" method="post">
+      <form class="form" action="/how-many-orgs" method="post" id="how-many-orgs-input">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -36,7 +48,10 @@
               value: "international",
               text: "International company"
             }
-          ]
+          ],
+          errorMessage: {
+            text: "Select if you are checking a UK registered company or an international company"
+          }
         }) }}
         {% endset -%}
 
@@ -46,6 +61,7 @@
             {
               value: "one",
               text: "One",
+              checked: true,
               conditional: {
                 html: oneOrg
               }

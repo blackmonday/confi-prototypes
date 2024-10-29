@@ -20,28 +20,6 @@
         Results of financial crime checks
       </h1>
 
-      {% if (data['grantsSchemeDetail'] != "") %}
-        <div class="parent" style="width:100%;height:25px;display:flex;margin-bottom:10px">
-          <div class="child1" style="width: 370px;">
-            <p class="govuk-heading-s">GGIS ID</p>
-          </div>
-          <div class="child2">
-              <p class="govuk-body">{{ data['grantsSchemeDetail'] }}</p>
-          </div>
-        </div>
-      {% endif %}
-
-      {% if (data['contractsDetail'] != "") %}
-        <div class="parent" style="width:100%;height:25px;display:flex;margin-bottom:10px">
-          <div class="child1" style="width: 370px;">
-            <p class="govuk-heading-s">Contract name</p>
-          </div>
-          <div class="child2">
-              <p class="govuk-body">{{ data['contractsDetail'] }}</p>
-          </div>
-        </div>
-      {% endif %}
-
       <div class="parent" style="width:100%;height:25px;display:flex;margin-bottom:10px">
         <div class="child1" style="width: 370px;">
           <p class="govuk-heading-s">Organisation's name</p>
@@ -120,6 +98,8 @@
         </div>
       </div>
 
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
       <div class="parent" style="width:100%;height:25px;display:flex;margin-bottom:10px">
         <div class="child1" style="width: 370px;">
           <p class="govuk-heading-s">Spotlight reference number for checks</p>
@@ -134,7 +114,7 @@
           <p class="govuk-heading-s">Checks conducted on</p>
         </div>
         <div class="child2">
-          <p class="govuk-body">17 October 2024</p>
+          <p class="govuk-body">{{ "today" | govukDate }}</p>
         </div>
       </div>
 

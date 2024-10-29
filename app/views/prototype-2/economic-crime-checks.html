@@ -20,28 +20,6 @@
         Economic crime checks
       </h1>
 
-      {% if (data['grantsSchemeDetail'] != "") %}
-        <div class="parent" style="width:100%;height:25px;margin-bottom:30px;display:flex">
-          <div class="child1" style="width: 370px;">
-            <p class="govuk-heading-s">GGIS scheme ID</p>
-          </div>
-          <div class="child2">
-              <p class="govuk-body">{{ data['grantsSchemeDetail'] }}</p>
-          </div>
-        </div>
-      {% endif %}
-
-      {% if (data['contractsDetail'] != "") %}
-        <div class="parent" style="width:100%;height:25px;margin-bottom:30px;display:flex">
-          <div class="child1" style="width: 370px;">
-            <p class="govuk-heading-s">Open Contracting ID (OCID)</p>
-          </div>
-          <div class="child2">
-              <p class="govuk-body">{{ data['contractsDetail'] }}</p>
-          </div>
-        </div>
-      {% endif %}
-
       <form class="form" action="/economic-crime-checks" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
