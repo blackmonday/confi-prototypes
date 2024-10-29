@@ -57,7 +57,7 @@
               {{ data['addressTown'] }}
             {% endif %}
             </br>
-            {% if (data['addressCountry'] == "") %}
+            {% if (data['addressCountry'] == "") or (data['addressCountry'] == "Choose") %}
               &mdash;
             {% else %}
               {{ data['addressCountry'] }}

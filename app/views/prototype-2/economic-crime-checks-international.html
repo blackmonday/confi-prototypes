@@ -79,7 +79,7 @@
             value: data['addressLine2']
           }) }}
         
-          {{ govukInput({
+         <!--{{ govukInput({
             label: {
               text: "Country (optional)"
             },
@@ -87,7 +87,47 @@
             id: "address-country",
             name: "addressCountry",
             value: data['addressCountry']
+        }) }}-->
+
+          {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+          {{ govukSelect({
+            id: "address-country",
+            name: "addressCountry",
+            label: {
+              text: "Country (optional)"
+            },
+            items: [
+              {
+                value: "Choose",
+                text: "Choose country",
+                selected: true
+              },        
+              {
+                value: "China",
+                text: "China"
+              },
+              {
+                value: "France",
+                text: "France"
+              },
+              {
+                value: "Iran",
+                text: "Iran"
+              },
+              {
+                value: "Germany",
+                text: "Germany"
+              }
+            ]
           }) }}
+
+
+
+
+
+
+
                
           {{ govukInput({
             label: {
