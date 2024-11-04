@@ -98,8 +98,12 @@
       </ul>
 
       <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tab1">
-        <h2 class="govuk-heading-l">Know your applicant</h2>
+        <h2 class="govuk-heading-m">Know your applicant</h2>
+        <p class="govuk-body">Know your applicant checks show information held by Companies House, the Charity Commission and other sources on organisation.</p>
+        <p class="govuk-body">Know your applicant checks conduct checks related to National Security and Economic Crime. For further National Security checks you can run a UK and International PEPs, Sanctions and Adverse Media check on organisations and individuals.</p>
   
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
         <table class="govuk-table">
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
@@ -113,9 +117,9 @@
                   </summary>
                   <div class="govuk-details__text">
                     <p style="margin-bottom: 15px"><strong>Risk:</strong> This RISK ID helps to identify whether an organisation may be fictitious. Purporting to be trading but has been created for deceptive or fraudulent purposes.</p>
-                    <p style="margin-bottom: 10px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong> The organisation does not have similar details to any organisation that has previously applied for a grant.</p>
-                    <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong> The organisation has SOME similar details to an organisation that has previously applied for a grant.</p>
-                    <p style="margin-bottom: 10px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong> The organisation identified has the EXACT match details to an organisation that has previously applied for a grant, this could be a fictitious organisation.</p>
+                    <p style="margin-bottom: 10px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong> There is no match for all entities.</p>
+                    <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong> If there is an exact match for incorporation date and SIC code but a partial match for other entities and the company name has changed within a year.</p>
+                    <p style="margin-bottom: 10px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong> If there's exact matching details for the incorporation date and organisation address on companies house but the SIC codes and the company name have both changed within a year.</p>
                   </div>
                 </details>
   
@@ -133,10 +137,10 @@
                   </summary>
                   <div class="govuk-details__text">
                     <p style="margin-bottom: 15px"><strong>Risk:</strong> This RISK ID helps to define the potential thresholds indicating whether a large number of organisations are registered at the same address highlighting the possibility of a virtual mailbox being present.</p>
-                    <p style="margin-bottom: 10px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong> The organisation is registered at an address where there’s minimal chance of a virtual mailbox.</p>
-                    <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong> The organisation is registered at an address where there may be a virtual mailbox.</p>
-                    <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;HIGH/MEDIUM RISK&nbsp;&nbsp;</strong> The organisation is registered at an address where there’s a large presence of other companies, this may be a virtual mailbox.</p>
-                    <p style="margin-bottom: 10px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong> The organisation is registered at an address where there’s a significant presence of a number of companies, this may be a virtual mailbox.</p>
+                    <p style="margin-bottom: 10px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong> There are less than or equal to 49 registered companies. The organisation is registered at an address where there is minimal chance of a virtual mailbox.</p>
+                    <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong> There are between 50 and 99 registered companies. The organisation is registered at an address where there may be a virtual mailbox.</p>
+                    <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;HIGH/MEDIUM RISK&nbsp;&nbsp;</strong> There are between 100 and 249 registered companies. The organisation is registered at an address where there's a large presence of other companies, this may be a virtual mailbox.</p>
+                    <p style="margin-bottom: 10px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong> There are more than 250 registered companies. The organisation is registered at an address where there's a significant presence of a number of companies, this may be a virtual mailbox.</p>
                   </div>
                 </details>
                 
@@ -153,8 +157,8 @@
                     </span>
                   </summary>
                   <div class="govuk-details__text">
-                    <p style="margin-bottom: 15px"><strong>Risk:</strong> This RISK ID indicates whether an organisation may be attempting to impersonate an existing organisation.</p>
-                    <p style="margin-bottom: 10px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong> The organisation is at low risk of attempting to clone another legitimate organisation.</p>
+                    <p style="margin-bottom: 15px"><strong>Risk:</strong> This risk ID indicates whether an organisation may have a similar organisation name to another organisation but all other company specific details such as the director information or registered trading address or registered address is different. Where the incorporation date of an organisation with a similar name is different. This may indicate the entity is attempting to impersonate another legitimate organisation.</p>
+                    <p style="margin-bottom: 10px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong> If there is a partial match for all entities, the organisation is at a low risk of attempting to clone another legitimate organisation.</p>
                     <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong> The organisation has an EXACT or SIMILAR name to another organisation with some partial matching company details; there is a risk the organisation may be attempting to clone another legitimate company.</p>
                     <p style="margin-bottom: 10px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong> The organisation has an EXACT or SIMILAR name to another organisation but  no other matching company details; there is a risk the organisation may be attempting to clone another legitimate organisation.</p>
                   </div>
@@ -173,10 +177,10 @@
                     </span>
                   </summary>
                   <div class="govuk-details__text">
-                    <p style="margin-bottom: 15px"><strong>Risk:</strong> This RISK ID indicates whether an organisation may be a shell company. The entities could be concealing important information and its true purpose and identity.</p>
-                    <p style="margin-bottom: 10px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong> The organisation has minimal characteristics that can be associated with a shell company.</p>
-                    <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong> The organisation has some of the characteristics that can be associated with a shell company.</p>
-                    <p style="margin-bottom: 10px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong> The organisation has some of the characteristics that can be associated with a shell company.</p>
+                    <p style="margin-bottom: 15px"><strong>Risk:</strong> A shell company is an incorporated company with no independent operations, significant assets, ongoing business activities or employees.</p>
+                    <p style="margin-bottom: 10px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong> There are no matches for all entities, The organisation has minimal characteristics that can be associated with a shell company.</p>
+                    <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong> The company exists but has no assigned business type on companies house and the organisation address has been changed at least twice over the period of 1 year and there is only 1 Directors name on record and there are less than or equal to 1 employee.</p>
+                    <p style="margin-bottom: 10px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong> The company exists but has no assigned business type on Companies House records and the Organisation Address has been changed at least twice over a period of 1 year and there is only 1 Directors name on record. Also, if the financial turnover for the Company is £0 and there are less than or equal to 1 employee.</p>
                   </div>
                 </details>
                 
@@ -211,25 +215,22 @@
           }) }}
         </div>
 
-      </div>
-      
+      </div>      
       <div class="govuk-tabs__panel" id="tab2">
-        <div style="background-color: #f3f2f1">
-          <h2 class="govuk-heading-s" style="text-align:center;padding-top:60px;padding-bottom:60px">[Standard checks]</h2>
-        </div>
+        <h2 class="govuk-heading-m" style="">Standard checks</h2>
+        <p class="govuk-body" style="text-align:center;padding-top:0px;padding-bottom:60px"><img src="/public/img/standard-checks-example.png" alt="example of standard checks" style=""></h2>
       </div>
 
       <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tab3">
-        <div style="background-color: #f3f2f1;">
-          <h2 class="govuk-heading-s" style="text-align:center;padding-top:60px;padding-bottom:60px">[Enhanced checks]</h2>
-        </div>
+        <h2 class="govuk-heading-m" style="">Enhanced checks</h2>
+        <p class="govuk-body" style="text-align:center;padding-top:0px;padding-bottom:60px"><img src="/public/img/enhanced-checks-example.png" alt="example of standard checks" style=""></h2>
       </div>
 
-      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tab4">
+      <!--<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tab4">
         <div style="background-color: #f3f2f1;">
           <h2 class="govuk-heading-s" style="text-align:center;padding-top:60px;padding-bottom:60px">[International checks]</h2>
         </div>
-      </div>
+      </div>-->
 
     </div>
   </div>
