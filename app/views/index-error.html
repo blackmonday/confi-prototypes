@@ -35,14 +35,25 @@
     
     <!--{% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}-->
 
-    <p>Select a prototype:</p>
+    {% set html %}
+    <p class="govuk-notification-banner__body">
+      Always clear data before starting a protytpe.
+      <a class="govuk-notification-banner__link" href="/manage-prototype/clear-data">Clear data</a>.
+    </p>
+  {% endset %}
+  
+  {{ govukNotificationBanner({
+    html: html
+  }) }}
 
-    <!--{% from "govuk/components/button/macro.njk" import govukButton %}
+  <p style="margin-top:-15px">Select a prototype:</p>
 
-    {{ govukButton({
-      text: "Start prototype 1",
-      href: "/prototype-1/index",
-      isStartButton: true
+  <!--{% from "govuk/components/button/macro.njk" import govukButton %}
+
+  {{ govukButton({
+    text: "Start prototype 1",
+    href: "/prototype-1/index",
+    isStartButton: true
   }) }}-->
 
 
@@ -81,7 +92,7 @@
 
   <div class="govuk-grid-column-one-third">
 
-    {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+    <!--{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
     {% set html %}
       <p class="govuk-notification-banner__body">
@@ -92,7 +103,8 @@
     
     {{ govukNotificationBanner({
       html: html
-    }) }}
+    }) }}-->
+      
   </div>
   
 </div>
