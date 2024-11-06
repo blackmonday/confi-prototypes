@@ -1,0 +1,188 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Your checks
+      </h1>
+
+      <h2 class="govuk-heading-m" style="margin-bottom:0">
+        <div style="width:160px; float: left; color:#00703c">User:</div>
+        <div>[User's name]</div>
+      </h2>
+
+      <h2 class="govuk-heading-m" style="margin-bottom:0">
+        <div style="width:160px; float: left; color:#00703c">Organisation:</div>
+        <div>[User's organisation]</div>
+      </h2>
+
+      <h2 class="govuk-heading-m">
+        <div style="width:160px; float: left; color:#00703c">Role:</div>
+        <div>[User's role]</div>
+      </h2>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div style="float: left;margin-right:30px">
+
+        <h1 class="govuk-heading-m">
+          Previous checks
+        </h1>
+
+        <p class="govuk-body">
+          The table below shows your previous checks.
+        </p>
+
+        <p class="govuk-body">
+          Use the table below to sort your checks by details including name and date checked.
+        </p>
+
+      </div>
+
+      <div class="govuk-!-text-align-right">
+        
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Run a new check",
+          href: "/prototype-3/threats"
+        }) }}   
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible" style="margin-bottom:30px">
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <p class="govuk-body">
+        Showing 137 results
+      </p>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+        label: {
+          text: "Search previous checks by organisation name"
+        },
+        id: "event-name",
+        name: "eventName"
+      }) }}
+    </div>
+  </div>
+ 
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom:30px">
+ 
+      <table class="govuk-table govuk-table--small-text-until-tablet">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header"><a href="#">Organisation name</a></th>
+            <th scope="col" class="govuk-table__header"><a href="#">Date checked</a></th>
+            <th scope="col" class="govuk-table__header">Edit</th>
+            <th scope="col" class="govuk-table__header">Delete</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell"><a href="#">[Organisation one name]</a></td>
+            <td class="govuk-table__cell">30 Oct 2024 07:30</td>
+            <td class="govuk-table__cell"><a href="#">Edit</a></td>
+            <td class="govuk-table__cell"><a href="#">Delete</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell"><a href="#">[Organisation two name]</a></td>
+            <td class="govuk-table__cell">30 Oct 2024 07:30</td>
+            <td class="govuk-table__cell"><a href="#">Edit</a></td>
+            <td class="govuk-table__cell"><a href="#">Delete</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell"><a href="#">[Organisation three name]</a></td>
+            <td class="govuk-table__cell">30 Oct 2024 07:30</td>
+            <td class="govuk-table__cell"><a href="#">Edit</a></td>
+            <td class="govuk-table__cell"><a href="#">Delete</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell"><a href="#">[Organisation four name]</a></td>
+            <td class="govuk-table__cell">30 Oct 2024 07:30</td>
+            <td class="govuk-table__cell"><a href="#">Edit</a></td>
+            <td class="govuk-table__cell"><a href="#">Delete</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell"><a href="#">[Organisation five name]</a></td>
+            <td class="govuk-table__cell">30 Oct 2024 07:30</td>
+            <td class="govuk-table__cell"><a href="#">Edit</a></td>
+            <td class="govuk-table__cell"><a href="#">Delete</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell"><a href="#">[Organisation six name]</a></td>
+            <td class="govuk-table__cell">30 Oct 2024 07:30</td>
+            <td class="govuk-table__cell"><a href="#">Edit</a></td>
+            <td class="govuk-table__cell"><a href="#">Delete</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell"><a href="#">[Organisation seven name]</a></td>
+            <td class="govuk-table__cell">30 Oct 2024 07:30</td>
+            <td class="govuk-table__cell"><a href="#">Edit</a></td>
+            <td class="govuk-table__cell"><a href="#">Delete</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell"><a href="#">[Organisation eight name]</a></td>
+            <td class="govuk-table__cell">30 Oct 2024 07:30</td>
+            <td class="govuk-table__cell"><a href="#">Edit</a></td>
+            <td class="govuk-table__cell"><a href="#">Delete</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell"><a href="#">[Organisation nine name]</a></td>
+            <td class="govuk-table__cell">30 Oct 2024 07:30</td>
+            <td class="govuk-table__cell"><a href="#">Edit</a></td>
+            <td class="govuk-table__cell"><a href="#">Delete</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell"><a href="#">[Organisation ten name]</a></td>
+            <td class="govuk-table__cell">30 Oct 2024 07:30</td>
+            <td class="govuk-table__cell"><a href="#">Edit</a></td>
+            <td class="govuk-table__cell"><a href="#">Delete</a></td>
+          </tr>
+        </tbody>
+      </table>
+ 
+      <p class="govuk-body govuk-!-text-align-right" style="margin-top:-15px">
+        Showing <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">10</span> of <span class="govuk-!-font-weight-bold">137</span> results
+      </p>
+    
+    </div>
+  </div>
+
+
+  <p class="govuk-body-s" style="font-size: 9px; color:	#b1b4b6">PROTOTYPE VERSION: {{ data['which-prototype'] }}</p>
+
+{% endblock %}

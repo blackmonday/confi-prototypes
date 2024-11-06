@@ -1,0 +1,380 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <style>
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 45px;
+      height: 25px;
+    }
+
+    .switch input { 
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 19px;
+      width: 19px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(20px);
+      -ms-transform: translateX(20px);
+      transform: translateX(20px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 25px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+  </style>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">
+        Results of financial crime checks
+      </h1>
+
+    </div>
+
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class="govuk-tabs__title">
+          Contents
+        </h2>
+
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#tab1">
+              Results of checks
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#tab2">
+              Previous uploads
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#tab3">
+              Check other entities
+            </a>
+          </li>
+        </ul>
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tab1">
+    
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <p>You can click on an organisation to see the results of the checks, or download all selected organisations as a Microosoft excel (.xlsx) file.</p>
+            </div>
+            <div class="govuk-grid-column-one-half">
+              <p class="govuk-!-margin-bottom-2 govuk-heading-s">Download threat summary</p>
+              <div class="parent" style="width:100%; height=50px;display:flex">
+                <div class="child1 govuk-!-margin-right-3">
+                  <img src="/public/img/icon-document.svg" alt="Document icon"">
+                </div>
+                <div class="child2">
+                  <p class="govuk-body govuk-!-margin-bottom-0"><a href class="govuk-link">Download results in XLSX format</a></p>
+                  <p class="govuk-body">MS Excel Spreadsheet, 2mb</p>
+                </div>
+              </div> 
+            </div>
+          </div>
+          
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <p>Showing 1 result</p>
+            </div>
+            <div class="govuk-grid-column-one-half">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="width-20">
+                  Search grant applicants by organisation name
+                </label>
+                <input class="govuk-input govuk-input--width-20" id="width-20" name="width20" type="text">
+              </div>              
+            </div>
+          </div>
+          
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+
+              <table class="govuk-table">
+                <caption class="govuk-table__caption govuk-table__caption--m">Organisations</caption>
+                
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col"  class="govuk-table__cell govuk-body-s" style="width:30px">
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="xxx" name="xxx" type="checkbox" value="aaa">
+                          <label class="govuk-label govuk-checkboxes__label" for="waste"></label>
+                        </div>
+                      </div>
+                    </th>
+                    <!--<th scope="col" class="govuk-table__header app-custom-class govuk-body-s" style="width:60px">
+                      Grant awarded<br />
+                      <label class="switch" style="margin-top:8px">
+                        <input type="checkbox" style="display:none">
+                        <span class="slider round"></span>
+                      </label>
+                    </th>-->
+                    <th scope="col" class="govuk-table__header app-custom-class govuk-body-s" style="width:300px">Organisation name</th>
+                    <th scope="col" class="govuk-table__header app-custom-class govuk-body-s" style="width:225px">Date checked</th>
+                    <!--<th scope="col" class="govuk-table__header app-custom-class govuk-body-s">Amount requested</th>-->
+                    <th scope="col" class="govuk-table__header app-custom-class govuk-body-s">Due diligence check result</th>
+                  </tr>
+                </thead>
+
+                <tbody class="govuk-table__body">
+
+                  <tr class="govuk-table__row" >
+                    <td scope="row" class="govuk-table__cell govuk-body-s" style="width:30px">
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="xxx" name="xxx" type="checkbox" value="aaa">
+                          <label class="govuk-label govuk-checkboxes__label" for="waste"></label>
+                        </div>
+                      </div>
+                    </td>
+                    <!--<td class="govuk-table__cell govuk-body-s" style="width:60px">
+                      <label class="switch" style="margin-top:8px">
+                        <input type="checkbox" style="display:none">
+                        <span class="slider round"></span>
+                      </label>
+                    </td>-->
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px;width:300px">
+                      <p class="govuk-body-s"><a href="/prototype-2/results-UK?organisationName=Organisation Name&companysHouseRegisteredNumber=01624297&charityCommissionRegisteredNumber=—&addressLine1=Address Line 1&addressLine2=Address Line 2&addressTown=Town&addressCounty=County&addressPostcode=Postcode">Organisation Name</a></p>
+                      <p class="govuk-body-s" style="margin-top:-10px">Awarded: No</p>
+                    </td>
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px" style="width:225px">30 Oct 2024, 07:30</td>
+                    <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">£ 3,000,000</td>-->
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Know your applicant
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          <span style="color:#005a30">2 low</span><br />
+                          <span style="color:#f47738">1 medium</span><br />
+                          <span style="color:#852414">1 high</span>
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Companies House<br />
+                          <span style="font-size:12px">#01624297</span>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          <span style="color:#005a30">5 low</span><br />
+                          <span style="color:#f47738">0 medium</span><br />
+                          <span style="color:#852414">0 high</span>
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Charity Commission
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          Not applicable
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Other funding (GGIS, CaSIE, 360 giving)
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          No
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Other applications (Spotlight)
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          Yes
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Similarities
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          <span style="color:#005a30">Low</span>
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                     </td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+              <p class="govuk-body" style="text-align: right">Showing <strong>1</strong> to <strong>1</strong> of <strong>1</strong> results</p>
+
+            </div>
+          </div>
+
+        </div>
+        
+
+
+
+
+
+
+        <div class="govuk-tabs__panel" id="tab2">
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Previous checks</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header"><a href="#">Date created</a></th>
+                <th scope="col" class="govuk-table__header"><a href="#">Batch link</a></th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td scope="row" class="govuk-table__cell">30 Oct 2024, 07:30</td>
+                <td class="govuk-table__cell"><a href="#">Filename batch: XLSX_Spotlight_Templates.xlsx (View upload summary)</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td scope="row" class="govuk-table__cell">30 Oct 2024, 12:45</td>
+                <td class="govuk-table__cell"><a href="#">Filename batch: XLSX_Spotlight_Templates.xlsx (View upload summary)</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td scope="row" class="govuk-table__cell">31 Oct 2024, 13:11</td>
+                <td class="govuk-table__cell"><a href="#">Filename batch: XLSX_Spotlight_Templates.xlsx (View upload summary)</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+
+
+
+
+
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tab3">
+          <h1 class="govuk-heading-m">
+            How many organisations do you want to check?
+          </h1>
+    
+          <form class="form" action="/how-many-orgs" method="post">
+    
+            {% from "govuk/components/radios/macro.njk" import govukRadios %}
+    
+            {% set oneOrg %}
+            {{ govukRadios({
+              name: "org-location",
+              items: [
+                {
+                  value: "uk",
+                  text: "UK registered company"
+                },
+                {
+                  value: "international",
+                  text: "International company"
+                }
+              ]
+            }) }}
+            {% endset -%}
+    
+            {{ govukRadios({
+              name: "how-many-orgs",
+              items: [
+                {
+                  value: "one",
+                  text: "One",
+                  conditional: {
+                    html: oneOrg
+                  }
+                },
+                {
+                  value: "two-or-more",
+                  text: "Two or more",
+                  hint: {
+                    text: "To conduct two or more checks. we'll ask you to upload a spreadsheet containing appropriate data"
+                  }
+                }
+              ]
+            }) }}
+    
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+    
+          </form>
+    
+        </div>
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <p class="govuk-body-s" style="font-size: 9px; color:	#b1b4b6">PROTOTYPE VERSION: {{ data['which-prototype'] }}</p>
+
+{% endblock %}

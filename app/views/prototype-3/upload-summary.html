@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">
+      Upload summary
+    </h1>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <span class="govuk-caption-xl" style="text-align: center; padding-bottom:30px">2 of 2 records prepared...</span>
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <div style="text-align:center;background-color:#21703F;padding:60px">
+      <h1 class="govuk-heading-l" style="color:#ffffff">
+        1
+      </h1>
+  
+      <p class="govuk-caption-l" style="color:#ffffff">entities were successfully loaded and checked in Spotlight</p>
+
+      <p style="color:#ffffff; margin-top:30px">Click <a href="#" style="color:#ffdd00">here</a> to download successful records.</p>
+    </div>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    <div style="text-align: right; margin-top:15px">
+      {{ govukButton({
+        text: "View results",
+        href:"/prototype-2/two-or-more-results"
+      }) }}
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+    <div style="text-align:center;background-color:#A22A1A;padding:60px">
+      <h1 class="govuk-heading-l" style="color:#ffffff">
+        1
+      </h1>
+  
+      <p class="govuk-caption-l" style="color:#ffffff">entities failed to load into Spotlight</p>
+
+      <p style="color:#ffffff; margin-top:30px">Click button to view and correct applicants which did not load.</p>
+    </div>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    <div style="text-align: right; margin-top:15px">
+      {{ govukButton({
+        text: "View and correct errors",
+        classes: "govuk-button--secondary",
+        href: "javascript:window.history.back()"
+      }) }}
+    </div>
+  </div>
+
+</div>
+
+<p class="govuk-body-s" style="font-size: 9px; color:	#b1b4b6">PROTOTYPE VERSION: {{ data['which-prototype'] }}</p>
+
+{% endblock %}

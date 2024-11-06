@@ -1,0 +1,89 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Select how many organisations you want to check",
+            href: "#how-many-orgs-input"
+          }
+        ]
+      }) }}
+
+      <h1 class="govuk-heading-l">
+        How many organisations do you want to check?
+      </h1>
+
+      <form class="form" action="/how-many-orgs" method="post" id="how-many-orgs-input">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {% set oneOrg %}
+        {{ govukRadios({
+          name: "org-location",
+          items: [
+            {
+              value: "uk",
+              text: "UK registered company"
+            },
+            {
+              value: "international",
+              text: "International company"
+            }
+          ]
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          name: "how-many-orgs",
+          items: [
+            {
+              value: "one",
+              text: "One",
+              conditional: {
+                html: oneOrg
+              }
+            },
+            {
+              value: "two-or-more",
+              text: "Two or more",
+              hint: {
+                text: "To conduct two or more checks. we'll ask you to upload a spreadsheet containing appropriate data"
+              }
+            }
+          ],
+          errorMessage: {
+            text: "Select how many organisations you want to check"
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+  <p class="govuk-body-s" style="font-size: 9px; color:	#b1b4b6">PROTOTYPE VERSION: {{ data['which-prototype'] }}</p>
+
+{% endblock %}

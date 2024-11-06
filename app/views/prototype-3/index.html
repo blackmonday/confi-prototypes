@@ -1,0 +1,143 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Alpha"
+    },
+    html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+  }) }}
+
+  <!--{{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+}) }}-->
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <p class="govuk-body-s"><img src="/public/img/icon-important.svg" alt="Important icon" style="margin-right:10px;vertical-align: middle;"> The Cabinet Office Grant Management Function is not responsible for the accuracy of the information received from data sources</p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <img src="/public/img/Spotlight-logo.svg" alt="Spotlight logo" style="margin-top:30px; margin-bottom:40px">
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+
+    <style>
+      .linkDiv {
+          opacity: 1;
+          transition: opacity 0.3s ease;
+      }
+
+      .linkDiv:hover {
+          opacity: 0.8;
+      }
+    </style>
+
+    <!--<a href="/prototype-2/contracts-process" style="text-decoration: none;">-->
+    <a href="/prototype-2/contracts-1" style="text-decoration: none;">
+      <div class="govuk-grid-column-one-third">
+        <div class="linkDiv" style="background-color: #1d70b8; text-align:center">
+          <div>
+            <img src="/public/img/icon-contracts.svg" alt="Contracts icon" style="margin-top:30px">
+            <p class="govuk-heading-l" style="color: #ffffff;margin-top:15px; padding-bottom:30px">Contracts</p>
+          </div>
+        </div>
+        <p class="govuk-body govuk-!-margin-top-3">View and manage your contracts and suppliers</p>
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        <!--<div style="float:right;">
+          <div style="right:0px; background-color: #1d70b8; text-align:center; width:34px; height:34px">
+            <div>
+              <img src="/public/img/icon-small-arrow.svg" alt="Small arrow icon" style="margin-top:10px">
+            </div>
+          </div>
+        </div>
+        <div style="height:30px;border-bottom: 4px solid #1d70b8">
+        </div>-->
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-button--secondary",
+          href: "/prototype-2/contracts-1"
+        }) }}
+      </div>
+    </a>
+
+    <a href="/prototype-3/your-checks" style="text-decoration: none;">
+      <div class="govuk-grid-column-one-third">
+        <div class="linkDiv" style="background-color: #d4351c; text-align:center">
+          <div>
+            <img src="/public/img/icon-threats.svg" alt="Threats icon" style="margin-top:30px">
+            <p class="govuk-heading-l" style="color: #ffffff;margin-top:15px; padding-bottom:30px">Threats</p>
+          </div>
+        </div>
+        <p class="govuk-body govuk-!-margin-top-3">View and manage national security casework. For example, sanctions, NSIA notifications, export licences, foreign direct investment and community engagement standards</p>
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        <!--<div style="float:right;">
+          <div style="right:0px; background-color: #d4351c; text-align:center; width:34px; height:34px">
+            <div>
+              <img src="/public/img/icon-small-arrow.svg" alt="Small arrow icon" style="margin-top:10px">
+            </div>
+          </div>
+        </div>
+        <div style="height:30px;border-bottom: 4px solid #d4351c">
+        </div>-->
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-button--secondary",
+          href: "your-checks"
+        }) }}
+        </div>
+      </a>
+    
+      <!--<a href="/prototype-2/grants-process" style="text-decoration: none;">-->
+      <a href="/prototype-2/grants-1" style="text-decoration: none;">
+        <div class="govuk-grid-column-one-third">
+          <div class="linkDiv" style="background-color: #00703c; text-align:center">
+            <div>
+              <img src="/public/img/icon-grants.svg" alt="Grants icon" style="margin-top:30px">
+              <p class="govuk-heading-l" style="color: #ffffff;margin-top:15px; padding-bottom:30px">Grants</p>
+            </div>
+          </div>
+          <p class="govuk-body govuk-!-margin-top-3">View and manage your grant schemes and applicants</p>
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          <!--<div style="float:right;">
+            <div style="right:0px; background-color: #00703c; text-align:center; width:34px; height:34px">
+              <div>
+                <img src="/public/img/icon-small-arrow.svg" alt="Small arrow icon" style="margin-top:10px">
+              </div>
+            </div>
+          </div>
+          <div style="height:30px;border-bottom: 4px solid #00703c">
+          </div>-->
+
+          {{ govukButton({
+            text: "Continue",
+            classes: "govuk-button--secondary",
+            href:"/prototype-2/grants-1"
+          }) }}
+        </div>
+      </a>
+  </div>
+
+  <p class="govuk-body-s" style="font-size: 9px; color:	#b1b4b6">PROTOTYPE VERSION: {{ data['which-prototype'] }}</p>
+
+{% endblock %}

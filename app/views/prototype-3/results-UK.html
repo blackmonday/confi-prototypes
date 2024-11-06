@@ -20,104 +20,79 @@
         Results of economic crime checks
       </h1>
 
-      <div class="parent" style="width:100%;height:25px;display:flex;margin-bottom:10px">
-        <div class="child1" style="width: 370px;">
-          <p class="govuk-heading-s">Organisation's name</p>
-        </div>
-        <div class="child2">
-          {% if (data['organisationName'] == "") %}
-              <p class="govuk-body">&mdash;</p>
-            {% else %}
-              <p class="govuk-body">{{ data['organisationName'] }}</p>
-          {% endif %}
-        </div>
-      </div>
+      {% if (data['organisationName'] == "") %}
+        <h2 class="govuk-heading-m">&mdash;</h2>
+      {% else %}
+        <h2 class="govuk-heading-m">{{ data['organisationName'] }}</h2>
+      {% endif %}
 
-      <div class="parent" style="width:100%;height:25px;display:flex;margin-bottom:10px">
-        <div class="child1" style="width: 370px;">
-          <p class="govuk-heading-s">Companies House registration number</p>
-        </div>
-        <div class="child2">
-          {% if (data['companysHouseRegisteredNumber'] == "") %}
-              <p class="govuk-body">&mdash;</p>
-            {% else %}
-              <p class="govuk-body">{{ data['companysHouseRegisteredNumber'] }}</p>
-          {% endif %}
-        </div>
-      </div>
+      <div class="govuk-grid-row">
 
-      <div class="parent" style="width:100%;height:25px;display:flex;margin-bottom:10px">
-        <div class="child1" style="width: 370px;">
-          <p class="govuk-heading-s">Charity Commission registered number</p>
+        <div class="govuk-grid-column-one-half">
+          <p class="govuk-body-s">
+            Your Spotlight reference number for these checks is<br />
+          <span class="govuk-!-font-weight-bold">A-7485674</span></p>
+          <p class="govuk-body-s">Checks conducted on<br />
+          <span class="govuk-!-font-weight-bold">{{ "today" | govukDate }}</span></p>  
         </div>
-        <div class="child2">
-          {% if (data['charityCommissionRegisteredNumber'] == "") %}
-              <p class="govuk-body">&mdash;</p>
-            {% else %}
-              <p class="govuk-body">{{ data['charityCommissionRegisteredNumber'] }}</p>
-          {% endif %}
-        </div>
-      </div>
 
-      <div class="parent" style="width:100%;display:flex">
-        <div class="child1" style="width: 370px;">
-          <p class="govuk-heading-s">Organsiations registered address</p>
-        </div>
-        <div class="child2">
-          <p class="govuk-body" style=";margin-bottom:10px">
-            {% if (data['addressLine1'] == "") %}
-              &mdash;
-            {% else %}
-              {{ data['addressLine1'] }}
-            {% endif %}
-            </br>
-            {% if (data['addressLine2'] == "") %}
-              &mdash;
-            {% else %}
-              {{ data['addressLine2'] }}
-            {% endif %}
-            </br>
-            {% if (data['addressTown'] == "") %}
-              &mdash;
-            {% else %}
-              {{ data['addressTown'] }}
-            {% endif %}
-            </br>
-            {% if (data['addressCounty'] == "") %}
-              &mdash;
-            {% else %}
-              {{ data['addressCounty'] }}
-            {% endif %}
-            </br>
-            {% if (data['addressPostcode'] == "") %}
-              &mdash;
-            {% else %}
-              {{ data['addressPostcode'] }}
-            {% endif %}
+        <div class="govuk-grid-column-one-half">
+          <p class="govuk-body-s">
+            Organisation’s registered address<br />
+            <span class="govuk-!-font-weight-bold">
+              {% if (data['addressLine1'] == "") %}
+                &mdash;
+              {% else %}
+                {{ data['addressLine1'] }}
+              {% endif %}
+              </br>
+              {% if (data['addressLine2'] == "") %}
+                &mdash;
+              {% else %}
+                {{ data['addressLine2'] }}
+              {% endif %}
+              </br>
+              {% if (data['addressTown'] == "") %}
+                &mdash;
+              {% else %}
+                {{ data['addressTown'] }}
+              {% endif %}
+              </br>
+              {% if (data['addressCounty'] == "") %}
+                &mdash;
+              {% else %}
+                {{ data['addressCounty'] }}
+              {% endif %}
+              </br>
+              {% if (data['addressPostcode'] == "") %}
+                &mdash;
+              {% else %}
+                {{ data['addressPostcode'] }}
+              {% endif %}
+            </span>
           </p>
+
+          <p class="govuk-body-s">
+            Companies House registered number<br />
+            {% if (data['companysHouseRegisteredNumber'] == "") %}
+              <span class="govuk-!-font-weight-bold">&mdash;</span>
+            {% else %}
+              <span class="govuk-!-font-weight-bold">{{ data['companysHouseRegisteredNumber'] }}</span>
+            {% endif %}
+          </p>  
+
+          <p class="govuk-body-s">
+            Charity commission registered number<br />
+            {% if (data['charityCommissionRegisteredNumber'] == "") %}
+              <span class="govuk-!-font-weight-bold">&mdash;</span>
+            {% else %}
+              <span class="govuk-!-font-weight-bold">{{ data['charityCommissionRegisteredNumber'] }}</span>
+            {% endif %}
+          </p>  
+    
         </div>
       </div>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-      <div class="parent" style="width:100%;height:25px;display:flex;margin-bottom:10px">
-        <div class="child1" style="width: 370px;">
-          <p class="govuk-heading-s">Spotlight reference number for checks</p>
-        </div>
-        <div class="child2">
-          <p class="govuk-body">A-817476</p>
-        </div>
-      </div>
-
-      <div class="parent govuk-!-margin-bottom-7" style="width:100%;height:25px;display:flex">
-        <div class="child1" style="width: 370px;">
-          <p class="govuk-heading-s">Checks conducted on</p>
-        </div>
-        <div class="child2">
-          <p class="govuk-body">{{ "today" | govukDate }}</p>
-        </div>
-      </div>
-
+      
     </div>
 
     <div class="govuk-grid-column-full">
