@@ -20,6 +20,8 @@ router.post('/which-prototype', function (req, res) {
     res.redirect('/prototype-1/index')
   } else if (whichPrototype == "2.0"){
     res.redirect('/prototype-2/index')
+  } else if (whichPrototype == "3.0"){
+    res.redirect('/prototype-3/index')
   } else{
     res.redirect('/index-error')
   }
@@ -75,6 +77,23 @@ router.post('/threats-type-answer', function (req, res) {
       res.redirect('/prototype-2/threats-error')
     }
   
+  //
+  // START Prototype 3 routes
+  //
+  } else if (whichPrototype == "3.0"){
+    
+    // Make a variable and give it the value from 'which-threat'
+    var whichThreat = req.session.data['which-threat']
+
+    // Check whether the variable matches a condition
+    if (whichThreat == "sanctions"){
+      res.redirect('/prototype-3/sanctions')
+    } else if (whichThreat == "economic-crime"){
+      res.redirect('/prototype-3/how-many-orgs')
+    } else {
+      res.redirect('/prototype-3/threats-error')
+    }
+
   }
 
 })
@@ -170,9 +189,33 @@ router.post('/how-many-orgs', function (req, res) {
     } else {
       res.redirect('/prototype-2/how-many-orgs-error')
     }
+
+  //
+  // START Prototype 3 routes
+  //
+  } else if (whichPrototype == "3.0"){
+
+    // Make a variable and give it the value from 'how-many-orgs'
+    var howManyOrgs = req.session.data['how-many-orgs']
+    var orgLocation = req.session.data['org-location']
+  
+    // Check whether the variable matches a condition
+    if (howManyOrgs == "one"){
+      if (orgLocation == "uk"){
+        res.redirect('/prototype-3/economic-crime-checks')
+      } else if (orgLocation == "international") {
+        res.redirect('/prototype-3/economic-crime-checks-international')
+      } else {
+        res.redirect('/prototype-3/how-many-orgs-error-2')
+      }
+    } else if (howManyOrgs == "two-or-more"){
+        res.redirect('/prototype-3/two-or-more')
+    } else {
+      res.redirect('/prototype-3/how-many-orgs-error')
+    }
   
   }
-
+  
 })
 
 
@@ -245,11 +288,25 @@ router.post('/economic-crime-checks', function (req, res) {
     var orgLocation = req.session.data['org-location']
 
     // Check whether the variable matches a condition
-      if (orgLocation == "uk"){
-        res.redirect('/prototype-2/results-UK')
-      } else {
-        res.redirect('/prototype-2/results-international')
-      }
-    }  
+    if (orgLocation == "uk"){
+      res.redirect('/prototype-2/results-UK')
+    } else {
+      res.redirect('/prototype-2/results-international')
+    }
+
+  //
+  // START Prototype 3 routes
+  //
+  } else if (whichPrototype == "3.0"){
+    // Make a variable and give it the value from 'which-check'
+    var orgLocation = req.session.data['org-location']
+
+    // Check whether the variable matches a condition
+    if (orgLocation == "uk"){
+      res.redirect('/prototype-3/results-UK')
+    } else {
+      res.redirect('/prototype-3/results-international')
+    }
+  }  
 
 })
