@@ -20,9 +20,19 @@
         Economic crime checks
       </h1>
 
+      <p class="govuk-body">
+        All fields are optional and at least one must be completed. For example, you can search by company name only or by any combination of information.
+      </p>
+
+      <p class="govuk-body">
+        The more data you provide, the most accurate and complete the results.
+      </p>
+
       <form class="form" action="/economic-crime-checks" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
+        {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
 
         {{ govukInput({
           label: {
@@ -37,37 +47,6 @@
         }) }}
 
 
-        {{ govukInput({
-          label: {
-            text: "Companies House registered number",
-            classes: "govuk-label--s"
-          },
-          hint: {
-            text: "Enter the organisation's Companies House registered number, if applicable."
-          },
-          classes: "govuk-input--width-10",
-          id: "companys-house-registered-number",
-          name: "companysHouseRegisteredNumber"
-        }) }}
-
-
-        {{ govukInput({
-          label: {
-            text: "Charity Commission registered number",
-            classes: "govuk-label--s"
-          },
-          hint: {
-            text: "Enter the organisation's Charity Commission registered number, if applicable."
-          },
-          classes: "govuk-input--width-10",
-          id: "charity-commission-registered-number",
-          name: "charityCommissionRegisteredNumber"
-        }) }}
-
-
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
-        
         {% call govukFieldset({
           legend: {
             text: "Organisations registered address",
@@ -129,8 +108,127 @@
             value: data['addressPostcode']
           }) }}
         
+          {{ govukSelect({
+            id: "address-country",
+            name: "addressCountry",
+            label: {
+              text: "Country (optional)"
+            },
+            items: [
+              {
+                value: "Choose",
+                text: "Choose country",
+                selected: true
+              },        
+              {
+                value: "China",
+                text: "China"
+              },
+              {
+                value: "France",
+                text: "France"
+              },
+              {
+                value: "Iran",
+                text: "Iran"
+              },
+              {
+                value: "Germany",
+                text: "Germany"
+              }
+            ]
+          }) }}
+
         {% endcall %}        
 
+
+        {{ govukInput({
+          label: {
+            text: "Companies House registered number",
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "Enter the organisation's Companies House registered number, if applicable."
+          },
+          classes: "govuk-input--width-10",
+          id: "companys-house-registered-number",
+          name: "companysHouseRegisteredNumber"
+        }) }}
+
+
+        {{ govukInput({
+          label: {
+            text: "Charity Commission registered number",
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "Enter the organisation's Charity Commission registered number, if applicable."
+          },
+          classes: "govuk-input--width-10",
+          id: "charity-commission-registered-number",
+          name: "charityCommissionRegisteredNumber"
+        }) }}
+
+
+        {{ govukInput({
+          label: {
+            text: "Other registered number",
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "Enter the organisation's registered number for a non-UK organisations, if applicable."
+          },
+          classes: "govuk-input--width-10",
+          id: "other-registered-number",
+          name: "otherRegisteredNumber"
+        }) }}
+
+
+        {{ govukInput({
+          label: {
+            text: "D-U-N-S number",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input--width-10",
+          id: "duns-number",
+          name: "dunsNumber"
+        }) }}
+
+
+        {{ govukInput({
+          label: {
+            text: "Telephone number",
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "Include the country code, for example, +39 1 33 45 70 90"
+          },
+          classes: "govuk-input--width-10",
+          id: "telephone-number",
+          name: "telephoneNumber"
+        }) }}
+
+
+        {{ govukInput({
+          label: {
+            text: "Website",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input--width-10",
+          id: "website",
+          name: "website"
+        }) }}
+
+
+        {{ govukInput({
+          label: {
+            text: "Email address",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input--width-10",
+          id: "email-addressr",
+          name: "emailAddress"
+        }) }}
 
 
         {{ govukButton({

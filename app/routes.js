@@ -197,19 +197,12 @@ router.post('/how-many-orgs', function (req, res) {
 
     // Make a variable and give it the value from 'how-many-orgs'
     var howManyOrgs = req.session.data['how-many-orgs']
-    var orgLocation = req.session.data['org-location']
   
     // Check whether the variable matches a condition
     if (howManyOrgs == "one"){
-      if (orgLocation == "uk"){
-        res.redirect('/prototype-3/economic-crime-checks')
-      } else if (orgLocation == "international") {
-        res.redirect('/prototype-3/economic-crime-checks-international')
-      } else {
-        res.redirect('/prototype-3/how-many-orgs-error-2')
-      }
+      res.redirect('/prototype-3/economic-crime-checks')
     } else if (howManyOrgs == "two-or-more"){
-        res.redirect('/prototype-3/two-or-more')
+      res.redirect('/prototype-3/two-or-more')
     } else {
       res.redirect('/prototype-3/how-many-orgs-error')
     }
@@ -303,9 +296,9 @@ router.post('/economic-crime-checks', function (req, res) {
 
     // Check whether the variable matches a condition
     if (orgLocation == "uk"){
-      res.redirect('/prototype-3/results-UK')
+      res.redirect('/prototype-3/review')
     } else {
-      res.redirect('/prototype-3/results-international')
+      res.redirect('/prototype-3/review')
     }
   }  
 

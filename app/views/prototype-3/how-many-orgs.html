@@ -24,31 +24,12 @@
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-        {% set oneOrg %}
-        {{ govukRadios({
-          name: "org-location",
-          items: [
-            {
-              value: "uk",
-              text: "UK registered company"
-            },
-            {
-              value: "international",
-              text: "International company"
-            }
-          ]
-        }) }}
-        {% endset -%}
-
         {{ govukRadios({
           name: "how-many-orgs",
           items: [
             {
               value: "one",
-              text: "One",
-              conditional: {
-                html: oneOrg
-              }
+              text: "One"
             },
             {
               value: "two-or-more",
