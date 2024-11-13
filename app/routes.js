@@ -14,6 +14,8 @@ router.post('/which-prototype', function (req, res) {
 
   // Make a variable and give it the value from 'which-prototype'
   var whichPrototype = req.session.data['which-prototype']
+  var modUser = req.session.data['view-as-mod']
+
 
   // Check which prototype type version to run
   if (whichPrototype == "1.0"){
@@ -21,7 +23,11 @@ router.post('/which-prototype', function (req, res) {
   } else if (whichPrototype == "2.0"){
     res.redirect('/prototype-2/index')
   } else if (whichPrototype == "3.0"){
-    res.redirect('/prototype-3/index')
+    if (modUser == "true"){
+      res.redirect('/prototype-3/index-threats-only')
+    } else {
+      res.redirect('/prototype-3/index')
+    }
   } else{
     res.redirect('/index-error')
   }

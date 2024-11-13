@@ -36,11 +36,11 @@
 
         {{ govukInput({
           label: {
-            text: "Organisation name",
+            text: "Entity name",
             classes: "govuk-label--s"
           },
           hint: {
-            text: "Enter the organisation's full registered name, as displayed on the application form."
+            text: "Enter the entities full registered name, as displayed on the application form."
           },
           id: "organisation-name",
           name: "organisationName"
@@ -49,7 +49,7 @@
 
         {% call govukFieldset({
           legend: {
-            text: "Organisations registered address",
+            text: "Entities registered address",
             classes: "govuk-fieldset__legend--s",
             isPageHeading: false
           }
@@ -148,7 +148,7 @@
             classes: "govuk-label--s"
           },
           hint: {
-            text: "Enter the organisation's Companies House registered number, if applicable."
+            text: "Enter the entities Companies House registered number, if applicable."
           },
           classes: "govuk-input--width-10",
           id: "companys-house-registered-number",
@@ -162,7 +162,7 @@
             classes: "govuk-label--s"
           },
           hint: {
-            text: "Enter the organisation's Charity Commission registered number, if applicable."
+            text: "Enter the entities Charity Commission registered number, if applicable."
           },
           classes: "govuk-input--width-10",
           id: "charity-commission-registered-number",
@@ -176,7 +176,7 @@
             classes: "govuk-label--s"
           },
           hint: {
-            text: "Enter the organisation's registered number for a non-UK organisations, if applicable."
+            text: "Enter the entities registered number for a non-UK entity, if applicable."
           },
           classes: "govuk-input--width-10",
           id: "other-registered-number",

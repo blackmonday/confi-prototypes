@@ -85,6 +85,20 @@
         }) }}
       </p>
 
+      <p>
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          name: "view-as-mod",
+          items: [
+            {
+              value: "mod-user",
+              text: "View as an MOD user (optional)"
+            }
+          ]
+        }) }}
+      </p>
+
       {{ govukButton({
         text: "Start prototype",
         isStartButton: true
