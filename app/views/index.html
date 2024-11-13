@@ -37,6 +37,19 @@
       <p>
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
+        {% set emailHtml %}
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {{ govukCheckboxes({
+          name: "view-as-mod",
+          items: [
+            {
+              value: "true",
+              text: "View as an MOD user (optional)"
+            }
+          ]
+        }) }}
+        {% endset -%}
+
         {{ govukRadios({
           name: "which-prototype",
           value: data['which-prototype'],
@@ -51,21 +64,10 @@
             },
             {
               value: "3.0",
-              text: "Prototype three"
-            }
-          ]
-        }) }}
-      </p>
-
-      <p>
-        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-
-        {{ govukCheckboxes({
-          name: "view-as-mod",
-          items: [
-            {
-              value: "true",
-              text: "View as an MOD user (optional)"
+              text: "Prototype three",
+              conditional: {
+                html: emailHtml
+              }
             }
           ]
         }) }}
