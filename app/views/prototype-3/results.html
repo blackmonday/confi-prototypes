@@ -237,11 +237,11 @@
                     <!-- FILTER -->
                      <span class="filter-tag govuk-body-s">Showing all data</span>
                     <!-- FILTER -->
-                    <!--<span class="filter-tag govuk-body-s">Lorem ipsum<img src="/public/img/icon-close.svg" alt="Important icon" style="vertical-align: middle;margin-left:5px"></span>-->
+                    <span class="filter-tag govuk-body-s">Lorem ipsum<img src="/public/img/icon-close.svg" alt="Important icon" style="vertical-align: middle;margin-left:5px"></span>
                     <!-- FILTER -->
-                    <!--<span class="filter-tag govuk-body-s">Dolor sit<img src="/public/img/icon-close.svg" alt="Important icon" style="vertical-align: middle;margin-left:5px"></span>-->
+                    <span class="filter-tag govuk-body-s">Dolor sit<img src="/public/img/icon-close.svg" alt="Important icon" style="vertical-align: middle;margin-left:5px"></span>
                     <!-- FILTER -->
-                    <!--<span class="filter-tag govuk-body-s">Amet<img src="/public/img/icon-close.svg" alt="Important icon" style="vertical-align: middle;margin-left:5px"></span>-->
+                    <span class="filter-tag govuk-body-s">Amet<img src="/public/img/icon-close.svg" alt="Important icon" style="vertical-align: middle;margin-left:5px"></span>
                   </span>
                 </h2>
                 <!--
@@ -363,19 +363,31 @@
                           <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
                             <label class="govuk-body-s govuk-checkboxes__label" for="organisation">
-                              What filters...
+                              What filters would...
                             </label>
                           </div>
                           <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
                             <label class="govuk-body-s govuk-checkboxes__label" for="organisation-2">
-                              ...would you...
+                              ... you find useful?
                             </label>
                           </div>
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
+                            <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD" checked>
                             <label class="govuk-body-s govuk-checkboxes__label" for="organisation-3">
-                              ...find useful?
+                              Lorem ipsum
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD" checked>
+                            <label class="govuk-body-s govuk-checkboxes__label" for="organisation-3">
+                              Dolor sit
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD" checked>
+                            <label class="govuk-body-s govuk-checkboxes__label" for="organisation-3">
+                              Amet
                             </label>
                           </div>
                         </div>
@@ -448,7 +460,7 @@
                 </div>-->
               </div>
 
-              <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" style="padding-bottom:0">
+              <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
 
                 <div class="govuk-grid-row" style="margin-bottom: -15px;">
                   <div class="govuk-grid-column-one-third">
@@ -528,7 +540,7 @@
                 </div>
               </div>
 
-              <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" style="padding-bottom:0">
+              <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
 
                 <div class="govuk-grid-row">
                   <div class="govuk-grid-column-one-half">
@@ -662,6 +674,7 @@
                   Hint text to be confirmed.
                 </div>
               </div>
+
               <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content">
 
                 <!-- DATA ITEM -->
@@ -1535,7 +1548,7 @@
 
 
                       <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-third" style="margin-top:15px;margin-bottom:-15px">
+                        <div class="govuk-grid-column-one-third" style="margin-top:15px;">
                           <p class="govuk-body-s">See this entity on:<br />
                           <a href="">Companies House</a></p>
                         </div>
@@ -1565,12 +1578,567 @@
                   Hint text to be confirmed.
                 </div>
               </div>
+
               <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content">
-                <p class="govuk-body">
-                  Coming soon!
-                </p>
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Is the company dissolved or no longer operating?</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <p class="govuk-body" style="">
+                      {{govukTag({
+                        text: "NO - GREEN",
+                        classes: "govuk-tag--green"
+                      })}}
+                    </p>
+                  </div>
+                </div>
+                
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Failure score</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <p class="govuk-body" style="">
+                      {{govukTag({
+                        text: "85 - GREEN",
+                        classes: "govuk-tag--green"
+                      })}}
+                    </p>
+                  </div>
+                </div>
+
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with failure score
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
+
+                <!-- DATA ITEM -->
+                <style>
+                  .tag-width .govuk-tag {
+                    display:revert;
+                  }
+                </style>
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Risk rating</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <p class="govuk-body tag-width">
+                      {{govukTag({
+                        text: "LOWER THAN AVERAGE RISK - GREEN",
+                        classes: "govuk-tag--green"
+                      })}}
+                    </p>            
+                  </div>
+                </div>
+
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with risk rating
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
+
+                <!--         -->
+                <!--         -->
+                <!-- SECTION -->
+                <div class="govuk-grid-row" style="padding-top: 30px;padding-bottom:30px">
+                  <div class="govuk-grid-column-full">
+                    <p class="govuk-heading-m">Financial indicators</p>
+                  </div>
+                </div>
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Files accounts currency</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <p class="govuk-body">GBP</p>            
+                  </div>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 40px;">
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Turnover</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <div style="float:left; width: 200px;">
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">15 Apr 2024 (Latest)</p>
+                      <p class="govuk-body-s" style="margin-bottom:10px">&nbsp</p>
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">29 Mar 2023</p>
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">28 Mar 2022</p>
+                      <p class="govuk-body govuk-!-font-weight-bold">7 Jun 2021</p>
+                    </div>            
+                    <div style="float:left;">
+                      <p class="govuk-body" style="margin-bottom:0">£0,000,000.00 <img src="/public/img/icon-increase.svg" alt="Important icon" style="vertical-align: top;"></p>
+                      <p class="govuk-body-s" style="margin-bottom:10px">Compared to 4 year average</p>
+                      <p class="govuk-body" style="margin-bottom:0">£0,000,000.00</p>
+                      <p class="govuk-body" style="margin-bottom:0">£0,000,000.00</p>
+                      <p class="govuk-body">£0,000,000.00</p>
+                    </div>            
+                  </div>
+                </div>
+
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with turnover
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
+                
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Operating profit</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <div style="float:left; width: 200px;">
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">15 Apr 2024 (Latest)</p>
+                      <p class="govuk-body-s" style="margin-bottom:10px">&nbsp</p>
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">29 Mar 2023</p>
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">28 Mar 2022</p>
+                      <p class="govuk-body govuk-!-font-weight-bold">7 Jun 2021</p>
+                    </div>            
+                    <div style="float:left;">
+                      <p class="govuk-body" style="margin-bottom:0">£0,000,000.00 <img src="/public/img/icon-increase.svg" alt="Important icon" style="vertical-align: top;"></p>
+                      <p class="govuk-body-s" style="margin-bottom:10px">Compared to 4 year average</p>
+                      <p class="govuk-body" style="margin-bottom:0">£0,000,000.00</p>
+                      <p class="govuk-body" style="margin-bottom:0">£0,000,000.00</p>
+                      <p class="govuk-body">£0,000,000.00</p>
+                    </div>            
+                  </div>
+                </div>
+
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with operating profit
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Net cashflow from operating activities</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <div style="float:left; width: 200px;">
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">15 Apr 2024 (Latest)</p>
+                      <p class="govuk-body-s" style="margin-bottom:10px">&nbsp</p>
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">29 Mar 2023</p>
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">28 Mar 2022</p>
+                      <p class="govuk-body govuk-!-font-weight-bold">7 Jun 2021</p>
+                    </div>            
+                    <div style="float:left;">
+                      <p class="govuk-body" style="margin-bottom:0">£0,000,000.00 <img src="/public/img/icon-decrease.svg" alt="Important icon" style="vertical-align: top;"></p>
+                      <p class="govuk-body-s" style="margin-bottom:10px">Compared to 4 year average</p>
+                      <p class="govuk-body" style="margin-bottom:0">£0,000,000.00</p>
+                      <p class="govuk-body" style="margin-bottom:0">£0,000,000.00</p>
+                      <p class="govuk-body">£0,000,000.00</p>
+                    </div>            
+                  </div>
+                </div>
+
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with net cashflow from operating activities
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Net cashflow from operating activities</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <div style="float:left; width: 200px;">
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">15 Apr 2024 (Latest)</p>
+                      <p class="govuk-body-s" style="margin-bottom:10px">&nbsp</p>
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">29 Mar 2023</p>
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">28 Mar 2022</p>
+                      <p class="govuk-body govuk-!-font-weight-bold">7 Jun 2021</p>
+                    </div>            
+                    <div style="float:left;">
+                      <p class="govuk-body" style="margin-bottom:0">£0,000,000.00 <img src="/public/img/icon-decrease.svg" alt="Important icon" style="vertical-align: top;"></p>
+                      <p class="govuk-body-s" style="margin-bottom:10px">Compared to 4 year average</p>
+                      <p class="govuk-body" style="margin-bottom:0">£0,000,000.00</p>
+                      <p class="govuk-body" style="margin-bottom:0">£0,000,000.00</p>
+                      <p class="govuk-body">£0,000,000.00</p>
+                    </div>            
+                  </div>
+                </div>
+
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with net cashflow from operating activities
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
+
+                <!--         -->
+                <!--         -->
+                <!-- SECTION -->
+                <div class="govuk-grid-row" style="padding-top: 30px;padding-bottom:30px">
+                  <div class="govuk-grid-column-full">
+                    <p class="govuk-heading-m">Financial viability</p>
+                  </div>
+                </div>
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Current ratio</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <div style="float:left; width: 200px;">
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">15 Apr 2024 (Latest)</p>
+                      <p class="govuk-body-s" style="margin-bottom:10px">&nbsp</p>
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">29 Mar 2023</p>
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">28 Mar 2022</p>
+                      <p class="govuk-body govuk-!-font-weight-bold">7 Jun 2021</p>
+                    </div>            
+                    <div style="float:left;">
+                      <p class="govuk-body" style="margin-bottom:0">1.20 <img src="/public/img/icon-increase.svg" alt="Important icon" style="vertical-align: top;"></p>
+                      <p class="govuk-body-s" style="margin-bottom:10px">Compared to 4 year average</p>
+                      <p class="govuk-body" style="margin-bottom:0">1.0</p>
+                      <p class="govuk-body" style="margin-bottom:0">1.0</p>
+                      <p class="govuk-body">1.0</p>
+                    </div>            
+                  </div>
+                </div>
+
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with current ratio
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Acid test ratio</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <div style="float:left; width: 200px;">
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">15 Apr 2024 (Latest)</p>
+                      <p class="govuk-body-s" style="margin-bottom:10px">&nbsp</p>
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">29 Mar 2023</p>
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">28 Mar 2022</p>
+                      <p class="govuk-body govuk-!-font-weight-bold">7 Jun 2021</p>
+                    </div>            
+                    <div style="float:left;">
+                      <p class="govuk-body" style="margin-bottom:0">1.20 <img src="/public/img/icon-increase.svg" alt="Important icon" style="vertical-align: top;"></p>
+                      <p class="govuk-body-s" style="margin-bottom:10px">Compared to 4 year average</p>
+                      <p class="govuk-body" style="margin-bottom:0">1.0</p>
+                      <p class="govuk-body" style="margin-bottom:0">1.0</p>
+                      <p class="govuk-body">1.0</p>
+                    </div>            
+                  </div>
+                </div>
+
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with acid test ratio
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Debt ratio</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <div style="float:left; width: 200px;">
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">15 Apr 2024 (Latest)</p>
+                      <p class="govuk-body-s" style="margin-bottom:10px">&nbsp</p>
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">29 Mar 2023</p>
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">28 Mar 2022</p>
+                      <p class="govuk-body govuk-!-font-weight-bold">7 Jun 2021</p>
+                    </div>            
+                    <div style="float:left;">
+                      <p class="govuk-body" style="margin-bottom:0">£0,000,000.00 <img src="/public/img/icon-increase.svg" alt="Important icon" style="vertical-align: top;"></p>
+                      <p class="govuk-body-s" style="margin-bottom:10px">Compared to 4 year average</p>
+                      <p class="govuk-body" style="margin-bottom:0">£0,000,000.00</p>
+                      <p class="govuk-body" style="margin-bottom:0">£0,000,000.00</p>
+                      <p class="govuk-body">£0,000,000.00</p>
+                    </div>            
+                  </div>
+                </div>
+
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with debt ratio
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Equity gearing ratio</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <div style="float:left; width: 200px;">
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">15 Apr 2024 (Latest)</p>
+                      <p class="govuk-body-s" style="margin-bottom:10px">&nbsp</p>
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">29 Mar 2023</p>
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">28 Mar 2022</p>
+                      <p class="govuk-body govuk-!-font-weight-bold">7 Jun 2021</p>
+                    </div>            
+                    <div style="float:left;">
+                      <p class="govuk-body" style="margin-bottom:0">£0,000,000.00 <img src="/public/img/icon-increase.svg" alt="Important icon" style="vertical-align: top;"></p>
+                      <p class="govuk-body-s" style="margin-bottom:10px">Compared to 4 year average</p>
+                      <p class="govuk-body" style="margin-bottom:0">£0,000,000.00</p>
+                      <p class="govuk-body" style="margin-bottom:0">£0,000,000.00</p>
+                      <p class="govuk-body">£0,000,000.00</p>
+                    </div>            
+                  </div>
+                </div>
+
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with equity gearing ratio
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
+          
+                <!--         -->
+                <!--         -->
+                <!-- SECTION -->
+                <div class="govuk-grid-row" style="padding-top: 30px;padding-bottom:30px">
+                  <div class="govuk-grid-column-full">
+                    <p class="govuk-heading-m">Financial performance</p>
+                  </div>
+                </div>
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Return on captial employment</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <div style="float:left; width: 200px;">
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">15 Apr 2024 (Latest)</p>
+                    </div>               
+                    <div style="float:left;"> 
+                      <p class="govuk-body" style="margin-bottom:0">47.0% <img src="/public/img/icon-increase.svg" alt="Important icon" style="vertical-align: top;"></p>
+                      <p class="govuk-body-s" style="margin-bottom:10px">Compared to 4 year average</p>
+                    </div>            
+                  </div>
+                </div>
+
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with return on capital employment
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Operating profit margin</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <div style="float:left; width: 200px;">
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">15 Apr 2024 (Latest)</p>
+                      <p class="govuk-body-s" style="margin-bottom:10px">&nbsp</p>
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">29 Mar 2023</p>
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">28 Mar 2022</p>
+                      <p class="govuk-body govuk-!-font-weight-bold">7 Jun 2021</p>
+                    </div>            
+                    <div style="float:left;">
+                      <p class="govuk-body" style="margin-bottom:0">7.69% <img src="/public/img/icon-increase.svg" alt="Important icon" style="vertical-align: top;"></p>
+                      <p class="govuk-body-s" style="margin-bottom:10px">Compared to 4 year average</p>
+                      <p class="govuk-body" style="margin-bottom:0">3.78%</p>
+                      <p class="govuk-body" style="margin-bottom:0">4.61%</p>
+                      <p class="govuk-body">5.25%</p>
+                    </div>            
+                  </div>
+                </div>
+
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with operating profit margin
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Credit days</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <div style="float:left; width: 200px;">
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">15 Apr 2024 (Latest)</p>
+                      <p class="govuk-body-s" style="margin-bottom:10px">&nbsp</p>
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">29 Mar 2023</p>
+                      <p class="govuk-body govuk-!-font-weight-bold" style="margin-bottom:0">28 Mar 2022</p>
+                      <p class="govuk-body govuk-!-font-weight-bold">7 Jun 2021</p>
+                    </div>            
+                    <div style="float:left;">
+                      <p class="govuk-body" style="margin-bottom:0">8.00 <img src="/public/img/icon-increase.svg" alt="Important icon" style="vertical-align: top;"></p>
+                      <p class="govuk-body-s" style="margin-bottom:10px">Compared to 4 year average</p>
+                      <p class="govuk-body" style="margin-bottom:0">No data available</p>
+                      <p class="govuk-body" style="margin-bottom:0">No data available</p>
+                      <p class="govuk-body">No data available</p>
+                    </div>            
+                  </div>
+                </div>
+
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with operating profit margin
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
               </div>
             </div>
+
 
             <!--        -->
             <!--        -->
@@ -1588,21 +2156,167 @@
                   Hint text to be confirmed.
                 </div>
               </div>
+
               <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content">
-                <p class="govuk-body">
-                  Coming soon!
-                </p>
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Grant value</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <p class="govuk-body">£100.00</p>
+                  </div>
+                </div>
+                
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Credit limit vs grant amount</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <p class="govuk-body" style="">
+                      {{govukTag({
+                        text: "0.00% - GREEN",
+                        classes: "govuk-tag--green"
+                      })}}
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with credit limit vs grant amount
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Turnover vs grant amount</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <p class="govuk-body" style="">
+                      {{govukTag({
+                        text: "0.00% - GREEN",
+                        classes: "govuk-tag--green"
+                      })}}
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with turnover vs grant amount
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
+                                
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Net worth vs grant amount</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <p class="govuk-body" style="">
+                      {{govukTag({
+                        text: "0.00% - GREEN",
+                        classes: "govuk-tag--green"
+                      })}}
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with net worth vs grant amount
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: ;">
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Incorporation date</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <p class="govuk-body" style="">24 March 1982</p>
+                  </div>
+                </div>
+                
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with incorporation date
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+
+
+
+
+
+
               </div>
             </div>
 
+
+
+
+
+
+
+
+
+
+
+
           </div>
-
         </div>
-
       </div>
 
     </div>
-
   </div>
 
   <p class="govuk-body-s" style="font-size: 9px; color:	#b1b4b6">PROTOTYPE VERSION: {{ data['which-prototype'] }}</p>
