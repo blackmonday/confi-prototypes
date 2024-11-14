@@ -62,7 +62,7 @@
             <p class="govuk-heading-l" style="color: #ffffff;margin-top:15px; padding-bottom:30px">Contracts</p>
           </div>
         </div>
-        <p class="govuk-body govuk-!-margin-top-3">View and manage your contracts and suppliers.</p>
+        <p class="govuk-body govuk-!-margin-top-3">{{ data['contracts-text'] }}</p>
         {% from "govuk/components/button/macro.njk" import govukButton %}
 
         <!--<div style="float:right;">
@@ -96,7 +96,7 @@
             <p class="govuk-heading-l" style="color: #ffffff;margin-top:15px; padding-bottom:30px">Threats</p>
           </div>
         </div>
-        <p class="govuk-body govuk-!-margin-top-3 govuk-!-margin-bottom-2">Conduct due diligence checks on entities.</p>
+        <p class="govuk-body govuk-!-margin-top-3 govuk-!-margin-bottom-2">{{ data['threats-text'] }}</p>
         {% from "govuk/components/button/macro.njk" import govukButton %}
 
         <!--<div style="float:right;">
@@ -131,7 +131,7 @@
             <p class="govuk-heading-l" style="color: #ffffff;margin-top:15px; padding-bottom:30px">Grants</p>
           </div>
         </div>
-        <p class="govuk-body govuk-!-margin-top-3">View and manage your grant schemes and applicants.</p>
+        <p class="govuk-body govuk-!-margin-top-3">{{ data['grants-text'] }}</p>
         {% from "govuk/components/button/macro.njk" import govukButton %}
 
         <!--<div style="float:right;">

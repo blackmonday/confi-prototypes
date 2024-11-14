@@ -54,14 +54,14 @@
     <!--         -->
     <!-- THREATS -->
     <a href="/prototype-3/your-checks" style="text-decoration: none;">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-one-third">
         <div class="linkDiv" style="background-color: #d4351c; text-align:center">
           <div>
             <img src="/public/img/icon-threats.svg" alt="Threats icon" style="margin-top:30px">
             <p class="govuk-heading-l" style="color: #ffffff;margin-top:15px; padding-bottom:30px">Threats</p>
           </div>
         </div>
-        <p class="govuk-body govuk-!-margin-top-3 govuk-!-margin-bottom-2">Conduct due diligence checks on entities.</p>
+        <p class="govuk-body govuk-!-margin-top-3 govuk-!-margin-bottom-2">{{ data['threats-text'] }}</p>
         {% from "govuk/components/button/macro.njk" import govukButton %}
 
         <!--<div style="float:right;">
