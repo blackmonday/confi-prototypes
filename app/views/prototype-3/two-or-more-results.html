@@ -159,7 +159,7 @@
                 <!-- HEADER ROW -->
                 <thead class="govuk-table__head">
                   <tr class="govuk-table__row">
-                    <th scope="col"  class="govuk-table__cell govuk-body-s" style="width:30px">
+                    <th scope="col"  class="govuk-table__cell govuk-body-s" style="width:30px;">
                       <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item">
                           <input class="govuk-checkboxes__input" id="xxx" name="xxx" type="checkbox" value="aaa">
@@ -174,10 +174,10 @@
                         <span class="slider round"></span>
                       </label>
                     </th>-->
-                    <th scope="col" class="govuk-table__header app-custom-class govuk-body-s" style="width:300px">Entity name</th>
-                    <th scope="col" class="govuk-table__header app-custom-class govuk-body-s" style="width:225px">Date checked</th>
+                    <th scope="col" class="govuk-table__header app-custom-class govuk-body-s" style="width:300px;vertical-align:middle;">Entity name</th>
+                    <th scope="col" class="govuk-table__header app-custom-class govuk-body-s" style="width:225px;vertical-align:middle;">Date checked</th>
                     <!--<th scope="col" class="govuk-table__header app-custom-class govuk-body-s">Amount requested</th>-->
-                    <th scope="col" class="govuk-table__header app-custom-class govuk-body-s">Due diligence check result</th>
+                    <!--<th scope="col" class="govuk-table__header app-custom-class govuk-body-s">Due diligence check result</th>-->
                   </tr>
                 </thead>
 
@@ -203,12 +203,12 @@
                       </label>
                     </td>-->
                     <td class="govuk-table__cell govuk-body-s" style="padding-top:20px;width:300px">
-                      <p class="govuk-body-s"><a href="/prototype-3/results?organisationName=Organisation Name&companysHouseRegisteredNumber=01624297&charityCommissionRegisteredNumber=—&addressLine1=Address Line 1&addressLine2=Address Line 2&addressTown=Town&addressCounty=County&addressPostcode=Postcode&otherRegisteredNumber=0192837465&telephoneNumber=+44 123 456 7890&website=http://company.com&emailAddress=help@company.com&dunsNumber=1245780">Entity Name</a></p>
-                      <p class="govuk-body-s" style="margin-top:-10px">Awarded: No</p>
+                      <p class="govuk-body-s"><a href="/prototype-3/results?organisationName=Organisation Name&companysHouseRegisteredNumber=01624297&charityCommissionRegisteredNumber=—&addressLine1=Address Line 1&addressLine2=Address Line 2&addressTown=Town&addressCounty=County&addressPostcode=Postcode&otherRegisteredNumber=0192837465&telephoneNumber=+44 123 456 7890&website=http://company.com&emailAddress=help@company.com&dunsNumber=1245780">Entity Name</a><strong class="govuk-tag" style="margin-left:10px">NEW</strong></p>
+                      <!--<p class="govuk-body-s" style="margin-top:-10px">Awarded: No</p>-->
                     </td>
                     <td class="govuk-table__cell govuk-body-s" style="padding-top:20px" style="width:225px">30 Oct 2024, 07:30</td>
                     <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">£ 3,000,000</td>-->
-                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px">
+                    <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">
                       <div class="govuk-grid-row">
                         <div class="govuk-grid-column-one-half">
                           Know your applicant
@@ -268,7 +268,95 @@
                         </div>
                       </div>
                       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                     </td>
+                     </td>-->
+                  </tr>
+
+                  <!--           -->
+                  <!--           -->
+                  <!--           -->
+                  <!-- TABLE ROW -->
+                  <tr class="govuk-table__row" >
+                    <td scope="row" class="govuk-table__cell govuk-body-s" style="width:30px">
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="xxx" name="xxx" type="checkbox" value="aaa">
+                          <label class="govuk-label govuk-checkboxes__label" for="waste"></label>
+                        </div>
+                      </div>
+                    </td>
+                    <!--<td class="govuk-table__cell govuk-body-s" style="width:60px">
+                      <label class="switch" style="margin-top:8px">
+                        <input type="checkbox" style="display:none">
+                        <span class="slider round"></span>
+                      </label>
+                    </td>-->
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px;width:300px">
+                      <p class="govuk-body-s"><a href="/prototype-3/results?organisationName=Organisation Name&companysHouseRegisteredNumber=01624297&charityCommissionRegisteredNumber=—&addressLine1=Address Line 1&addressLine2=Address Line 2&addressTown=Town&addressCounty=County&addressPostcode=Postcode&otherRegisteredNumber=0192837465&telephoneNumber=+44 123 456 7890&website=http://company.com&emailAddress=help@company.com&dunsNumber=1245780">Entity Name</a><strong class="govuk-tag" style="margin-left:10px">NEW</strong></p>
+                      <!--<p class="govuk-body-s" style="margin-top:-10px">Awarded: No</p>-->
+                    </td>
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px" style="width:225px">30 Oct 2024, 07:30</td>
+                    <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">£ 3,000,000</td>-->
+                    <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Know your applicant
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          <span style="color:#005a30">2 low</span><br />
+                          <span style="color:#f47738">1 medium</span><br />
+                          <span style="color:#852414">1 high</span>
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Companies House<br />
+                          <span style="font-size:12px">#01624297</span>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          <span style="color:#005a30">5 low</span><br />
+                          <span style="color:#f47738">0 medium</span><br />
+                          <span style="color:#852414">0 high</span>
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Charity Commission
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          Not applicable
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Other funding (GGIS, CaSIE, 360 giving)
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          No
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Other applications (Spotlight)
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          Yes
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Similarities
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          <span style="color:#005a30">Low</span>
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                     </td>-->
                   </tr>
 
                   <!--           -->
@@ -292,11 +380,11 @@
                     </td>-->
                     <td class="govuk-table__cell govuk-body-s" style="padding-top:20px;width:300px">
                       <p class="govuk-body-s"><a href="/prototype-3/results?organisationName=Organisation Name&companysHouseRegisteredNumber=01624297&charityCommissionRegisteredNumber=—&addressLine1=Address Line 1&addressLine2=Address Line 2&addressTown=Town&addressCounty=County&addressPostcode=Postcode&otherRegisteredNumber=0192837465&telephoneNumber=+44 123 456 7890&website=http://company.com&emailAddress=help@company.com&dunsNumber=1245780">Entity Name</a></p>
-                      <p class="govuk-body-s" style="margin-top:-10px">Awarded: No</p>
+                      <!--<p class="govuk-body-s" style="margin-top:-10px">Awarded: No</p>-->
                     </td>
                     <td class="govuk-table__cell govuk-body-s" style="padding-top:20px" style="width:225px">30 Oct 2024, 07:30</td>
                     <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">£ 3,000,000</td>-->
-                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px">
+                    <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">
                       <div class="govuk-grid-row">
                         <div class="govuk-grid-column-one-half">
                           Know your applicant
@@ -356,10 +444,274 @@
                         </div>
                       </div>
                       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                     </td>
+                     </td>-->
                   </tr>
 
-                </tbody>
+                  <!--           -->
+                  <!--           -->
+                  <!--           -->
+                  <!-- TABLE ROW -->
+                  <tr class="govuk-table__row" >
+                    <td scope="row" class="govuk-table__cell govuk-body-s" style="width:30px">
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="xxx" name="xxx" type="checkbox" value="aaa">
+                          <label class="govuk-label govuk-checkboxes__label" for="waste"></label>
+                        </div>
+                      </div>
+                    </td>
+                    <!--<td class="govuk-table__cell govuk-body-s" style="width:60px">
+                      <label class="switch" style="margin-top:8px">
+                        <input type="checkbox" style="display:none">
+                        <span class="slider round"></span>
+                      </label>
+                    </td>-->
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px;width:300px">
+                      <p class="govuk-body-s"><a href="/prototype-3/results?organisationName=Organisation Name&companysHouseRegisteredNumber=01624297&charityCommissionRegisteredNumber=—&addressLine1=Address Line 1&addressLine2=Address Line 2&addressTown=Town&addressCounty=County&addressPostcode=Postcode&otherRegisteredNumber=0192837465&telephoneNumber=+44 123 456 7890&website=http://company.com&emailAddress=help@company.com&dunsNumber=1245780">Entity Name</a></p>
+                      <!--<p class="govuk-body-s" style="margin-top:-10px">Awarded: No</p>-->
+                    </td>
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px" style="width:225px">30 Oct 2024, 07:30</td>
+                    <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">£ 3,000,000</td>-->
+                    <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Know your applicant
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          <span style="color:#005a30">2 low</span><br />
+                          <span style="color:#f47738">1 medium</span><br />
+                          <span style="color:#852414">1 high</span>
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Companies House<br />
+                          <span style="font-size:12px">#01624297</span>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          <span style="color:#005a30">5 low</span><br />
+                          <span style="color:#f47738">0 medium</span><br />
+                          <span style="color:#852414">0 high</span>
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Charity Commission
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          Not applicable
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Other funding (GGIS, CaSIE, 360 giving)
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          No
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Other applications (Spotlight)
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          Yes
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Similarities
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          <span style="color:#005a30">Low</span>
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                     </td>-->
+                  </tr>
+
+                  <!--           -->
+                  <!--           -->
+                  <!--           -->
+                  <!-- TABLE ROW -->
+                  <tr class="govuk-table__row" >
+                    <td scope="row" class="govuk-table__cell govuk-body-s" style="width:30px">
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="xxx" name="xxx" type="checkbox" value="aaa">
+                          <label class="govuk-label govuk-checkboxes__label" for="waste"></label>
+                        </div>
+                      </div>
+                    </td>
+                    <!--<td class="govuk-table__cell govuk-body-s" style="width:60px">
+                      <label class="switch" style="margin-top:8px">
+                        <input type="checkbox" style="display:none">
+                        <span class="slider round"></span>
+                      </label>
+                    </td>-->
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px;width:300px">
+                      <p class="govuk-body-s"><a href="/prototype-3/results?organisationName=Organisation Name&companysHouseRegisteredNumber=01624297&charityCommissionRegisteredNumber=—&addressLine1=Address Line 1&addressLine2=Address Line 2&addressTown=Town&addressCounty=County&addressPostcode=Postcode&otherRegisteredNumber=0192837465&telephoneNumber=+44 123 456 7890&website=http://company.com&emailAddress=help@company.com&dunsNumber=1245780">Entity Name</a></p>
+                      <!--<p class="govuk-body-s" style="margin-top:-10px">Awarded: No</p>-->
+                    </td>
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px" style="width:225px">30 Oct 2024, 07:30</td>
+                    <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">£ 3,000,000</td>-->
+                    <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Know your applicant
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          <span style="color:#005a30">2 low</span><br />
+                          <span style="color:#f47738">1 medium</span><br />
+                          <span style="color:#852414">1 high</span>
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Companies House<br />
+                          <span style="font-size:12px">#01624297</span>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          <span style="color:#005a30">5 low</span><br />
+                          <span style="color:#f47738">0 medium</span><br />
+                          <span style="color:#852414">0 high</span>
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Charity Commission
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          Not applicable
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Other funding (GGIS, CaSIE, 360 giving)
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          No
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Other applications (Spotlight)
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          Yes
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Similarities
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          <span style="color:#005a30">Low</span>
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                     </td>-->
+                  </tr>
+
+                  <!--           -->
+                  <!--           -->
+                  <!--           -->
+                  <!-- TABLE ROW -->
+                  <tr class="govuk-table__row" >
+                    <td scope="row" class="govuk-table__cell govuk-body-s" style="width:30px">
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="xxx" name="xxx" type="checkbox" value="aaa">
+                          <label class="govuk-label govuk-checkboxes__label" for="waste"></label>
+                        </div>
+                      </div>
+                    </td>
+                    <!--<td class="govuk-table__cell govuk-body-s" style="width:60px">
+                      <label class="switch" style="margin-top:8px">
+                        <input type="checkbox" style="display:none">
+                        <span class="slider round"></span>
+                      </label>
+                    </td>-->
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px;width:300px">
+                      <p class="govuk-body-s"><a href="/prototype-3/results?organisationName=Organisation Name&companysHouseRegisteredNumber=01624297&charityCommissionRegisteredNumber=—&addressLine1=Address Line 1&addressLine2=Address Line 2&addressTown=Town&addressCounty=County&addressPostcode=Postcode&otherRegisteredNumber=0192837465&telephoneNumber=+44 123 456 7890&website=http://company.com&emailAddress=help@company.com&dunsNumber=1245780">Entity Name</a></p>
+                      <!--<p class="govuk-body-s" style="margin-top:-10px">Awarded: No</p>-->
+                    </td>
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px" style="width:225px">30 Oct 2024, 07:30</td>
+                    <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">£ 3,000,000</td>-->
+                    <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Know your applicant
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          <span style="color:#005a30">2 low</span><br />
+                          <span style="color:#f47738">1 medium</span><br />
+                          <span style="color:#852414">1 high</span>
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Companies House<br />
+                          <span style="font-size:12px">#01624297</span>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          <span style="color:#005a30">5 low</span><br />
+                          <span style="color:#f47738">0 medium</span><br />
+                          <span style="color:#852414">0 high</span>
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Charity Commission
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          Not applicable
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Other funding (GGIS, CaSIE, 360 giving)
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          No
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Other applications (Spotlight)
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          Yes
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          Similarities
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          <span style="color:#005a30">Low</span>
+                        </div>
+                      </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                     </td>-->
+                  </tr>
+
+               </tbody>
               </table>
 
               <p class="govuk-body" style="text-align: right">Showing <strong>2</strong> to <strong>2</strong> of <strong>2</strong> results</p>
