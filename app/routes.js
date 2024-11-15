@@ -99,7 +99,7 @@ router.post('/threats-type-answer', function (req, res) {
     if (whichThreat == "sanctions"){
       res.redirect('/prototype-3/sanctions')
     } else if (whichThreat == "economic-crime"){
-      res.redirect('/prototype-3/how-many-orgs')
+      res.redirect('/prototype-3/results-history')
     } else {
       res.redirect('/prototype-3/threats-error')
     }

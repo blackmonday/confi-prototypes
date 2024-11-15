@@ -21,21 +21,58 @@
       </h1>
 
       <form class="form" action="/how-many-orgs" method="post">
-
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {% set oneOrg %}
+        {{ govukRadios({
+          name: "org-location-for-one",
+          items: [
+            {
+              value: "uk",
+              text: "UK registered company"
+            },
+            {
+              value: "international",
+              text: "International company"
+            }
+          ]
+        }) }}
+        {% endset -%}
+
+        {% set twoOrMoreOrg %}
+        {{ govukRadios({
+          name: "org-location-for-two-or-more",
+          items: [
+            {
+              value: "uk",
+              text: "UK registered company"
+            },
+            {
+              value: "international",
+              text: "International company"
+            }
+          ]
+        }) }}
+        {% endset -%}
 
         {{ govukRadios({
           name: "how-many-orgs",
           items: [
             {
               value: "one",
-              text: "One"
+              text: "One",
+              conditional: {
+                html: oneOrg
+              }
             },
             {
               value: "two-or-more",
               text: "Two or more",
               hint: {
                 text: "To conduct two or more checks. we'll ask you to upload a spreadsheet containing appropriate data"
+              },
+              conditional: {
+                html: twoOrMoreOrg
               }
             }
           ]
@@ -44,7 +81,6 @@
         {{ govukButton({
           text: "Continue"
         }) }}
-
       </form>
 
     </div>
