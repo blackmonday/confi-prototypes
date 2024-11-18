@@ -306,20 +306,37 @@ router.post('/economic-crime-checks', function (req, res) {
     } else {
       res.redirect('/prototype-2/results-international')
     }
+  }
+})
 
+router.post('/economic-crime-checks-uk', function (req, res) {
   //
   // START Prototype 3 routes
   //
-  } else if (whichPrototype == "3.0"){
-    // Make a variable and give it the value from 'which-check'
-    var orgLocationForOne = req.session.data['org-location-for-one']
+  // Make a variable and give it the value from 'which-check'
+  var orgLocationForOne = req.session.data['org-location-for-one']
+  var orgLocationForTwoOrMore = req.session.data['org-location-for-two-or-more']
 
-    // Check whether the variable matches a condition
-    if (orgLocationForOne == "uk"){
-      res.redirect('/prototype-3/review-uk')
-    } else {
-      res.redirect('/prototype-3/review-international')
-    }
-  }  
+  // Check whether the variable matches a condition
+  if (orgLocationForOne == "uk"){
+    res.redirect('/prototype-3/review-uk')
+  } else {
+    res.redirect('/prototype-3/review-international')
+  }
+})
 
+router.post('/economic-crime-checks-international', function (req, res) {
+  //
+  // START Prototype 3 routes
+  //
+  // Make a variable and give it the value from 'which-check'
+  var orgLocationForOne = req.session.data['org-location-for-one']
+  var orgLocationForTwoOrMore = req.session.data['org-location-for-two-or-more']
+
+  // Check whether the variable matches a condition
+  if (orgLocationForOne == "uk"){
+    res.redirect('/prototype-3/review-uk')
+  } else {
+    res.redirect('/prototype-3/review-international')
+  }
 })

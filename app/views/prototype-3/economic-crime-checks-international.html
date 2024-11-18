@@ -20,7 +20,7 @@
         Economic crime checks
       </h1>
 
-      <form class="form" action="/economic-crime-checks" method="post">
+      <form class="form" action="/economic-crime-checks-international" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
@@ -84,7 +84,7 @@
             id: "address-country",
             name: "addressCountry",
             label: {
-              text: "Country (optional)"
+              text: "Country"
             },
             items: [
               {
@@ -166,7 +166,7 @@
 
         {{ govukInput({
           label: {
-            text: "D-U-N-S number",
+            text: "D-U-N-S number (optional)",
             classes: "govuk-label--s"
           },
           classes: "govuk-input--width-10",
