@@ -78,12 +78,13 @@
             autocomplete: "address-level2",
             value: data['addressLine2']
           }) }}
-                
+        
+           
           {{ govukSelect({
             id: "address-country",
             name: "addressCountry",
             label: {
-              text: "Country"
+              text: "Country (optional)"
             },
             items: [
               {
@@ -155,7 +156,7 @@
             classes: "govuk-label--s"
           },
           hint: {
-            text: "Enter the entities registered number for a non-UK entity, if applicable."
+            text: "This is the entities registered number for a non-UK entity."
           },
           classes: "govuk-input--width-10",
           id: "other-registered-number",
@@ -165,7 +166,7 @@
 
         {{ govukInput({
           label: {
-            text: "D-U-N-S number (optional)",
+            text: "D-U-N-S number",
             classes: "govuk-label--s"
           },
           classes: "govuk-input--width-10",

@@ -1,0 +1,139 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Potential matches for review
+      </h1>
+
+      <p>
+        Spotlight has been unable to find an exact match for the records below. Review the records and confirm or reject Spotlight's suggested matches for processing.
+      </p>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Original vs. suggested matches</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Original</th>
+            <th scope="col" class="govuk-table__header">Suggested match</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+
+              <p class="govuk-body-s govuk-!-margin-bottom-2">
+                {% if (data['organisationName'] == "") %}
+                &mdash;
+                {% else %}
+                  {{ data['organisationName'] }}
+                {% endif %}
+              </p>
+
+              <div class="govuk-!-margin-bottom-2">
+                <p class="govuk-body-s govuk-!-margin-bottom-2" style="width:200px; float:left"><img src="/public/img/icon-location.svg" alt="Important icon" style="height:20px; margin-right:2px;vertical-align: middle;"> 
+                  {% if (data['addressTown'] == "") %}
+                  &mdash;
+                  {% else %}
+                    {{ data['addressTown'] }}
+                  {% endif %}  
+                </p>
+                <p class="govuk-body-s govuk-!-margin-bottom-2"><img src="/public/img/icon-world.svg" alt="Important icon" style="height:20px; margin-right:2px;vertical-align: middle;"> 
+                  {% if (data['addressPostcode'] == "Choose") %}
+                  &mdash;
+                  {% else %}
+                    {{ data['addressPostcode'] }}
+                  {% endif %}  
+                </p>
+              </div>
+
+              <p class="govuk-body-s govuk-!-margin-bottom-2" style="">Companies House <span class="govuk-!-font-weight-bold">
+                {% if (data['companysHouseRegisteredNumber'] == "") %}
+                &mdash;
+                {% else %}
+                  {{ data['companysHouseRegisteredNumber'] }}
+                {% endif %}  
+              </span></p>
+
+              <p class="govuk-body-s govuk-!-margin-bottom-0" style="">Charities Commission <span class="govuk-!-font-weight-bold">
+                {% if (data['charityCommissionRegisteredNumber'] == "") %}
+                &mdash;
+                {% else %}
+                  {{ data['charityCommissionRegisteredNumber'] }}
+                {% endif %}  
+              </span></p>
+
+            </td>
+            <td class="govuk-table__cell">
+
+              <p class="govuk-body-s govuk-!-margin-bottom-2"><img src="/public/img/icon-warning.svg" alt="Important icon" style="height:20px; margin-right:2px;vertical-align: middle;"> [A different name]</p>
+
+              <div class="govuk-!-margin-bottom-2">
+                <p class="govuk-body-s govuk-!-margin-bottom-2" style="width:200px; float:left"><img src="/public/img/icon-tick.svg" alt="Important icon" style="height:20px; margin-right:2px;vertical-align: middle;"> 
+                  {% if (data['addressTown'] == "") %}
+                  &mdash;
+                  {% else %}
+                    {{ data['addressTown'] }}
+                  {% endif %}  
+                </p>
+                <p class="govuk-body-s govuk-!-margin-bottom-2"><img src="/public/img/icon-tick.svg" alt="Important icon" style="height:20px; margin-right:2px;vertical-align: middle;"> 
+                  {% if (data['addressPostcode'] == "Choose") %}
+                  &mdash;
+                  {% else %}
+                    {{ data['addressPostcode'] }}
+                  {% endif %}  
+                </p>
+              </div>
+
+              <p class="govuk-body-s govuk-!-margin-bottom-2" style=""><img src="/public/img/icon-warning.svg" alt="Important icon" style="height:20px; margin-right:2px;vertical-align: middle;"> [A different number]</p>
+
+              <p class="govuk-body-s govuk-!-margin-bottom-2" style=""><img src="/public/img/icon-tick.svg" alt="Important icon" style="height:20px; margin-right:2px;vertical-align: middle;"> 
+                {% if (data['charityCommissionRegisteredNumber'] == "") %}
+                &mdash;
+                {% else %}
+                  {{ data['charityCommissionRegisteredNumber'] }}
+                {% endif %}  
+              </p>
+                            
+            </td>
+        </tbody>
+      </table>
+
+      <a href="/prototype-3/results"><button type="submit" class="govuk-button" data-module="govuk-button" style="margin-right:15px">
+        Continue with suggested match
+      </button></a>
+
+      <a href="javascript:window.history.back()"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:15px">
+        Go back and edit original
+      </button></a>
+
+      <a href="/prototype-3/your-checks"><button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
+        Reject and return to your checks
+      </button></a>
+
+    </div>
+  </div>
+
+  <p class="govuk-body-s" style="font-size: 9px; color:	#b1b4b6">PROTOTYPE VERSION: {{ data['which-prototype'] }}</p>
+
+{% endblock %}
