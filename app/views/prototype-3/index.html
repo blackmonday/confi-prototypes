@@ -15,10 +15,6 @@
     html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
   }) }}
 
-  <!--{{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-}) }}-->
 {% endblock %}
 
 {% block content %}
@@ -34,6 +30,59 @@
       <img src="/public/img/Spotlight-logo.svg" alt="Spotlight logo" style="margin-top:30px; margin-bottom:40px">
     </div>
   </div>
+
+  {% if (data['view-as-mod'] == "true") %}
+
+  <div class="govuk-grid-row">
+
+    <style>
+      .linkDiv {
+          opacity: 1;
+          transition: opacity 0.3s ease;
+      }
+
+      .linkDiv:hover {
+          opacity: 0.8;
+      }
+    </style>
+
+    <!--         -->
+    <!--         -->
+    <!--         -->
+    <!--         -->
+    <!-- THREATS -->
+    <a href="/prototype-3/threats" style="text-decoration: none;">
+      <div class="govuk-grid-column-one-third">
+        <div class="linkDiv" style="background-color: #d4351c; text-align:center">
+          <div>
+            <img src="/public/img/icon-threats.svg" alt="Threats icon" style="margin-top:30px">
+            <p class="govuk-heading-l" style="color: #ffffff;margin-top:15px; padding-bottom:30px">Threats</p>
+          </div>
+        </div>
+        <p class="govuk-body govuk-!-margin-top-3 govuk-!-margin-bottom-2">{{ data['threats-text'] }}</p>
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        <!--<div style="float:right;">
+          <div style="right:0px; background-color: #d4351c; text-align:center; width:34px; height:34px">
+            <div>
+              <img src="/public/img/icon-small-arrow.svg" alt="Small arrow icon" style="margin-top:10px">
+            </div>
+          </div>
+        </div>
+        <div style="height:30px;border-bottom: 4px solid #d4351c">
+        </div>-->
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-button--secondary",
+          href: "threats"
+        }) }}
+        </div>
+    </a>
+  
+  </div>
+
+  {% else %}
 
   <div class="govuk-grid-row">
 
@@ -152,6 +201,8 @@
       </div>
     </a>
   </div>
+
+  {% endif %}
 
   <p class="govuk-body-s" style="font-size: 9px; color:	#b1b4b6">PROTOTYPE VERSION: {{ data['which-prototype'] }}</p>
 

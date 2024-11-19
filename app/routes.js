@@ -25,7 +25,7 @@ router.post('/which-prototype', function (req, res) {
   } else if (whichPrototype == "3.0"){
     if (modUser == "true"){
       req.session.data['threats-text'] = "Conduct due diligence checks on entities."
-      res.redirect('/prototype-3/index-threats-only')
+      res.redirect('/prototype-3/index')
     } else {
       req.session.data['contracts-text'] = "View and manage your contracts and suppliers"
       req.session.data['threats-text'] = "Run sanction checks on individuals and organisations"
