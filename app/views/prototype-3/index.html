@@ -31,7 +31,12 @@
     </div>
   </div>
 
-  {% if (data['view-as-mod'] == "true") %}
+  <!--                         -->
+  <!--                         -->
+  <!--                         -->
+  <!--                         -->
+  <!-- THREATS USERS ONLY VIEW -->
+  {% if (data['which-user'] == "user2") %}
 
   <div class="govuk-grid-row">
 
@@ -82,6 +87,15 @@
   
   </div>
 
+
+
+
+
+  <!--                             -->
+  <!--                             -->
+  <!--                             -->
+  <!--                             -->
+  <!-- GRANTS AND COMMERCIAL USERS -->
   {% else %}
 
   <div class="govuk-grid-row">
@@ -137,7 +151,7 @@
     <!--         -->
     <!--         -->
     <!-- THREATS -->
-    <a href="/prototype-3/threats" style="text-decoration: none;">
+    <a href="/prototype-3/sanctions" style="text-decoration: none;">
       <div class="govuk-grid-column-one-third">
         <div class="linkDiv" style="background-color: #d4351c; text-align:center">
           <div>
@@ -161,7 +175,7 @@
         {{ govukButton({
           text: "Continue",
           classes: "govuk-button--secondary",
-          href: "threats"
+          href: "sanctions"
         }) }}
         </div>
     </a>

@@ -39,6 +39,8 @@
 
         {% set emailHtml %}
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        
+        <!--
         {{ govukCheckboxes({
           name: "view-as-mod",
           items: [
@@ -48,6 +50,28 @@
             }
           ]
         }) }}
+      -->
+
+
+
+        {{ govukRadios({
+          name: "which-user",
+          value: data['which-user'],
+          items: [
+            {
+              value: "user1",
+              text: "Grants and commercial users"
+            },
+            {
+              value: "user2",
+              text: "All other users"
+            }
+          ]
+        }) }}
+
+
+
+
         {% endset -%}
 
         {{ govukRadios({

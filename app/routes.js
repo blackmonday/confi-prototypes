@@ -14,8 +14,8 @@ router.post('/which-prototype', function (req, res) {
 
   // Make a variable and give it the value from 'which-prototype'
   var whichPrototype = req.session.data['which-prototype']
-  var modUser = req.session.data['view-as-mod']
-
+  //var modUser = req.session.data['view-as-mod']
+  var whichUser = req.session.data['which-user']
 
   // Check which prototype type version to run
   if (whichPrototype == "1.0"){
@@ -23,13 +23,13 @@ router.post('/which-prototype', function (req, res) {
   } else if (whichPrototype == "2.0"){
     res.redirect('/prototype-2/index')
   } else if (whichPrototype == "3.0"){
-    if (modUser == "true"){
-      req.session.data['threats-text'] = "Conduct due diligence checks on entities."
-      res.redirect('/prototype-3/index')
-    } else {
+    if (whichUser == "user1"){
       req.session.data['contracts-text'] = "View and manage your contracts and suppliers"
       req.session.data['threats-text'] = "Run sanction checks on individuals and organisations"
       req.session.data['grants-text'] = "View and manage your grant schemes and applicants"
+      res.redirect('/prototype-3/index')
+    } else if (whichUser == "user2"){
+      req.session.data['threats-text'] = "Conduct due diligence checks on entities."
       res.redirect('/prototype-3/index')
     }
   } else{
