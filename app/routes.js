@@ -31,6 +31,8 @@ router.post('/which-prototype', function (req, res) {
     } else if (whichUser == "user2"){
       req.session.data['threats-text'] = "Conduct due diligence checks on entities."
       res.redirect('/prototype-3/index')
+    } else {
+      res.redirect('/index-error-2')
     }
   } else{
     res.redirect('/index-error')
