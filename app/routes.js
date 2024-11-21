@@ -34,6 +34,18 @@ router.post('/which-prototype', function (req, res) {
     } else {
       res.redirect('/index-error-2')
     }
+  } else if (whichPrototype == "4.0"){
+    if (whichUser == "user1"){
+      req.session.data['contracts-text'] = "View and manage your contracts and suppliers"
+      req.session.data['threats-text'] = "Run sanction checks on individuals and organisations"
+      req.session.data['grants-text'] = "View and manage your grant schemes and applicants"
+      res.redirect('/prototype-4/index')
+    } else if (whichUser == "user2"){
+      req.session.data['threats-text'] = "Conduct due diligence checks on entities."
+      res.redirect('/prototype-4/index')
+    } else {
+      res.redirect('/index-error-2')
+    }
   } else{
     res.redirect('/index-error')
   }
@@ -104,6 +116,23 @@ router.post('/threats-type-answer', function (req, res) {
       res.redirect('/prototype-3/results-history')
     } else {
       res.redirect('/prototype-3/threats-error')
+    }
+
+  //
+  // START Prototype 4 routes
+  //
+  } else if (whichPrototype == "4.0"){
+      
+    // Make a variable and give it the value from 'which-threat'
+    var whichThreat = req.session.data['which-threat']
+
+    // Check whether the variable matches a condition
+    if (whichThreat == "sanctions"){
+      res.redirect('/prototype-4/sanctions')
+    } else if (whichThreat == "economic-crime"){
+      res.redirect('/prototype-4/results-history')
+    } else {
+      res.redirect('/prototype-4/threats-error')
     }
 
   }
@@ -229,7 +258,34 @@ router.post('/how-many-orgs', function (req, res) {
       res.redirect('/prototype-3/how-many-orgs-error')
     }
   
-  }
+  //
+  // START Prototype 3 routes
+  //
+  } else if (whichPrototype == "4.0"){
+
+    // Make a variable and give it the value from 'how-many-orgs'
+    var howManyOrgs = req.session.data['how-many-orgs']
+    var orgLocationForOne = req.session.data['org-location-for-one']
+    var orgLocationForTwoOrMore = req.session.data['org-location-for-two-or-more']
+
+    // Check whether the variable matches a condition
+    if (howManyOrgs == "one"){
+      if (orgLocationForOne == "uk"){
+        res.redirect('/prototype-4/economic-crime-checks')
+      } else if (orgLocationForOne == "international"){
+        res.redirect('/prototype-4/economic-crime-checks')
+      }
+    } else if (howManyOrgs == "two-or-more"){
+      if (orgLocationForTwoOrMore == "uk"){
+        res.redirect('/prototype-4/two-or-more')
+      } else if (orgLocationForTwoOrMore == "international"){
+        res.redirect('/prototype-4/two-or-more')
+      }
+    } else {
+      res.redirect('/prototype-4/how-many-orgs-error')
+    }
+
+  } 
   
 })
 
@@ -341,4 +397,11 @@ router.post('/economic-crime-checks-international', function (req, res) {
   } else {
     res.redirect('/prototype-3/review-international')
   }
+})
+
+//
+// START Prototype 4 routes
+//
+router.post('/economic-crime-checks-v4', function (req, res) {
+  res.redirect('/prototype-4/review')
 })
