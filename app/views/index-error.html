@@ -63,7 +63,7 @@
       <p>
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-        {% set emailHtml %}
+        {% set whichUser %}
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
         {{ govukRadios({
@@ -98,7 +98,14 @@
               value: "3.0",
               text: "Prototype three",
               conditional: {
-                html: emailHtml
+                html: whichUser
+              }
+            },
+            {
+              value: "4.0",
+              text: "Prototype four",
+              conditional: {
+                html: whichUser
               }
             }
           ],

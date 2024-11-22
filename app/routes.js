@@ -32,7 +32,7 @@ router.post('/which-prototype', function (req, res) {
       req.session.data['threats-text'] = "Conduct due diligence checks on entities."
       res.redirect('/prototype-3/index')
     } else {
-      res.redirect('/index-error-2')
+      res.redirect('/index-error-v3')
     }
   } else if (whichPrototype == "4.0"){
     if (whichUser == "user1"){
@@ -44,7 +44,7 @@ router.post('/which-prototype', function (req, res) {
       req.session.data['threats-text'] = "Conduct due diligence checks on entities."
       res.redirect('/prototype-4/index')
     } else {
-      res.redirect('/index-error-2')
+      res.redirect('/index-error-v4')
     }
   } else{
     res.redirect('/index-error')
