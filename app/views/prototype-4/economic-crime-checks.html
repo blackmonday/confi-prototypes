@@ -84,25 +84,17 @@
         
           {{ govukInput({
             label: {
-              text: "Address line 1 (optional)"
+              text: "Building number (or name) and street (optional)"
+            },
+            hint: {
+              text: "This field can contain building name, building number, street name and/or industrial estate name."
             },
             id: "address-line-1",
             name: "addressLine1",
             autocomplete: "address-line1",
             value: data['addressLine1']
           }) }}
-        
-          {{ govukInput({
-            label: {
-              text: "Address line 2 (optional)",
-              classes: "govuk-!-margin-top-0"
-            },
-            id: "address-line-2",
-            name: "addressLine2",
-            autocomplete: "address-line2",
-            value: data['addressLine2']
-          }) }}
-        
+                
           {{ govukInput({
             label: {
               text: "Town or city (optional)"
@@ -181,6 +173,9 @@
           {{ govukInput({
             label: {
               text: "Address line 1 (optional)"
+            },
+            hint: {
+              text: "This field can contain building name, building number, street name and/or industrial estate name."
             },
             id: "address-line-1",
             name: "addressLine1",

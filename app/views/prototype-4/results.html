@@ -54,12 +54,12 @@
                 {{ data['addressLine1'] }}
               {% endif %}
               </br>
-              {% if (data['addressLine2'] == "") %}
+              <!--{% if (data['addressLine2'] == "") %}
                 &mdash;
               {% else %}
                 {{ data['addressLine2'] }}
               {% endif %}
-              </br>
+              </br>-->
               {% if (data['addressTown'] == "") %}
                 &mdash;
               {% else %}
@@ -140,7 +140,7 @@
                 {{ data['addressTown'] }}
               {% endif %}
               </br>
-              {% if (data['addressCountry'] == "") %}
+              {% if (data['addressCountry'] == "") or (data['addressCountry'] == "Choose") %}
                 &mdash;
               {% else %}
                 {{ data['addressCountry'] }}
@@ -150,19 +150,19 @@
 
           <p class="govuk-body-s">
             Telephone number<br />
-            {% if (data['TelephoneNumber'] == "") %}
+            {% if (data['telephoneNumber'] == "") %}
               <span class="govuk-!-font-weight-bold">&mdash;</span>
             {% else %}
-              <span class="govuk-!-font-weight-bold">{{ data['TelephoneNumber'] }}</span>
+              <span class="govuk-!-font-weight-bold">{{ data['telephoneNumber'] }}</span>
             {% endif %}
           </p>  
 
           <p class="govuk-body-s">
             Email address<br />
-            {% if (data['EmailAddress'] == "") %}
+            {% if (data['emailAddress'] == "") %}
               <span class="govuk-!-font-weight-bold">&mdash;</span>
             {% else %}
-              <span class="govuk-!-font-weight-bold">{{ data['EmailAddress'] }}</span>
+              <span class="govuk-!-font-weight-bold">{{ data['emailAddress'] }}</span>
             {% endif %}
           </p>  
 
@@ -177,10 +177,10 @@
 
           <p class="govuk-body-s">
             D-U-N-S number<br />
-            {% if (data['DUNSNumber'] == "") %}
+            {% if (data['dunsNumber'] == "") %}
               <span class="govuk-!-font-weight-bold">&mdash;</span>
             {% else %}
-              <span class="govuk-!-font-weight-bold">{{ data['DUNSNumber'] }}</span>
+              <span class="govuk-!-font-weight-bold">{{ data['dunsNumber'] }}</span>
             {% endif %}
           </p>  
         </div>
@@ -295,13 +295,13 @@
                     <!-- HEADER -->
                      <span style="margin-right:10px">Filters in use:</span>
                     <!-- FILTER -->
-                    <!--<span class="filter-tag govuk-body-s">Showing all data</span>-->
+                    <span class="filter-tag govuk-body-s">Showing all data</span>
                     <!-- FILTER -->
-                    <span class="filter-tag govuk-body-s">Lorem ipsum<img src="/public/img/icon-close.svg" alt="Important icon" style="vertical-align: middle;margin-left:5px"></span>
+                    <!--<span class="filter-tag govuk-body-s">Lorem ipsum<img src="/public/img/icon-close.svg" alt="Important icon" style="vertical-align: middle;margin-left:5px"></span>-->
                     <!-- FILTER -->
-                    <span class="filter-tag govuk-body-s">Dolor sit<img src="/public/img/icon-close.svg" alt="Important icon" style="vertical-align: middle;margin-left:5px"></span>
+                    <!--<span class="filter-tag govuk-body-s">Dolor sit<img src="/public/img/icon-close.svg" alt="Important icon" style="vertical-align: middle;margin-left:5px"></span>-->
                     <!-- FILTER -->
-                    <span class="filter-tag govuk-body-s">Amet<img src="/public/img/icon-close.svg" alt="Important icon" style="vertical-align: middle;margin-left:5px"></span>
+                    <!--<span class="filter-tag govuk-body-s">Amet<img src="/public/img/icon-close.svg" alt="Important icon" style="vertical-align: middle;margin-left:5px"></span>-->
                   </span>
                 </h2>
                 <!--
@@ -477,6 +477,12 @@
               <!-- FILTERS - 4-COL VERSION -->
               <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content govuk-!-padding-bottom-0">
 
+                <div class="govuk-grid-row" style="margin-top:-15px; margin-bottom:15px">
+                  <div class="govuk-grid-column-one-half">
+                    <p class="govuk-body govuk-!-margin-top-0">Use these filters to show specific data.</p>
+                  </div>
+                </div>
+
                 <div class="govuk-grid-row">
                   <div class="govuk-grid-column-one-half">
 
@@ -494,12 +500,12 @@
                             </h1>
                           </legend>
                           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
+                            <!--<div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
                               <label class="govuk-body-s govuk-checkboxes__label" for="organisation">
                                 Summary
                               </label>
-                            </div>
+                            </div>-->
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
                               <label class="govuk-body-s govuk-checkboxes__label" for="organisation-2">
@@ -521,7 +527,13 @@
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
                               <label class="govuk-body-s govuk-checkboxes__label" for="organisation-3">
-                                Grants
+                                Grant funding
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
+                              <label class="govuk-body-s govuk-checkboxes__label" for="organisation-3">
+                                Contracts funding
                               </label>
                             </div>
                           </div>
@@ -633,23 +645,24 @@
                               </label>
                             </div>
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD" checked>
+                              <!--<input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD" checked>-->
+                              <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
                               <label class="govuk-body-s govuk-checkboxes__label" for="organisation-3">
                                 Lorem ipsum
                               </label>
                             </div>
                             <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD" checked>
+                              <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
                               <label class="govuk-body-s govuk-checkboxes__label" for="organisation-3">
                                 Dolor sit
                               </label>
                             </div>
-                            <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD" checked>
+                            <!--<div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
                               <label class="govuk-body-s govuk-checkboxes__label" for="organisation-3">
                                 Amet
                               </label>
-                            </div>
+                            </div>-->
                           </div>
                         </fieldset>
                       </div>
@@ -717,6 +730,7 @@
             <!--                 -->
             <!--                 -->
             <!-- SECTION SUMMARY -->
+            <!--
             <div class="govuk-accordion__section sections">
               <div class="govuk-accordion__section-header" style="">
                 <h2 class="govuk-accordion__section-heading">
@@ -724,9 +738,6 @@
                     Summary
                   </span>
                 </h2>
-                <!--<div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
-                  Economic crime checks show information held by Companies House, the Charity Commission and other sources on organisation.
-                </div>-->
               </div>
 
               <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
@@ -791,6 +802,7 @@
 
               </div>
             </div>
+            -->
 
             <!--                     -->
             <!--                     -->
@@ -2812,7 +2824,6 @@
               </div>
             </div>
 
-
             <!--        -->
             <!--        -->
             <!--        -->
@@ -2822,7 +2833,7 @@
               <div class="govuk-accordion__section-header">
                 <h2 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
-                    Grants
+                    Grant funding
                   </span>
                 </h2>
                 <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
@@ -2974,17 +2985,162 @@
               </div>
             </div>
 
+            <!--                  -->
+            <!--                  -->
+            <!--                  -->
+            <!--                  -->
+            <!-- CONTRACT FUNDING -->
+            <div class="govuk-accordion__section sections">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
+                    Contract funding
+                  </span>
+                </h2>
+                <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
+                  Hint text to be confirmed.
+                </div>
+              </div>
+
+              <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content">
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Contract value</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <p class="govuk-body">£31.000,000.00</p>
+                  </div>
+                </div>
+                
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Credit limit vs contract amount</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <p class="govuk-body" style="">
+                      {{govukTag({
+                        text: "5344.83% - RED",
+                        classes: "govuk-tag--red"
+                      })}}
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with credit limit vs contract amount
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Turnover vs contract amount</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <p class="govuk-body" style="">
+                      No data available
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with turnover vs contract amount
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
+                                
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Net worth vs contract amount</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <p class="govuk-body" style="">
+                      {{govukTag({
+                        text: "695.07% - RED",
+                        classes: "govuk-tag--red"
+                      })}}
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with net worth vs contract amount
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: ;">
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Contract funding per employee</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <p class="govuk-body" style="">£30,845.77</p>
+                  </div>
+                </div>
+                
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with contract funding per employee
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
 
 
 
 
 
-
-
-
-
-
-
+              </div>
+            </div>
+ 
           </div>
 
           {% else %}
@@ -3001,6 +3157,7 @@
             <!--                 -->
             <!--                 -->
             <!-- SECTION SUMMARY -->
+             <!--
             <div class="govuk-accordion__section sections">
               <div class="govuk-accordion__section-header" style="">
                 <h2 class="govuk-accordion__section-heading">
@@ -3008,9 +3165,6 @@
                     Summary
                   </span>
                 </h2>
-                <!--<div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
-                  Economic crime checks show information held by Companies House, the Charity Commission and other sources on organisation.
-                </div>-->
               </div>
 
               <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
@@ -3045,6 +3199,7 @@
 
               </div>
             </div>
+            -->
 
             <!--                     -->
             <!--                     -->
@@ -4324,18 +4479,6 @@
               </div>
             </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
             <!--             -->
             <!--             -->
             <!--             -->
@@ -4364,22 +4507,6 @@
               </div>
             </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
             <!--                     -->
             <!--                     -->
             <!--                     -->
@@ -5010,22 +5137,6 @@
               </div>
             </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <!--               -->
             <!--               -->
             <!--               -->
@@ -5185,16 +5296,161 @@
               </div>
             </div>
 
+            <!--                  -->
+            <!--                  -->
+            <!--                  -->
+            <!--                  -->
+            <!-- CONTRACT FUNDING -->
+            <div class="govuk-accordion__section sections">
+              <div class="govuk-accordion__section-header">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
+                    Contract funding
+                  </span>
+                </h2>
+                <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
+                  Hint text to be confirmed.
+                </div>
+              </div>
+
+              <div id="accordion-with-summary-sections-content-2" class="govuk-accordion__section-content">
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Contract value</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <p class="govuk-body">£31.000,000.00</p>
+                  </div>
+                </div>
+                
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Credit limit vs contract amount</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <p class="govuk-body" style="">
+                      {{govukTag({
+                        text: "5344.83% - RED",
+                        classes: "govuk-tag--red"
+                      })}}
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with credit limit vs contract amount
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Turnover vs contract amount</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <p class="govuk-body" style="">
+                      No data available
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with turnover vs contract amount
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
+                                
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Net worth vs contract amount</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <p class="govuk-body" style="">
+                      {{govukTag({
+                        text: "695.07% - RED",
+                        classes: "govuk-tag--red"
+                      })}}
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with net worth vs contract amount
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: ;">
+
+                <!-- DATA ITEM -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
+                    <p class="govuk-heading-s">Contract funding per employee</p>
+                  </div>
+                  <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
+                    <p class="govuk-body" style="">£30,845.77</p>
+                  </div>
+                </div>
+                
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with contract funding per employee
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
 
 
 
 
 
-
-
-
-
-
+              </div>
+            </div>
 
           </div>
 
