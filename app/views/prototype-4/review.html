@@ -13,26 +13,127 @@
 
 {% block content %}
 
-  <div class="govuk-grid-row">
+  <!--     -->
+  <!--     -->
+  <!--     -->
+  <!-- ROW -->
+  <div class="govuk-grid-row">                            
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
         Potential matches for review
       </h1>
 
-      <p>
-        Spotlight has been unable to find an exact match for the records below. Review the records and confirm or reject Spotlight's suggested matches for processing.
-      </p>
+      <p class="govuk-body">Spotlight has identified possible matches for the entity details provided. These potential matches cost 1 credit / £0.50p each in addition to the 2 credits for the main record, although you can “reject” the suggested match(es).</p>
+
+      <p class="govuk-body">Review the list of potential matched entities in the table below. To reject a suggested match, check the box next to the record you do not want to run a check on. The rejected records will be added to a separate spreadsheet that you can access after you have run the checks.</p>
+
+      <p class="govuk-body">When you have completed your selection, click ‘Save and continue’  to proceed to the order summary page which will display the rest of your uploaded records, ready to check.</p>
+
+      <p class="govuk-body">Contact <a href="#">spotlight@cabinetoffice.gov.uk</a> to purchase credits for your account.</p>
 
     </div>
   </div>
 
+  <!--     -->
+  <!--     -->
+  <!--     -->
+  <!-- ROW -->
   <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full" style="margin-bottom:10px">
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+  </div>
+
+  <!--     -->
+  <!--     -->
+  <!--     -->
+  <!-- ROW -->
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-half">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="full">
+          <strong>Search by entity name</strong>
+        </label>
+        <input class="govuk-input govuk-!-width-full" id="full" name="full" type="text">
+      </div>
+    </div>
+
+    <div class="govuk-grid-column-one-half" style="text-align: right;">
+      <p class="govuk-body" style="margin-bottom:0">Your total credits: <strong style="color:#1d70b8">420</strong></p>
+      <p class="govuk-heading-m" style="margin-top:-10px"><strong>This search uses: <span style="color:#00703c">9 credits</span></strong></p>
+    </div>
+ 
+  </div>
+
+  <!--     -->
+  <!--     -->
+  <!--     -->
+  <!-- ROW -->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full" style="margin-top:-15px">
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+  </div>
+
+  <!--     -->
+  <!--     -->
+  <!--     -->
+  <!-- ROW -->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p style="padding-top:7px;">Showing <strong>3</strong> to <strong>3</strong> of <strong>3</strong> potential matches</p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <div class="govuk-form-group">
+        <style>
+          select.govuk-select {
+            min-width:0;
+            width:35%;
+            float:right;
+            margin-left:10px;
+            
+          }
+          .select-label {
+            float:left;
+            width:60%;
+            text-align:right;
+            padding-top:7px;
+          }
+        </style>
+        <label class="govuk-label select-label" for="sort">
+          View per page
+        </label>
+        <select class="govuk-select" id="sort" name="sort">
+          <option value="10">10</option>
+          <option value="20" selected>20</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+
+    </div>
+  </div>
+  
+  <!--     -->
+  <!--     -->
+  <!--     -->
+  <!-- ROW -->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full" style="margin-top:-15px">
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+  </div>
+
+  <!--       -->
+  <!--       -->
+  <!--       -->
+  <!--       -->
+  <!-- TABLE -->
+  <div class="govuk-grid-row">
+
     <div class="govuk-grid-column-full">
-
-
-
-
 
       {% if (data['org-location-for-one'] == "uk") or (data['org-location-for-two-or-more'] == "uk") %}
 
@@ -41,95 +142,104 @@
       <!--            -->
       <!-- UK MATCHES -->
       <p class="govuk-body" style="color:red">UK MATCHES</p>
-      <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--m">Original vs. suggested matches</caption>
+
+      <style>
+        .gov-table__header .app-custom-class {
+          font-size:10px!important;
+        }
+      </style>
+
+      <table class="govuk-table" style="margin-bottom: 0">
+        <!--<caption class="govuk-table__caption govuk-table__caption--m">Month you apply</caption>-->
+        
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Original</th>
-            <th scope="col" class="govuk-table__header">Suggested match</th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="width: 53px; font-size:16px;text-align:center">Reject</th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="width: 65px; font-size:16px">Match score</th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px">Entity name</th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px">City</th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:100px">Postcode</th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:120px">Companies House</th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:120px">Charity Commission</th>
           </tr>
         </thead>
+        
         <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row" style="background-color:rgba(0, 112, 60,.1); border-left:4px solid #005a30; border-right:1px solid #005a30">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center;">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px;visibility: hidden;">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:12px; padding-top:12px"><strong>ORIGINAL MATCHED</strong></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px">Microsoft</td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:16px">Reading</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:100px">RG1 2ED</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:120px">0987654321</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:120px">&mdash;</td>
+          </tr>
+
           <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell">
-
-              <p class="govuk-body-s govuk-!-margin-bottom-2">
-                {% if (data['organisationName'] == "") %}
-                &mdash;
-                {% else %}
-                  {{ data['organisationName'] }}
-                {% endif %}
-              </p>
-
-              <div class="govuk-!-margin-bottom-2">
-                <p class="govuk-body-s govuk-!-margin-bottom-2" style="width:200px; float:left"><img src="/public/img/icon-location.svg" alt="Important icon" style="height:20px; margin-right:2px;vertical-align: middle;"> 
-                  {% if (data['addressTown'] == "") %}
-                  &mdash;
-                  {% else %}
-                    {{ data['addressTown'] }}
-                  {% endif %}  
-                </p>
-                <p class="govuk-body-s govuk-!-margin-bottom-2"><img src="/public/img/icon-world.svg" alt="Important icon" style="height:20px; margin-right:2px;vertical-align: middle;"> 
-                  {% if (data['addressPostcode'] == "Choose") %}
-                  &mdash;
-                  {% else %}
-                    {{ data['addressPostcode'] }}
-                  {% endif %}  
-                </p>
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
               </div>
-
-              <p class="govuk-body-s govuk-!-margin-bottom-2" style="">Companies House <span class="govuk-!-font-weight-bold">
-                {% if (data['companysHouseRegisteredNumber'] == "") %}
-                &mdash;
-                {% else %}
-                  {{ data['companysHouseRegisteredNumber'] }}
-                {% endif %}  
-              </span></p>
-
-              <p class="govuk-body-s govuk-!-margin-bottom-0" style="">Charities Commission <span class="govuk-!-font-weight-bold">
-                {% if (data['charityCommissionRegisteredNumber'] == "") %}
-                &mdash;
-                {% else %}
-                  {{ data['charityCommissionRegisteredNumber'] }}
-                {% endif %}  
-              </span></p>
-
-            </td>
-            <td class="govuk-table__cell">
-
-              <p class="govuk-body-s govuk-!-margin-bottom-2"><img src="/public/img/icon-warning.svg" alt="Important icon" style="height:20px; margin-right:2px;vertical-align: middle;"> [A different name]</p>
-
-              <div class="govuk-!-margin-bottom-2">
-                <p class="govuk-body-s govuk-!-margin-bottom-2" style="width:200px; float:left"><img src="/public/img/icon-tick.svg" alt="Important icon" style="height:20px; margin-right:2px;vertical-align: middle;"> 
-                  {% if (data['addressTown'] == "") %}
-                  &mdash;
-                  {% else %}
-                    {{ data['addressTown'] }}
-                  {% endif %}  
-                </p>
-                <p class="govuk-body-s govuk-!-margin-bottom-2"><img src="/public/img/icon-tick.svg" alt="Important icon" style="height:20px; margin-right:2px;vertical-align: middle;"> 
-                  {% if (data['addressPostcode'] == "Choose") %}
-                  &mdash;
-                  {% else %}
-                    {{ data['addressPostcode'] }}
-                  {% endif %}  
-                </p>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">100%</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px">Microsoft</td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Reading</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">RG1 2ED</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">0987654321</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">&mdash;</td>
+          </tr>
+                    
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
               </div>
-
-              <p class="govuk-body-s govuk-!-margin-bottom-2" style=""><img src="/public/img/icon-warning.svg" alt="Important icon" style="height:20px; margin-right:2px;vertical-align: middle;"> [A different number]</p>
-
-              <p class="govuk-body-s govuk-!-margin-bottom-2" style=""><img src="/public/img/icon-tick.svg" alt="Important icon" style="height:20px; margin-right:2px;vertical-align: middle;"> 
-                {% if (data['charityCommissionRegisteredNumber'] == "") %}
-                &mdash;
-                {% else %}
-                  {{ data['charityCommissionRegisteredNumber'] }}
-                {% endif %}  
-              </p>
-                            
-            </td>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">50%</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><mark>Microsoft Limited</mark></td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Reading</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">RG1 2ED</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px"><mark>&mdash;</mark></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px"><mark>5679001234</mark></td>
+          </tr>
+          
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">10%</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><mark>Microsoft a Gravida</mark></td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px"><mark>Manchester</mark></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px"><mark>MA64 3EG</mark></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px"><mark>1324576809</mark></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">&mdash;</td>
+          </tr>
+          
         </tbody>
+
       </table>
 
+      <p class="govuk-body">This part of the order will use <strong style="color:#00703c">3 credits</strong> and cost <strong style="color:#00703c">£1.50</strong></p>
+      
       {% else %}
 
       <!--                       -->
@@ -137,113 +247,103 @@
       <!--                       -->
       <!-- INTERNATIONAL MATCHES -->
       <p class="govuk-body" style="color:red">INTERNATIONAL MATCHES</p>
-      <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--m">Original vs. suggested matches</caption>
+
+      <style>
+        .gov-table__header .app-custom-class {
+          font-size:10px!important;
+        }
+      </style>
+
+      <table class="govuk-table" style="margin-bottom: 0">
+        <!--<caption class="govuk-table__caption govuk-table__caption--m">Month you apply</caption>-->
+        
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Original</th>
-            <th scope="col" class="govuk-table__header">Suggested match</th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="width: 53px; font-size:16px;text-align:center">Reject</th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="width: 65px; font-size:16px">Match score</th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px">Entity name</th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px">City</th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:100px">Country</th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:120px">D-U-N-S number</th>
           </tr>
         </thead>
+        
         <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row" style="background-color:rgba(0, 112, 60,.1); border-left:4px solid #005a30; border-right:1px solid #005a30">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px;visibility: hidden;">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:12px; padding-top:12px"><strong>ORIGINAL MATCHED</strong></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px">Microsoft</td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:16px">Redmond</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:100px">United States</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:120px">0123456789</td>
+          </tr>
+                              
           <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell">
-
-              <p class="govuk-body-s govuk-!-margin-bottom-2">
-                {% if (data['organisationName'] == "") %}
-                &mdash;
-                {% else %}
-                  {{ data['organisationName'] }}
-                {% endif %}
-              </p>
-
-              <div class="govuk-!-margin-bottom-2">
-                <p class="govuk-body-s govuk-!-margin-bottom-2" style="width:200px; float:left"><img src="/public/img/icon-location.svg" alt="Important icon" style="height:20px; margin-right:2px;vertical-align: middle;"> 
-                  {% if (data['addressTown'] == "") %}
-                  &mdash;
-                  {% else %}
-                    {{ data['addressTown'] }}
-                  {% endif %}  
-                </p>
-                <p class="govuk-body-s govuk-!-margin-bottom-2"><img src="/public/img/icon-world.svg" alt="Important icon" style="height:20px; margin-right:2px;vertical-align: middle;"> 
-                  {% if (data['addressCountry'] == "Choose") %}
-                  &mdash;
-                  {% else %}
-                    {{ data['addressCountry'] }}
-                  {% endif %}  
-                </p>
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
               </div>
-
-              <p class="govuk-body-s govuk-!-margin-bottom-2" style="">Other registration <span class="govuk-!-font-weight-bold">
-                {% if (data['otherRegisteredNumber'] == "") %}
-                &mdash;
-                {% else %}
-                  {{ data['otherRegisteredNumber'] }}
-                {% endif %}  
-              </span></p>
-
-              <p class="govuk-body-s govuk-!-margin-bottom-0" style="">D-U-N-S number <span class="govuk-!-font-weight-bold">
-                {% if (data['dunsNumber'] == "") %}
-                &mdash;
-                {% else %}
-                  {{ data['dunsNumber'] }}
-                {% endif %}  
-
-              </span></p>
-
-            </td>
-            <td class="govuk-table__cell">
-
-              <p class="govuk-body-s govuk-!-margin-bottom-2"><img src="/public/img/icon-warning.svg" alt="Important icon" style="height:20px; margin-right:2px;vertical-align: middle;"> [A different name]</p>
-
-              <div class="govuk-!-margin-bottom-2">
-                <p class="govuk-body-s govuk-!-margin-bottom-2" style="width:200px; float:left"><img src="/public/img/icon-tick.svg" alt="Important icon" style="height:20px; margin-right:2px;vertical-align: middle;"> 
-                  {% if (data['addressTown'] == "") %}
-                  &mdash;
-                  {% else %}
-                    {{ data['addressTown'] }}
-                  {% endif %}  
-                </p>
-                <p class="govuk-body-s govuk-!-margin-bottom-2"><img src="/public/img/icon-tick.svg" alt="Important icon" style="height:20px; margin-right:2px;vertical-align: middle;"> 
-                  {% if (data['addressCountry'] == "Choose") %}
-                  &mdash;
-                  {% else %}
-                    {{ data['addressCountry'] }}
-                  {% endif %}  
-                </p>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">100%</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px">Microsoft</td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Redmond</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">United States</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">0123456790</td>
+          </tr>
+                    
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
               </div>
-              
-              <p class="govuk-body-s govuk-!-margin-bottom-2" style=""><img src="/public/img/icon-tick.svg" alt="Important icon" style="height:20px; margin-right:2px;vertical-align: middle;"> 
-                {% if (data['otherRegisteredNumber'] == "") %}
-                &mdash;
-                {% else %}
-                  {{ data['otherRegisteredNumber'] }}
-                {% endif %}  
-              </p>
-              
-              <p class="govuk-body-s govuk-!-margin-bottom-2" style=""><img src="/public/img/icon-warning.svg" alt="Important icon" style="height:20px; margin-right:2px;vertical-align: middle;"> [A different number]</p>
-              
-            </td>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">50%</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><mark>Microsoft Limited</mark></td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Redmond</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">United States</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px"><mark>5679001234</mark></td>
+          </tr>
+          
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">10%</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><mark>Microsoft a Gravida</mark></td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px"><mark>Sydney</mark></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px"><mark>Australia</mark></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px"><mark>1324576809</mark></td>
+          </tr>
+          
         </tbody>
+
       </table>
+
+      <p class="govuk-body">This part of the order will use <strong style="color:#00703c">3 credits</strong> and cost <strong style="color:#00703c">£1.50</strong></p>
 
       {% endif %}
 
-
-
-
-
-
-      <a href="results"><button type="submit" class="govuk-button" data-module="govuk-button" style="margin-right:15px">
-        Continue with suggested match
-      </button></a>
-
-      <a href="javascript:window.history.back()"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-right:15px">
-        Go back and edit original
-      </button></a>
-
-      <a href="results-history"><button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
-        Reject and return to your checks
+      <a href="order-summary"><button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
       </button></a>
 
     </div>
