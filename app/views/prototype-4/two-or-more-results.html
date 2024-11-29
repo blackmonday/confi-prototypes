@@ -122,16 +122,6 @@
             <div class="govuk-grid-column-two-thirds">
               <p>You can click on an entity to see the results of the checks, or download all selected entities as a Microosoft excel (.xlsx) file.</p>
               
-              <p class="govuk-!-margin-bottom-2 govuk-heading-s">Download threat summary</p>
-              <div class="parent" style="width:100%; height=50px;display:flex">
-                <div class="child1 govuk-!-margin-right-3">
-                  <img src="/public/img/icon-document.svg" alt="Document icon">
-                </div>
-                <div class="child2">
-                  <p class="govuk-body govuk-!-margin-bottom-0"><a href class="govuk-link">Download results in XLSX format</a></p>
-                  <p class="govuk-body">MS Excel Spreadsheet, 2mb</p>
-                </div>
-              </div> 
             </div>
             <div class="govuk-grid-column-one-third" style="text-align: right;">
               {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -145,10 +135,31 @@
           
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
+          
+
+
+
+
+
+
+
+
+          <!--       -->
+          <!--       -->
+          <!--       -->
+          <!-- ROW 1 -->
           <div class="govuk-grid-row">
-            <div class="govuk-grid-column-one-half">
-              <p style="margin-bottom:15px">Showing 5 results</p>
-              <p>Last upload: 2 new entities added on 30 Oct 2024</p>
+            <div class="govuk-grid-column-one-half">              
+              <p class="govuk-!-margin-bottom-2 govuk-heading-s">Download threat summary</p>
+              <div class="parent" style="width:100%; height=50px;display:flex">
+                <div class="child1 govuk-!-margin-right-3">
+                  <img src="/public/img/icon-document.svg" alt="Document icon">
+                </div>
+                <div class="child2">
+                  <p class="govuk-body govuk-!-margin-bottom-0"><a href class="govuk-link">Download results in XLSX format</a></p>
+                  <p class="govuk-body">MS Excel Spreadsheet, 2mb</p>
+                </div>
+              </div> 
             </div>
             <div class="govuk-grid-column-one-half">
               <div class="govuk-form-group">
@@ -156,10 +167,57 @@
                   Search entity name or date checked
                 </label>
                 <input class="govuk-input" id="event-name" name="eventName" type="text">
-
               </div>              
             </div>
           </div>
+
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+          <!--       -->
+          <!--       -->
+          <!--       -->
+          <!-- ROW 2 -->
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <p style="padding-top:7px;">Showing <strong>5</strong> to <strong>5</strong> of <strong>5</strong> check results</p>
+            </div>
+            <div class="govuk-grid-column-one-third">
+              <div class="govuk-form-group">
+                <style>
+                  select.govuk-select {
+                    min-width:0;
+                    width:35%;
+                    float:right;
+                    margin-left:10px;
+                    
+                  }
+                  .select-label {
+                    float:left;
+                    width:60%;
+                    text-align:right;
+                    padding-top:7px;
+                  }
+                </style>
+                <label class="govuk-label select-label" for="sort">
+                  View per page
+                </label>
+                <select class="govuk-select" id="sort" name="sort">
+                  <option value="10">10</option>
+                  <option value="20" selected>20</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                </select>
+              </div>
+
+            </div>
+          </div>
+
+
+
+
+
+
+
           
           <!--         -->
           <!--         -->
