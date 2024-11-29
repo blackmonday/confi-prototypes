@@ -27,13 +27,17 @@
   </div>
 </div>
 
-{% if (data['org-location-for-one'] == "uk") or (data['org-location-for-two-or-more'] == "uk") %}
+
+
+
+
+{% if (data['org-location-for-one'] == "uk") %}
 
 <!--            -->
 <!--            -->
 <!--            -->
 <!-- UK MATCHES -->
-<p class="govuk-body" style="color:red">UK MATCHES</p>
+<p class="govuk-body" style="color:red">UK - ONE ENTITY</p>
 
 <div class="govuk-grid-row">
 
@@ -86,13 +90,15 @@
 
 </div>
 
-{% else %}
+{% endif %}
 
-<!--                       -->
-<!--                       -->
-<!--                       -->
-<!-- INTERNATIONAL MATCHES -->
-<p class="govuk-body" style="color:red">INTERNATIONAL MATCHES</p>
+
+
+
+
+{% if (data['org-location-for-two-or-more'] == "uk") %}
+
+<p calss="govuk-heading-l" style="color:red">UK - TWO OR MORE ENTITIES COMING SOON</p>
 
 <div class="govuk-grid-row">
 
@@ -122,7 +128,7 @@
   <div class="govuk-grid-column-one-third">
     <div style="text-align:center;background-color:#f47738;padding: 30px">
       <h1 class="govuk-heading-l" style="color:#ffffff">
-        0
+        5
       </h1>
   
       <p class="govuk-caption-l" style="color:#ffffff">Suggested entities were rejected by the user</p>
@@ -138,7 +144,153 @@
       {{ govukButton({
         text: "View rejected records",
         classes: "govuk-button--secondary",
+        href:""
+      }) }}
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-one-third">                              
+    <div style="text-align:center;background-color:#A22A1A;padding:30px">
+      <h1 class="govuk-heading-l" style="color:#ffffff">
+        0
+      </h1>
+  
+      <p class="govuk-caption-l" style="color:#ffffff">Records failed to load into spotlight<br /><span style="visibility: hidden">.</span></p>
+
+      <hr class="govuk-section-break govuk-section-break--visible" style="padding-top:30px">
+
+      <p class="govuk-body-s" style="color:#ffffff; margin-top:30px">Click below to see why these applicants failed to load, and correct them</p>
+    </div>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    <div style="text-align: right; margin-top:15px">
+      {{ govukButton({
+        text: "View and correct errors",
+        classes: "govuk-button--secondary",
         disabled: true
+      }) }}
+    </div>
+  </div>
+
+</div>
+                 
+{% endif %}
+
+
+
+
+
+{% if (data['org-location-for-one'] == "international") %}
+
+<p calss="govuk-heading-l" style="color:red">INTERNATIONAL - ONE ENTITY</p>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-half">
+    <div style="text-align:center;background-color:#21703F;padding:30px">
+      <h1 class="govuk-heading-l" style="color:#ffffff">
+        3
+      </h1>
+  
+      <p class="govuk-caption-l" style="color:#ffffff">Entities were checked for Economic crime and national security </p>
+
+      <hr class="govuk-section-break govuk-section-break--visible" style="padding-top:30px">
+
+      <p style="color:#ffffff; margin-top:30px"><a href="#" style="color:#ffdd00">Click here to download successful records for storing offline</a></p>
+    </div>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    <div style="text-align: right; margin-top:15px">
+      {{ govukButton({
+        text: "View results",
+        href:"two-or-more-results"
+      }) }}
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+    <div style="text-align:center;background-color:#f47738;padding:30px">
+      <h1 class="govuk-heading-l" style="color:#ffffff">
+        0
+      </h1>
+  
+      <p class="govuk-caption-l" style="color:#ffffff">Suggested entities were rejected by the user</p>
+      
+      <hr class="govuk-section-break govuk-section-break--visible" style="padding-top:30px">
+
+      <p style="color:#ffffff; margin-top:30px">Click below  to download the rejected records for your auditing purposes</p>
+    </div>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    <div style="text-align: right; margin-top:15px">
+      {{ govukButton({
+        text: "View and correct errors",
+        classes: "govuk-button--secondary",
+        disabled: true
+      }) }}
+    </div>
+  </div>
+
+</div>
+
+{% endif %}
+
+
+
+
+
+{% if (data['org-location-for-two-or-more'] == "international") %}
+
+<p class="govuk-body" style="color:red">INTERNATIONAL - TWO OR MORE</p>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+    <div style="text-align:center;background-color:#21703F;padding:30px">
+      <h1 class="govuk-heading-l" style="color:#ffffff">
+        3
+      </h1>
+  
+      <p class="govuk-caption-l" style="color:#ffffff">Entities were checked for Economic crime and national security</p>
+
+      <hr class="govuk-section-break govuk-section-break--visible" style="padding-top:30px">
+
+      <p class="govuk-body-s" style="color:#ffffff; margin-top:30px"><a href="#" style="color:#ffdd00">Click here to download successful records for storing offline</a><br /><span style="visibility: hidden">.</span></p>
+    </div>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    <div style="text-align: right; margin-top:15px">
+      {{ govukButton({
+        text: "View results",
+        href:"two-or-more-results"
+      }) }}
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <div style="text-align:center;background-color:#f47738;padding: 30px">
+      <h1 class="govuk-heading-l" style="color:#ffffff">
+        5
+      </h1>
+  
+      <p class="govuk-caption-l" style="color:#ffffff">Suggested entities were rejected by the user</p>
+
+      <hr class="govuk-section-break govuk-section-break--visible" style="padding-top:30px">
+
+      <p class="govuk-body-s" style="color:#ffffff; margin-top:30px">Click below  to download the rejected records for your auditing purposes</p>
+    </div>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    <div style="text-align: right; margin-top:15px">
+      {{ govukButton({
+        text: "View rejected records",
+        classes: "govuk-button--secondary",
+        href:""
       }) }}
     </div>
   </div>
@@ -170,6 +322,10 @@
 </div>
 
 {% endif %}
+
+
+    
+
 
 
 <p class="govuk-body-s" style="font-size: 9px; color:	#b1b4b6">PROTOTYPE VERSION: {{ data['which-prototype'] }}</p>
