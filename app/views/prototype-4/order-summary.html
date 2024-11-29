@@ -129,145 +129,306 @@
 
     <div class="govuk-grid-column-full">
 
-      {% if (data['org-location-for-one'] == "uk") or (data['org-location-for-two-or-more'] == "uk") %}
 
-      <!--            -->
-      <!--            -->
-      <!--            -->
-      <!-- UK MATCHES -->
-      <p class="govuk-body" style="color:red">UK MATCHES</p>
 
-      <style>
-        .gov-table__header .app-custom-class {
-          font-size:10px!important;
-        }
-      </style>
 
-      <table class="govuk-table">
-        <!--<caption class="govuk-table__caption govuk-table__caption--m">Month you apply</caption>-->
-        
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header app-custom-class" style="width: 53px; font-size:16px;">Remove</th>
-            <th scope="col" class="govuk-table__header app-custom-class" style="width: 65px; font-size:16px">Match score</th>
-            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px">Entity name</th>
-            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px">City</th>
-            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:100px">Postcode</th>
-            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:120px">Companies House</th>
-            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:120px">Charity Commission</th>
-          </tr>
-        </thead>
-        
-        <tbody>
+      <!--        -->
+      <!--        -->
+      <!--        -->
+      <!-- UK ONE -->
+      {% if (data['org-location-for-one'] == "uk") %}
 
-          <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell" style="width: 53px; font-size:16px; padding-top:12px">
-              <a href="#">Remove</a>
-            </td>
-            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">100%</td>
-            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><a href="#">Microsoft</a></td>
-            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Reading</td>
-            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">RG1 2ED</td>
-            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">0987654321</td>
-            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">&mdash;</td>
-          </tr>
-                    
-          <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell" style="width: 53px; font-size:16px; padding-top:12px">
-              <a href="#">Remove</a>
-            </td>
-            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">50%</td>
-            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><a href="#">Microsoft Limited</a></td>
-            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Reading</td>
-            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">RG1 2ED</td>
-            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">&mdash;</td>
-            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">5679001234</td>
-          </tr>
+
+        <!--<p class="govuk-body" style="color:red">UK1</p>-->
+
+        <style>
+          .gov-table__header .app-custom-class {
+            font-size:10px!important;
+          }
+        </style>
+
+        <table class="govuk-table">
+          <!--<caption class="govuk-table__caption govuk-table__caption--m">Month you apply</caption>-->
           
-          <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell" style="width: 53px; font-size:16px; padding-top:12px">
-              <a href="#">Remove</a>
-            </td>
-            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">10%</td>
-            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><a href="#">Microsoft a Gravida</a></td>
-            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Manchester</td>
-            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">MA64 3EG<</td>
-            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">1324576809</td>
-            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">&mdash;</td>
-          </tr>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header app-custom-class" style="width: 53px; font-size:16px;">Remove</th>
+              <th scope="col" class="govuk-table__header app-custom-class" style="width: 65px; font-size:16px">Match score</th>
+              <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px">Entity name</th>
+              <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px">City</th>
+              <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:100px">Postcode</th>
+              <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:120px">Companies House</th>
+              <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:120px">Charity Commission</th>
+            </tr>
+          </thead>
           
-        </tbody>
+          <tbody>
 
-      </table>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell" style="width: 53px; font-size:16px; padding-top:12px">
+                <a href="#">Remove</a>
+              </td>
+              <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">100%</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><a href="#">Microsoft</a></td>
+              <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Reading</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">RG1 2ED</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">0987654321</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">&mdash;</td>
+            </tr>
+                      
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell" style="width: 53px; font-size:16px; padding-top:12px">
+                <a href="#">Remove</a>
+              </td>
+              <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">50%</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><a href="#">Microsoft Limited</a></td>
+              <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Reading</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">RG1 2ED</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">&mdash;</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">5679001234</td>
+            </tr>
+            
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell" style="width: 53px; font-size:16px; padding-top:12px">
+                <a href="#">Remove</a>
+              </td>
+              <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">10%</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><a href="#">Microsoft a Gravida</a></td>
+              <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Manchester</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">MA64 3EG</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">1324576809</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">&mdash;</td>
+            </tr>
+            
+          </tbody>
+
+        </table>
       
-      {% else %}
+      {% endif %}
 
-      <!--                       -->
-      <!--                       -->
-      <!--                       -->
-      <!-- INTERNATIONAL MATCHES -->
-      <p class="govuk-body" style="color:red">INTERNATIONAL MATCHES</p>
 
-      <style>
-        .gov-table__header .app-custom-class {
-          font-size:10px!important;
-        }
-      </style>
 
-      <table class="govuk-table">
-        <!--<caption class="govuk-table__caption govuk-table__caption--m">Month you apply</caption>-->
-        
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header app-custom-class" style="width: 53px; font-size:16px;">Remove</th>
-            <th scope="col" class="govuk-table__header app-custom-class" style="width: 65px; font-size:16px">Match score</th>
-            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px">Entity name</th>
-            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px">City</th>
-            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:100px">Country</th>
-            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:120px">D-U-N-S number</th>
-          </tr>
-        </thead>
-        
-        <tbody>
 
-          <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell" style="width: 53px; font-size:16px; padding-top:12px">
-              <a href="#">Remove</a>
-            </td>
-            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">100%</td>
-            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><a href="#">Microsoft</a></td>
-            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Redmond</td>
-            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">United States</td>
-            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">0123456790</td>
-          </tr>
-                    
-          <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell" style="width: 53px; font-size:16px; padding-top:12px">
-              <a href="#">Remove</a>
-            </td>
-            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">95%</td>
-            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><a href="#">BYD Company Limited</a></td>
-            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Shenzen</td>
-            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">China</td>
-            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">4523896701</td>
-          </tr>
+      <!--                   -->
+      <!--                   -->
+      <!--                   -->
+      <!-- INTERNATIONAL ONE -->
+      {% if (data['org-location-for-one'] == "international") %}
+
+        <!--<p class="govuk-body" style="color:red">INT1</p>-->
+
+        <style>
+          .gov-table__header .app-custom-class {
+            font-size:10px!important;
+          }
+        </style>
+
+        <table class="govuk-table">
+          <!--<caption class="govuk-table__caption govuk-table__caption--m">Month you apply</caption>-->
           
-          <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__cell" style="width: 53px; font-size:16px; padding-top:12px">
-              <a href="#">Remove</a>
-            </td>
-            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">100%</td>
-            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><a href="#">Deep Cool</a></td>
-            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Beijing</td>
-            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">China</td>
-            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">0123456790</td>
-          </tr>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header app-custom-class" style="width: 53px; font-size:16px;">Remove</th>
+              <th scope="col" class="govuk-table__header app-custom-class" style="width: 65px; font-size:16px">Match score</th>
+              <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px">Entity name</th>
+              <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px">City</th>
+              <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:100px">Country</th>
+              <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:120px">D-U-N-S number</th>
+            </tr>
+          </thead>
           
-        </tbody>
+          <tbody>
 
-      </table>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell" style="width: 53px; font-size:16px; padding-top:12px">
+                <a href="#">Remove</a>
+              </td>
+              <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">100%</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><a href="#">Microsoft</a></td>
+              <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Redmond</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">United States</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">0123456790</td>
+            </tr>
+                      
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell" style="width: 53px; font-size:16px; padding-top:12px">
+                <a href="#">Remove</a>
+              </td>
+              <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">50%</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><a href="#">Microsoft Limited</a></td>
+              <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Redmond</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">United States</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">5679001234</td>
+            </tr>
+            
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell" style="width: 53px; font-size:16px; padding-top:12px">
+                <a href="#">Remove</a>
+              </td>
+              <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">10%</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><a href="#">Microsoft a Gravida</a></td>
+              <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Sydney</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">Australia</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">1324576809</td>
+            </tr>
+            
+          </tbody>
+
+        </table>
 
       {% endif %}
+
+
+
+
+      <!--               -->
+      <!--               -->
+      <!--               -->
+      <!-- UK TWO OR MORE-->
+      {% if (data['org-location-for-two-or-more'] == "uk") %}
+
+        <!--<p class="govuk-body" style="color:red">UK2</p>-->
+
+        <style>
+          .gov-table__header .app-custom-class {
+            font-size:10px!important;
+          }
+        </style>
+
+        <table class="govuk-table">
+          <!--<caption class="govuk-table__caption govuk-table__caption--m">Month you apply</caption>-->
+          
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header app-custom-class" style="width: 53px; font-size:16px;">Remove</th>
+              <th scope="col" class="govuk-table__header app-custom-class" style="width: 65px; font-size:16px">Match score</th>
+              <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px">Entity name</th>
+              <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px">City</th>
+              <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:100px">Postcode</th>
+              <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:120px">Companies House</th>
+              <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:120px">Charity Commission</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell" style="width: 53px; font-size:16px; padding-top:12px">
+                <a href="#">Remove</a>
+              </td>
+              <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">100%</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><a href="#">Microsoft</a></td>
+              <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Reading</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">RG1 2ED</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">0987654321</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">&mdash;</td>
+            </tr>
+                      
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell" style="width: 53px; font-size:16px; padding-top:12px">
+                <a href="#">Remove</a>
+              </td>
+              <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">50%</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><a href="#">Google UK Limited</a></td>
+              <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">London</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">SW1W 9TQ</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">03977902</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">&mdash;</td>
+            </tr>
+            
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell" style="width: 53px; font-size:16px; padding-top:12px">
+                <a href="#">Remove</a>
+              </td>
+              <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">10%</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><a href="#">TVR Automotive Limited</a></td>
+              <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Swindon</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">SN2 2GA</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">05449931	</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">&mdash;</td>
+            </tr>
+            
+          </tbody>
+
+        </table>
+
+      {% endif %}
+
+
+
+
+      <!--                           -->
+      <!--                           -->
+      <!--                           -->
+      <!-- INTERNATIONAL TWO OR MORE -->
+      {% if (data['org-location-for-two-or-more'] == "international") %}
+
+        <!--<p class="govuk-body" style="color:red">INT2</p>-->
+
+        <style>
+          .gov-table__header .app-custom-class {
+            font-size:10px!important;
+          }
+        </style>
+
+        <table class="govuk-table">
+          <!--<caption class="govuk-table__caption govuk-table__caption--m">Month you apply</caption>-->
+          
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header app-custom-class" style="width: 53px; font-size:16px;">Remove</th>
+              <th scope="col" class="govuk-table__header app-custom-class" style="width: 65px; font-size:16px">Match score</th>
+              <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px">Entity name</th>
+              <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px">City</th>
+              <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:100px">Country</th>
+              <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:120px">D-U-N-S number</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell" style="width: 53px; font-size:16px; padding-top:12px">
+                <a href="#">Remove</a>
+              </td>
+              <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">100%</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><a href="#">Microsoft</a></td>
+              <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Redmond</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">United States</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">0123456790</td>
+            </tr>
+                      
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell" style="width: 53px; font-size:16px; padding-top:12px">
+                <a href="#">Remove</a>
+              </td>
+              <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">95%</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><a href="#">BYD Company Limited</a></td>
+              <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Shenzen</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">China</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">4523896701</td>
+            </tr>
+            
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell" style="width: 53px; font-size:16px; padding-top:12px">
+                <a href="#">Remove</a>
+              </td>
+              <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">100%</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><a href="#">Deep Cool</a></td>
+              <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Beijing</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">China</td>
+              <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">0123456790</td>
+            </tr>
+            
+          </tbody>
+
+        </table>
+
+      {% endif %}
+
+
+
+
 
       <p class="govuk-body">This part of the order will use <strong style="color:#00703c">9 credits</strong> and cost <strong style="color:#00703c">£4.50</strong></p>
 

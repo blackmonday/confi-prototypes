@@ -161,13 +161,227 @@
             </div>
           </div>
           
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
+          <!--         -->
+          <!--         -->
+          <!--         -->
+          <!-- FILTERS -->
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
 
+              <!--                -->
+              <!--                -->
+              <!--                -->
+              <!-- FILTERS STYLES -->
+              <style>
+                .filters .govuk-accordion__controls {
+                  display:none;
+                }
+                .filters {
+                  /*
+                  background:rgb(243, 242, 241, .5);
+                  border:1px solid #b1b4b6	;
+                  border-top:none;
+                  padding-left:15px;
+                  padding-right:15px;
+                  */
+                }
+                .filters .govuk-accordion__section-headingheader {
+                  border-top:none;
+                }
+                .filters .govuk-accordion__section-header {
+                  margin-left:-15px;
+                  margin-right:-15px;
+                }
+                .filters .govuk-accordion__section-button {
+                  padding-left:15px;
+                  padding-right:15px;
+                  border:0;
+                }
+                .filters .govuk-checkboxes__item {
+                  margin-bottom:-10px;
+                }
+                .filters .govuk-fieldset__legend {
+                  margin-bottom:0px;
+                }
+                .filters .govuk-accordion__section-heading {
+                  /*margin-bottom: -30px;*/
+                }
+                .filter-tag {
+                  border:1px solid #b1b4b6;
+                  padding:4px 8px 4px 8px;
+                  margin-right:10px;
+                  background:#ffffff;
+                }
+                .filter-tag:hover {
+                  background:#f3f2f1;
+                }
+              </style>
+            
+              <div class="govuk-accordion filters" data-module="govuk-accordion" id="accordion-with-summary-sections">
+                <div class="govuk-accordion__section">
+
+                  <!--                -->
+                  <!--                -->
+                  <!--                -->
+                  <!--                -->
+                  <!-- FILTERS HEADER -->
+                  <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                      <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
+                        <!-- HEADER -->
+                        <span style="margin-right:10px">Filters in use:</span>
+                        <!-- FILTER -->
+                        <span class="filter-tag govuk-body-s">Showing all checks</span>
+                        <!-- FILTER -->
+                        <!--<span class="filter-tag govuk-body-s">Lorem ipsum<img src="/public/img/icon-close.svg" alt="Important icon" style="vertical-align: middle;margin-left:5px"></span>-->
+                        <!-- FILTER -->
+                        <!--<span class="filter-tag govuk-body-s">Dolor sit<img src="/public/img/icon-close.svg" alt="Important icon" style="vertical-align: middle;margin-left:5px"></span>-->
+                        <!-- FILTER -->
+                        <!--<span class="filter-tag govuk-body-s">Amet<img src="/public/img/icon-close.svg" alt="Important icon" style="vertical-align: middle;margin-left:5px"></span>-->
+                      </span>
+                    </h2>
+                    <!--
+                    <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+                      Hint text to be confirmed.
+                    </div>
+                    -->
+                  </div>
+
+                  <!-- FILTERS - 3-COL VERSION -->
+                  <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content govuk-!-padding-bottom-0">
+
+                    <div class="govuk-grid-row">
+
+                      <!--                  -->
+                      <!--                  -->
+                      <!--                  -->
+                      <!--                  -->
+                      <!-- FILTERS COLUMN 1 -->
+                      <div class="govuk-grid-column-full">
+
+                        <div class="govuk-form-group" style="float:left; margin-right:15px">
+                          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                            <legend class="govuk-fieldset__legend govuk-!-margin-bottom-1">
+                              <strong>Date last checked from</strong>
+                            </legend>
+                            <!--<div id="passport-issued-hint" class="govuk-hint">
+                              For example, 27 3 2007
+                            </div>-->
+                            <div class="govuk-date-input" id="passport-issued">
+                              <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                    Day
+                                  </label>
+                                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                                </div>
+                              </div>
+                              <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                    Month
+                                  </label>
+                                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                                </div>
+                              </div>
+                              <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                    Year
+                                  </label>
+                                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                                </div>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+
+                        <div class="govuk-form-group" style="float:left">
+                          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                            <legend class="govuk-fieldset__legend govuk-!-margin-bottom-1">
+                              <strong>Date last checked to</strong>
+                            </legend>
+                            <!--<div id="passport-issued-hint" class="govuk-hint">
+                              For example, 27 3 2007
+                            </div>-->
+                            <div class="govuk-date-input" id="passport-issued">
+                              <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                    Day
+                                  </label>
+                                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                                </div>
+                              </div>
+                              <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                    Month
+                                  </label>
+                                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                                </div>
+                              </div>
+                              <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                    Year
+                                  </label>
+                                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                                </div>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                    <div class="govuk-grid-row">
+
+                      <div class="govuk-grid-column-full">
+                        {% from "govuk/components/button/macro.njk" import govukButton %}
+                        <div class="govuk-button-group">
+                          {{ govukButton({
+                            text: "Apply filters"
+                          }) }}
+                          <a class="govuk-link" href="#">Clear all filters</a>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!--                  -->
+          <!--                  -->
+          <!--                  -->
+          <!-- RECORDS SELECTED -->
+          <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-full" style="margin-top:-10px; background-color:#f3f2f1; padding-top:8px; height:40px;border-top:2px solid #0b0c0c; border-bottom:1px solid #0b0c0c; margin-left:15px; width:97%">
+              <img src="/public/img/icon-info-small.svg" alt="Info icon" style="float:left; margin-right:5px">
+              <p class="govuk-body-s" style="float:left;padding-top:1px">0 records selected</p>
+            </div>
+
+          </div>
+          
+
+          <!--       -->
+          <!--       -->
+          <!--       -->
+          <!-- TABLE -->
+          <div class="govuk-grid-row" >
+
+            <div class="govuk-grid-column-full">
+
               <table class="govuk-table">
-                <caption class="govuk-table__caption govuk-table__caption--m">Previous checks</caption>
+                <!--<caption class="govuk-table__caption govuk-table__caption--m">Previous checks</caption>-->
                 
                 <!--            -->
                 <!--            -->
@@ -175,7 +389,8 @@
                 <!-- HEADER ROW -->
                 <thead class="govuk-table__head">
                   <tr class="govuk-table__row">
-                    <th scope="col"  class="govuk-table__cell govuk-body-s" style="width:30px; padding-bottom:0px">
+
+                    <th scope="col"  class="govuk-table__cell govuk-body-s" style="padding-bottom:0px">
                       <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item">
                           <input class="govuk-checkboxes__input" id="xxx" name="xxx" type="checkbox" value="aaa">
@@ -183,20 +398,26 @@
                         </div>
                       </div>
                     </th>
-                    <th scope="col" class="govuk-table__header app-custom-class govuk-body-s" style="width:300px;vertical-align:middle; padding-bottom:0px"><a href="">Entity name <img src="/public/img/icon-sort-inactive.svg" alt="Document icon"></a></th>
-                    <th scope="col" class="govuk-table__header app-custom-class govuk-body-s" style="width:225px;vertical-align:middle; padding-bottom:0px"><a href="">Date checked <img src="/public/img/icon-sort-up.svg" alt="Document icon"></a></th>
-                    <!--<th scope="col" class="govuk-table__header app-custom-class govuk-body-s">Amount requested</th>-->
-                    <!--<th scope="col" class="govuk-table__header app-custom-class govuk-body-s">Due diligence check result</th>-->
+
+                    <th scope="col" class="govuk-table__header app-custom-class govuk-body-s" style="vertical-align:middle; padding-bottom:7px"><a href="">Entity name <img src="/public/img/icon-sort-inactive.svg" alt="Document icon"></a></th>
+
+                    <th scope="col" class="govuk-table__header app-custom-class govuk-body-s" style="vertical-align:middle; padding-bottom:7px"><a href="">Date checked <img src="/public/img/icon-sort-up.svg" alt="Document icon"></a></th>
+
+                    <th scope="col" class="govuk-table__header app-custom-class govuk-body-s" style="vertical-align:middle; padding-bottom:7px"><a href="">Check type <img src="/public/img/icon-sort-inactive.svg" alt="Document icon"></a></th>
+
+                    <th scope="col" class="govuk-table__header app-custom-class govuk-body-s" style="vertical-align:middle; padding-bottom:7px;visibility:hidden"><a href="#">Remove</a></th>
+
                   </tr>
                 </thead>
 
                 <tbody class="govuk-table__body">
 
-                  <!--           -->
-                  <!--           -->
-                  <!--           -->
-                  <!-- TABLE ROW -->
+                  <!--                 -->
+                  <!--                 -->
+                  <!--                 -->
+                  <!-- TABLE ROW NEW 1 -->
                   <tr class="govuk-table__row" >
+
                     <td scope="row" class="govuk-table__cell govuk-body-s" style="width:30px">
                       <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item">
@@ -205,79 +426,185 @@
                         </div>
                       </div>
                     </td>
-                    <!--<td class="govuk-table__cell govuk-body-s" style="width:60px">
-                      <label class="switch" style="margin-top:8px">
-                        <input type="checkbox" style="display:none">
-                        <span class="slider round"></span>
-                      </label>
-                    </td>-->
+
                     <td class="govuk-table__cell govuk-body-s" style="padding-top:20px;width:300px">
-                      <p class="govuk-body-s"><a href="/prototype-4/results?organisationName=Microsoft&companysHouseRegisteredNumber=01624297&charityCommissionRegisteredNumber=—&addressLine1=Microsoft Campus&addressLine2=Thames Valley Park&addressTown=Reading&addressCounty=Berkshire&addressPostcode=RG6 1WG&org-location-for-two-or-more=uk">Microsoft [UK]</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong></p>
-                      <!--<p class="govuk-body-s" style="margin-top:-10px">Awarded: No</p>-->
+                      <p class="govuk-body-s">
+                        
+                        {% if (data['org-location-for-one'] == "uk") %}
+
+                         <a href="/prototype-4/results?organisationName=Microsoft&companysHouseRegisteredNumber=0987654321&charityCommissionRegisteredNumber=—&addressLine1=Microsoft Campus&addressLine2=Thames Valley Park&addressTown=Reading&addressCounty=Berkshire&addressPostcode=RG1 2ED&org-location-for-two-or-more=uk">Microsoft</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
+
+                        {% endif %}
+                     
+                        {% if (data['org-location-for-two-or-more'] == "uk") %}
+
+                         <a href="/prototype-4/results?organisationName=Microsoft&companysHouseRegisteredNumber=0987654321&charityCommissionRegisteredNumber=—&addressLine1=Microsoft Campus&addressLine2=Thames Valley Park&addressTown=Reading&addressCounty=Berkshire&addressPostcode=RG1 2ED&org-location-for-two-or-more=uk">Microsoft</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
+
+                        {% endif %}
+                     
+                        {% if (data['org-location-for-one'] == "international") %}
+
+                          <a href="/prototype-4/results?organisationName=Microsoft&addressLine1=Microsoft Campus&addressLine2=-&addressTown=Redmond&addressCountry=United States&telephoneNumber=-&emailAddress=contact@microsoft.com&otherRegisteredNumber=-&dunsNumber=0123456790&org-location-for-two-or-more=international">Microsoft</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
+
+                        {% endif %}
+
+                        {% if (data['org-location-for-two-or-more'] == "international") %}
+
+                          <a href="/prototype-4/results?organisationName=Microsoft&addressLine1=Microsoft Campus&addressLine2=-&addressTown=Redmond&addressCountry=United States&telephoneNumber=-&emailAddress=contact@microsoft.com&otherRegisteredNumber=-&dunsNumber=0123456790&org-location-for-two-or-more=international">Microsoft</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
+
+                        {% endif %}
+
+                      </p>
                     </td>
+
                     <td class="govuk-table__cell govuk-body-s" style="padding-top:20px" style="width:225px">30 Oct 2024, 07:30</td>
-                    <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">£ 3,000,000</td>-->
-                    <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Know your applicant
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          <span style="color:#005a30">2 low</span><br />
-                          <span style="color:#f47738">1 medium</span><br />
-                          <span style="color:#852414">1 high</span>
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Companies House<br />
-                          <span style="font-size:12px">#01624297</span>
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          <span style="color:#005a30">5 low</span><br />
-                          <span style="color:#f47738">0 medium</span><br />
-                          <span style="color:#852414">0 high</span>
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Charity Commission
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          Not applicable
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Other funding (GGIS, CaSIE, 360 giving)
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          No
+
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px">
+                      
+                      {% if (data['org-location-for-one'] == "uk") or (data['org-location-for-two-or-more'] == "uk") %}
+
+                        Domestic
+
+                      {% else %}
+
+                        International
+
+                      {% endif %}
+                  
+                    </td>
+
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px"><a href="#">remove</a></td>
+
+                  </tr>
+
+                  <!--                 -->
+                  <!--                 -->
+                  <!--                 -->
+                  <!-- TABLE ROW NEW 2 -->
+                  <tr class="govuk-table__row" >
+
+                    <td scope="row" class="govuk-table__cell govuk-body-s" style="width:30px">
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="xxx" name="xxx" type="checkbox" value="aaa">
+                          <label class="govuk-label govuk-checkboxes__label" for="waste"></label>
                         </div>
                       </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Other applications (Spotlight)
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          Yes
+                    </td>
+
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px;width:300px">
+                      <p class="govuk-body-s">
+                        
+                        {% if (data['org-location-for-one'] == "uk") %}
+
+                         <a href="/prototype-4/results?organisationName=Microsoft&companysHouseRegisteredNumber=0987654321&charityCommissionRegisteredNumber=—&addressLine1=Microsoft Campus&addressLine2=Thames Valley Park&addressTown=Reading&addressCounty=Berkshire&addressPostcode=RG1 2ED">Microsoft Limited</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
+
+                        {% endif %} 
+                            
+                        {% if (data['org-location-for-two-or-more'] == "uk") %}
+
+                          <a href="/prototype-4/results?organisationName=Google UK Limited&companysHouseRegisteredNumber=03977902&charityCommissionRegisteredNumber=—&addressLine1=1 St. Giles High Street&addressLine2=-&addressTown=London&addressCounty=-&addressPostcode=WC2H 8AG">Google UK Limited</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
+
+                        {% endif %}
+
+                        {% if (data['org-location-for-one'] == "international") %}
+
+                          <a href="/prototype-4/results?organisationName=Microsoft&addressLine1=Microsoft Campus&addressLine2=-&addressTown=Redmond&addressCountry=United States&telephoneNumber=-&emailAddress=contact@microsoft.com&otherRegisteredNumber=-&dunsNumber=0123456790&org-location-for-two-or-more=international">Microsoft Limited</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
+
+                        {% endif %}
+
+                        {% if (data['org-location-for-two-or-more'] == "international") %}
+
+                          <a href="/prototype-4/results?organisationName=BYD Company Limited&addressLine1=Pingshan District&addressLine2=Shenzen&addressTown=Guangdong&addressCountry=China&telephoneNumber=-&emailAddress=-&otherRegisteredNumber=-&dunsNumber=4523896701 ">BYD Company Limited</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
+
+                        {% endif %}
+
+                      </p>
+                    </td>
+
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px" style="width:225px">30 Oct 2024, 07:30</td>
+
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px">
+                      
+                      {% if (data['org-location-for-one'] == "uk") or (data['org-location-for-two-or-more'] == "uk") %}
+
+                        Domestic
+
+                      {% else %}
+
+                        International
+
+                      {% endif %}
+                  
+                    </td>
+
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px"><a href="#">remove</a></td>
+
+                  </tr>
+
+                  <!--                 -->
+                  <!--                 -->
+                  <!--                 -->
+                  <!-- TABLE ROW NEW 3 -->
+                  <tr class="govuk-table__row" >
+
+                    <td scope="row" class="govuk-table__cell govuk-body-s" style="width:30px">
+                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="xxx" name="xxx" type="checkbox" value="aaa">
+                          <label class="govuk-label govuk-checkboxes__label" for="waste"></label>
                         </div>
                       </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Similarities
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          <span style="color:#005a30">Low</span>
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                     </td>-->
+                    </td>
+
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px;width:300px">
+                      <p class="govuk-body-s">
+                        
+                        {% if (data['org-location-for-one'] == "uk") %}
+
+                         <a href="/prototype-4/results?organisationName=Microsoft a Gravida&companysHouseRegisteredNumber=—&charityCommissionRegisteredNumber=5679001234&addressLine1=123 High Street&addressLine2=Business Park&addressTown=Manchester&addressCounty=-&addressPostcode=MA64 3EG">Microsoft a Gravida</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
+
+                        {% endif %}
+
+                        {% if (data['org-location-for-two-or-more'] == "uk") %}
+
+                          <a href="/prototype-4/results?organisationName=TVR Automotive Limited&companysHouseRegisteredNumber=05449931&charityCommissionRegisteredNumber=—&addressLine1=Hermes House&addressLine2=Fire Fly Avenue&addressTown=Swindon&addressCounty=-&addressPostcode=SN2 2GA">TVR Automotive Limited</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
+
+                        {% endif %}
+
+                        {% if (data['org-location-for-one'] == "international") %}
+
+                          <a href="/prototype-4/results?organisationName=Microsoft a Gravida&addressLine1=123 High Street&addressLine2=Industrial Park&addressTown=Sydney&addressCountry=Australia&telephoneNumber=-&emailAddress=-&otherRegisteredNumber=-&dunsNumber=1324576809">Microsoft a Gravida</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
+
+                        {% endif %}
+                      
+                        {% if (data['org-location-for-two-or-more'] == "international") %}
+                        
+                          <a href="/prototype-4/results?organisationName=Deep Cool&addressLine1=-&addressLine2=-&addressTown=Beijing&addressCountry=China&telephoneNumber=-&emailAddress=-&otherRegisteredNumber=-&dunsNumber=0123456790">Deep Cool</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
+
+                        {% endif %}
+
+                      </p>
+                    </td>
+
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px" style="width:225px">30 Oct 2024, 07:30</td>
+
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px">
+                      
+                      {% if (data['org-location-for-one'] == "uk") or (data['org-location-for-two-or-more'] == "uk") %}
+
+                        Domestic
+
+                      {% else %}
+
+                        International
+
+                      {% endif %}
+                  
+                    </td>
+
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px"><a href="#">remove</a></td>
+
                   </tr>
 
                   <!--           -->
@@ -285,7 +612,8 @@
                   <!--           -->
                   <!-- TABLE ROW -->
                   <tr class="govuk-table__row" >
-                    <td scope="row" class="govuk-table__cell govuk-body-s" style="width:30px">
+
+                    <td scope="row" class="govuk-table__cell govuk-body-s">
                       <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item">
                           <input class="govuk-checkboxes__input" id="xxx" name="xxx" type="checkbox" value="aaa">
@@ -293,80 +621,18 @@
                         </div>
                       </div>
                     </td>
-                    <!--<td class="govuk-table__cell govuk-body-s" style="width:60px">
-                      <label class="switch" style="margin-top:8px">
-                        <input type="checkbox" style="display:none">
-                        <span class="slider round"></span>
-                      </label>
-                    </td>-->
-                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px;width:300px">
-                      <p class="govuk-body-s"><a href="/prototype-4/results?organisationName=Deep Cool&addressLine1=Building 15&addressLine2=No. 9 Dijin Road&addressTown=Zhongguancun Environmental Protection Park&addressCountry=China&otherRegisteredNumber=91110108749397687N&TelephoneNumber=—&Website=www.deepcool.com.cn
-                        &EmailAddress=—&DUNSNumber=420946584&org-location-for-two-or-more=international">Deep Cool[international]</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong></p>
+
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px;">
+                      <p class="govuk-body-s"><a href="/prototype-4/results?organisationName=Pellentesque Egestas Ullamcorper&companysHouseRegisteredNumber=0123456789&charityCommissionRegisteredNumber=—&addressLine1=[Address Line 1]&addressLine2=[Address Line 2]&addressTown=[Town]&addressCounty=[County]&addressPostcode=[Postcode]&org-location-for-two-or-more=uk">Pellentesque Egestas Ullamcorper</a></p>
                       <!--<p class="govuk-body-s" style="margin-top:-10px">Awarded: No</p>-->
                     </td>
-                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px" style="width:225px">30 Oct 2024, 07:30</td>
-                    <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">£ 3,000,000</td>-->
-                    <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Know your applicant
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          <span style="color:#005a30">2 low</span><br />
-                          <span style="color:#f47738">1 medium</span><br />
-                          <span style="color:#852414">1 high</span>
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Companies House<br />
-                          <span style="font-size:12px">#01624297</span>
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          <span style="color:#005a30">5 low</span><br />
-                          <span style="color:#f47738">0 medium</span><br />
-                          <span style="color:#852414">0 high</span>
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Charity Commission
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          Not applicable
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Other funding (GGIS, CaSIE, 360 giving)
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          No
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Other applications (Spotlight)
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          Yes
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Similarities
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          <span style="color:#005a30">Low</span>
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                     </td>-->
+
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px">18 Sep 2024, 10:46</td>
+
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px">Domestic</td>
+
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px"><a href="#">remove</a></td>
+
                   </tr>
 
                   <!--           -->
@@ -374,7 +640,8 @@
                   <!--           -->
                   <!-- TABLE ROW -->
                   <tr class="govuk-table__row" >
-                    <td scope="row" class="govuk-table__cell govuk-body-s" style="width:30px">
+                    
+                    <td scope="row" class="govuk-table__cell govuk-body-s">
                       <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item">
                           <input class="govuk-checkboxes__input" id="xxx" name="xxx" type="checkbox" value="aaa">
@@ -382,261 +649,24 @@
                         </div>
                       </div>
                     </td>
-                    <!--<td class="govuk-table__cell govuk-body-s" style="width:60px">
-                      <label class="switch" style="margin-top:8px">
-                        <input type="checkbox" style="display:none">
-                        <span class="slider round"></span>
-                      </label>
-                    </td>-->
-                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px;width:300px">
-                      <p class="govuk-body-s"><a href="/prototype-3/results?organisationName=Nulla Vita&companysHouseRegisteredNumber=0123456789&charityCommissionRegisteredNumber=—&addressLine1=[Address Line 1]&addressLine2=[Address Line 2]&addressTown=[Town]&addressCounty=[County]&addressPostcode=[Postcode]&org-location-for-two-or-more=uk">Nulla Vitae [UK]</a></p>
-                      <!--<p class="govuk-body-s" style="margin-top:-10px">Awarded: No</p>-->
-                    </td>
-                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px" style="width:225px">30 Oct 2024, 07:30</td>
-                    <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">£ 3,000,000</td>-->
-                    <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Know your applicant
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          <span style="color:#005a30">2 low</span><br />
-                          <span style="color:#f47738">1 medium</span><br />
-                          <span style="color:#852414">1 high</span>
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Companies House<br />
-                          <span style="font-size:12px">#01624297</span>
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          <span style="color:#005a30">5 low</span><br />
-                          <span style="color:#f47738">0 medium</span><br />
-                          <span style="color:#852414">0 high</span>
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Charity Commission
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          Not applicable
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Other funding (GGIS, CaSIE, 360 giving)
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          No
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Other applications (Spotlight)
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          Yes
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Similarities
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          <span style="color:#005a30">Low</span>
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                     </td>-->
-                  </tr>
 
-                  <!--           -->
-                  <!--           -->
-                  <!--           -->
-                  <!-- TABLE ROW -->
-                  <tr class="govuk-table__row" >
-                    <td scope="row" class="govuk-table__cell govuk-body-s" style="width:30px">
-                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="xxx" name="xxx" type="checkbox" value="aaa">
-                          <label class="govuk-label govuk-checkboxes__label" for="waste"></label>
-                        </div>
-                      </div>
-                    </td>
-                    <!--<td class="govuk-table__cell govuk-body-s" style="width:60px">
-                      <label class="switch" style="margin-top:8px">
-                        <input type="checkbox" style="display:none">
-                        <span class="slider round"></span>
-                      </label>
-                    </td>-->
-                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px;width:300px">
-                      <p class="govuk-body-s"><a href="/prototype-3/results-international?organisationName=Pellentesque Egestas Ullamcorper&addressLine1=[Address Line 1]&addressLine2=[Address Line 2]&addressTown=[Town]&addressCounrty=[Counrty]&otherRegisteredNumber=0192837465&TelephoneNumber=+44 123 456 7890&Website=http://company.com&EmailAddress=help@company.com&DUNSNumber=1245780&org-location-for-two-or-more=international">Pellentesque Egestas Ullamcorper [international]</a></p>
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px">
+                      <p class="govuk-body-s"><a href="/prototype-4/results?organisationName=Adipiscing a Gravida&addressLine1=[Address Line 1]&addressLine2=[Address Line 2]&addressTown=[Town]&addressCounrty=[Counrty]&otherRegisteredNumber=0192837465&TelephoneNumber=+44 123 456 7890&Website=http://company.com&EmailAddress=help@company.com&DUNSNumber=1245780&org-location-for-two-or-more=international">Adipiscing a Gravida</a></p>
                       <!--<p class="govuk-body-s" style="margin-top:-10px">Awarded: No</p>-->
                     </td>
-                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px" style="width:225px">30 Oct 2024, 07:30</td>
-                    <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">£ 3,000,000</td>-->
-                    <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Know your applicant
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          <span style="color:#005a30">2 low</span><br />
-                          <span style="color:#f47738">1 medium</span><br />
-                          <span style="color:#852414">1 high</span>
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Companies House<br />
-                          <span style="font-size:12px">#01624297</span>
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          <span style="color:#005a30">5 low</span><br />
-                          <span style="color:#f47738">0 medium</span><br />
-                          <span style="color:#852414">0 high</span>
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Charity Commission
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          Not applicable
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Other funding (GGIS, CaSIE, 360 giving)
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          No
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Other applications (Spotlight)
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          Yes
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Similarities
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          <span style="color:#005a30">Low</span>
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                     </td>-->
-                  </tr>
+                    
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px">23 Aug 2024, 15:02</td>
 
-                  <!--           -->
-                  <!--           -->
-                  <!--           -->
-                  <!-- TABLE ROW -->
-                  <tr class="govuk-table__row" >
-                    <td scope="row" class="govuk-table__cell govuk-body-s" style="width:30px">
-                      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                        <div class="govuk-checkboxes__item">
-                          <input class="govuk-checkboxes__input" id="xxx" name="xxx" type="checkbox" value="aaa">
-                          <label class="govuk-label govuk-checkboxes__label" for="waste"></label>
-                        </div>
-                      </div>
-                    </td>
-                    <!--<td class="govuk-table__cell govuk-body-s" style="width:60px">
-                      <label class="switch" style="margin-top:8px">
-                        <input type="checkbox" style="display:none">
-                        <span class="slider round"></span>
-                      </label>
-                    </td>-->
-                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px;width:300px">
-                      <p class="govuk-body-s"><a href="/prototype-3/results?organisationName=Adipiscing a Gravida&companysHouseRegisteredNumber=01624297&charityCommissionRegisteredNumber=—&addressLine1=[Address Line 1]&addressLine2=[Address Line 2]&addressTown=[Town]&addressCounty=[County]&addressPostcode=[Postcode]&org-location-for-two-or-more=uk">Adipiscing a Gravida [UK]</a></p>
-                      <!--<p class="govuk-body-s" style="margin-top:-10px">Awarded: No</p>-->
-                    </td>
-                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px" style="width:225px">30 Oct 2024, 07:30</td>
-                    <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">£ 3,000,000</td>-->
-                    <!--<td class="govuk-table__cell govuk-body-s" style="padding-top:20px">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Know your applicant
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          <span style="color:#005a30">2 low</span><br />
-                          <span style="color:#f47738">1 medium</span><br />
-                          <span style="color:#852414">1 high</span>
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Companies House<br />
-                          <span style="font-size:12px">#01624297</span>
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          <span style="color:#005a30">5 low</span><br />
-                          <span style="color:#f47738">0 medium</span><br />
-                          <span style="color:#852414">0 high</span>
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Charity Commission
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          Not applicable
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Other funding (GGIS, CaSIE, 360 giving)
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          No
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Other applications (Spotlight)
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          Yes
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          Similarities
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          <span style="color:#005a30">Low</span>
-                        </div>
-                      </div>
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                     </td>-->
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px">Domestic</td>
+
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px"><a href="#">remove</a></td>
+
                   </tr>
 
                </tbody>
               </table>
 
-              <p class="govuk-body" style="text-align: right">Showing <strong>5</strong> to <strong>5</strong> of <strong>5</strong> results</p>
+              <p class="govuk-body" style="text-align: right">Showing <strong>2</strong> to <strong>2</strong> of <strong>2</strong> results</p>
 
             </div>
           </div>
@@ -679,70 +709,6 @@
           </table>
         </div>
 
-
-
-
-
-
-        <!--       -->
-        <!--       -->
-        <!--       -->
-        <!--       -->
-        <!-- TAB 3 -->
-        <!--
-        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tab3">
-          <h1 class="govuk-heading-m">
-            How many organisations do you want to check?
-          </h1>
-    
-          <form class="form" action="/how-many-orgs" method="post">
-    
-            {% from "govuk/components/radios/macro.njk" import govukRadios %}
-    
-            {% set oneOrg %}
-            {{ govukRadios({
-              name: "org-location",
-              items: [
-                {
-                  value: "uk",
-                  text: "UK registered company"
-                },
-                {
-                  value: "international",
-                  text: "International company"
-                }
-              ]
-            }) }}
-            {% endset -%}
-    
-            {{ govukRadios({
-              name: "how-many-orgs",
-              items: [
-                {
-                  value: "one",
-                  text: "One",
-                  conditional: {
-                    html: oneOrg
-                  }
-                },
-                {
-                  value: "two-or-more",
-                  text: "Two or more",
-                  hint: {
-                    text: "To conduct two or more checks. we'll ask you to upload a spreadsheet containing appropriate data"
-                  }
-                }
-              ]
-            }) }}
-    
-            {{ govukButton({
-              text: "Continue"
-            }) }}
-    
-          </form>
-    
-        </div>
-        -->
 
 
 
