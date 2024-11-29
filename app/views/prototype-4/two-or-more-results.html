@@ -99,7 +99,7 @@
           </li>
           <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
             <a class="govuk-tabs__tab" href="#tab2">
-              Previous uploads
+              Previous checks
             </a>
           </li>
           <!--
@@ -689,21 +689,25 @@
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
                 <th scope="col" class="govuk-table__header"><a href="#">Date created</a></th>
-                <th scope="col" class="govuk-table__header"><a href="#">Batch link</a></th>
+                <th scope="col" class="govuk-table__header"><a href="#">Download check</a></th>
               </tr>
             </thead>
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
-                <td scope="row" class="govuk-table__cell">30 Oct 2024, 07:30</td>
-                <td class="govuk-table__cell"><a href="/prototype-3/upload-summary">Filename batch: XLSX_Spotlight_Templates.xlsx (View upload summary)</a></td>
+                <td scope="row" class="govuk-table__cell">{{ "today" | govukDate }}, {{ "now" | govukTime }}</td>
+                <td class="govuk-table__cell"><a href="">XLSX_Spotlight_Templates.xlsx</a></td>
               </tr>
               <tr class="govuk-table__row">
-                <td scope="row" class="govuk-table__cell">30 Oct 2024, 12:45</td>
-                <td class="govuk-table__cell"><a href="/prototype-3/upload-summary">Filename batch: XLSX_Spotlight_Templates.xlsx (View upload summary)</a></td>
+                <td scope="row" class="govuk-table__cell">30 Oct 2024, 07:30am</td>
+                <td class="govuk-table__cell"><a href="">XLSX_Spotlight_Templates.xlsx</a></td>
               </tr>
               <tr class="govuk-table__row">
-                <td scope="row" class="govuk-table__cell">31 Oct 2024, 13:11</td>
-                <td class="govuk-table__cell"><a href="/prototype-3/upload-summary">Filename batch: XLSX_Spotlight_Templates.xlsx (View upload summary)</a></td>
+                <td scope="row" class="govuk-table__cell">12 Oct 2024, 12:45pm</td>
+                <td class="govuk-table__cell"><a href="">XLSX_Spotlight_Templates.xlsx</a><br/><a href="">XLSX_rejected_checks.xlsx</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td scope="row" class="govuk-table__cell">23 Sep 2024, 13:11pm</td>
+                <td class="govuk-table__cell"><a href="">XLSX_Spotlight_Templates.xlsx</a></td>
               </tr>
             </tbody>
           </table>
