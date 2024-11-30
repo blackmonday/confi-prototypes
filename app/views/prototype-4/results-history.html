@@ -148,14 +148,24 @@
                 </div>
               </div> 
               -->
+
             </div>
             <div class="govuk-grid-column-one-third" style="text-align: right;">
               {% from "govuk/components/button/macro.njk" import govukButton %}
 
               {{ govukButton({
                 text: "Run a new check",
-                href: "how-many-orgs"
+                href: "how-many-orgs?org-location-for-two-or-more="
               }) }}
+
+              <!--
+              <a href="how-many-orgs?org-location-for-two-or-more=">
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                  Run a new check
+                </button>
+              </a>
+              -->
+
             </div>
           </div>
 
@@ -528,7 +538,7 @@
                     
                     <td class="govuk-table__cell govuk-body-s" style="padding-top:20px">23 Aug 2024, 15:02</td>
 
-                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px">Domestic</td>
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px">International</td>
 
                     <td class="govuk-table__cell govuk-body-s" style="padding-top:20px"><a href="#">remove</a></td>
 

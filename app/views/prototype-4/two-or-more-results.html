@@ -87,6 +87,7 @@
     <div class="govuk-grid-column-full">
 
       <div class="govuk-tabs" data-module="govuk-tabs">
+
         <h2 class="govuk-tabs__title">
           Contents
         </h2>
@@ -102,6 +103,7 @@
               Previous checks
             </a>
           </li>
+
           <!--
           <li class="govuk-tabs__list-item">
             <a class="govuk-tabs__tab" href="#tab3">
@@ -109,6 +111,7 @@
             </a>
           </li>
           -->
+
         </ul>
 
         <!--       -->
@@ -128,21 +131,12 @@
 
               {{ govukButton({
                 text: "Run a new check",
-                href: "how-many-orgs"
+                href: "how-many-orgs?org-location-for-two-or-more=&org-location-for-one="
               }) }}
             </div>
           </div>
           
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-          
-
-
-
-
-
-
-
 
           <!--       -->
           <!--       -->
@@ -212,13 +206,6 @@
             </div>
           </div>
 
-
-
-
-
-
-
-          
           <!--         -->
           <!--         -->
           <!--         -->
@@ -555,13 +542,13 @@
                         
                         {% if (data['org-location-for-one'] == "uk") %}
 
-                         <a href="/prototype-4/results?organisationName=Microsoft&companysHouseRegisteredNumber=0987654321&charityCommissionRegisteredNumber=—&addressLine1=Microsoft Campus&addressLine2=Thames Valley Park&addressTown=Reading&addressCounty=Berkshire&addressPostcode=RG1 2ED">Microsoft Limited</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
+                         <a href="/prototype-4/results?organisationName=Microsoft&companysHouseRegisteredNumber=0987654321&charityCommissionRegisteredNumber=—&addressLine1=Microsoft Campus&addressLine2=Thames Valley Park&addressTown=Reading&addressCounty=Berkshire&addressPostcode=RG1 2ED&org-location-for-two-or-more=uk">Microsoft Limited</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
 
                         {% endif %} 
                             
                         {% if (data['org-location-for-two-or-more'] == "uk") %}
 
-                          <a href="/prototype-4/results?organisationName=Google UK Limited&companysHouseRegisteredNumber=03977902&charityCommissionRegisteredNumber=—&addressLine1=1 St. Giles High Street&addressLine2=-&addressTown=London&addressCounty=-&addressPostcode=WC2H 8AG">Google UK Limited</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
+                          <a href="/prototype-4/results?organisationName=Google UK Limited&companysHouseRegisteredNumber=03977902&charityCommissionRegisteredNumber=—&addressLine1=1 St. Giles High Street&addressLine2=-&addressTown=London&addressCounty=-&addressPostcode=WC2H 8AG&org-location-for-two-or-more=uk">Google UK Limited</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
 
                         {% endif %}
 
@@ -573,7 +560,7 @@
 
                         {% if (data['org-location-for-two-or-more'] == "international") %}
 
-                          <a href="/prototype-4/results?organisationName=BYD Company Limited&addressLine1=Pingshan District&addressLine2=Shenzen&addressTown=Guangdong&addressCountry=China&telephoneNumber=-&emailAddress=-&otherRegisteredNumber=-&dunsNumber=4523896701 ">BYD Company Limited</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
+                          <a href="/prototype-4/results?organisationName=BYD Company Limited&addressLine1=Pingshan District&addressLine2=Shenzen&addressTown=Guangdong&addressCountry=China&telephoneNumber=-&emailAddress=-&otherRegisteredNumber=-&dunsNumber=4523896701&org-location-for-two-or-more=international">BYD Company Limited</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
 
                         {% endif %}
 
@@ -620,25 +607,25 @@
                         
                         {% if (data['org-location-for-one'] == "uk") %}
 
-                         <a href="/prototype-4/results?organisationName=Microsoft a Gravida&companysHouseRegisteredNumber=—&charityCommissionRegisteredNumber=5679001234&addressLine1=123 High Street&addressLine2=Business Park&addressTown=Manchester&addressCounty=-&addressPostcode=MA64 3EG">Microsoft a Gravida</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
+                         <a href="/prototype-4/results?organisationName=Microsoft a Gravida&companysHouseRegisteredNumber=—&charityCommissionRegisteredNumber=5679001234&addressLine1=123 High Street&addressLine2=Business Park&addressTown=Manchester&addressCounty=-&addressPostcode=MA64 3EG&org-location-for-two-or-more=uk">Microsoft a Gravida</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
 
                         {% endif %}
 
                         {% if (data['org-location-for-two-or-more'] == "uk") %}
 
-                          <a href="/prototype-4/results?organisationName=TVR Automotive Limited&companysHouseRegisteredNumber=05449931&charityCommissionRegisteredNumber=—&addressLine1=Hermes House&addressLine2=Fire Fly Avenue&addressTown=Swindon&addressCounty=-&addressPostcode=SN2 2GA">TVR Automotive Limited</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
+                          <a href="/prototype-4/results?organisationName=TVR Automotive Limited&companysHouseRegisteredNumber=05449931&charityCommissionRegisteredNumber=—&addressLine1=Hermes House&addressLine2=Fire Fly Avenue&addressTown=Swindon&addressCounty=-&addressPostcode=SN2 2GA&org-location-for-two-or-more=uk">TVR Automotive Limited</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
 
                         {% endif %}
 
                         {% if (data['org-location-for-one'] == "international") %}
 
-                          <a href="/prototype-4/results?organisationName=Microsoft a Gravida&addressLine1=123 High Street&addressLine2=Industrial Park&addressTown=Sydney&addressCountry=Australia&telephoneNumber=-&emailAddress=-&otherRegisteredNumber=-&dunsNumber=1324576809">Microsoft a Gravida</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
+                          <a href="/prototype-4/results?organisationName=Microsoft a Gravida&addressLine1=123 High Street&addressLine2=Industrial Park&addressTown=Sydney&addressCountry=Australia&telephoneNumber=-&emailAddress=-&otherRegisteredNumber=-&dunsNumber=1324576809&org-location-for-two-or-more=international">Microsoft a Gravida</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
 
                         {% endif %}
                       
                         {% if (data['org-location-for-two-or-more'] == "international") %}
                         
-                          <a href="/prototype-4/results?organisationName=Deep Cool&addressLine1=-&addressLine2=-&addressTown=Beijing&addressCountry=China&telephoneNumber=-&emailAddress=-&otherRegisteredNumber=-&dunsNumber=0123456790">Deep Cool</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
+                          <a href="/prototype-4/results?organisationName=Deep Cool&addressLine1=-&addressLine2=-&addressTown=Beijing&addressCountry=China&telephoneNumber=-&emailAddress=-&otherRegisteredNumber=-&dunsNumber=0123456790&org-location-for-two-or-more=international&">Deep Cool</a><strong class="govuk-tag" style="margin-left:10px; font-size:16px;font-weight:600">NEW</strong>
 
                         {% endif %}
 
@@ -681,7 +668,7 @@
                     </td>
 
                     <td class="govuk-table__cell govuk-body-s" style="padding-top:20px;">
-                      <p class="govuk-body-s"><a href="/prototype-4/results?organisationName=Pellentesque Egestas Ullamcorper&companysHouseRegisteredNumber=0123456789&charityCommissionRegisteredNumber=—&addressLine1=[Address Line 1]&addressLine2=[Address Line 2]&addressTown=[Town]&addressCounty=[County]&addressPostcode=[Postcode]&org-location-for-two-or-more=uk">Pellentesque Egestas Ullamcorper</a></p>
+                      <p class="govuk-body-s"><a href="/prototype-4/results?organisationName=Pellentesque Egestas Ullamcorper&companysHouseRegisteredNumber=0123456789&charityCommissionRegisteredNumber=—&addressLine1=[Address Line 1]&addressLine2=[Address Line 2]&addressTown=[Town]&addressCounty=[County]&addressPostcode=[Postcode]&org-location-for-two-or-more=uk&org-location-for-one=uk">Pellentesque Egestas Ullamcorper</a></p>
                       <!--<p class="govuk-body-s" style="margin-top:-10px">Awarded: No</p>-->
                     </td>
 
@@ -709,13 +696,13 @@
                     </td>
 
                     <td class="govuk-table__cell govuk-body-s" style="padding-top:20px">
-                      <p class="govuk-body-s"><a href="/prototype-4/results?organisationName=Adipiscing a Gravida&addressLine1=[Address Line 1]&addressLine2=[Address Line 2]&addressTown=[Town]&addressCounrty=[Counrty]&otherRegisteredNumber=0192837465&TelephoneNumber=+44 123 456 7890&Website=http://company.com&EmailAddress=help@company.com&DUNSNumber=1245780&org-location-for-two-or-more=international">Adipiscing a Gravida</a></p>
+                      <p class="govuk-body-s"><a href="/prototype-4/results?organisationName=Adipiscing a Gravida&addressLine1=[Address Line 1]&addressLine2=[Address Line 2]&addressTown=[Town]&addressCounrty=[Counrty]&otherRegisteredNumber=0192837465&TelephoneNumber=+44 123 456 7890&Website=http://company.com&EmailAddress=help@company.com&DUNSNumber=1245780&org-location-for-two-or-more=international&org-location-for-one=international">Adipiscing a Gravida</a></p>
                       <!--<p class="govuk-body-s" style="margin-top:-10px">Awarded: No</p>-->
                     </td>
                     
                     <td class="govuk-table__cell govuk-body-s" style="padding-top:20px">23 Aug 2024, 15:02</td>
 
-                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px">Domestic</td>
+                    <td class="govuk-table__cell govuk-body-s" style="padding-top:20px">International</td>
 
                     <td class="govuk-table__cell govuk-body-s" style="padding-top:20px"><a href="#">remove</a></td>
 
@@ -731,11 +718,6 @@
 
         </div>
         
-
-
-
-
-
         <!--       -->
         <!--       -->
         <!--       -->
