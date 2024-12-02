@@ -56,7 +56,13 @@
 
     <div class="govuk-grid-column-one-half" style="text-align: right;">
       <p class="govuk-body" style="margin-bottom:0">Your total credits: <strong style="color:#1d70b8">420</strong></p>
-      <p class="govuk-heading-m" style="margin-top:-10px"><strong>This search uses: <span style="color:#00703c">9 credits</span></strong></p>
+
+      {% if (data['org-location-for-one'] == "uk") or (data['org-location-for-one'] == "international") %}
+        <p class="govuk-heading-m" style="margin-top:-10px"><strong>This search uses: <span style="color:#00703c">5 credits</span></strong></p>
+      {% else %}
+        <p class="govuk-heading-m" style="margin-top:-10px"><strong>This search uses: <span style="color:#00703c">9 credits</span></strong></p>
+      {% endif %}
+
     </div>
  
   </div>
@@ -429,12 +435,26 @@
 
 
 
+      {% if (data['org-location-for-one'] == "uk") or (data['org-location-for-one'] == "international") %}
+        <p class="govuk-body">This part of the order will use <strong style="color:#00703c">3 credits</strong> and cost <strong style="color:#00703c">£1.50</strong></p>
 
-      <p class="govuk-body">This part of the order will use <strong style="color:#00703c">3 credits</strong> and cost <strong style="color:#00703c">£1.50</strong></p>
+        <p class="govuk-body">The cost of the initial matching is <strong style="color:#00703c">2 credits</strong> and cost <strong style="color:#00703c">£1.00</strong></p>
 
-      <p class="govuk-body">The cost of the initial matching is <strong style="color:#00703c">6 credits</strong> and cost <strong style="color:#00703c">£3.00</strong></p>
+        <p class="govuk-body">The total cost for these checks will use <strong style="color:#00703c">5 credits</strong> and cost <strong style="color:#00703c">£2.50</strong></p>
+      {% else %}
+        <p class="govuk-body">This part of the order will use <strong style="color:#00703c">3 credits</strong> and cost <strong style="color:#00703c">£1.50</strong></p>
 
-      <p class="govuk-body">The total cost for these checks will use <strong style="color:#00703c">9 credits</strong> and cost <strong style="color:#00703c">£4.50</strong></p>
+        <p class="govuk-body">The cost of the initial matching is <strong style="color:#00703c">6 credits</strong> and cost <strong style="color:#00703c">£3.00</strong></p>
+
+        <p class="govuk-body">The total cost for these checks will use <strong style="color:#00703c">9 credits</strong> and cost <strong style="color:#00703c">£4.50</strong></p>
+      {% endif %}
+
+
+
+
+
+
+
 
       <p class="govuk-body">Contact <a href="#">spotlight@cabinetoffice.gov.uk</a> to purchase credits for your account.</p>
 
