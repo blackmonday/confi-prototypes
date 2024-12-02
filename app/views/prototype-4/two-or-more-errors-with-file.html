@@ -59,7 +59,7 @@
                 Download and correct the error file
               </span>
             </h2>
-            <p>You need to download and correct the error file to correct errors in applicants data.</p>
+            <p>You need to download and correct the error file to correct errors in entity data.</p>
           </div>
 
           <div class="app-step-nav__panel js-panel" id="step-panel-check-you-re-allowed-to-drive-1">
@@ -141,33 +141,38 @@
                 </span>
               </summary>
               <div class="govuk-details__text">
-                <p class="app-step-nav__paragraph" style="margin-bottom:-15px">The following fields are mandatory:</p>
-                <ul>
-                  <li>application number (for grants only)</li>
+                <p class="app-step-nav__paragraph" style="margin-bottom:-15px">The following fields are mandatory for UK-based domestic entities:</p>
+                <ul style="margin-bottom:15px;">
                   <li>organisation name</li>
-                  <li>application amount (for grants only)</li>
-                  <li>either Companies House registration number or Charity Commission registered number</li>
+                  <li>Postcode</li>
+                  <li>Companies House registration number and/or Charity Commission registered number</li>
                 </ul>
 
-                <p class="app-step-nav__paragraph" style="margin-top:15px; margin-bottom:-15px">Some spreadsheets automatically re-format your data after the file is opened and cause your .xlsx file to be rejected, for example dropping leading zeros from numeric cells such as the Companies House and/or Charity Commission registration number.</p>
+                <p class="app-step-nav__paragraph" style="margin-bottom:-15px">The following fields are mandatory for International entities:</p>
+                <ul>
+                  <li>organisation name</li>
+                  <li>country</li>
+                </ul>
 
-                <p class="app-step-nav__paragraph" style="margin-bottom:-15px">An applicants' registration number which loses a leading zero will also fail validation, causing the line to reject.</p>
+                <p class="app-step-nav__paragraph" style="margin-top:15px; margin-bottom:-15px">Some spreadsheets automatically re-format your data after the file is opened and cause your .xlsx file to be rejected. For example dropping leading zeros from numeric cells such as the Companies House and/or Charity Commission registration number.</p>
+
+                <p class="app-step-nav__paragraph" style="margin-bottom:-15px">An entities registration number which loses a leading zero will also fail validation, causing the line to reject.</p>
   
-                <p class="app-step-nav__paragraph" style="margin-bottom:-15px">The maximum number of checks is 10,000. To add more you need to run a new check and create a new scheme (grants only).</p>
+                <p class="app-step-nav__paragraph" style="margin-bottom:-15px">The maximum number of checks is 1,000. To add more you need to run a new file.</p>
   
                 <p class="app-step-nav__paragraph" style="margin-bottom:-15px">You may get an error message explaining why a .xlsx file failed to  upload.</p>
   
                 <p class="app-step-nav__paragraph" style="margin-bottom:-15px">If your file fails to upload:</p>
                 <ul>
                   <li>check the file has been uploaded as a .xlsx file and not another file format for example, .csv, .xlt or .xlw</li>
-                  <li>check there are no blank fields in the rows containing applicants data</li>
+                  <li>check there are no blank fields in the rows containing entity data</li>
                   <li>check whether a leading zero has been dropped from the Companies House registration number and/or</li>
                   <li>Charity Commission registered number</li>
                 </ul>
 
                 <p class="app-step-nav__paragraph" style="margin-top:15px; margin-bottom:-15px">Validation checks are carried out during the upload of the file and any errors identified will be highlighted on the following screens.</p>
 
-                <p class="app-step-nav__paragraph" style="margin-bottom:-15px">You will be able to amend data in your .xlsx file before resubmitting it or you can make an additional declaration of the corrected data at a later date.</p>
+                <!--<p class="app-step-nav__paragraph" style="margin-bottom:-15px">You will be able to amend data in your .xlsx file before resubmitting it or you can make an additional declaration of the corrected data at a later date.</p>-->
 
                 <p class="app-step-nav__paragraph" style="margin-bottom:-15px">An acknowledgement message with a unique submission reference number will be displayed which you can print or download and keep for your records. You will also be able to view previous submissions online.</p>
 
@@ -175,6 +180,11 @@
 
             </details>
             
+            <div class="govuk-inset-text">
+              <p class="govuk-body govuk-body govuk-!-margin-bottom-2">Your total credits: <strong style="color:#1d70b8">420</strong></p>
+              <p class="govuk-body">This check will cost a minimum of <strong style="color:#00703C">6</strong> credits and cost <strong style="color:#00703C">£3.00</strong></p>
+            </div>    
+
             {{ govukButton({
               text: "Continue",
               href:"review-two-or-more"
