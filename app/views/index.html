@@ -82,20 +82,17 @@
               conditional: {
                 html: whichUser
               }
+            },
+            {
+              value: "5.0",
+              text: "Prototype five",
+              conditional: {
+                html: whichUser
+              }
             }
           ]
         }) }}
       </p>
-
-      <!-- ADD TO ABOVE WHEN V3 TESTING COMPLETES -->
-      <!--,
-            {
-              value: "4.0",
-              text: "Prototype four",
-              conditional: {
-                html: whichUser
-              }
-            }-->
 
       {{ govukButton({
         text: "Start prototype",
@@ -106,19 +103,6 @@
 
   </div>
   <div class="govuk-grid-column-one-third">
-
-    <!--{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
-
-    {% set html %}
-      <p class="govuk-notification-banner__body">
-        Always clear data before starting a protytpe.
-        <a class="govuk-notification-banner__link" href="/manage-prototype/clear-data">Clear data</a>.
-      </p>
-    {% endset %}
-    
-    {{ govukNotificationBanner({
-      html: html
-    }) }}-->
 
   </div>
 

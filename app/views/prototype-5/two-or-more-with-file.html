@@ -1,0 +1,254 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript">
+    var $element = document.querySelector('#step-by-step-navigation')
+    var stepByStepNavigation = new GOVUK.Modules.AppStepNav($element).init()
+  </script>
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Conduct checks on two or more entities
+    </h1>
+
+    <p>
+      To conduct checks on two or more entities, you'll need to follow these steps.
+    </p>
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  
+    <div data-module="appstepnav"id="step-by-step-navigation" class="app-step-nav js-hidden app-step-nav--large" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all steps" data-hide-all-text="Hide all steps">
+      <ol class="app-step-nav__steps">
+        <li class="app-step-nav__step js-step" id="download-and-complete-the-template">
+          <div class="app-step-nav__header js-toggle-panel" data-position="1">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 1<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title">
+                Download and complete the template
+              </span>
+            </h2>
+          </div>
+
+          <div class="app-step-nav__panel js-panel" id="step-panel-check-you-re-allowed-to-drive-1">
+            <div class="parent" style="width:100%; height=50px;display:flex">
+              <div class="child1 govuk-!-margin-right-3">
+                <img src="/public/img/icon-document.svg" alt="Document icon"">
+              </div>
+              <div class="child2">
+                <p class="govuk-body govuk-!-margin-bottom-0"><a href class="govuk-link">Download Spotlight risk assessment template in .xlsx format</a></p>
+                <p class="govuk-body">MS Excel Spreadsheet, 14KB</p>
+              </div>
+            </div> 
+
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  How to use the template
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <ol>
+                  <li>Open the spreadsheet template.</li>
+                  <li>Save the spreadsheet to your computer using a file name relevant to you. Include the upload date. Upload in an excel workbook (*.xlsx) file format</li>
+                </ol>
+                <p class="app-step-nav__paragraph" style="margin-top:15px;margin-bottom:-15px">To minimise the risk of the data having to be re-submitted:</p>
+                <ul>
+                  <li>submit your entity data using the original, completed and saved template downloaded from our website</li>
+                  <li>do not copy the template contents onto a blank Excel spreadsheet</li>
+                  <li>do not add, delete or alter the sheets, tabs, rows or columns within the template</li>
+                  <li>only update the relevant fields for completing your information, but do complete all the fields for each entity</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+
+        </li>
+
+        <li class="app-step-nav__step js-step" id="upload-the-completed-template">
+          <div class="app-step-nav__header js-toggle-panel" data-position="2">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 2<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title">
+                Upload the completed template
+              </span>
+            </h2>
+          </div>
+
+          <div class="app-step-nav__panel js-panel" id="step-panel-get-a-provisional-licence-2">
+            <p class="app-step-nav__paragraph">Select 'Browse' to select and upload the saved, completed .xlsx template file.</p>
+
+            <div class="govuk-button-group" style="margin-top:-15px; margin-bottom:5px">
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Choose file
+              </button>
+              <strong>XLSX_Spotli...template.xlsx</strong>
+            </div>
+
+            <p class="app-step-nav__paragraph">Select 'Continue' to check your data for errors. If there are no errors, you'll continue to the results of checks on the entities.</p>
+
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Help with uploading the template
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="app-step-nav__paragraph" style="margin-bottom:-15px">The following fields are mandatory for UK registered domestic entities: </p>
+                <ul style="margin-bottom:15px">
+                  <li>organisation name</li>
+                  <li>postcode</li>
+                  <li>Companies House registration number and/or Charity Commission registered number</li>
+                </ul>
+
+                <p class="app-step-nav__paragraph" style="margin-bottom:-15px">The following fields are mandatory international entities: </p>
+                <ul>
+                  <li>organisation name</li>
+                  <li>country</li>
+                </ul>
+
+                <p class="app-step-nav__paragraph" style="margin-top:15px; margin-bottom:-15px">Some spreadsheets automatically re-format your data after the file is opened and cause your .xlsx file to be rejected, for example dropping leading zeros from numeric cells such as the Companies House and/or Charity Commission registration number.</p>
+
+                <p class="app-step-nav__paragraph" style="margin-bottom:-15px">An entity registration number which loses a leading zero will also fail validation, causing the line to reject.</p>
+  
+                <p class="app-step-nav__paragraph" style="margin-bottom:-15px">The maximum number of checks is 1,000. To add more you need to run a new file.</p>
+  
+                <p class="app-step-nav__paragraph" style="margin-bottom:-15px">You may get an error message explaining why a .xlsx file failed to  upload.</p>
+  
+                <p class="app-step-nav__paragraph" style="margin-bottom:-15px">If your file fails to upload:</p>
+                <ul>
+                  <li>check the file has been uploaded as a .xlsx file and not another file format for example, .csv, .xlt or .xlw</li>
+                  <li>check there are no blank fields in the rows containing entity data</li>
+                  <li>check whether a leading zero has been dropped from the Companies House registration number and/or</li>
+                  <li>Charity Commission registered number</li>
+                </ul>
+
+                <p class="app-step-nav__paragraph" style="margin-top:15px; margin-bottom:-15px">Validation checks are carried out during the upload of the file and any errors identified will be highlighted on the following screens.</p>
+
+                <p class="app-step-nav__paragraph" style="margin-bottom:-15px">You will be able to amend data in your .xlsx file before resubmitting it or you can make an additional declaration of the corrected data at a later date.</p>
+
+                <p class="app-step-nav__paragraph" style="margin-bottom:-15px">An acknowledgement message with a unique submission reference number will be displayed which you can print or download and keep for your records. You will also be able to view previous submissions online.</p>
+
+              </div>
+
+            </details>
+            
+            <div class="govuk-inset-text">
+              <p class="govuk-body govuk-body govuk-!-margin-bottom-2">Your departments total credits: <strong style="color:#1d70b8">420</strong></p>
+              <p class="govuk-body">This check will cost a minimum of <strong style="color:#00703C">6</strong> credits and cost <strong style="color:#00703C">£3.00</strong></p>
+            </div>    
+
+            {{ govukButton({
+              text: "Continue",
+              href:"review-two-or-more"
+            }) }}
+
+          </div>
+
+        </li>
+
+        <li class="app-step-nav__step js-step" id="check-the-error-log">
+          <div class="app-step-nav__header js-toggle-panel" data-position="3">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 3<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+
+              <span class="js-step-title">
+                Check the error log, if applicable
+              </span>
+            </h2>
+          </div>
+
+          <div class="app-step-nav__panel js-panel" id="step-panel-driving-lessons-and-practice-3">
+            <p class="app-step-nav__paragraph">A detailed log will highlight any errors in your completed template, if applicable.</p>
+
+            <p class="app-step-nav__paragraph">Correct any errors and save and upload the amended template to complete the checks.</p>
+          </div>
+
+        </li>
+
+        <!--<li class="app-step-nav__step js-step" id="view-the-results-of-your-checks">
+          <div class="app-step-nav__header js-toggle-panel" data-position="4">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--logic">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                    and
+                  </span>
+                </span>
+              </span>-->
+
+        <li class="app-step-nav__step js-step" id="view-the-results-of-your-checks">
+          <div class="app-step-nav__header js-toggle-panel" data-position="4">
+            <h2 class="app-step-nav__title">
+              <span class="app-step-nav__circle app-step-nav__circle--number">
+                <span class="app-step-nav__circle-inner">
+                  <span class="app-step-nav__circle-background">
+                      <span class="govuk-visually-hidden govuk-!-display-none-print">Step</span> 4<span class="govuk-visually-hidden govuk-!-display-none-print" aria-hidden="true">:</span>
+                  </span>
+                </span>
+              </span>
+      
+              <span class="js-step-title">
+                <div style="margin-top:10px">View the results of your checks</div>
+              </span>
+            </h2>
+          </div>
+
+          <div class="app-step-nav__panel" id="step-panel-driving-lessons-and-practice-4">
+          </div>
+        </li> 
+
+      </ol>
+    </div>
+
+  </div>
+</div>
+
+<p class="govuk-body-s" style="font-size: 9px; color:	#b1b4b6">PROTOTYPE VERSION: {{ data['which-prototype'] }}</p>
+
+{% endblock %}
