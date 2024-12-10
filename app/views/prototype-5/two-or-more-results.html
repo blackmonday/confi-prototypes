@@ -412,6 +412,41 @@
 
         </div>
         
+        <!--               -->
+        <!--               -->
+        <!--               -->
+        <!-- TABLE SCRIPTS -->
+        <script>
+          function showDiv() {
+            document.getElementById('cancel-request-1').style.visibility = "visible";
+            document.getElementById('delete-1').style.visibility = "collapse";
+          }
+          function hideDiv() {
+            document.getElementById('cancel-request-1').style.visibility = "collapse";
+            document.getElementById('delete-1').style.visibility = "visible";
+          }
+          function confirmDelete() {
+            document.getElementById('cancel-request-1').style.visibility = "collapse";
+            document.getElementById('delete-1').style.visibility = "visible";
+            document.getElementById('delete-1').innerHTML  = "<a onclick='showDivCancel()' style='color:red;'>Pending deletion</a>";
+          }
+
+          function showDivCancel() {
+            document.getElementById('cancel-request-pending-1').style.visibility = "visible";
+            document.getElementById('delete-1').innerHTML  = "<a onclick='showDivCancelHide()' style='color:red;'>Pending deletion</a>";
+          }
+          function showDivCancelHide() {
+            document.getElementById('cancel-request-pending-1').style.visibility = "collapse";
+            document.getElementById('delete-1').innerHTML  = "<a onclick='showDivCancel()' style='color:red;'>Pending deletion</a>";
+          }
+          function hideDivCancel() {
+            document.getElementById('cancel-request-pending-1').style.visibility = "collapse";
+            document.getElementById('delete-1').innerHTML  = "<a onclick='showDiv()' style='color:#1d70b8'>Delete</a>";
+          }
+
+
+        </script>
+
         <!--       -->
         <!--       -->
         <!--       -->
@@ -447,7 +482,7 @@
 
                   <th scope="col" class="govuk-table__header app-custom-class govuk-body-s" style="vertical-align:middle; padding-bottom:7px"><a href="">Reference ID <img src="/public/img/icon-sort-inactive.svg" alt="Document icon"></a></th>
 
-                  <th scope="col" class="govuk-table__header app-custom-class govuk-body-s" style="vertical-align:middle; padding-bottom:7px;visibility:hidden"><a href="#">Remove</a></th>
+                  <th scope="col" class="govuk-table__header app-custom-class govuk-body-s" style="vertical-align:middle; padding-bottom:7px;visibility:hidden"><a href="#">Delete</a></th>
 
                 </tr>
               </thead>
@@ -458,7 +493,7 @@
                 <!--                 -->
                 <!--                 -->
                 <!-- TABLE ROW NEW 1 -->
-                <tr class="govuk-table__row" >
+                <tr class="govuk-table__row">
 
                   <td scope="row" class="govuk-table__cell govuk-body-s" style="width:30px">
                     <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -517,9 +552,66 @@
 
                   <td class="govuk-table__cell govuk-body-s" style="padding-top:20px" style="width:225px">[Reference ID]</td>
 
-                  <td class="govuk-table__cell govuk-body-s" style="padding-top:20px"><a href="#">remove</a></td>
+                  <script>
+
+                  </script>
+                  <td id="delete-1" class="govuk-table__cell govuk-body-s" style="padding-top:20px">
+                    <span id="delete-1"><a onclick="showDiv()" style="color:#1d70b8">Delete</a></span>
+                  </td>
 
                 </tr>
+
+                <!--                -->
+                <!--                -->
+                <!--                -->
+                <!-- CANCEL REQUEST -->
+                <tr id="cancel-request-1" class="govuk-table__row" style="border-top:2px solid #ffffff; border-bottom:1px solid #b1b4b6; visibility: collapse;">
+                  <td colspan="7"scope="row" class=" govuk-body-s">
+
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-!-font-weight-bold" for="more-detail">
+                        Reason to request deletion (required)
+                      </label>
+                      <textarea class="govuk-textarea" id="cancel-request-detail" name="cancelRequestDetail" rows="5" style="width:630px"></textarea>
+                    </div>
+                    <div class="govuk-button-group">
+                      <button type="submit" class="govuk-button" data-module="govuk-button" onclick="confirmDelete()">
+                        Confirm request
+                      </button>
+                      <a class="govuk-link" onclick="hideDiv()" style="color:#1d70b8">Cancel request</a>
+                    </div>
+                    
+                  </td>
+                </tr>
+
+                <!--                        -->
+                <!--                        -->
+                <!--                        -->
+                <!-- CANCEL REQUEST PENDING -->
+                <tr id="cancel-request-pending-1" class="govuk-table__row" style="border-top:2px solid #ffffff; border-bottom:1px solid #b1b4b6; visibility: collapse;">
+                  <td colspan="7"scope="row" class=" govuk-body-s">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-!-font-weight-bold" for="more-detail">
+                        Reason to request deletion
+                      </label>
+                      <p class="govuk-body" style="width:630px">[Reason given for deletion request] {{ data['cancelRequestDetail'] }}</p>
+                      <p class="govuk-body govuk-link" onclick="hideDivCancel()" style="color:#1d70b8">Cancel request</p>
+                    </div>
+                  </td>
+                </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 <!--                 -->
                 <!--                 -->
@@ -584,7 +676,7 @@
 
                   <td class="govuk-table__cell govuk-body-s" style="padding-top:20px" style="width:225px">[Reference ID]</td>
 
-                  <td class="govuk-table__cell govuk-body-s" style="padding-top:20px"><a href="#">remove</a></td>
+                  <td class="govuk-table__cell govuk-body-s" style="padding-top:20px"><a href="#">Delete</a></td>
 
                 </tr>
 
@@ -651,7 +743,7 @@
 
                   <td class="govuk-table__cell govuk-body-s" style="padding-top:20px" style="width:225px">[Reference ID]</td>
 
-                  <td class="govuk-table__cell govuk-body-s" style="padding-top:20px"><a href="#">remove</a></td>
+                  <td class="govuk-table__cell govuk-body-s" style="padding-top:20px"><a href="#">Delete</a></td>
 
                 </tr>
 
@@ -681,7 +773,7 @@
 
                   <td class="govuk-table__cell govuk-body-s" style="padding-top:20px" style="width:225px">[Reference ID]</td>
 
-                  <td class="govuk-table__cell govuk-body-s" style="padding-top:20px"><a href="#">remove</a></td>
+                  <td class="govuk-table__cell govuk-body-s" style="padding-top:20px"><a href="#">Delete</a></td>
 
                 </tr>
 
@@ -711,7 +803,7 @@
 
                   <td class="govuk-table__cell govuk-body-s" style="padding-top:20px" style="width:225px">[Reference ID]</td>
 
-                  <td class="govuk-table__cell govuk-body-s" style="padding-top:20px"><a href="#">remove</a></td>
+                  <td class="govuk-table__cell govuk-body-s" style="padding-top:20px"><a href="#">Delete</a></td>
 
                 </tr>
 

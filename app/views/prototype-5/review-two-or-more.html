@@ -24,13 +24,29 @@
         Potential matches for review
       </h1>
 
-      <p class="govuk-body">Spotlight has identified possible matches for the entity details provided. These potential matches cost 1 credit / £0.50p each in addition to the 2 credits for the main record, although you can “reject” the suggested match(es).</p>
+      <p class="govuk-body">Spotlight has identified possible matches for the entity details provided.  Review the list of potential matched entities in the table below. To accept a suggested match, check the box next to the record you want to run a check on. When you have completed your selection, click 'Proceed with checks'.</p>
 
-      <p class="govuk-body">Review the list of potential matched entities in the table below. To reject a suggested match, check the box next to the record you do not want to run a check on. The rejected records will be added to a separate spreadsheet that you can access after you have run the checks.</p>
+    </div>
+  </div>
 
-      <p class="govuk-body">When you have completed your selection, click ‘Save and continue’  to proceed to the order summary page which will display the rest of your uploaded records, ready to check.</p>
+  <!--     -->
+  <!--     -->
+  <!--     -->
+  <!-- ROW -->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full" style="margin-bottom:10px">
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+  </div>
 
-      <p class="govuk-body">Contact <a href="#">spotlight@cabinetoffice.gov.uk</a> to purchase credits for your account.</p>
+  <!--     -->
+  <!--     -->
+  <!--     -->
+  <!-- ROW -->
+  <div class="govuk-grid-row">                            
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-body">Reference ID coming soon</p>
 
     </div>
   </div>
@@ -60,10 +76,12 @@
       </div>
     </div>
 
+    <!--
     <div class="govuk-grid-column-one-half" style="text-align: right;">
       <p class="govuk-body" style="margin-bottom:0">Your total credits: <strong style="color:#1d70b8">420</strong></p>
       <p class="govuk-heading-m" style="margin-top:-10px"><strong>This search uses: <span style="color:#00703c">6 credits</span></strong></p>
     </div>
+    -->
  
   </div>
 
@@ -83,7 +101,7 @@
   <!-- ROW -->
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <p style="padding-top:7px;">Showing <strong>8</strong> to <strong>8</strong> of <strong>8</strong> potential matches</p>
+      <p style="padding-top:7px;">Showing <strong>1</strong> to <strong>8</strong> of <strong>8</strong> potential matches</p>
     </div>
     <div class="govuk-grid-column-one-third">
       <div class="govuk-form-group">
@@ -163,13 +181,21 @@
         
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header app-custom-class" style="width: 53px; font-size:16px;text-align:center">Reject</th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="width: 53px; font-size:16px;text-align:center">
+              Accept
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px;">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
             <th scope="col" class="govuk-table__header app-custom-class" style="width: 65px; font-size:16px">Match score</th>
-            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px">Entity name</th>
-            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px">City</th>
-            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:100px">Postcode</th>
-            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:120px">Companies House</th>
-            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:120px">Charity Commission</th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px"><a href="#">Entity name</a></th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px"><a href="#">City</a></th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:100px"><a href="#">Postcode</a></th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:120px"><a href="#">Companies House</a></th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:120px"><a href="#">Charity Commission</a></th>
           </tr>
         </thead>
         
@@ -213,7 +239,7 @@
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -230,7 +256,7 @@
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -285,7 +311,7 @@
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -340,7 +366,7 @@
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -357,7 +383,7 @@
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -374,7 +400,10 @@
 
       </table>
 
-      <p class="govuk-body">This part of the order will use <strong style="color:#00703c">3 credits</strong> and cost <strong style="color:#00703c">£1.50</strong></p>
+      <p class="govuk-body govuk-!-margin-top-5 govuk-!-margin-bottom-1">I confirm that:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>It is appropriate to undertake additional due diligence checks</li>
+      </ul>
       
       {% else %}
 
@@ -405,12 +434,20 @@
         
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header app-custom-class" style="width: 53px; font-size:16px;text-align:center">Reject</th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="width: 53px; font-size:16px;text-align:center">
+              Accept
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px;">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
             <th scope="col" class="govuk-table__header app-custom-class" style="width: 65px; font-size:16px">Match score</th>
-            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px">Entity name</th>
-            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px">City</th>
-            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:100px">Country</th>
-            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:120px">D-U-N-S number</th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px"><a href=#>Entity name</a></th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px"><a href=#>City</a></th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:100px"><a href=#>Country</a></th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:120px"><a href=#>D-U-N-S number</a></th>
           </tr>
         </thead>
         
@@ -452,7 +489,7 @@
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -468,7 +505,7 @@
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -520,7 +557,7 @@
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -572,7 +609,7 @@
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -588,7 +625,7 @@
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -604,12 +641,15 @@
 
       </table>
 
-      <p class="govuk-body">This part of the order will use <strong style="color:#00703c">3 credits</strong> and cost <strong style="color:#00703c">£1.50</strong></p>
+      <p class="govuk-body govuk-!-margin-top-5 govuk-!-margin-bottom-1">I confirm that:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>It is appropriate to undertake additional due diligence checks</li>
+      </ul>
 
       {% endif %}
 
-      <a href="order-summary"><button type="submit" class="govuk-button" data-module="govuk-button">
-        Save and continue
+      <a href="upload-summary-checking"><button type="submit" class="govuk-button" data-module="govuk-button">
+        Proceed with checks
       </button></a>
 
     </div>

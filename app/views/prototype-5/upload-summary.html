@@ -20,16 +20,43 @@
       Upload summary
     </h1>
 
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-    <span class="govuk-caption-xl" style="text-align: center; padding-bottom:30px">3 of 3 records prepared...</span>
+
+
+
+
+
+
+
+
+
+    <style>
+      .meter { 
+          height: 10px;
+          position: relative;
+          background: #f3f2f1;
+          overflow: hidden;
+      }
+      
+      .meter span {
+          display: block;
+          height: 100%;
+      }
+      
+      .progress {
+          background-color: #1d70b8;
+          width:100%; 
+      }
+          </style> 
+
+    <div class="meter">
+      <span style="width:100%;"><span class="progress"></span></span>
+    </div>
+  
+    <span class="govuk-caption-xl" style="text-align: center; padding-top:15px; padding-bottom:30px">3 of 3 records prepared...</span>
 
   </div>
 </div>
-
-
-
-
 
 {% if (data['org-location-for-one'] == "uk") %}
 
@@ -39,7 +66,7 @@
 <!-- UK MATCHES -->
 <!--<p class="govuk-body" style="color:red">UK - ONE ENTITY</p>-->
 
-<div class="govuk-grid-row">
+<div class="success govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
     <div style="text-align:center;background-color:#21703F;padding:30px">
@@ -116,16 +143,16 @@
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
-    <div style="text-align:center;background-color:#21703F;padding:30px">
+    <div style="text-align:center;background-color:#21703F;padding:15px">
       <h1 class="govuk-heading-l" style="color:#ffffff">
         3
       </h1>
   
-      <p class="govuk-caption-l" style="color:#ffffff">Entities were checked for Economic crime and national security </p>
+      <p class="govuk-caption-l" style="color:#ffffff;margin-top:-15px">Entities were checked for Economic crime and national security</p>
 
-      <hr class="govuk-section-break govuk-section-break--visible" style="padding-top:30px">
+      <hr class="govuk-section-break govuk-section-break--visible" style="padding-top:15px;">
 
-      <p style="color:#ffffff; margin-top:30px"><a href="success-download" style="color:#ffdd00">Click here to download successful records for storing offline</a></p>
+      <p class="govuk-body-s" style="color:#ffffff; margin-top:15px;margin-bottom:0"><a href="success-download" style="color:#ffdd00">Click here to download successful records for storing offline</a><br /><span style="visibility: hidden">.</span></p>
     </div>
 
     {% from "govuk/components/button/macro.njk" import govukButton %}

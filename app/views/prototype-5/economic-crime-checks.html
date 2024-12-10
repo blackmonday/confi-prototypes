@@ -129,10 +129,12 @@
         
         {% endcall %}        
 
+        <!--
         <div class="govuk-inset-text">
           <p class="govuk-body govuk-body govuk-!-margin-bottom-2">Your departments total credits: <strong style="color:#1d70b8">420</strong></p>
           <p class="govuk-body">This check will cost a minimum of <strong style="color:#00703C">2</strong> credits and cost <strong style="color:#00703C">£1.00</strong></p>
         </div>
+        -->
 
         {{ govukButton({
           text: "Continue"
@@ -147,7 +149,7 @@
       <!--                    -->
       <!-- INTERNATIONAL FORM -->
       <!--<p class="govuk-body" style="color:#b1b4b6">INTERNATIONAL FORM</p>-->
-      <form class="form" action="/economic-crime-checks-v4" method="post">
+      <form class="form" action="/economic-crime-checks-v5" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
@@ -304,10 +306,12 @@
           name: "dunsNumber"
         }) }}
 
+        <!--
         <div class="govuk-inset-text">
           <p class="govuk-body govuk-body govuk-!-margin-bottom-2">Your departments total credits: <strong style="color:#1d70b8">420</strong></p>
           <p class="govuk-body">This check will cost a minimum of <strong style="color:#00703C">2</strong> credits and cost <strong style="color:#00703C">£1.00</strong></p>
         </div>
+        -->
 
         {{ govukButton({
           text: "Continue"
