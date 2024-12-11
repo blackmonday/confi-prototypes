@@ -474,3 +474,13 @@ router.post('/economic-crime-checks-v4', function (req, res) {
 router.post('/economic-crime-checks-v5', function (req, res) {
   res.redirect('/prototype-5/review')
 })
+
+router.post('/pepsadversemediacheck', function (req, res) {
+  req.session.data['PEPSAdverseMediaChecked'] = "Yes"
+  res.redirect('/prototype-5/peps-adversemedia-upload-summary-checking')
+})
+
+router.post('/orgadversemediacheck', function (req, res) {
+  req.session.data['orgAdverseMediaChecked'] = "Yes"
+  res.redirect('/prototype-5/orgadversemedia-upload-summary-checking')
+})
