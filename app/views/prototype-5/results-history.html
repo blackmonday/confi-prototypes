@@ -350,7 +350,7 @@
               <img src="/public/img/icon-document.svg" alt="Document icon">
             </div>
             <div class="child2">
-              <p class="govuk-body govuk-!-margin-bottom-0"><a href class="govuk-link">Download all entities</a></p>
+              <p class="govuk-body govuk-!-margin-bottom-0"><a href class="govuk-link">Download <span id="download">all</span> entities</a></p>
               <p class="govuk-body">MS Excel Spreadsheet, 2mb</p>
             </div>
           </div> 
@@ -444,7 +444,7 @@
                 document.getElementById('tableRow2').style.cssText = 'background-color: #E9F1F8';
                 i=2;
                 document.getElementById('number').innerHTML=i;
-
+                document.getElementById('download').innerHTML ="selected";
               } else {
                 document.getElementById('tableRow1Input').checked = false;
                 document.getElementById('tableRow1').style.cssText = 'background-color: none';
@@ -452,6 +452,7 @@
                 document.getElementById('tableRow2').style.cssText = 'background-color: none';
                 i=0;
                 document.getElementById('number').innerHTML=i;
+                document.getElementById('download').innerHTML ="all";
               }
             }
 
@@ -462,10 +463,14 @@
                 document.getElementById('tableRow1').style.cssText = 'background-color: #E9F1F8';
                 i++;
                 document.getElementById('number').innerHTML=i;
+                document.getElementById('download').innerHTML ="selected";
               } else {
                 document.getElementById('tableRow1').style.cssText = 'background-color: none';
                 i--;
                 document.getElementById('number').innerHTML=i;
+                if (i==0) {
+                  document.getElementById('download').innerHTML ="all";
+                }
               }              
             }
             
@@ -476,10 +481,14 @@
                 document.getElementById('tableRow2').style.cssText = 'background-color: #E9F1F8';
                 i++;
                 document.getElementById('number').innerHTML=i;
+                document.getElementById('download').innerHTML ="selected";
               } else {
                 document.getElementById('tableRow2').style.cssText = 'background-color: none';
                 i--;
                 document.getElementById('number').innerHTML=i;
+                if (i==0) {
+                  document.getElementById('download').innerHTML ="all";
+                }
               }
             }
 
