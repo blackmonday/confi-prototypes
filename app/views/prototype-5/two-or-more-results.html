@@ -407,7 +407,7 @@
 
           <div class="govuk-grid-column-full" style="margin-top:-10px; background-color:#f3f2f1; padding-top:8px; height:40px;border-top:2px solid #0b0c0c; border-bottom:1px solid #0b0c0c; margin-left:15px; width:97%">
             <img src="/public/img/icon-info-small.svg" alt="Info icon" style="float:left; margin-right:5px">
-            <p class="govuk-body-s" style="float:left;padding-top:1px">0 records selected</p>
+            <p class="govuk-body-s" style="float:left;padding-top:1px"><span id="number"></span> records selected</p>
           </div>
 
         </div>
@@ -443,8 +443,117 @@
             document.getElementById('cancel-request-pending-1').style.visibility = "collapse";
             document.getElementById('delete-1').innerHTML  = "<a onclick='showDiv()' style='color:#1d70b8'>Delete</a>";
           }
+        </script>
 
+        <script type="text/javascript">
+                    
+          var i=0; 
+          document.getElementById('number').innerHTML=i;
 
+          function checkAllRows() {
+            /* CHECK ALL */
+            checkAll = document.getElementById("checkAllInput");
+            
+            if (checkAll.checked) {
+              document.getElementById('tableRow1Input').checked = true;
+              document.getElementById('tableRow1').style.cssText = 'background-color: #E9F1F8';
+              document.getElementById('tableRow2Input').checked = true;
+              document.getElementById('tableRow2').style.cssText = 'background-color: #E9F1F8';
+              document.getElementById('tableRow3Input').checked = true;
+              document.getElementById('tableRow3').style.cssText = 'background-color: #E9F1F8';
+              document.getElementById('tableRow4Input').checked = true;
+              document.getElementById('tableRow4').style.cssText = 'background-color: #E9F1F8';
+              document.getElementById('tableRow5Input').checked = true;
+              document.getElementById('tableRow5').style.cssText = 'background-color: #E9F1F8';
+              i=5;
+              document.getElementById('number').innerHTML=i;
+
+            } else {
+              document.getElementById('tableRow1Input').checked = false;
+              document.getElementById('tableRow1').style.cssText = 'background-color: none';
+              document.getElementById('tableRow2Input').checked = false;
+              document.getElementById('tableRow2').style.cssText = 'background-color: none';
+              document.getElementById('tableRow3Input').checked = false;
+              document.getElementById('tableRow3').style.cssText = 'background-color: none';
+              document.getElementById('tableRow4Input').checked = false;
+              document.getElementById('tableRow4').style.cssText = 'background-color: none';
+              document.getElementById('tableRow5Input').checked = false;
+              document.getElementById('tableRow5').style.cssText = 'background-color: none';
+              i=0;
+              document.getElementById('number').innerHTML=i;
+            }
+          }
+
+          function row1Select() {
+            var check1 = document.getElementById("tableRow1Input");
+            
+            if (check1.checked) {
+              document.getElementById('tableRow1').style.cssText = 'background-color: #E9F1F8';
+              i++;
+              document.getElementById('number').innerHTML=i;
+            } else {
+              document.getElementById('tableRow1').style.cssText = 'background-color: none';
+              i--;
+              document.getElementById('number').innerHTML=i;
+            }              
+          }
+          
+          function row2Select() {
+            var check2 = document.getElementById("tableRow2Input");
+
+            if (check2.checked) {
+              document.getElementById('tableRow2').style.cssText = 'background-color: #E9F1F8';
+              i++;
+              document.getElementById('number').innerHTML=i;
+            } else {
+              document.getElementById('tableRow2').style.cssText = 'background-color: none';
+              i--;
+              document.getElementById('number').innerHTML=i;
+            }
+          }
+
+          function row3Select() {
+            var check3 = document.getElementById("tableRow3Input");
+
+            if (check3.checked) {
+              document.getElementById('tableRow3').style.cssText = 'background-color: #E9F1F8';
+              i++;
+              document.getElementById('number').innerHTML=i;
+            } else {
+              document.getElementById('tableRow3').style.cssText = 'background-color: none';
+              i--;
+              document.getElementById('number').innerHTML=i;
+            }
+          }
+
+          function row4Select() {
+            var check4 = document.getElementById("tableRow4Input");
+
+            if (check4.checked) {
+              document.getElementById('tableRow4').style.cssText = 'background-color: #E9F1F8';
+              i++;
+              document.getElementById('number').innerHTML=i;
+            } else {
+              document.getElementById('tableRow4').style.cssText = 'background-color: none';
+              i--;
+              document.getElementById('number').innerHTML=i;
+            }
+          }
+
+          function row5Select() {
+            var check5 = document.getElementById("tableRow5Input");
+
+            if (check5.checked) {
+              document.getElementById('tableRow5').style.cssText = 'background-color: #E9F1F8';
+              i++;
+              document.getElementById('number').innerHTML=i;
+            } else {
+              document.getElementById('tableRow5').style.cssText = 'background-color: none';
+              i--;
+              document.getElementById('number').innerHTML=i;
+            }
+          }
+          
         </script>
 
         <!--       -->
@@ -468,7 +577,7 @@
                   <th scope="col"  class="govuk-table__cell govuk-body-s" style="padding-bottom:0px">
                     <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="xxx" name="xxx" type="checkbox" value="aaa">
+                        <input class="govuk-checkboxes__input" id="checkAllInput" name="xxx" type="checkbox" value="aaa" onclick="checkAllRows()">
                         <label class="govuk-label govuk-checkboxes__label" for="waste"></label>
                       </div>
                     </div>
@@ -493,12 +602,12 @@
                 <!--                 -->
                 <!--                 -->
                 <!-- TABLE ROW NEW 1 -->
-                <tr class="govuk-table__row">
+                <tr class="govuk-table__row" id="tableRow1">
 
                   <td scope="row" class="govuk-table__cell govuk-body-s" style="width:30px">
                     <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="xxx" name="xxx" type="checkbox" value="aaa">
+                        <input class="govuk-checkboxes__input" id="tableRow1Input" name="xxx" type="checkbox" value="aaa" onclick="row1Select()">
                         <label class="govuk-label govuk-checkboxes__label" for="waste"></label>
                       </div>
                     </div>
@@ -617,12 +726,12 @@
                 <!--                 -->
                 <!--                 -->
                 <!-- TABLE ROW NEW 2 -->
-                <tr class="govuk-table__row" >
+                <tr class="govuk-table__row" id="tableRow2">
 
                   <td scope="row" class="govuk-table__cell govuk-body-s" style="width:30px">
                     <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="xxx" name="xxx" type="checkbox" value="aaa">
+                        <input class="govuk-checkboxes__input" id="tableRow2Input" name="xxx" type="checkbox" value="aaa" onclick="row2Select()">
                         <label class="govuk-label govuk-checkboxes__label" for="waste"></label>
                       </div>
                     </div>
@@ -684,12 +793,12 @@
                 <!--                 -->
                 <!--                 -->
                 <!-- TABLE ROW NEW 3 -->
-                <tr class="govuk-table__row" >
+                <tr class="govuk-table__row" id="tableRow3">
 
                   <td scope="row" class="govuk-table__cell govuk-body-s" style="width:30px">
                     <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="xxx" name="xxx" type="checkbox" value="aaa">
+                        <input class="govuk-checkboxes__input" id="tableRow3Input" name="xxx" type="checkbox" value="aaa" onclick="row3Select()">
                         <label class="govuk-label govuk-checkboxes__label" for="waste"></label>
                       </div>
                     </div>
@@ -747,16 +856,16 @@
 
                 </tr>
 
-                <!--           -->
-                <!--           -->
-                <!--           -->
-                <!-- TABLE ROW -->
-                <tr class="govuk-table__row" >
+                <!--             -->
+                <!--             -->
+                <!--             -->
+                <!-- TABLE ROW 4 -->
+                <tr class="govuk-table__row" id="tableRow4">
 
                   <td scope="row" class="govuk-table__cell govuk-body-s">
                     <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="xxx" name="xxx" type="checkbox" value="aaa">
+                        <input class="govuk-checkboxes__input" id="tableRow4Input" name="xxx" type="checkbox" value="aaa" onclick="row4Select()">
                         <label class="govuk-label govuk-checkboxes__label" for="waste"></label>
                       </div>
                     </div>
@@ -777,16 +886,16 @@
 
                 </tr>
 
-                <!--           -->
-                <!--           -->
-                <!--           -->
-                <!-- TABLE ROW -->
-                <tr class="govuk-table__row" >
+                <!--             -->
+                <!--             -->
+                <!--             -->
+                <!-- TABLE ROW 5 -->
+                <tr class="govuk-table__row" id="tableRow5">
                   
                   <td scope="row" class="govuk-table__cell govuk-body-s">
                     <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="xxx" name="xxx" type="checkbox" value="aaa">
+                        <input class="govuk-checkboxes__input" id="tableRow5Input" name="xxx" type="checkbox" value="aaa" onclick="row5Select()">
                         <label class="govuk-label govuk-checkboxes__label" for="waste"></label>
                       </div>
                     </div>
