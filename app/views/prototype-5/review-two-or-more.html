@@ -106,16 +106,6 @@
   <!--     -->
   <!-- ROW -->
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full" style="margin-top:-15px">
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-    </div>
-  </div>
-
-  <!--     -->
-  <!--     -->
-  <!--     -->
-  <!-- ROW -->
-  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <p style="padding-top:7px;">Showing <strong>1</strong> to <strong>8</strong> of <strong>8</strong> potential matches</p>
     </div>
@@ -149,14 +139,17 @@
     </div>
   </div>
   
-  <!--     -->
-  <!--     -->
-  <!--     -->
-  <!-- ROW -->
+  <!--                  -->
+  <!--                  -->
+  <!--                  -->
+  <!-- RECORDS SELECTED -->
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full" style="margin-top:-15px">
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <div class="govuk-grid-column-full" style="margin-top:-10px; background-color:#f3f2f1; padding-top:8px; height:40px;border-top:2px solid #0b0c0c; border-bottom:1px solid #0b0c0c; margin-left:15px; width:97%">
+      <img src="/public/img/icon-info-small.svg" alt="Info icon" style="float:left; margin-right:5px">
+      <p class="govuk-body-s" style="float:left;padding-top:1px"><span id="number"></span> records selected</p>
     </div>
+
   </div>
 
   <!--       -->
@@ -167,6 +160,205 @@
   <div class="govuk-grid-row">
 
     <div class="govuk-grid-column-full">
+
+      <script type="text/javascript">
+            
+        var i=0; 
+        document.getElementById('number').innerHTML=i;
+
+        function checkAllRows() {
+          /* CHECK ALL */
+          checkAll = document.getElementById("checkAllInput");
+          
+          if (checkAll.checked) {
+            document.getElementById('tableRow1Input').checked = true;
+            document.getElementById('tableRow1').style.cssText = 'background-color: #E9F1F8';
+            document.getElementById('tableRow2Input').checked = true;
+            document.getElementById('tableRow2').style.cssText = 'background-color: #E9F1F8';
+            document.getElementById('tableRow3Input').checked = true;
+            document.getElementById('tableRow3').style.cssText = 'background-color: #E9F1F8';
+            document.getElementById('tableRow4Input').checked = true;
+            document.getElementById('tableRow4').style.cssText = 'background-color: #E9F1F8';
+            document.getElementById('tableRow5Input').checked = true;
+            document.getElementById('tableRow5').style.cssText = 'background-color: #E9F1F8';
+            document.getElementById('tableRow6Input').checked = true;
+            document.getElementById('tableRow6').style.cssText = 'background-color: #E9F1F8';
+            document.getElementById('tableRow7Input').checked = true;
+            document.getElementById('tableRow7').style.cssText = 'background-color: #E9F1F8';
+            document.getElementById('tableRow8Input').checked = true;
+            document.getElementById('tableRow8').style.cssText = 'background-color: #E9F1F8';
+            i=8;
+            document.getElementById('number').innerHTML=i;
+            document.getElementById('download').innerHTML ="selected";
+          } else {
+            document.getElementById('tableRow1Input').checked = false;
+            document.getElementById('tableRow1').style.cssText = 'background-color: none';
+            document.getElementById('tableRow2Input').checked = false;
+            document.getElementById('tableRow2').style.cssText = 'background-color: none';
+            document.getElementById('tableRow3Input').checked = false;
+            document.getElementById('tableRow3').style.cssText = 'background-color: none';
+            document.getElementById('tableRow4Input').checked = false;
+            document.getElementById('tableRow4').style.cssText = 'background-color: none';
+            document.getElementById('tableRow5Input').checked = false;
+            document.getElementById('tableRow5').style.cssText = 'background-color: none';
+            document.getElementById('tableRow6Input').checked = false;
+            document.getElementById('tableRow6').style.cssText = 'background-color: none';
+            document.getElementById('tableRow7Input').checked = false;
+            document.getElementById('tableRow7').style.cssText = 'background-color: none';
+            document.getElementById('tableRow8Input').checked = false;
+            document.getElementById('tableRow8').style.cssText = 'background-color: none';
+            i=0;
+            document.getElementById('number').innerHTML=i;
+            document.getElementById('download').innerHTML ="all";
+          }
+        }
+
+        function row1Select() {
+          var check1 = document.getElementById("tableRow1Input");
+          
+          if (check1.checked) {
+            document.getElementById('tableRow1').style.cssText = 'background-color: #E9F1F8';
+            i++;
+            document.getElementById('number').innerHTML=i;
+            document.getElementById('download').innerHTML ="selected";
+          } else {
+            document.getElementById('tableRow1').style.cssText = 'background-color: none';
+            i--;
+            document.getElementById('number').innerHTML=i;
+            if (i==0) {
+              document.getElementById('download').innerHTML ="all";
+            }
+          }              
+        }
+        
+        function row2Select() {
+          var check2 = document.getElementById("tableRow2Input");
+
+          if (check2.checked) {
+            document.getElementById('tableRow2').style.cssText = 'background-color: #E9F1F8';
+            i++;
+            document.getElementById('number').innerHTML=i;
+            document.getElementById('download').innerHTML ="selected";
+          } else {
+            document.getElementById('tableRow2').style.cssText = 'background-color: none';
+            i--;
+            document.getElementById('number').innerHTML=i;
+            if (i==0) {
+              document.getElementById('download').innerHTML ="all";
+            }
+          }
+        }
+
+        function row3Select() {
+          var check3 = document.getElementById("tableRow3Input");
+
+          if (check3.checked) {
+            document.getElementById('tableRow3').style.cssText = 'background-color: #E9F1F8';
+            i++;
+            document.getElementById('number').innerHTML=i;
+            document.getElementById('download').innerHTML ="selected";
+          } else {
+            document.getElementById('tableRow3').style.cssText = 'background-color: none';
+            i--;
+            document.getElementById('number').innerHTML=i;
+            if (i==0) {
+              document.getElementById('download').innerHTML ="all";
+            }
+          }
+        }
+
+        function row4Select() {
+          var check4 = document.getElementById("tableRow4Input");
+
+          if (check4.checked) {
+            document.getElementById('tableRow4').style.cssText = 'background-color: #E9F1F8';
+            i++;
+            document.getElementById('number').innerHTML=i;
+            document.getElementById('download').innerHTML ="selected";
+          } else {
+            document.getElementById('tableRow4').style.cssText = 'background-color: none';
+            i--;
+            document.getElementById('number').innerHTML=i;
+            if (i==0) {
+              document.getElementById('download').innerHTML ="all";
+            }
+          }
+        }
+
+        function row5Select() {
+          var check5 = document.getElementById("tableRow5Input");
+
+          if (check5.checked) {
+            document.getElementById('tableRow5').style.cssText = 'background-color: #E9F1F8';
+            i++;
+            document.getElementById('number').innerHTML=i;
+            document.getElementById('download').innerHTML ="selected";
+          } else {
+            document.getElementById('tableRow5').style.cssText = 'background-color: none';
+            i--;
+            document.getElementById('number').innerHTML=i;
+            if (i==0) {
+              document.getElementById('download').innerHTML ="all";
+            }
+          }
+        }
+
+        function row6Select() {
+          var check6 = document.getElementById("tableRow6Input");
+
+          if (check6.checked) {
+            document.getElementById('tableRow6').style.cssText = 'background-color: #E9F1F8';
+            i++;
+            document.getElementById('number').innerHTML=i;
+            document.getElementById('download').innerHTML ="selected";
+          } else {
+            document.getElementById('tableRow6').style.cssText = 'background-color: none';
+            i--;
+            document.getElementById('number').innerHTML=i;
+            if (i==0) {
+              document.getElementById('download').innerHTML ="all";
+            }
+          }
+        }
+
+        function row7Select() {
+          var check7 = document.getElementById("tableRow7Input");
+
+          if (check7.checked) {
+            document.getElementById('tableRow7').style.cssText = 'background-color: #E9F1F8';
+            i++;
+            document.getElementById('number').innerHTML=i;
+            document.getElementById('download').innerHTML ="selected";
+          } else {
+            document.getElementById('tableRow7').style.cssText = 'background-color: none';
+            i--;
+            document.getElementById('number').innerHTML=i;
+            if (i==0) {
+              document.getElementById('download').innerHTML ="all";
+            }
+          }
+        }
+
+        function row8Select() {
+          var check8 = document.getElementById("tableRow2Input");
+
+          if (check8.checked) {
+            document.getElementById('tableRow8').style.cssText = 'background-color: #E9F1F8';
+            i++;
+            document.getElementById('number').innerHTML=i;
+            document.getElementById('download').innerHTML ="selected";
+          } else {
+            document.getElementById('tableRow8').style.cssText = 'background-color: none';
+            i--;
+            document.getElementById('number').innerHTML=i;
+            if (i==0) {
+              document.getElementById('download').innerHTML ="all";
+            }
+          }
+        }
+
+      </script>
+
 
       {% if (data['org-location-for-one'] == "uk") or (data['org-location-for-two-or-more'] == "uk") %}
 
@@ -201,7 +393,7 @@
               Accept
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px;">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <input class="govuk-checkboxes__input" id="checkAllInput" name="organisation" type="checkbox" value="hmrc" onclick="checkAllRows()">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -234,11 +426,11 @@
             <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:120px">&mdash;</td>
           </tr>
 
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row" id="tableRow1">
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <input class="govuk-checkboxes__input" id="tableRow1Input" name="organisation" type="checkbox" value="hmrc" onclick="row1Select()">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -251,11 +443,11 @@
             <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">&mdash;</td>
           </tr>
                     
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row" id="tableRow2">
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <input class="govuk-checkboxes__input" id="tableRow2Input" name="organisation" type="checkbox" value="hmrc" onclick="row2Select()">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -268,11 +460,11 @@
             <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px"><mark>5679001234</mark></td>
           </tr>
           
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row" id="tableRow3">
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <input class="govuk-checkboxes__input" id="tableRow3Input" name="organisation" type="checkbox" value="hmrc" onclick="row3Select()">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -306,11 +498,11 @@
             <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:120px">&mdash;</td>
           </tr>
 
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row" id="tableRow4">
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <input class="govuk-checkboxes__input" id="tableRow4Input" name="organisation" type="checkbox" value="hmrc" onclick="row4Select()">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -323,11 +515,11 @@
             <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">&mdash;</td>
           </tr>
                     
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row" id="tableRow5">
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <input class="govuk-checkboxes__input" id="tableRow5Input" name="organisation" type="checkbox" value="hmrc" onclick="row5Select()">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -361,11 +553,11 @@
             <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:120px">&mdash;</td>
           </tr>
 
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row" id="tableRow6">
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <input class="govuk-checkboxes__input" id="tableRow6Input" name="organisation" type="checkbox" value="hmrc" onclick="row6Select()">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -378,11 +570,11 @@
             <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">&mdash;</td>
           </tr>
                     
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row" id="tableRow7">
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <input class="govuk-checkboxes__input" id="tableRow7Input" name="organisation" type="checkbox" value="hmrc" onclick="row7Select()">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -395,11 +587,11 @@
             <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">&mdash;</td>
           </tr>
           
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row" id="tableRow8">
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <input class="govuk-checkboxes__input" id="tableRow8Input" name="organisation" type="checkbox" value="hmrc" onclick="row8Select()">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -454,7 +646,7 @@
               Accept
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px;">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <input class="govuk-checkboxes__input" id="checkAllInput" name="organisation" type="checkbox" value="hmrc" onclick="checkAllRows()">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -485,11 +677,11 @@
             <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:120px">0123456790</td>
           </tr>
                               
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row" id="tableRow1">
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <input class="govuk-checkboxes__input" id="tableRow1Input" name="organisation" type="checkbox" value="hmrc" onclick="row1Select()">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -501,11 +693,11 @@
             <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">0123456790</td>
           </tr>
                     
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row" id="tableRow2">
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <input class="govuk-checkboxes__input" id="tableRow2Input" name="organisation" type="checkbox" value="hmrc" onclick="row2Select()">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -517,11 +709,11 @@
             <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px"><mark>5679001234</mark></td>
           </tr>
           
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row" id="tableRow3">
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <input class="govuk-checkboxes__input" id="tableRow3Input" name="organisation" type="checkbox" value="hmrc" onclick="row3Select()">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -553,11 +745,11 @@
             <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:120px">4523896701</td>
           </tr>
                               
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row" id="tableRow4">
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <input class="govuk-checkboxes__input" id="tableRow4Input" name="organisation" type="checkbox" value="hmrc" onclick="row4Select()">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -569,11 +761,11 @@
             <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">4523896701</td>
           </tr>
                     
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row" id="tableRow5">
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <input class="govuk-checkboxes__input" id="tableRow5Input" name="organisation" type="checkbox" value="hmrc" onclick="row5Select()">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -605,11 +797,11 @@
             <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:120px">0123456790</td>
           </tr>
                               
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row" id="tableRow6">
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <input class="govuk-checkboxes__input" id="tableRow6Input" name="organisation" type="checkbox" value="hmrc" onclick="row6Select()">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -621,11 +813,11 @@
             <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">0123456790</td>
           </tr>
                     
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row" id="tableRow7">
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <input class="govuk-checkboxes__input" id="tableRow7Input" name="organisation" type="checkbox" value="hmrc" onclick="row7Select()">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
@@ -637,11 +829,11 @@
             <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">0123456790</td>
           </tr>
           
-          <tr class="govuk-table__row">
+          <tr class="govuk-table__row" id="tableRow8">
             <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <input class="govuk-checkboxes__input" id="tableRow8Input" name="organisation" type="checkbox" value="hmrc" onclick="row8Select()">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
                 </div>
               </div>
