@@ -162,7 +162,8 @@ router.post('/threats-type-answer', function (req, res) {
 
     // Check whether the variable matches a condition
     if (whichThreat == "sanctions"){
-      res.redirect('/prototype-5/sanctions')
+      //res.redirect('/prototype-5/sanctions')
+      res.redirect('https://spotlight-2021-v3.herokuapp.com/v14.5/engagement')
     } else if (whichThreat == "economic-crime"){
       res.redirect('/prototype-5/results-history')
     } else {
