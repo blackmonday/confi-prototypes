@@ -321,7 +321,7 @@ router.post('/how-many-orgs', function (req, res) {
 
     
     //
-    // START Prototype 4 routes
+    // START Prototype 5 routes
     //
   } else if (whichPrototype == "5.0"){
 
@@ -332,12 +332,14 @@ router.post('/how-many-orgs', function (req, res) {
 
       // Check whether the variable matches a condition
       if (howManyOrgs == "one"){
+        req.session.data['org-location-for-two-or-more'] = ""
         if (orgLocationForOne == "uk"){
           res.redirect('/prototype-5/economic-crime-checks')
         } else if (orgLocationForOne == "international"){
           res.redirect('/prototype-5/economic-crime-checks')
         }
       } else if (howManyOrgs == "two-or-more"){
+        req.session.data['org-location-for-one'] = ""
         if (orgLocationForTwoOrMore == "uk"){
           res.redirect('/prototype-5/two-or-more')
         } else if (orgLocationForTwoOrMore == "international"){
