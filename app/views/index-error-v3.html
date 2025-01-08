@@ -91,15 +91,15 @@
           items: [
             {
               value: "1.0",
-              text: "Prototype one"
+              text: "Prototype one (archived)"
             },
             {
               value: "2.0",
-              text: "Prototype two"
+              text: "Prototype two (archived)"
             },
             {
               value: "3.0",
-              text: "Prototype three",
+              text: "Prototype three (archived)",
               checked: true,
               conditional: {
                 html: whichUser
@@ -107,7 +107,14 @@
             },
             {
               value: "4.0",
-              text: "Prototype four",
+              text: "Prototype four (archived)",
+              conditional: {
+                html: whichUser
+              }
+            },
+            {
+              value: "5.0",
+              text: "Prototype five",
               conditional: {
                 html: whichUser
               }
