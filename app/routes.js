@@ -63,6 +63,19 @@ router.post('/which-prototype', function (req, res) {
       res.redirect('/index-error-v5')
     }
 
+  } else if (whichPrototype == "6.0"){
+    if (whichUser == "user1"){
+      req.session.data['contracts-text'] = "View and manage your contracts and suppliers"
+      req.session.data['threats-text'] = "Run sanction checks on individuals and organisations"
+      req.session.data['grants-text'] = "View and manage your grant schemes and applicants"
+      res.redirect('/prototype-6/index')
+    } else if (whichUser == "user2"){
+      req.session.data['threats-text'] = "Conduct due diligence checks on entities."
+      res.redirect('/prototype-6/index')
+    } else {
+      res.redirect('/index-error-v6')
+    }
+
   } else{
     res.redirect('/index-error')
   }
@@ -71,6 +84,16 @@ router.post('/which-prototype', function (req, res) {
 //
 //
 //
+
+
+
+
+
+
+
+
+
+
 
 
 //
@@ -170,9 +193,32 @@ router.post('/threats-type-answer', function (req, res) {
       res.redirect('/prototype-5/threats-error')
     }
 
+    //
+    // START Prototype 6 routes
+    //
+  } else if (whichPrototype == "6.0"){
+          
+    // Make a variable and give it the value from 'which-threat'
+    var whichThreat = req.session.data['which-threat']
+
+    // Check whether the variable matches a condition
+    if (whichThreat == "sanctions"){
+      //res.redirect('/prototype-5/sanctions')
+      res.redirect('https://spotlight-2021-v3.herokuapp.com/v14.5/engagement')
+    } else if (whichThreat == "economic-crime"){
+      res.redirect('/prototype-6/results-history')
+    } else {
+      res.redirect('/prototype-6/threats-error')
+    }
+
   }
 
 })
+
+
+
+
+
 
 
 
@@ -215,6 +261,11 @@ router.post('/which-check-answer', function (req, res) {
   }
 
 })
+
+
+
+
+
 
 
 
@@ -319,8 +370,7 @@ router.post('/how-many-orgs', function (req, res) {
     } else {
       res.redirect('/prototype-4/how-many-orgs-error')
     }
-
-    
+  
     //
     // START Prototype 5 routes
     //
@@ -349,10 +399,44 @@ router.post('/how-many-orgs', function (req, res) {
       } else {
         res.redirect('/prototype-5/how-many-orgs-error')
       }
+  
+    //
+    // START Prototype 5 routes
+    //
+  } else if (whichPrototype == "6.0"){
+
+    // Make a variable and give it the value from 'how-many-orgs'
+    var howManyOrgs = req.session.data['how-many-orgs']
+    var orgLocationForOne = req.session.data['org-location-for-one']
+    var orgLocationForTwoOrMore = req.session.data['org-location-for-two-or-more']
+
+    // Check whether the variable matches a condition
+    if (howManyOrgs == "one"){
+      req.session.data['org-location-for-two-or-more'] = ""
+      if (orgLocationForOne == "uk"){
+        res.redirect('/prototype-6/economic-crime-checks')
+      } else if (orgLocationForOne == "international"){
+        res.redirect('/prototype-6/economic-crime-checks')
+      }
+    } else if (howManyOrgs == "two-or-more"){
+      req.session.data['org-location-for-one'] = ""
+      if (orgLocationForTwoOrMore == "uk"){
+        res.redirect('/prototype-6/two-or-more')
+      } else if (orgLocationForTwoOrMore == "international"){
+        res.redirect('/prototype-6/two-or-more')
+      }
+    } else {
+      res.redirect('/prototype-6/how-many-orgs-error')
+    }
 
   } 
     
 })
+
+
+
+
+
 
 
 
@@ -486,4 +570,21 @@ router.post('/pepsadversemediacheck', function (req, res) {
 router.post('/orgadversemediacheck', function (req, res) {
   req.session.data['orgAdverseMediaChecked'] = "Yes"
   res.redirect('/prototype-5/orgadversemedia-upload-summary-checking')
+})
+
+//
+// START Prototype 6 routes
+//
+router.post('/economic-crime-checks-v6', function (req, res) {
+  res.redirect('/prototype-6/review')
+})
+
+router.post('/pepsadversemediacheck_v6', function (req, res) {
+  req.session.data['PEPSAdverseMediaChecked'] = "Yes"
+  res.redirect('/prototype-6/peps-adversemedia-upload-summary-checking')
+})
+
+router.post('/orgadversemediacheck_v6', function (req, res) {
+  req.session.data['orgAdverseMediaChecked'] = "Yes"
+  res.redirect('/prototype-6/orgadversemedia-upload-summary-checking')
 })

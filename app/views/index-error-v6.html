@@ -7,6 +7,24 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+        {
+          text: "Select the user type before starting protytpe three",
+          href: "#which-prototype-input"
+        }
+      ]
+    }) }}
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
     <!--{% include "govuk-prototype-kit/includes/homepage-top.njk" %}-->
 
     <!--<h1 class="govuk-heading-xl">
@@ -17,29 +35,37 @@
     
     <!--{% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}-->
 
-    {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
-
     {% set html %}
-      <p class="govuk-notification-banner__body">
-        Always clear data before starting a protytpe.
-        <a class="govuk-notification-banner__link" href="/manage-prototype/clear-data">Clear data</a>.
-      </p>
-    {% endset %}
-    
-    {{ govukNotificationBanner({
-      html: html
-    }) }}
+    <p class="govuk-notification-banner__body">
+      Always clear data before starting a protytpe.
+      <a class="govuk-notification-banner__link" href="/manage-prototype/clear-data">Clear data</a>.
+    </p>
+  {% endset %}
+  
+  {{ govukNotificationBanner({
+    html: html
+  }) }}
 
-    <p style="margin-top:-15px">Select a prototype:</p>
+  <p style="margin-top:-15px">Select a prototype:</p>
 
-    <form class="form" action="/which-prototype" method="post">
+  <!--{% from "govuk/components/button/macro.njk" import govukButton %}
+
+  {{ govukButton({
+    text: "Start prototype 1",
+    href: "/prototype-1/index",
+    isStartButton: true
+  }) }}-->
+
+
+
+    <form class="form" action="/which-prototype" method="post" id="which-prototype-input">
 
       <p>
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {% set whichUser %}
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-        
+
         {{ govukRadios({
           name: "which-user",
           value: data['which-user'],
@@ -52,14 +78,16 @@
               value: "user2",
               text: "All other users"
             }
-          ]
+          ],
+          errorMessage: {
+            text: "Select the user type before starting protytpe three"
+          }
         }) }}
 
         {% endset -%}
-
+        
         {{ govukRadios({
           name: "which-prototype",
-          value: data['which-prototype'],
           items: [
             {
               value: "1.0",
@@ -85,7 +113,7 @@
             },
             {
               value: "5.0",
-              text: "Prototype fiver (archived)",
+              text: "Prototype five",
               conditional: {
                 html: whichUser
               }
@@ -93,6 +121,7 @@
             {
               value: "6.0",
               text: "Prototype six",
+              checked: true,
               conditional: {
                 html: whichUser
               }
@@ -109,10 +138,24 @@
     </form>
 
   </div>
+
   <div class="govuk-grid-column-one-third">
 
-  </div>
+    <!--{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
+    {% set html %}
+      <p class="govuk-notification-banner__body">
+        Always clear data before starting a protytpe.
+        <a class="govuk-notification-banner__link" href="/manage-prototype/clear-data">Clear data</a>.
+      </p>
+    {% endset %}
+    
+    {{ govukNotificationBanner({
+      html: html
+    }) }}-->
+      
+  </div>
+  
 </div>
 
 {% endblock %}
