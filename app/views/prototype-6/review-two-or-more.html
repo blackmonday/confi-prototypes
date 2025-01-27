@@ -64,7 +64,7 @@
     <div class="govuk-grid-column-one-third">
       <div class="govuk-form-group">
         <style>
-          select.govuk-select {
+          select.how-many {
             min-width:0;
             width:35%;
             float:right;
@@ -80,7 +80,7 @@
         <label class="govuk-label select-label" for="sort">
           View per page
         </label>
-        <select class="govuk-select" id="sort" name="sort">
+        <select class="govuk-select how-many" id="sort" name="sort">
           <option value="10">10</option>
           <option value="20" selected>20</option>
           <option value="50">50</option>
@@ -808,6 +808,7 @@
   <div class="govuk-grid-row">                            
     <div class="govuk-grid-column-two-thirds">
 
+      <!--
       <div class="govuk-form-group govuk-!-margin-bottom-0">
         <label class="govuk-label govuk-!-font-weight-bold" for="reference0-ID">
           Reference ID (optional)
@@ -825,6 +826,36 @@
 
         <p class="govuk-body govuk-hint">You can enter up to 80 characters or select an existing reference ID from the dropdown list</p>
       </div>
+      -->
+
+      <label class="govuk-label govuk-!-font-weight-bold" for="reference0-ID">
+        Reference ID (optional)
+      </label>
+      <div id="referene-ID-hint" class="govuk-body">
+        This is an optional  field to enable the system to differentiate between checks. You can select a reference ID from the list or create a new one. This can be any combination of characters, special characters (for example, hyphens), or numbers.
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sort">
+          Select an existing reference ID
+        </label>
+        <select class="govuk-select" id="sort" name="sort">
+          <option value="ref-id-0" selected></option>
+          <option value="ref-id-1">[Reference ID one xxxxxxxxxxxxxx]</option>
+          <option value="ref-id-2">[Reference ID two yyyyyyyyyyyyyyyyyyyyy]</option>
+          <option value="ref-id-3">[Reference ID three zzzzzzzz]</option>
+        </select>
+      </div>
+
+      <p class="govuk-body" style="margin-top:-10px;margin-bottom:10px">or</p>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="address-line-1">
+            Create a new reference ID
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="address-line-1" name="addressLine1" type="text" autocomplete="address-line1">
+          <p class="govuk-hint">You can enter up to 80 characters</p>
+        </div>
 
     </div>
   </div>

@@ -588,3 +588,14 @@ router.post('/orgadversemediacheck_v6', function (req, res) {
   req.session.data['orgAdverseMediaChecked'] = "Yes"
   res.redirect('/prototype-6/orgadversemedia-upload-summary-checking')
 })
+
+router.post('/run-additional-checks', function (req, res) {
+  var runAdditionalChecksFor = req.session.data['run-additional-checks-for']
+
+  // Check whether the variable matches a condition
+  if (runAdditionalChecksFor == "organisations"){
+    res.redirect('/prototype-6/orgadversemedia')
+  } else if (runAdditionalChecksFor == "people"){
+    res.redirect('/prototype-6/peps-adversemedia')
+  }
+})

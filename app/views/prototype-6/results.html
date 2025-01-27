@@ -195,12 +195,11 @@
       <!--                  -->
       <!--                  -->
       <!-- DOWNLOAD RESULTS -->
-      <!--
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
       <div class="govuk-grid-row">
 
-        <div class="govuk-grid-column-full">
-
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <div class="govuk-grid-column-one-half">
 
           <p class="govuk-!-margin-bottom-2 govuk-heading-s">Download results of economic crime checks</p>
           <div class="parent" style="width:100%; height=50px;display:flex">
@@ -213,13 +212,24 @@
             </div>
           </div>
 
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible">
+        </div>
+
+        <div class="govuk-grid-column-one-half" style="text-align:right">
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Run additional checks",
+            href: "run-additional-checks"
+          }) }}
+
+          <p class="govuk-body-s" style="color:#505a5f;margin-top:-20px">This includes sanctions, PEPs and adverse media</p>
 
         </div>
-      </div>
-    -->
 
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible">
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--hidden">
 
       <div class="govuk-grid-row">
 
@@ -870,7 +880,7 @@
                 <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
                   <p class="govuk-body">Know your applicant checks relate to National Security and Economic Crime and show information held by Companies House, the Charity Commission and other sources on organisation.</p>
 
-                  <p class="govuk-body"><a href="https://spotlight-2021-v3.herokuapp.com/v14.5/engagement">You can also run a Sanctions check (opens in new tab)</a></p>
+                  <!--<p class="govuk-body"><a href="https://spotlight-2021-v3.herokuapp.com/v14.5/engagement">You can also run a Sanctions check (opens in new tab)</a></p>-->
 
                 </div>
               </div>
@@ -991,6 +1001,51 @@
 
               </div>
             </div>
+
+
+
+
+
+
+
+
+
+            {% if (data['orgAdverseMediaChecked'] == "Yes") %}
+
+            <!--                        -->
+            <!--                        -->
+            <!--                        -->
+            <!--                        -->
+            <!-- Organisation sanctions -->
+            <div class="govuk-accordion__section sections">
+              <div class="govuk-accordion__section-header" style="margin-bottom:-15px">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1" style="">
+                    Organisation sanctions
+                  </span>
+                </h2>
+
+                <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+                  <p class="govuk-heading-s">
+                    Risk level
+                    <strong class="govuk-tag govuk-tag--red" style="margin-left:30px;margin-right:30px">
+                      HIGH
+                    </strong>
+                    <span class="govuk-body">This organisation appears on UK or UN sanctions or watchlist.</span>
+                  </p>
+
+                  <p class="govuk-body">A collection of the list that Spootlight checks against can be viewed on the <a href="">Knowledge Hub</a>.</p>
+                </div>
+              </div>
+
+              <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
+
+                <p class="govuk-body">Coming soon!</p>
+                  <img src="/public/img/organisation-sanctions-example.png" alt="example of an organsiation sanctions check" style="width:800px; margin-top:-40px">
+
+              </div>
+            </div>
+            {% endif %}
 
             <!--                         -->
             <!--                         -->
@@ -1621,6 +1676,7 @@
                 <!--                                                 -->
                 <!--                                                 -->
                 <!-- DATA ITEM - ORGANISATION ADVERSE MEDIA PRECHECK -->
+                <!--
                 <div class="organsiation-aderse-media-precheck">
 
                   <div class="govuk-grid-row" style="margin-bottom: -15px;">
@@ -1647,6 +1703,7 @@
                   </div>
 
                 </div>
+                -->
 
                 {% endif %}
 
@@ -1719,6 +1776,7 @@
                       })}}
                     </p>
                   </div>
+                  <!--
                   <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
                     <a href="peps-adversemedia"><button type="submit" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-3" data-module="govuk-button">
                       PEPs and Adverse Media
@@ -1728,6 +1786,7 @@
                       Check whether entities are politically exposed people (PEPs) or have received adverse media coverage.
                     </p>
                   </div>
+                  -->
                 </div>
                 
                 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
@@ -3746,7 +3805,7 @@
             <!--                 -->
             <!--                 -->
             <!-- SECTION SUMMARY -->
-             <!--
+            <!--
             <div class="govuk-accordion__section sections">
               <div class="govuk-accordion__section-header" style="">
                 <h2 class="govuk-accordion__section-heading">
@@ -4672,12 +4731,32 @@
 
                 </div>
 
+                <!--                                                  -->
+                <!--                                                  -->
+                <!--                                                  -->
+                <!-- DATA ITEM - ORGANISATION ADVERSE MEDIA HELP TEXT -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <details class="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with organsiation adverse media
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Content to be confirmed.
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
                 {% else %}
 
                 <!--                                                 -->
                 <!--                                                 -->
                 <!--                                                 -->
                 <!-- DATA ITEM - ORGANISATION ADVERSE MEDIA PRECHECK -->
+                <!--
                 <div class="organsiation-aderse-media-precheck">
 
                   <div class="govuk-grid-row" style="margin-bottom: -15px;">
@@ -4702,29 +4781,10 @@
                       </p>
                     </div>
                   </div>
-
+                  -->
                 </div>
 
                 {% endif %}
-
-                <!--                                                  -->
-                <!--                                                  -->
-                <!--                                                  -->
-                <!-- DATA ITEM - ORGANISATION ADVERSE MEDIA HELP TEXT -->
-                <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                  <div class="govuk-grid-column-full">
-                    <details class="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          Help with organsiation adverse media
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        Content to be confirmed.
-                      </div>
-                    </details>
-                  </div>
-                </div>
 
                 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" style="border-bottom-width:5px; border-color:#505A5F">
 
@@ -4770,6 +4830,7 @@
                       })}}
                     </p>
                   </div>
+                  <!--
                   <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
                     <a href="peps-adversemedia"><button type="submit" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-3" data-module="govuk-button" href="peps-adversemedia">
                       PEPs and Adverse Media
@@ -4778,6 +4839,7 @@
                       Check whether entities are politically exposed people (PEPs) or have received adverse media coverage.
                     </p>
                   </div>
+                  -->
                 </div>
                 
                 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom: 50px;">
