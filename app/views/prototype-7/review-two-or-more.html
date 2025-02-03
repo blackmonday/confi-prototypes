@@ -1,0 +1,902 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <!--     -->
+  <!--     -->
+  <!--     -->
+  <!-- ROW -->
+  <div class="govuk-grid-row">                            
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Potential matches for review
+      </h1>
+
+      <p class="govuk-body">Spotlight has identified possible matches for the entity details provided.</p>
+
+    </div>
+  </div>
+
+  <!--     -->
+  <!--     -->
+  <!--     -->
+  <!-- ROW -->
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-half">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="full">
+          <strong>Search by entity name</strong>
+        </label>
+        <input class="govuk-input govuk-!-width-full" id="full" name="full" type="text">
+      </div>
+    </div>
+
+    <!--
+    <div class="govuk-grid-column-one-half" style="text-align: right;">
+      <p class="govuk-body" style="margin-bottom:0">Your total credits: <strong style="color:#1d70b8">420</strong></p>
+      <p class="govuk-heading-m" style="margin-top:-10px"><strong>This search uses: <span style="color:#00703c">6 credits</span></strong></p>
+    </div>
+    -->
+ 
+  </div>
+
+  <!--     -->
+  <!--     -->
+  <!--     -->
+  <!-- ROW -->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p style="padding-top:7px;">Showing <strong>1</strong> to <strong>8</strong> of <strong>8</strong> potential matches</p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <div class="govuk-form-group">
+        <style>
+          select.how-many {
+            min-width:0;
+            width:35%;
+            float:right;
+            margin-left:10px;
+          }
+          .select-label {                  
+            float:left;
+            width:60%;
+            text-align:right;
+            padding-top:7px;
+          }
+        </style>
+        <label class="govuk-label select-label" for="sort">
+          View per page
+        </label>
+        <select class="govuk-select how-many" id="sort" name="sort">
+          <option value="10">10</option>
+          <option value="20" selected>20</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+
+    </div>
+  </div>
+  
+  <!--                  -->
+  <!--                  -->
+  <!--                  -->
+  <!-- RECORDS SELECTED -->
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full" style="margin-top:-10px; background-color:#f3f2f1; padding-top:8px; height:40px;border-top:2px solid #0b0c0c; border-bottom:1px solid #0b0c0c; margin-left:15px; width:97%">
+      <img src="/public/img/icon-info-small.svg" alt="Info icon" style="float:left; margin-right:5px">
+      <p class="govuk-body-s" style="float:left;padding-top:1px"><span id="number"></span> records selected</p>
+    </div>
+
+  </div>
+
+  <!--       -->
+  <!--       -->
+  <!--       -->
+  <!--       -->
+  <!-- TABLE -->
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full">
+
+      <script type="text/javascript">
+            
+        var i=0; 
+        document.getElementById('number').innerHTML=i;
+
+        function checkAllRows() {
+          /* CHECK ALL */
+          checkAll = document.getElementById("checkAllInput");
+          
+          if (checkAll.checked) {
+            document.getElementById('tableRow1Input').checked = true;
+            document.getElementById('tableRow1').style.cssText = 'background-color: #E9F1F8';
+            document.getElementById('tableRow2Input').checked = true;
+            document.getElementById('tableRow2').style.cssText = 'background-color: #E9F1F8';
+            document.getElementById('tableRow3Input').checked = true;
+            document.getElementById('tableRow3').style.cssText = 'background-color: #E9F1F8';
+            document.getElementById('tableRow4Input').checked = true;
+            document.getElementById('tableRow4').style.cssText = 'background-color: #E9F1F8';
+            document.getElementById('tableRow5Input').checked = true;
+            document.getElementById('tableRow5').style.cssText = 'background-color: #E9F1F8';
+            document.getElementById('tableRow6Input').checked = true;
+            document.getElementById('tableRow6').style.cssText = 'background-color: #E9F1F8';
+            document.getElementById('tableRow7Input').checked = true;
+            document.getElementById('tableRow7').style.cssText = 'background-color: #E9F1F8';
+            document.getElementById('tableRow8Input').checked = true;
+            document.getElementById('tableRow8').style.cssText = 'background-color: #E9F1F8';
+            i=8;
+            document.getElementById('number').innerHTML=i;
+            document.getElementById('download').innerHTML ="selected";
+          } else {
+            document.getElementById('tableRow1Input').checked = false;
+            document.getElementById('tableRow1').style.cssText = 'background-color: none';
+            document.getElementById('tableRow2Input').checked = false;
+            document.getElementById('tableRow2').style.cssText = 'background-color: none';
+            document.getElementById('tableRow3Input').checked = false;
+            document.getElementById('tableRow3').style.cssText = 'background-color: none';
+            document.getElementById('tableRow4Input').checked = false;
+            document.getElementById('tableRow4').style.cssText = 'background-color: none';
+            document.getElementById('tableRow5Input').checked = false;
+            document.getElementById('tableRow5').style.cssText = 'background-color: none';
+            document.getElementById('tableRow6Input').checked = false;
+            document.getElementById('tableRow6').style.cssText = 'background-color: none';
+            document.getElementById('tableRow7Input').checked = false;
+            document.getElementById('tableRow7').style.cssText = 'background-color: none';
+            document.getElementById('tableRow8Input').checked = false;
+            document.getElementById('tableRow8').style.cssText = 'background-color: none';
+            i=0;
+            document.getElementById('number').innerHTML=i;
+            document.getElementById('download').innerHTML ="all";
+          }
+        }
+
+        function row1Select() {
+          var check1 = document.getElementById("tableRow1Input");
+          
+          if (check1.checked) {
+            document.getElementById('tableRow1').style.cssText = 'background-color: #E9F1F8';
+            i++;
+            document.getElementById('number').innerHTML=i;
+            document.getElementById('download').innerHTML ="selected";
+          } else {
+            document.getElementById('tableRow1').style.cssText = 'background-color: none';
+            i--;
+            document.getElementById('number').innerHTML=i;
+            if (i==0) {
+              document.getElementById('download').innerHTML ="all";
+            }
+          }              
+        }
+        
+        function row2Select() {
+          var check2 = document.getElementById("tableRow2Input");
+
+          if (check2.checked) {
+            document.getElementById('tableRow2').style.cssText = 'background-color: #E9F1F8';
+            i++;
+            document.getElementById('number').innerHTML=i;
+            document.getElementById('download').innerHTML ="selected";
+          } else {
+            document.getElementById('tableRow2').style.cssText = 'background-color: none';
+            i--;
+            document.getElementById('number').innerHTML=i;
+            if (i==0) {
+              document.getElementById('download').innerHTML ="all";
+            }
+          }
+        }
+
+        function row3Select() {
+          var check3 = document.getElementById("tableRow3Input");
+
+          if (check3.checked) {
+            document.getElementById('tableRow3').style.cssText = 'background-color: #E9F1F8';
+            i++;
+            document.getElementById('number').innerHTML=i;
+            document.getElementById('download').innerHTML ="selected";
+          } else {
+            document.getElementById('tableRow3').style.cssText = 'background-color: none';
+            i--;
+            document.getElementById('number').innerHTML=i;
+            if (i==0) {
+              document.getElementById('download').innerHTML ="all";
+            }
+          }
+        }
+
+        function row4Select() {
+          var check4 = document.getElementById("tableRow4Input");
+
+          if (check4.checked) {
+            document.getElementById('tableRow4').style.cssText = 'background-color: #E9F1F8';
+            i++;
+            document.getElementById('number').innerHTML=i;
+            document.getElementById('download').innerHTML ="selected";
+          } else {
+            document.getElementById('tableRow4').style.cssText = 'background-color: none';
+            i--;
+            document.getElementById('number').innerHTML=i;
+            if (i==0) {
+              document.getElementById('download').innerHTML ="all";
+            }
+          }
+        }
+
+        function row5Select() {
+          var check5 = document.getElementById("tableRow5Input");
+
+          if (check5.checked) {
+            document.getElementById('tableRow5').style.cssText = 'background-color: #E9F1F8';
+            i++;
+            document.getElementById('number').innerHTML=i;
+            document.getElementById('download').innerHTML ="selected";
+          } else {
+            document.getElementById('tableRow5').style.cssText = 'background-color: none';
+            i--;
+            document.getElementById('number').innerHTML=i;
+            if (i==0) {
+              document.getElementById('download').innerHTML ="all";
+            }
+          }
+        }
+
+        function row6Select() {
+          var check6 = document.getElementById("tableRow6Input");
+
+          if (check6.checked) {
+            document.getElementById('tableRow6').style.cssText = 'background-color: #E9F1F8';
+            i++;
+            document.getElementById('number').innerHTML=i;
+            document.getElementById('download').innerHTML ="selected";
+          } else {
+            document.getElementById('tableRow6').style.cssText = 'background-color: none';
+            i--;
+            document.getElementById('number').innerHTML=i;
+            if (i==0) {
+              document.getElementById('download').innerHTML ="all";
+            }
+          }
+        }
+
+        function row7Select() {
+          var check7 = document.getElementById("tableRow7Input");
+
+          if (check7.checked) {
+            document.getElementById('tableRow7').style.cssText = 'background-color: #E9F1F8';
+            i++;
+            document.getElementById('number').innerHTML=i;
+            document.getElementById('download').innerHTML ="selected";
+          } else {
+            document.getElementById('tableRow7').style.cssText = 'background-color: none';
+            i--;
+            document.getElementById('number').innerHTML=i;
+            if (i==0) {
+              document.getElementById('download').innerHTML ="all";
+            }
+          }
+        }
+
+        function row8Select() {
+          var check8 = document.getElementById("tableRow2Input");
+
+          if (check8.checked) {
+            document.getElementById('tableRow8').style.cssText = 'background-color: #E9F1F8';
+            i++;
+            document.getElementById('number').innerHTML=i;
+            document.getElementById('download').innerHTML ="selected";
+          } else {
+            document.getElementById('tableRow8').style.cssText = 'background-color: none';
+            i--;
+            document.getElementById('number').innerHTML=i;
+            if (i==0) {
+              document.getElementById('download').innerHTML ="all";
+            }
+          }
+        }
+
+      </script>
+
+
+      {% if (data['org-location-for-one'] == "uk") or (data['org-location-for-two-or-more'] == "uk") %}
+
+      <!--            -->
+      <!--            -->
+      <!--            -->
+      <!-- UK MATCHES -->
+      <!--<p class="govuk-body" style="color:red">UK MATCHES</p>-->
+
+      <style>
+        .gov-table__header .app-custom-class {
+          font-size:10px!important;
+        }
+        .original-matched {
+          background-color:rgba(0, 112, 60,.1);
+          border-left:4px solid #005a30;
+          border-right:1px solid #005a30
+        }
+        .original-no-match {
+          background-color:#fff7bf;
+          border-left:4px solid #594d00;
+          border-right:1px solid #005a30;
+        }
+      </style>
+
+      <table class="govuk-table">
+        <!--<caption class="govuk-table__caption govuk-table__caption--m">Month you apply</caption>-->
+        
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header app-custom-class" style="width: 53px; font-size:16px;text-align:center">
+              Accept
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px;">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="checkAllInput" name="organisation" type="checkbox" value="hmrc" onclick="checkAllRows()">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="width: 65px; font-size:16px">Match score</th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px"><a href="#">Entity name</a></th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px"><a href="#">City</a></th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:100px"><a href="#">Postcode</a></th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:120px"><a href="#">Companies House</a></th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:120px"><a href="#">Charity Commission</a></th>
+          </tr>
+        </thead>
+        
+        <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row original-matched">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center;">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px;visibility: hidden;">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:12px; padding-top:12px"><strong>ORIGINAL MATCHED</strong></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px">Microsoft</td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:16px">Reading</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:100px">RG1 2ED</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:120px">0987654321</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:120px">&mdash;</td>
+          </tr>
+
+          <tr class="govuk-table__row" id="tableRow1">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="tableRow1Input" name="organisation" type="checkbox" value="hmrc" onclick="row1Select()">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">100%</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px">Microsoft</td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Reading</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">RG1 2ED</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">0987654321</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">&mdash;</td>
+          </tr>
+                    
+          <tr class="govuk-table__row" id="tableRow2">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="tableRow2Input" name="organisation" type="checkbox" value="hmrc" onclick="row2Select()">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">70%</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><mark>Microsoft Limited</mark></td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Reading</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">RG1 2ED</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px"><mark>&mdash;</mark></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px"><mark>5679001234</mark></td>
+          </tr>
+          
+          <tr class="govuk-table__row" id="tableRow3">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="tableRow3Input" name="organisation" type="checkbox" value="hmrc" onclick="row3Select()">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">50%</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><mark>Microsoft a Gravida</mark></td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px"><mark>Manchester</mark></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px"><mark>MA64 3EG</mark></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px"><mark>1324576809</mark></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">&mdash;</td>
+          </tr>
+          
+        </tbody>
+
+        <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row original-no-match">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center;">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px;visibility: hidden;">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:12px; padding-top:12px"><strong>ORIGINAL NO MATCH</strong></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px">Google</td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:16px">London</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:100px">SW1W 9TQ</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:120px">03977902</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:120px">&mdash;</td>
+          </tr>
+
+          <tr class="govuk-table__row" id="tableRow4">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="tableRow4Input" name="organisation" type="checkbox" value="hmrc" onclick="row4Select()">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">97%</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><mark>Google UK Limited</mark></td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">London</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">SW1W 9TQ</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">03977902</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">&mdash;</td>
+          </tr>
+                    
+          <tr class="govuk-table__row" id="tableRow5">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="tableRow5Input" name="organisation" type="checkbox" value="hmrc" onclick="row5Select()">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">37%</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><mark>Google Connect UK Ltd</mark></td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px"><mark>Henley-In-Arden</mark></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px"><mark>B95 5BH</mark></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px"><mark>&mdash;</mark></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px"><mark>5679001234</mark></td>
+          </tr>
+                    
+        </tbody>
+
+        <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row original-matched">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center;">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px;visibility: hidden;">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:12px; padding-top:12px"><strong>ORIGINAL MATCHED</strong></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px">TVR Automotive Limited</td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:16px">Swindon</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:100px">SN2 2GA</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:120px">05449931</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:120px">&mdash;</td>
+          </tr>
+
+          <tr class="govuk-table__row" id="tableRow6">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="tableRow6Input" name="organisation" type="checkbox" value="hmrc" onclick="row6Select()">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">100%</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px">TVR Automotive Limited</td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Swindon</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">SN2 2GA</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">05449931</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">&mdash;</td>
+          </tr>
+                    
+          <tr class="govuk-table__row" id="tableRow7">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="tableRow7Input" name="organisation" type="checkbox" value="hmrc" onclick="row7Select()">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">70%</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><mark>TVR Applications Limited</mark></td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px"><mark>Kineton</mark></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px"><mark>&mdash;</mark></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px"><mark>09261674</mark></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">&mdash;</td>
+          </tr>
+          
+          <tr class="govuk-table__row" id="tableRow8">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="tableRow8Input" name="organisation" type="checkbox" value="hmrc" onclick="row8Select()">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">50%</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><mark>TVR Car Club Limited</mark></td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px"><mark>Newport</mark></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px"><mark>TF10 7DW</mark></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px"><mark>02426865</mark></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">&mdash;</td>
+          </tr>
+          
+        </tbody>
+
+      </table>
+
+      {% else %}
+
+      <!--                       -->
+      <!--                       -->
+      <!--                       -->
+      <!-- INTERNATIONAL MATCHES -->
+      <!--<p class="govuk-body" style="color:red">INTERNATIONAL MATCHES</p>-->
+
+      <style>
+        .gov-table__header .app-custom-class {
+          font-size:10px!important;
+        }
+        .original-matched {
+          background-color:rgba(0, 112, 60,.1);
+          border-left:4px solid #005a30;
+          border-right:1px solid #005a30
+        }
+        .original-no-match {
+          background-color:#fff7bf;
+          border-left:4px solid #594d00;
+          border-right:1px solid #005a30;
+        }
+      </style>
+
+      <table class="govuk-table">
+        <!--<caption class="govuk-table__caption govuk-table__caption--m">Month you apply</caption>-->
+        
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header app-custom-class" style="width: 53px; font-size:16px;text-align:center">
+              Accept
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px;">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="checkAllInput" name="organisation" type="checkbox" value="hmrc" onclick="checkAllRows()">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="width: 65px; font-size:16px">Match score</th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px"><a href=#>Entity name</a></th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px"><a href=#>City</a></th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:100px"><a href=#>Country</a></th>
+            <th scope="col" class="govuk-table__header app-custom-class" style="font-size:16px; width:120px"><a href=#>D-U-N-S number</a></th>
+          </tr>
+        </thead>
+        
+        <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row original-matched">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px;visibility: hidden;">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:12px; padding-top:12px"><strong>ORIGINAL MATCHED</strong></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px">Microsoft</td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:16px">Redmond</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:100px">United States</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:120px">0123456790</td>
+          </tr>
+                              
+          <tr class="govuk-table__row" id="tableRow1">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="tableRow1Input" name="organisation" type="checkbox" value="hmrc" onclick="row1Select()">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">100%</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px">Microsoft</td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Redmond</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">United States</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">0123456790</td>
+          </tr>
+                    
+          <tr class="govuk-table__row" id="tableRow2">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="tableRow2Input" name="organisation" type="checkbox" value="hmrc" onclick="row2Select()">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">70%</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><mark>Microsoft Limited</mark></td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Redmond</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">United States</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px"><mark>5679001234</mark></td>
+          </tr>
+          
+          <tr class="govuk-table__row" id="tableRow3">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="tableRow3Input" name="organisation" type="checkbox" value="hmrc" onclick="row3Select()">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">50%</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><mark>Microsoft a Gravida</mark></td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px"><mark>Sydney</mark></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px"><mark>Australia</mark></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px"><mark>1324576809</mark></td>
+          </tr>
+          
+        </tbody>
+
+        <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row original-no-match">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px;visibility: hidden;">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:12px; padding-top:12px"><strong>ORIGINAL MATCHED</strong></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px">BYD</td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:16px">Shenzen</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:100px">China</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:120px">4523896701</td>
+          </tr>
+                              
+          <tr class="govuk-table__row" id="tableRow4">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="tableRow4Input" name="organisation" type="checkbox" value="hmrc" onclick="row4Select()">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">95%</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><mark>BYD Company Limited </mark></td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Shenzen</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">China</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">4523896701</td>
+          </tr>
+                    
+          <tr class="govuk-table__row" id="tableRow5">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="tableRow5Input" name="organisation" type="checkbox" value="hmrc" onclick="row5Select()">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">93%</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><mark>比亚迪股份有限公司</mark></td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Shenzen</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">China</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">4523896701</td>
+          </tr>
+                    
+        </tbody>
+
+        <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row original-matched">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px;visibility: hidden;">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:12px; padding-top:12px"><strong>ORIGINAL MATCHED</strong></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px">Deep Cool</td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:16px">Beijing</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:100px">China</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:16px; width:120px">0123456790</td>
+          </tr>
+                              
+          <tr class="govuk-table__row" id="tableRow6">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="tableRow6Input" name="organisation" type="checkbox" value="hmrc" onclick="row6Select()">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">100%</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px">Deep Cool</td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Beijing</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">China</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">0123456790</td>
+          </tr>
+                    
+          <tr class="govuk-table__row" id="tableRow7">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="tableRow7Input" name="organisation" type="checkbox" value="hmrc" onclick="row7Select()">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">94%</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><mark>深涼</mark></td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px">Beijing</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">China</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px">0123456790</td>
+          </tr>
+          
+          <tr class="govuk-table__row" id="tableRow8">
+            <th scope="row" class="govuk-table__header" style="width: 53px; font-size:16px; text-align:center">
+              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes" style="margin-top: -9px; margin-bottom: -10px">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="tableRow8Input" name="organisation" type="checkbox" value="hmrc" onclick="row8Select()">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+                </div>
+              </div>
+            </th>
+            <td class="govuk-table__cell" style="width: 65px; font-size:16px; padding-top:12px">33%</td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px"><mark>Deep Cool Ltd</mark></td>
+            <td class="govuk-table__cell"style="font-size:16px; padding-top:12px"><mark>Shanghai</mark></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:100px">China></td>
+            <td class="govuk-table__cell" style="font-size:16px; padding-top:12px; width:120px"><mark>5679001234</mark></td>
+          </tr>
+          
+        </tbody>
+
+      </table>
+
+      {% endif %}
+      
+    </div>
+  </div>
+
+  <!--                      -->
+  <!--                      -->
+  <!--                      -->
+  <!-- ROW - CASE REFERENCE -->
+  <div class="govuk-grid-row">                            
+    <div class="govuk-grid-column-two-thirds">
+
+      <!--
+      <div class="govuk-form-group govuk-!-margin-bottom-0">
+        <label class="govuk-label govuk-!-font-weight-bold" for="reference0-ID">
+          Reference ID (optional)
+        </label>
+        <div id="referene-ID-hint" class="govuk-body">
+          This is an optional  field to enable the system to differentiate between checks. You can select a reference ID from the list or create a new one. This can be any combination of characters, special characters (for example, hyphens), or numbers.
+        </div>
+        <select class="govuk-select" id="sort" name="sort" style="margin-right:-24px; margin-bottom:-40px">
+          <option value="published">[Reference ID 01234567890 Lorem Ipsum]</option>
+          <option value="updated">[Reference ID 01234567890 Lorem Ipsum]</option>
+          <option value="views">[Reference ID 01234567890 Lorem Ipsum]</option>
+          <option value="comments">[Reference ID 01234567890 Lorem Ipsum]</option>
+        </select>
+        <input class="govuk-input govuk-input--width-40 govuk-input--extra-letter-spacing" id="reference-ID" name="referenceID" type="text" spellcheck="false" value="" aria-describedby="rererence-ID-hint" style="">
+
+        <p class="govuk-body govuk-hint">You can enter up to 80 characters or select an existing reference ID from the dropdown list</p>
+      </div>
+      -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <label class="govuk-label govuk-!-font-weight-bold" for="reference0-ID">
+        Case reference (optional)
+      </label>
+      <div id="referene-ID-hint" class="govuk-body">
+        A case reference can be used to group different checks together under the same ID.
+      </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sort">
+          Select an existing case reference (optional)
+        </label>
+        <select class="govuk-select" id="sort" name="sort">
+          <option value="ref-id-0" selected></option>
+          <option value="ref-id-1">[Case reference one xxxxxxxxxxxxxx]</option>
+          <option value="ref-id-2">[Case reference two yyyyyyyyyyyyyyyyyyyyy]</option>
+          <option value="ref-id-3">[Case reference three zzzzzzzz]</option>
+        </select>
+      </div>
+
+      <p class="govuk-body" style="margin-top:-10px;margin-bottom:10px">or</p>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-line-1">
+          Create a new case reference (optional)
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="address-line-1" name="addressLine1" type="text" autocomplete="address-line1">
+        <p class="govuk-hint">You can enter up to 80 characters - this can be any combination of characters, special characters (for example, hyphens), or numbers</p>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">                            
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-body govuk-!-margin-top-2 govuk-!-margin-bottom-1">I confirm that:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>It is appropriate to undertake additional due diligence checks</li>
+      </ul>
+
+      <a href="upload-summary-checking"><button type="submit" class="govuk-button" data-module="govuk-button">
+        Proceed with checks
+      </button></a>
+
+    </div>
+  </div>
+
+  <p class="govuk-body-s" style="font-size: 9px; color:	#b1b4b6">PROTOTYPE VERSION: {{ data['which-prototype'] }}</p>
+
+{% endblock %}

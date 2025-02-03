@@ -76,6 +76,19 @@ router.post('/which-prototype', function (req, res) {
       res.redirect('/index-error-v6')
     }
 
+  } else if (whichPrototype == "7.0"){
+    if (whichUser == "user1"){
+      req.session.data['contracts-text'] = "View and manage your contracts and suppliers"
+      req.session.data['threats-text'] = "Run sanction checks on individuals and organisations"
+      req.session.data['grants-text'] = "View and manage your grant schemes and applicants"
+      res.redirect('/prototype-7/index')
+    } else if (whichUser == "user2"){
+      req.session.data['threats-text'] = "Conduct due diligence checks on entities."
+      res.redirect('/prototype-7/index')
+    } else {
+      res.redirect('/index-error-v7')
+    }
+
   } else{
     res.redirect('/index-error')
   }
@@ -401,7 +414,7 @@ router.post('/how-many-orgs', function (req, res) {
       }
   
     //
-    // START Prototype 5 routes
+    // START Prototype 6 routes
     //
   } else if (whichPrototype == "6.0"){
 
@@ -428,6 +441,36 @@ router.post('/how-many-orgs', function (req, res) {
     } else {
       res.redirect('/prototype-6/how-many-orgs-error')
     }
+
+    //
+    // START Prototype 7 routes
+    //
+  } else if (whichPrototype == "7.0"){
+
+    // Make a variable and give it the value from 'how-many-orgs'
+    var howManyOrgs = req.session.data['how-many-orgs']
+    var orgLocationForOne = req.session.data['org-location-for-one']
+    var orgLocationForTwoOrMore = req.session.data['org-location-for-two-or-more']
+
+    // Check whether the variable matches a condition
+    if (howManyOrgs == "one"){
+      req.session.data['org-location-for-two-or-more'] = ""
+      if (orgLocationForOne == "uk"){
+        res.redirect('/prototype-7/economic-crime-checks')
+      } else if (orgLocationForOne == "international"){
+        res.redirect('/prototype-7/economic-crime-checks')
+      }
+    } else if (howManyOrgs == "two-or-more"){
+      req.session.data['org-location-for-one'] = ""
+      if (orgLocationForTwoOrMore == "uk"){
+        res.redirect('/prototype-7/two-or-more')
+      } else if (orgLocationForTwoOrMore == "international"){
+        res.redirect('/prototype-7/two-or-more')
+      }
+    } else {
+      res.redirect('/prototype-7/how-many-orgs-error')
+    }
+
 
   } 
     
@@ -572,6 +615,9 @@ router.post('/orgadversemediacheck', function (req, res) {
   res.redirect('/prototype-5/orgadversemedia-upload-summary-checking')
 })
 
+
+
+
 //
 // START Prototype 6 routes
 //
@@ -589,13 +635,51 @@ router.post('/orgadversemediacheck_v6', function (req, res) {
   res.redirect('/prototype-6/orgadversemedia-upload-summary-checking')
 })
 
+
+//
+// START Prototype 7 routes
+//
+router.post('/economic-crime-checks-v7', function (req, res) {
+  res.redirect('/prototype-7/review')
+})
+
+router.post('/pepsadversemediacheck_v7', function (req, res) {
+  req.session.data['PEPSAdverseMediaChecked'] = "Yes"
+  res.redirect('/prototype-7/peps-adversemedia-upload-summary-checking')
+})
+
+router.post('/orgadversemediacheck_v7', function (req, res) {
+  req.session.data['orgAdverseMediaChecked'] = "Yes"
+  res.redirect('/prototype-7/orgadversemedia-upload-summary-checking')
+})
+
+
+
+
+
+
+
+
+
+
 router.post('/run-additional-checks', function (req, res) {
   var runAdditionalChecksFor = req.session.data['run-additional-checks-for']
+  var whichPrototype = req.session.data['which-prototype']
 
-  // Check whether the variable matches a condition
-  if (runAdditionalChecksFor == "organisations"){
-    res.redirect('/prototype-6/orgadversemedia')
-  } else if (runAdditionalChecksFor == "people"){
-    res.redirect('/prototype-6/peps-adversemedia')
+  if (whichPrototype == "6.0"){
+    // Check whether the variable matches a condition
+    if (runAdditionalChecksFor == "organisations"){
+      res.redirect('/prototype-6/orgadversemedia')
+    } else if (runAdditionalChecksFor == "people"){
+      res.redirect('/prototype-6/peps-adversemedia')
+    }
+  } else if (whichPrototype == "7.0") {
+    // Check whether the variable matches a condition
+    if (runAdditionalChecksFor == "organisations"){
+      res.redirect('/prototype-7/orgadversemedia')
+    } else if (runAdditionalChecksFor == "people"){
+      res.redirect('/prototype-7/peps-adversemedia')
+    }
   }
+
 })
