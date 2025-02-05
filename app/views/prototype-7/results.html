@@ -1028,41 +1028,192 @@
 
             {% if (data['orgAdverseMediaChecked'] == "Yes") %}
 
-            <!--                        -->
-            <!--                        -->
-            <!--                        -->
-            <!--                        -->
-            <!-- Organisation sanctions -->
-            <a name="organisation-sanctions-section"></a>
+            <!--                                          -->
+            <!--                                          -->
+            <!--                                          -->
+            <!--                                          -->
+            <!-- Organisation sanctions and adverse media -->
             <div class="govuk-accordion__section sections">
               <div class="govuk-accordion__section-header" style="margin-bottom:-15px">
                 <h2 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1" style="">
-                    Organisation sanctions
+                    Organisation sanctions and adverse media
                   </span>
                 </h2>
 
                 <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
-                  <p class="govuk-heading-s">
-                    Risk level
-                    <strong class="govuk-tag govuk-tag--red" style="margin-left:30px;margin-right:30px">
-                      HIGH
-                    </strong>
-                    <span class="govuk-body">This organisation appears on UK or UN sanctions or watchlist.</span>
-                  </p>
+                  <h3 class="govuk-heading-m">Risk level</h3>
 
-                  <p class="govuk-body">A collection of the list that Spootlight checks against can be viewed on the <a href="">Knowledge Hub</a>.</p>
+                  <!-- DATA ITEM -->
+                  <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                    <div class="govuk-grid-column-one-third">
+                      <p class="govuk-heading-s">Organisation sanctions</p>
+                    </div>
+                    <div class="govuk-grid-column-two-thirds">
+                      {{govukTag({
+                        text: "HIGH",
+                        classes: "govuk-tag--red"
+                      })}}
+                    </div>
+                  </div>
+
+                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
+
+                  <!-- DATA ITEM -->
+                  <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                    <div class="govuk-grid-column-one-third">
+                      <p class="govuk-heading-s">Organisation adverse media</p>
+                    </div>
+                    <div class="govuk-grid-column-two-thirds">
+                      {{govukTag({
+                        text: "LOW",
+                        classes: "govuk-tag--green"
+                      })}}
+                    </div>
+                  </div>
+
+                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
+
                 </div>
               </div>
 
               <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
 
-                <p class="govuk-body">Coming soon!</p>
-                  <img src="/public/img/organisation-sanctions-example.png" alt="example of an organsiation sanctions check" style="width:800px; margin-top:-40px">
+                  <img src="/public/img/v7_org_sanctions.png" alt="example of an organsiation sanctions check" style="width:800px; margin-top:-40px">
+
+              </div>
+            </div> 
+ 
+            {% else %}
+
+              <div class="govuk-accordion__section-header" style="margin-bottom:-15px">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1" style="">
+                    Organisation sanctions and adverse media<br/>
+                    <a href="run-additional-checks"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-top:15px;">
+                      Run additional organisation checks
+                    </button></a>
+                  </span>
+                </h2>
+              </div>
+
+            {% endif %}
+
+
+
+
+
+
+
+            {% if (data['PEPSAdverseMediaChecked'] == "Yes") %}
+
+            <!--                                          -->
+            <!--                                          -->
+            <!--                                          -->
+            <!--                                          -->
+            <!-- People sanctions, PEPs and adverse media -->
+            <div class="govuk-accordion__section sections">
+              <div class="govuk-accordion__section-header" style="margin-bottom:-15px">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1" style="">
+                    People sanctions, PEPs and adverse media
+                  </span>
+                </h2>
+
+                <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+                  <h3 class="govuk-heading-m">Risk level</h3>
+
+
+
+
+                    <!-- DATA ITEM -->
+                    <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                      <div class="govuk-grid-column-one-third">
+                        <p class="govuk-heading-s">Individual sanctions</p>
+                      </div>
+                      <div class="govuk-grid-column-two-thirds">
+                        {{govukTag({
+                          text: "1 HIGH",
+                          classes: "govuk-tag--red"
+                        })}}
+                        {{govukTag({
+                          text: "2 LOW",
+                          classes: "govuk-tag--green"
+                        })}}
+                      </div>
+                    </div>
+
+                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
+
+                    <!-- DATA ITEM -->
+                    <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                      <div class="govuk-grid-column-one-third">
+                        <p class="govuk-heading-s">Individual adverse media</p>
+                      </div>
+                      <div class="govuk-grid-column-two-thirds">
+                        {{govukTag({
+                          text: "3 LOW",
+                          classes: "govuk-tag--green"
+                        })}}
+                      </div>
+                    </div>
+
+                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
+
+                    <!-- DATA ITEM -->
+                    <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                      <div class="govuk-grid-column-one-third">
+                        <p class="govuk-heading-s">Individual PEPs</p>
+                      </div>
+                      <div class="govuk-grid-column-two-thirds">
+                        {{govukTag({
+                          text: "3 LOW",
+                          classes: "govuk-tag--green"
+                        })}}
+                      </div>
+                    </div>
+
+                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
+
+
+
+
+
+
+
+                  <!--<p class="govuk-body">A collection of the list that Spootlight checks against can be viewed on the <a href="">Knowledge Hub</a>.</p>-->
+                </div>
+              </div>
+
+              <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
+
+                <img src="/public/img/v7_people_sanctions.png" alt="example of an organsiation sanctions check" style="width:800px; margin-top:-40px">
 
               </div>
             </div>
+
+            {% else %}
+
+              <div class="govuk-accordion__section-header" style="margin-bottom:-15px">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1" style="">
+                    People sanctions, PEPs and adverse media<br/>
+                    <a href="run-additional-checks"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-top:15px;">
+                      Run additional people checks
+                    </button></a>
+                  </span>
+                </h2>
+              </div>
+
             {% endif %}
+
+
+
+
+
+
+
+
 
             <!--                         -->
             <!--                         -->
@@ -1638,112 +1789,7 @@
 
                 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" id="organisation-adverse-media-section">
 
-                {% if (data['orgAdverseMediaChecked'] == "Yes") %}
 
-                <!--                                                   -->
-                <!--                                                   -->
-                <!--                                                   -->
-                <!-- DATA ITEM - ORGANISATION ADVERSE MEDIA POST CHECK -->
-                <div class="organsiation-aderse-media-postcheck">
-
-                  <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                    <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
-                      <p class="govuk-heading-s govuk-!-margin-bottom-1">Organisation adverse media</p>
-                      <p class="govuk-body-s" style="color: #505a5f	;">Date checked: 1 December 2024</p>
-
-                    </div>
-                    <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
-                      <p class="govuk-body" style="">
-                        {{govukTag({
-                          text: "HIGH",
-                          classes: "govuk-tag--red"
-                        })}}
-                      </p>
-
-                      <p class="govuk-body" style="color: #505a5f">This organisation has adverse media articles about them.</p>
-                     
-                      <!-- ARTICLE -->
-                      <p class="govuk-body" style="color: #505a5f"><span class="govuk-!-font-weight-bold">Article 1</span><br/>
-                        <span class="govuk-!-font-weight-bold">Article source:</span> Diário Económico Online <br/>
-                        <span class="govuk-!-font-weight-bold">Article language:</span> Portuguese<br/>
-                        <span class="govuk-!-font-weight-bold">Publication year:</span> 2014<br/>
-                        <span class="govuk-!-font-weight-bold">Allegation category:</span> Environment/Production<br/>
-                        <span class="govuk-!-font-weight-bold">Allegation type:</span> Product/Service Issues<br/>
-                        <span class="govuk-!-font-weight-bold">Government action taken:</span> Yes
-                      </p>
-                      
-                      <!-- ARTICLE -->
-                      <p class="govuk-body" style="color: #505a5f"><span class="govuk-!-font-weight-bold">Article 2</span><br/>
-                        <span class="govuk-!-font-weight-bold">Article source:</span> US Fed News <br/>
-                        <span class="govuk-!-font-weight-bold">Article language:</span> English<br/>
-                        <span class="govuk-!-font-weight-bold">Publication year:</span> 2018<br/>
-                        <span class="govuk-!-font-weight-bold">Allegation category:</span> Regulatory<br/>
-                        <span class="govuk-!-font-weight-bold">Allegation type:</span> Fraud issues<br/>
-                        <span class="govuk-!-font-weight-bold">Government action taken:</span> Yes
-                      </p>
-                      
-                    </div>
-                  </div>
-
-                </div>
-
-                {% else %}
-
-                <!--                                                 -->
-                <!--                                                 -->
-                <!--                                                 -->
-                <!-- DATA ITEM - ORGANISATION ADVERSE MEDIA PRECHECK -->
-                <!--
-                <div class="organsiation-aderse-media-precheck">
-
-                  <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                    <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
-                      <p class="govuk-heading-s">Organisation adverse media</p>
-                    </div>
-                    <div class="govuk-grid-column-one-third" style="width:250px; margin-top:-10px;">
-                      <p class="govuk-body" style="visibility:collapse;">
-                        {{govukTag({
-                          text: "GREEN - 3",
-                          classes: "govuk-tag--green"
-                        })}}
-                      </p>
-                    </div>
-                    <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
-                      <a href="orgadversemedia"><button type="submit" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-3" data-module="govuk-button">
-                      Organisation adverse media
-                      </button></a>
-              
-                      <p class="govuk-body" style="color: #505a5f">
-                        Check whether entities are politically exposed people (PEPs) or have received adverse media coverage.
-                      </p>
-                    </div>
-                  </div>
-
-                </div>
-                -->
-
-                {% endif %}
-
-                <!--                                                  -->
-                <!--                                                  -->
-                <!--                                                  -->
-                <!-- DATA ITEM - ORGANISATION ADVERSE MEDIA HELP TEXT -->
-                <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                  <div class="govuk-grid-column-full">
-                    <details class="govuk-details">
-                      <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                          Help with organsiation adverse media
-                        </span>
-                      </summary>
-                      <div class="govuk-details__text">
-                        Content to be confirmed.
-                      </div>
-                    </details>
-                  </div>
-                </div>
-
-                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" style="border-color:#505A5F">
 
 
 
@@ -2032,123 +2078,6 @@
                     </div>
                   </div>
 
-                  {% if (data['PEPSAdverseMediaChecked'] == "Yes") %}
-
-                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-                  <!-- DATA ITEM -->
-                  <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                    <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
-                      <p class="govuk-heading-s govuk-!-margin-bottom-1">Individual sanctions</p>
-                      <p class="govuk-body-s" style="color: #505a5f	;">Date checked: 1 December 2024</p>
-                    </div>
-                    <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
-                      <p class="govuk-body govuk-!-margin-bottom-2" style="">
-                        {{govukTag({
-                          text: "High",
-                          classes: "govuk-tag--red"
-                        })}}
-                      </p>
-                      <p class="govuk-body govuk-!-margin-bottom-0">Content to be confirmed</p>
-                    </div>
-                  </div>
-                  
-                  <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                    <div class="govuk-grid-column-full" style="margin-bottom: -15px;">
-                      <details class="govuk-details">
-                        <summary class="govuk-details__summary">
-                          <span class="govuk-details__summary-text">
-                            Help with individual sanctions
-                          </span>
-                        </summary>
-                        <div class="govuk-details__text">
-                          <p class="govuk-body">Content to be confrmed.</p>
-                        </div>
-                      </details>
-                    </div>
-                  </div>
-
-                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-                    <!--                                      -->
-                    <!--                                      -->
-                    <!--                                      -->
-                    <!-- DATA ITEM - INDIVIDUAL ADVERSE MEDIA -->
-                    <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                      <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
-                        <p class="govuk-heading-s govuk-!-margin-bottom-1">Individual adverse media</p>
-                        <p class="govuk-body-s" style="color: #505a5f	;">Date checked: 1 December 2024</p>
-                      </div>
-                      <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
-                        <p class="govuk-body govuk-!-margin-bottom-2" style="">
-                          {{govukTag({
-                            text: "High",
-                            classes: "govuk-tag--red"
-                          })}}
-                        </p>
-                        <p class="govuk-body govuk-!-margin-bottom-0">This individual has adverse media about them</p>
-                        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Special Interest Person (SIP):</span> Trafficking</p>
-                      </div>
-                    </div>
-                    
-                    <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                      <div class="govuk-grid-column-full" style="margin-bottom: -15px;">
-                        <details class="govuk-details">
-                          <summary class="govuk-details__summary">
-                            <span class="govuk-details__summary-text">
-                              Help with individual adverse media
-                            </span>
-                          </summary>
-                          <div class="govuk-details__text">
-                            <p class="govuk-body">The records show whether the named individual has been identified by Dow Jones and Dun & Bradstreet as a special interest person (SIP).</p>
-                            <p class="govuk-body">A SIP is usually a well-known individual with a history of financial crimes, or other activities which make them a high-risk prospect. They do not need to be convicted to be considered as special interest; rather, they could be facing court proceedings, or merely have previous allegations of serious crimes..</p>
-                            <p class="govuk-body">There is no law against working with SIPs but involving yourself with a special interest person, whether intentionally or otherwise, puts your organisation at greater risk of money laundering and other financial crimes.</p>
-                          </div>
-                        </details>
-                      </div>
-                    </div>
-
-                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-                    <!--                                         -->
-                    <!--                                         -->
-                    <!--                                         -->
-                    <!-- DATA ITEM - POLITICALLY EXPOSED PERSONS -->
-                    <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                      <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
-                        <p class="govuk-heading-s govuk-!-margin-bottom-1">Politically exposed persons</p>
-                        <p class="govuk-body-s" style="color: #505a5f	;">Date checked: 1 December 2024</p>
-
-                      </div>
-                      <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
-                        <p class="govuk-body govuk-!-margin-bottom-2" style="">
-                          {{govukTag({
-                            text: "Low",
-                            classes: "govuk-tag--green"
-                          })}}
-                        </p>
-                        <p class="govuk-body govuk-!-margin-bottom-1">This individual is not politically exposed</p>
-                        <!--<p class="govuk-body"><span class="govuk-!-font-weight-bold">SIP categories:</span> Other Official Lists</p>-->
-                      </div>
-                    </div>
-                    
-                    <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                      <div class="govuk-grid-column-full" style="margin-bottom: -15px;">
-                        <details class="govuk-details">
-                          <summary class="govuk-details__summary">
-                            <span class="govuk-details__summary-text">
-                              Help with politically exposed persons
-                            </span>
-                          </summary>
-                          <div class="govuk-details__text">
-                            <p class="govuk-body">The records show whether the named individual is a politically exposed person (PEP) or is associated with politically exposed people.</p>
-                            <p class="govuk-body">PEPs may be more susceptible to bribery or corruption and the risk of providing funding to these individuals should be considered as part of your decision making process.</p>
-                          </div>
-                        </details>
-                      </div>
-                    </div>
-
-                  {% endif %}
 
                   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom:50px;">
 
@@ -2268,124 +2197,6 @@
                     </div>
                   </div>
 
-                  {% if (data['PEPSAdverseMediaChecked'] == "Yes") %}
-
-                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-                  <!-- DATA ITEM -->
-                  <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                    <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
-                      <p class="govuk-heading-s govuk-!-margin-bottom-1">Individual sanctions</p>
-                      <p class="govuk-body-s" style="color: #505a5f	;">Date checked: 1 December 2024</p>
-                    </div>
-                    <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
-                      <p class="govuk-body govuk-!-margin-bottom-2" style="">
-                        {{govukTag({
-                          text: "High",
-                          classes: "govuk-tag--red"
-                        })}}
-                      </p>
-                      <p class="govuk-body govuk-!-margin-bottom-0">Content to be confirmed</p>
-                    </div>
-                  </div>
-                  
-                  <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                    <div class="govuk-grid-column-full" style="margin-bottom: -15px;">
-                      <details class="govuk-details">
-                        <summary class="govuk-details__summary">
-                          <span class="govuk-details__summary-text">
-                            Help with individual sanctions
-                          </span>
-                        </summary>
-                        <div class="govuk-details__text">
-                          <p class="govuk-body">Content to be confrmed.</p>
-                        </div>
-                      </details>
-                    </div>
-                  </div>
-
-                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-                    <!--                                      -->
-                    <!--                                      -->
-                    <!--                                      -->
-                    <!-- DATA ITEM - INDIVIDUAL ADVERSE MEDIA -->
-                    <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                      <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
-                        <p class="govuk-heading-s govuk-!-margin-bottom-1">Individual adverse media</p>
-                        <p class="govuk-body-s" style="color: #505a5f	;">Date checked: 1 December 2024</p>
-                      </div>
-                      <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
-                        <p class="govuk-body govuk-!-margin-bottom-2" style="">
-                          {{govukTag({
-                            text: "High",
-                            classes: "govuk-tag--red"
-                          })}}
-                        </p>
-                        <p class="govuk-body govuk-!-margin-bottom-0">This individual has adverse media about them</p>
-                        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Special Interest Person (SIP):</span> Trafficking</p>
-                      </div>
-                    </div>
-                    
-                    <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                      <div class="govuk-grid-column-full" style="margin-bottom: -15px;">
-                        <details class="govuk-details">
-                          <summary class="govuk-details__summary">
-                            <span class="govuk-details__summary-text">
-                              Help with individual adverse media
-                            </span>
-                          </summary>
-                          <div class="govuk-details__text">
-                            <p class="govuk-body">The records show whether the named individual has been identified by Dow Jones and Dun & Bradstreet as a special interest person (SIP).</p>
-                            <p class="govuk-body">A SIP is usually a well-known individual with a history of financial crimes, or other activities which make them a high-risk prospect. They do not need to be convicted to be considered as special interest; rather, they could be facing court proceedings, or merely have previous allegations of serious crimes..</p>
-                            <p class="govuk-body">There is no law against working with SIPs but involving yourself with a special interest person, whether intentionally or otherwise, puts your organisation at greater risk of money laundering and other financial crimes.</p>
-                          </div>
-                        </details>
-                      </div>
-                    </div>
-
-                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-                    <!--                                         -->
-                    <!--                                         -->
-                    <!--                                         -->
-                    <!-- DATA ITEM - POLITICALLY EXPOSED PERSONS -->
-                    <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                      <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
-                        <p class="govuk-heading-s govuk-!-margin-bottom-1">Politically exposed persons</p>
-                        <p class="govuk-body-s" style="color: #505a5f	;">Date checked: 1 December 2024</p>
-
-                      </div>
-                      <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
-                        <p class="govuk-body govuk-!-margin-bottom-2" style="">
-                          {{govukTag({
-                            text: "Low",
-                            classes: "govuk-tag--green"
-                          })}}
-                        </p>
-                        <p class="govuk-body govuk-!-margin-bottom-1">This individual is not politically exposed</p>
-                        <!--<p class="govuk-body"><span class="govuk-!-font-weight-bold">SIP categories:</span> Other Official Lists</p>-->
-                      </div>
-                    </div>
-                    
-                    <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                      <div class="govuk-grid-column-full" style="margin-bottom: -15px;">
-                        <details class="govuk-details">
-                          <summary class="govuk-details__summary">
-                            <span class="govuk-details__summary-text">
-                              Help with politically exposed persons
-                            </span>
-                          </summary>
-                          <div class="govuk-details__text">
-                            <p class="govuk-body">The records show whether the named individual is a politically exposed person (PEP) or is associated with politically exposed people.</p>
-                            <p class="govuk-body">PEPs may be more susceptible to bribery or corruption and the risk of providing funding to these individuals should be considered as part of your decision making process.</p>
-                          </div>
-                        </details>
-                      </div>
-                    </div>
-
-                  {% endif %}
-
                   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom:50px;">
 
                 </span>
@@ -2489,123 +2300,6 @@
                       </p>
                     </div>
                   </div>
-
-                  {% if (data['PEPSAdverseMediaChecked'] == "Yes") %}
-                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-                  <!-- DATA ITEM -->
-                  <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                    <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
-                      <p class="govuk-heading-s govuk-!-margin-bottom-1">Individual sanctions</p>
-                      <p class="govuk-body-s" style="color: #505a5f	;">Date checked: 1 December 2024</p>
-                    </div>
-                    <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
-                      <p class="govuk-body govuk-!-margin-bottom-2" style="">
-                        {{govukTag({
-                          text: "High",
-                          classes: "govuk-tag--red"
-                        })}}
-                      </p>
-                      <p class="govuk-body govuk-!-margin-bottom-0">Content to be confirmed</p>
-                    </div>
-                  </div>
-                  
-                  <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                    <div class="govuk-grid-column-full" style="margin-bottom: -15px;">
-                      <details class="govuk-details">
-                        <summary class="govuk-details__summary">
-                          <span class="govuk-details__summary-text">
-                            Help with individual sanctions
-                          </span>
-                        </summary>
-                        <div class="govuk-details__text">
-                          <p class="govuk-body">Content to be confrmed.</p>
-                        </div>
-                      </details>
-                    </div>
-                  </div>
-
-                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-                    <!--                                      -->
-                    <!--                                      -->
-                    <!--                                      -->
-                    <!-- DATA ITEM - INDIVIDUAL ADVERSE MEDIA -->
-                    <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                      <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
-                        <p class="govuk-heading-s govuk-!-margin-bottom-1">Individual adverse media</p>
-                        <p class="govuk-body-s" style="color: #505a5f	;">Date checked: 1 December 2024</p>
-                      </div>
-                      <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
-                        <p class="govuk-body govuk-!-margin-bottom-2" style="">
-                          {{govukTag({
-                            text: "High",
-                            classes: "govuk-tag--red"
-                          })}}
-                        </p>
-                        <p class="govuk-body govuk-!-margin-bottom-0">This individual has adverse media about them</p>
-                        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Special Interest Person (SIP):</span> Trafficking</p>
-                      </div>
-                    </div>
-                    
-                    <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                      <div class="govuk-grid-column-full" style="margin-bottom: -15px;">
-                        <details class="govuk-details">
-                          <summary class="govuk-details__summary">
-                            <span class="govuk-details__summary-text">
-                              Help with individual adverse media
-                            </span>
-                          </summary>
-                          <div class="govuk-details__text">
-                            <p class="govuk-body">The records show whether the named individual has been identified by Dow Jones and Dun & Bradstreet as a special interest person (SIP).</p>
-                            <p class="govuk-body">A SIP is usually a well-known individual with a history of financial crimes, or other activities which make them a high-risk prospect. They do not need to be convicted to be considered as special interest; rather, they could be facing court proceedings, or merely have previous allegations of serious crimes..</p>
-                            <p class="govuk-body">There is no law against working with SIPs but involving yourself with a special interest person, whether intentionally or otherwise, puts your organisation at greater risk of money laundering and other financial crimes.</p>
-                          </div>
-                        </details>
-                      </div>
-                    </div>
-
-                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-                    <!--                                         -->
-                    <!--                                         -->
-                    <!--                                         -->
-                    <!-- DATA ITEM - POLITICALLY EXPOSED PERSONS -->
-                    <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                      <div class="govuk-grid-column-one-third" style="margin-top:-10px;">
-                        <p class="govuk-heading-s govuk-!-margin-bottom-1">Politically exposed persons</p>
-                        <p class="govuk-body-s" style="color: #505a5f	;">Date checked: 1 December 2024</p>
-
-                      </div>
-                      <div class="govuk-grid-column-two-thirds" style="margin-top:-10px;">
-                        <p class="govuk-body govuk-!-margin-bottom-2" style="">
-                          {{govukTag({
-                            text: "Low",
-                            classes: "govuk-tag--green"
-                          })}}
-                        </p>
-                        <p class="govuk-body govuk-!-margin-bottom-1">This individual is not politically exposed</p>
-                        <!--<p class="govuk-body"><span class="govuk-!-font-weight-bold">SIP categories:</span> Other Official Lists</p>-->
-                      </div>
-                    </div>
-                    
-                    <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                      <div class="govuk-grid-column-full" style="margin-bottom: -15px;">
-                        <details class="govuk-details">
-                          <summary class="govuk-details__summary">
-                            <span class="govuk-details__summary-text">
-                              Help with politically exposed persons
-                            </span>
-                          </summary>
-                          <div class="govuk-details__text">
-                            <p class="govuk-body">The records show whether the named individual is a politically exposed person (PEP) or is associated with politically exposed people.</p>
-                            <p class="govuk-body">PEPs may be more susceptible to bribery or corruption and the risk of providing funding to these individuals should be considered as part of your decision making process.</p>
-                          </div>
-                        </details>
-                      </div>
-                    </div>
-
-                  {% endif %}
 
                   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-bottom:15px;">
 
