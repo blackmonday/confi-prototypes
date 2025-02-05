@@ -108,7 +108,7 @@
 
       {% else %}
 
-      <!--                                -->
+      <!--                                --> 
       <!--                                -->
       <!-- HEADER CONTENT - INTERNATIONAL -->
       <!--<p class="govuk-body" style="color:red">START INTERNATIONAL HEADER</p>-->
@@ -887,6 +887,7 @@
             <!--                     -->
             <!-- KNOW YOUR APPLICANT -->
             <div class="govuk-accordion__section sections">
+
               <div class="govuk-accordion__section-header" style="margin-bottom:-15px">
                 <h2 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1" style="">
@@ -932,7 +933,7 @@
                   <table class="govuk-table govuk-!-margin-top-0">
                     <tbody class="govuk-table__body">
                       <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">Fictitious organisation<br /><span class="govuk-body"">The organisation identified does not match details that could portray it as operating as a fictitious organisation.</span><br /><!--<span class="govuk-body-s" style="color: #505a5f">This RISK ID helps to identify whether an organisation may be fictitious. Purporting to be trading but has been created for deceptive or fraudulent purposes.</span></br>-->
+                        <th scope="row" class="govuk-table__header">Fictitious organisation<br /><span class="govuk-body">This RISK ID helps to identify whether an organisation may be fictitious. Purporting to be trading but has been created for deceptive or fraudulent purposes.</span><br /><!--<span class="govuk-body-s" style="color: #505a5f">This RISK ID helps to identify whether an organisation may be fictitious. Purporting to be trading but has been created for deceptive or fraudulent purposes.</span></br>-->
         
                           <details class="govuk-details" style="margin-top:15px">
                             <summary class="govuk-details__summary">
@@ -941,10 +942,10 @@
                               </span>
                             </summary>
                             <div class="govuk-details__text">
-                              <p style="margin-bottom: 15px"><strong>Risk:</strong> This RISK ID helps to identify whether an organisation may be fictitious. Purporting to be trading but has been created for deceptive or fraudulent purposes.</p>
+                              <p style="margin-bottom: 15px"><strong>Risk:</strong> The new applicants Company information could show exact matching details for the Organisation address on Companies House but the Confirmation Statement and the name of the Company have both changed within a year. This criteria has the characteristics that implies a Company could be fictitious and falls into the Economic Crime and SOC threat buckets, possible implications being money laundering, fraud or shell company set up.</p>
                               <p style="margin-bottom: 10px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong> There is no match for all entities.</p>
-                              <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong> If there is an exact match for incorporation date and SIC code but a partial match for other entities and the company name has changed within a year.</p>
-                              <p style="margin-bottom: 10px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong> If there's exact matching details for the incorporation date and organisation address on companies house but the SIC codes and the company name have both changed within a year.</p>
+                              <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong> The organisation identified matches details for the organisation Name with a partial Address Match on Companies House but the Confirmation Statement has changed within a year, this Risk indicator could portray it as operating as a fictitious organisation.</p>
+                              <p style="margin-bottom: 10px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong> The organisation identified matches details for the Address on Companies House but the Confirmation Statement and the Company Name have both changed within a year this Risk indicator could portray it as operating as a fictitious organisation.</p>
                             </div>
                           </details>
             
@@ -1026,23 +1027,24 @@
 
 
 
-            {% if (data['orgAdverseMediaChecked'] == "Yes") %}
 
             <!--                                          -->
             <!--                                          -->
             <!--                                          -->
             <!--                                          -->
             <!-- Organisation sanctions and adverse media -->
+            {% if (data['orgAdverseMediaChecked'] == "Yes") %}
+
             <div class="govuk-accordion__section sections">
-              <div class="govuk-accordion__section-header" style="margin-bottom:-15px">
+              <div class="govuk-accordion__section-header">
                 <h2 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1" style="">
                     Organisation sanctions and adverse media
                   </span>
                 </h2>
 
-                <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
-                  <h3 class="govuk-heading-s">Risk level</h3>
+                <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1" style="margin-top:30px">
+                  <h3 class="govuk-heading-s">Overall risk levels</h3>
 
                   <!-- DATA ITEM -->
                   <div class="govuk-grid-row" style="margin-bottom: -15px;">
@@ -1074,12 +1076,73 @@
 
                   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
 
+                  <!-- DATA ITEM -->
+                  <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                    <div class="govuk-grid-column-one-third">
+                      <p class="govuk-heading-s">Individual sanctions</p>
+                    </div>
+                    <div class="govuk-grid-column-two-thirds">
+                      {{govukTag({
+                        text: "1 HIGH",
+                        classes: "govuk-tag--red"
+                      })}}
+                      {{govukTag({
+                        text: "2 LOW",
+                        classes: "govuk-tag--green"
+                      })}}
+                    </div>
+                  </div>
+
+                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
+
+                  <!-- DATA ITEM -->
+                  <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                    <div class="govuk-grid-column-one-third">
+                      <p class="govuk-heading-s">Individual PEPs
+                    </div>
+                    <div class="govuk-grid-column-two-thirds">
+                      {{govukTag({
+                        text: "3 LOW",
+                        classes: "govuk-tag--green"
+                      })}}
+                    </div>
+                  </div>
+
+                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
+
+                  <!-- DATA ITEM -->
+                  <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                    <div class="govuk-grid-column-one-third">
+                      <p class="govuk-heading-s">Individual adverse media</p>
+                    </div>
+                    <div class="govuk-grid-column-two-thirds">
+                      {{govukTag({
+                        text: "3 LOW",
+                        classes: "govuk-tag--green"
+                      })}}
+                    </div>
+                  </div>
+
+                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
+                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-top:0">
+                  
+                  <a href="peps-adversemedia"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-top:-0; margin-bottom:15px">
+                    Run additional checks
+                  </button></a>
+
                 </div>
               </div>
 
               <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
 
                   <img src="/public/img/v7_org_sanctions.png" alt="example of an organsiation sanctions check" style="width:800px; margin-top:-40px">
+
+                  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+                  <h3 class="govuk-heading-s">Individual sanctions, PEPs and adverse media</h3>
+
+                  <img src="/public/img/v7_people_sanctions.png" alt="example of an organsiation sanctions check" style="width:800px; margin-top:-15px">
+
 
               </div>
             </div> 
@@ -1089,127 +1152,16 @@
               <div class="govuk-accordion__section-header" style="margin-bottom:-15px">
                 <h2 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1" style="">
-                    Organisation sanctions and adverse media<br/>
-                    <!--<a href="run-additional-checks"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-top:15px;">-->
-                    <a href="orgadversemedia"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-top:15px;">
-                      Run additional organisation checks
-                    </button></a>
-                  </span>
-                </h2>
-              </div>
-
-            {% endif %}
-
-
-
-
-
-
-
-            {% if (data['PEPSAdverseMediaChecked'] == "Yes") %}
-
-            <!--                                          -->
-            <!--                                          -->
-            <!--                                          -->
-            <!--                                          -->
-            <!-- People sanctions, PEPs and adverse media -->
-            <div class="govuk-accordion__section sections">
-              <div class="govuk-accordion__section-header" style="margin-bottom:-15px">
-                <h2 class="govuk-accordion__section-heading">
-                  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1" style="">
-                    People sanctions, PEPs and adverse media
-                  </span>
-                </h2>
-
-                <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
-                  <h3 class="govuk-heading-s">Risk level</h3>
-
-
-
-
-                    <!-- DATA ITEM -->
-                    <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                      <div class="govuk-grid-column-one-third">
-                        <p class="govuk-heading-s">Individual sanctions</p>
-                      </div>
-                      <div class="govuk-grid-column-two-thirds">
-                        {{govukTag({
-                          text: "1 HIGH",
-                          classes: "govuk-tag--red"
-                        })}}
-                        {{govukTag({
-                          text: "2 LOW",
-                          classes: "govuk-tag--green"
-                        })}}
-                      </div>
-                    </div>
-
-                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
-
-                    <!-- DATA ITEM -->
-                    <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                      <div class="govuk-grid-column-one-third">
-                        <p class="govuk-heading-s">Individual adverse media</p>
-                      </div>
-                      <div class="govuk-grid-column-two-thirds">
-                        {{govukTag({
-                          text: "3 LOW",
-                          classes: "govuk-tag--green"
-                        })}}
-                      </div>
-                    </div>
-
-                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
-
-                    <!-- DATA ITEM -->
-                    <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                      <div class="govuk-grid-column-one-third">
-                        <p class="govuk-heading-s">Individual PEPs</p>
-                      </div>
-                      <div class="govuk-grid-column-two-thirds">
-                        {{govukTag({
-                          text: "3 LOW",
-                          classes: "govuk-tag--green"
-                        })}}
-                      </div>
-                    </div>
-
-                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
-
-
-
-
-
-
-
-                  <!--<p class="govuk-body">A collection of the list that Spootlight checks against can be viewed on the <a href="">Knowledge Hub</a>.</p>-->
-                </div>
-              </div>
-
-              <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
-
-                <img src="/public/img/v7_people_sanctions.png" alt="example of an organsiation sanctions check" style="width:800px; margin-top:-40px">
-
-              </div>
-            </div>
-
-            {% else %}
-
-              <div class="govuk-accordion__section-header" style="margin-bottom:-15px">
-                <h2 class="govuk-accordion__section-heading">
-                  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1" style="">
-                    People sanctions, PEPs and adverse media<br/>
+                    Sanctions, PEPs and adverse media<br/>
                     <!--<a href="run-additional-checks"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-top:15px;">-->
                     <a href="peps-adversemedia"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-top:15px;">
-                      Run additional people checks
+                      Run additional checks
                     </button></a>
                   </span>
                 </h2>
               </div>
 
             {% endif %}
-
-
 
 
 
@@ -3704,6 +3656,7 @@
             <!--                     -->
             <!-- KNOW YOUR APPLICANT -->
             <div class="govuk-accordion__section sections">
+
               <div class="govuk-accordion__section-header" style="margin-bottom:-15px">
                 <h2 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1" style="">
@@ -3748,7 +3701,7 @@
                   <table class="govuk-table">
                     <tbody class="govuk-table__body">
                       <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">Fictitious organisation<br /><span class="govuk-body"">The organisation identified does not match details that could portray it as operating as a fictitious organisation.</span><br /><!--<span class="govuk-body-s" style="color: #505a5f">This RISK ID helps to identify whether an organisation may be fictitious. Purporting to be trading but has been created for deceptive or fraudulent purposes.</span></br>-->
+                        <th scope="row" class="govuk-table__header">Fictitious organisation<br /><span class="govuk-body">This RISK ID helps to identify whether an organisation may be fictitious. Purporting to be trading but has been created for deceptive or fraudulent purposes.</span><br /><!--<span class="govuk-body-s" style="color: #505a5f">This RISK ID helps to identify whether an organisation may be fictitious. Purporting to be trading but has been created for deceptive or fraudulent purposes.</span></br>-->
         
                           <details class="govuk-details" style="margin-top:15px">
                             <summary class="govuk-details__summary">
@@ -3757,10 +3710,10 @@
                               </span>
                             </summary>
                             <div class="govuk-details__text">
-                              <p style="margin-bottom: 15px"><strong>Risk:</strong> This RISK ID helps to identify whether an organisation may be fictitious. Purporting to be trading but has been created for deceptive or fraudulent purposes.</p>
+                              <p style="margin-bottom: 15px"><strong>Risk:</strong> The new applicant's Company information could show exact matching details for the Organisation address on D&B but the Industry Code and the name of the Company have both changed within a year. This criteria has the characteristics that implies a Company could be fictitious and falls into the Economic Crime and SOC threat buckets, possible implications being money laundering, fraud or shell company set up.</p>
                               <p style="margin-bottom: 10px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong> There is no match for all entities.</p>
-                              <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong> If there is an exact match for incorporation date and SIC code but a partial match for other entities and the company name has changed within a year.</p>
-                              <p style="margin-bottom: 10px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong> If there's exact matching details for the incorporation date and organisation address on companies house but the SIC codes and the company name have both changed within a year.</p>
+                              <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong> The organisation identified shows there have been no annual changes to the Industry Code  but there is a partial Address and organisation Name Match , this Risk indicator could portray it as operating as a fictitious organisation.</p>
+                              <p style="margin-bottom: 10px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong> The organisation identified matched details for the Address but the Industry Code and the Company Name have both changed within a year this Risk indicator could portray it as operating as a fictitious organisation.</p>
                             </div>
                           </details>
             
@@ -3834,43 +3787,156 @@
               </div>
             </div>
 
+
+
+
+
+
+
+            <!--                                          -->
+            <!--                                          -->
+            <!--                                          -->
+            <!--                                          -->
+            <!-- Organisation sanctions and adverse media -->
             {% if (data['orgAdverseMediaChecked'] == "Yes") %}
 
-            <!--                        -->
-            <!--                        -->
-            <!--                        -->
-            <!--                        -->
-            <!-- Organisation sanctions -->
-            <a name="organisation-sanctions-section"></a>
             <div class="govuk-accordion__section sections">
-              <div class="govuk-accordion__section-header" style="margin-bottom:-15px">
+              <div class="govuk-accordion__section-header">
                 <h2 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1" style="">
-                    Organisation sanctions
+                    Organisation sanctions and adverse media
                   </span>
                 </h2>
 
-                <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
-                  <p class="govuk-heading-s">
-                    Risk level
-                    <strong class="govuk-tag govuk-tag--red" style="margin-left:30px;margin-right:30px">
-                      HIGH
-                    </strong>
-                    <span class="govuk-body">This organisation appears on UK or UN sanctions or watchlist.</span>
-                  </p>
+                <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1" style="margin-top:30px">
+                  <h3 class="govuk-heading-s">Overall risk levels</h3>
 
-                  <p class="govuk-body">A collection of the list that Spootlight checks against can be viewed on the <a href="">Knowledge Hub</a>.</p>
+                  <!-- DATA ITEM -->
+                  <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                    <div class="govuk-grid-column-one-third">
+                      <p class="govuk-heading-s">Organisation sanctions</p>
+                    </div>
+                    <div class="govuk-grid-column-two-thirds">
+                      {{govukTag({
+                        text: "HIGH",
+                        classes: "govuk-tag--red"
+                      })}}
+                    </div>
+                  </div>
+
+                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
+
+                  <!-- DATA ITEM -->
+                  <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                    <div class="govuk-grid-column-one-third">
+                      <p class="govuk-heading-s">Organisation adverse media</p>
+                    </div>
+                    <div class="govuk-grid-column-two-thirds">
+                      {{govukTag({
+                        text: "LOW",
+                        classes: "govuk-tag--green"
+                      })}}
+                    </div>
+                  </div>
+
+                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
+
+                  <!-- DATA ITEM -->
+                  <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                    <div class="govuk-grid-column-one-third">
+                      <p class="govuk-heading-s">Individual sanctions</p>
+                    </div>
+                    <div class="govuk-grid-column-two-thirds">
+                      {{govukTag({
+                        text: "1 HIGH",
+                        classes: "govuk-tag--red"
+                      })}}
+                      {{govukTag({
+                        text: "2 LOW",
+                        classes: "govuk-tag--green"
+                      })}}
+                    </div>
+                  </div>
+
+                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
+
+                  <!-- DATA ITEM -->
+                  <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                    <div class="govuk-grid-column-one-third">
+                      <p class="govuk-heading-s">Individual PEPs
+                    </div>
+                    <div class="govuk-grid-column-two-thirds">
+                      {{govukTag({
+                        text: "3 LOW",
+                        classes: "govuk-tag--green"
+                      })}}
+                    </div>
+                  </div>
+
+                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
+
+                  <!-- DATA ITEM -->
+                  <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                    <div class="govuk-grid-column-one-third">
+                      <p class="govuk-heading-s">Individual adverse media</p>
+                    </div>
+                    <div class="govuk-grid-column-two-thirds">
+                      {{govukTag({
+                        text: "3 LOW",
+                        classes: "govuk-tag--green"
+                      })}}
+                    </div>
+                  </div>
+
+                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
+                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-top:0">
+                  
+                  <a href="peps-adversemedia"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-top:-0; margin-bottom:15px">
+                    Run additional checks
+                  </button></a>
+
                 </div>
               </div>
 
               <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
 
-                <p class="govuk-body">Coming soon!</p>
-                  <img src="/public/img/organisation-sanctions-example.png" alt="example of an organsiation sanctions check" style="width:800px; margin-top:-40px">
+                  <img src="/public/img/v7_org_sanctions.png" alt="example of an organsiation sanctions check" style="width:800px; margin-top:-40px">
+
+                  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+                  <h3 class="govuk-heading-s">Individual sanctions, PEPs and adverse media</h3>
+
+                  <img src="/public/img/v7_people_sanctions.png" alt="example of an organsiation sanctions check" style="width:800px; margin-top:-15px">
+
 
               </div>
-            </div>
+            </div> 
+ 
+            {% else %}
+
+              <div class="govuk-accordion__section-header" style="margin-bottom:-15px">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1" style="">
+                    Sanctions, PEPs and adverse media<br/>
+                    <!--<a href="run-additional-checks"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-top:15px;">-->
+                    <a href="peps-adversemedia"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-top:15px;">
+                      Run additional checks
+                    </button></a>
+                  </span>
+                </h2>
+              </div>
+
             {% endif %}
+
+
+
+
+
+
+
+
+
+
 
             <!--                         -->
             <!--                         -->

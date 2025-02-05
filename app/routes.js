@@ -645,10 +645,12 @@ router.post('/economic-crime-checks-v7', function (req, res) {
 
 router.post('/pepsadversemediacheck_v7', function (req, res) {
   req.session.data['PEPSAdverseMediaChecked'] = "Yes"
+  req.session.data['orgAdverseMediaChecked'] = "Yes"
   res.redirect('/prototype-7/peps-adversemedia-upload-summary-checking')
 })
 
 router.post('/orgadversemediacheck_v7', function (req, res) {
+  req.session.data['PEPSAdverseMediaChecked'] = "Yes"
   req.session.data['orgAdverseMediaChecked'] = "Yes"
   res.redirect('/prototype-7/orgadversemedia-upload-summary-checking')
 })

@@ -83,7 +83,7 @@
     <!-- HEADER -->
      <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">
-        People sanctions, PEPs and adverse media
+        Sanctions, PEPs and adverse media
       </h1>
 
       <p class="govuk-body-s govuk-!-margin-bottom-0">Organisations name</p>
@@ -103,21 +103,48 @@
       <!--                             -->
       <!-- TOP ROW - DOWNLOAD + SEARCH -->
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-half">
-          <div class="govuk-form-group">
-            <label class="govuk-label govuk-!-font-weight-bold" for="width-20">
-              Search this list by entity name or entity type
-            </label>
-            <input class="govuk-input" id="event-name" name="eventName" type="text">
-          </div>              
-        </div>
-        <div class="govuk-grid-column-one-half" style="text-align: right;">
+        <div class="govuk-grid-column-full">
           <p class="govuk-body" style="margin-bottom:0">Your total credits: <strong style="color:#1d70b8">420</strong></p>
          
           <p class="govuk-heading-m" style="margin-top:-10px"><strong>This search uses: <span style="color:#00703c">0 credits</span></strong></p>
     
         </div>
       </div>
+
+
+
+
+
+
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h3 class="govuk-heading-m">Organisation</h3>
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+        name: "waste",
+        classes: "govuk-checkboxes--small",
+        items: [
+          {
+            value: "org-checks",
+            text: "Include organisation sanctions and adverse media"
+          }
+        ]
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h3 class="govuk-heading-m">People</h3>
+
+
+
+
+
+
+
+
 
       <!--                   -->
       <!--                   -->
@@ -319,7 +346,7 @@
 
           <p class="govuk-body">I confirm that:</p>
           <ul class="govuk-list govuk-list--bullet">
-            <li>these checks are being undertaken as part of people sanctions, PEPs and adverse media activity</li>
+            <li>these checks are being undertaken as part of sanctions, PEPs and adverse media activity</li>
             <li>it is appropriate to undertake additional due diligence checks</li>
             <li>the cost of these checks will be paid by my organisation</li>
           </ul>
