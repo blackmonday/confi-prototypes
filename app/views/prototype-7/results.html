@@ -932,8 +932,9 @@
 
                   <table class="govuk-table govuk-!-margin-top-0">
                     <tbody class="govuk-table__body">
+                      <!-- Fictitious organisation -->
                       <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">Fictitious organisation<br /><span class="govuk-body">This RISK ID helps to identify whether an organisation may be fictitious. Purporting to be trading but has been created for deceptive or fraudulent purposes.</span><br /><!--<span class="govuk-body-s" style="color: #505a5f">This RISK ID helps to identify whether an organisation may be fictitious. Purporting to be trading but has been created for deceptive or fraudulent purposes.</span></br>-->
+                        <th scope="row" class="govuk-table__header">Fictitious organisation<br /><span class="govuk-body">This RISK ID helps to identify whether an organisation may be fictitious. Purporting to be trading but has been created for deceptive or fraudulent purposes.</span><br />
         
                           <details class="govuk-details" style="margin-top:15px">
                             <summary class="govuk-details__summary">
@@ -952,6 +953,7 @@
                         </th>
                         <td class="govuk-table__cell" style="width:150px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong></td>
                       </tr>
+                      <!-- Virtual company registration ID -->
                       <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Virtual company registration ID<br /><span class="govuk-body">The organisation is registered at an address where there's a large presence of other companies, this may be a virtual mailbox.</span><br /><!--<span class="govuk-body-s" style="color: #505a5f">This RISK ID helps to define the potential thresholds indicating whether a large number of organisations are registered at the same address highlighting the possibility of a virtual mailbox being present.</span></br>-->
         
@@ -973,8 +975,30 @@
                         </th>
                         <td class="govuk-table__cell" style="width:150px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong></td>
                       </tr>
+                      <!-- Phoenix Company Identification -->
                       <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">Impersonation of legitimate company<br /><span class="govuk-body">This organisation is at a low risk of impersonating another organisation.</span><br /><!--<span class="govuk-body-s" style="color: #505a5f">This RISK ID indicates whether an organisation may be attempting to impersonate an existing organisation.</span></br>-->
+                        <th scope="row" class="govuk-table__header">Phoenix Company Identification<br /><span class="govuk-body">A phoenix business is a company established after the insolvency or dissolution of an unsuccessful business to continue the same or similar work.</span><br />
+        
+                          <details class="govuk-details" style="margin-top:15px">
+                            <summary class="govuk-details__summary">
+                              <span class="govuk-details__summary-text">
+                                Help with phoenix company identification
+                              </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                              <p style="margin-bottom: 15px"><strong>Risk:</strong> This indicator looks to identify if the ‘preliminary’ Company Name has an exact or partial match to other associated existing registered companies in Companies House. If there are existing Companies a check will be made to establish what the legal status is of any associated companies. If the Company has been marked as insolvent or liquidated this will be highlighted and a further check to establish if the date of Insolvency/liquidation is less than 5 years from the date the check was initiated. A check to understand whether the Trading Status of a Director named in the preliminary company has been marked as Disqualified from managing a limited Company is also determined.</p>
+                              <p style="margin-bottom: 10px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong> The organisation identified does not portray it as having links or operating as a Phoenix Company.</p>
+                              <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong> The organisation identified matches details that could portray it as having links or operating as a Phoenix Company. An Existing Company with a similar name has been established with a legal status identified as Insolvent or Liquidated within a 5-year period. The Director has also been highlighted as being disqualified.</p>
+                              <p style="margin-bottom: 10px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong> The organisation identified matches details that could portray it as having links or operating as a Phoenix Company. Greater than two existing Companies with similar names have been established with one or more having a legal status identified as insolvent or liquidated within a 5-year period. The Director has also been highlighted as being disqualified.</p>
+                            </div>
+                          </details>
+                      
+                        </th>
+                        <td class="govuk-table__cell" style="width:150px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong></td>
+                      </tr>
+                      <!-- Impersonation of legitimate company -->
+                      <!--<tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Impersonation of legitimate company<br /><span class="govuk-body">This organisation is at a low risk of impersonating another organisation.</span><br />
         
                           <details class="govuk-details" style="margin-top:15px">
                             <summary class="govuk-details__summary">
@@ -992,7 +1016,8 @@
                       
                         </th>
                         <td class="govuk-table__cell" style="width:150px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong></td>
-                      </tr>
+                      </tr>-->
+                      <!-- Shell company identification -->
                       <tr class="last-section govuk-table__row">
                         <th scope="row" class="govuk-table__header" style="border-bottom:none">Shell company identification<br /><span class="govuk-body">The organisation displays a significant number of characteristics associated with a  Shell company and may be concealing important information and its true purpose and identity.</span><br /><!--<span class="govuk-body-s" style="color: #505a5f">This RISK ID indicates whether an organisation may be a shell company. The entities could be concealing important information and its true purpose and identity.</span></br>-->
         
@@ -3684,6 +3709,7 @@
 
                   <table class="govuk-table">
                     <tbody class="govuk-table__body">
+                      <!-- Fictitious organisation -->
                       <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Fictitious organisation<br /><span class="govuk-body">This RISK ID helps to identify whether an organisation may be fictitious. Purporting to be trading but has been created for deceptive or fraudulent purposes.</span><br /><!--<span class="govuk-body-s" style="color: #505a5f">This RISK ID helps to identify whether an organisation may be fictitious. Purporting to be trading but has been created for deceptive or fraudulent purposes.</span></br>-->
         
@@ -3704,6 +3730,7 @@
                         </th>
                         <td class="govuk-table__cell" style="width:150px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong></td>
                       </tr>
+                      <!-- Virtual company registration  -->
                       <tr class="govuk-table__row">
                         <th scope="row" class="govuk-table__header">Virtual company registration ID<br /><span class="govuk-body">The organisation is registered at an address where there's a large presence of other companies, this may be a virtual mailbox.</span><br /><!--<span class="govuk-body-s" style="color: #505a5f">This RISK ID helps to define the potential thresholds indicating whether a large number of organisations are registered at the same address highlighting the possibility of a virtual mailbox being present.</span></br>-->
         
@@ -3725,8 +3752,30 @@
                         </th>
                         <td class="govuk-table__cell" style="width:150px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong></td>
                       </tr>
+                      <!-- Phoenix Company Identification -->
                       <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">Impersonation of legitimate company<br /><span class="govuk-body">This organisation is at a low risk of impersonating another organisation.</span><br /><!--<span class="govuk-body-s" style="color: #505a5f">This RISK ID indicates whether an organisation may be attempting to impersonate an existing organisation.</span></br>-->
+                        <th scope="row" class="govuk-table__header">Phoenix Company Identification<br /><span class="govuk-body">A phoenix business is a company established after the insolvency or dissolution of an unsuccessful business to continue the same or similar work.</span><br />
+        
+                          <details class="govuk-details" style="margin-top:15px">
+                            <summary class="govuk-details__summary">
+                              <span class="govuk-details__summary-text">
+                                Help with phoenix company identification
+                              </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                              <p style="margin-bottom: 15px"><strong>Risk:</strong> This indicator looks to identify if the ‘preliminary’ Company Name has an exact or partial match to other associated existing registered companies in D&B. If there are existing Companies a check will be made to establish what the legal event is of any associated companies. If the Company has been marked as insolvent or liquidated this will be highlighted. A check to understand whether the Trading Status of a Director named in the preliminary company has been marked as Disqualified from managing a limited Company is also determined.</p>
+                              <p style="margin-bottom: 10px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong> The organisation identified does not portray it as having links or operating as a Phoenix Company.</p>
+                              <p style="margin-bottom: 10px"><strong class="govuk-tag--orange">&nbsp;&nbsp;MEDIUM RISK&nbsp;&nbsp;</strong> The organisation identified matches details that could portray it as having links or operating as a Phoenix Company. An Existing Company with a similar name has been established with a legal event identified as Insolvent or liquidated. The Director has also been highlighted as being disqualified.</p>
+                              <p style="margin-bottom: 10px"><strong class="govuk-tag--red">&nbsp;&nbsp;HIGH RISK&nbsp;&nbsp;</strong> The organisation identified matches details that could portray it as having links or operating as a Phoenix Company. Greater than two existing Companies with similar names have been established with one or more having a legal event identified as insolvent or liquidated. The Director has also been highlighted as being disqualified.</p>
+                            </div>
+                          </details>
+                      
+                        </th>
+                        <td class="govuk-table__cell" style="width:150px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong></td>
+                      </tr>
+                      <!-- Impersonation of legitimate company -->
+                      <!--<tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Impersonation of legitimate company<br /><span class="govuk-body">This organisation is at a low risk of impersonating another organisation.</span><br />
         
                           <details class="govuk-details" style="margin-top:15px">
                             <summary class="govuk-details__summary">
@@ -3744,8 +3793,9 @@
                       
                         </th>
                         <td class="govuk-table__cell" style="width:150px"><strong class="govuk-tag--green">&nbsp;&nbsp;LOW RISK&nbsp;&nbsp;</strong></td>
-                      </tr>
-                      <tr class="last-section govuk-table__row">
+                      </tr>-->
+                      <!-- SHELL COMPANY -->
+                       <tr class="last-section govuk-table__row">
                         <th scope="row" class="govuk-table__header" style="border-bottom:none">Shell company identification<br /><span class="govuk-body">The organisation displays a significant number of characteristics associated with a  Shell company and may be concealing important information and its true purpose and identity.</span><br /><!--<span class="govuk-body-s" style="color: #505a5f">This RISK ID indicates whether an organisation may be a shell company. The entities could be concealing important information and its true purpose and identity.</span></br>-->
         
                           <details class="govuk-details" style="margin-top:15px">
