@@ -224,6 +224,24 @@ router.post('/threats-type-answer', function (req, res) {
       res.redirect('/prototype-6/threats-error')
     }
 
+    //
+    // START Prototype 7 routes
+    //
+  } else if (whichPrototype == "7.0"){
+          
+    // Make a variable and give it the value from 'which-threat'
+    var whichThreat = req.session.data['which-threat']
+
+    // Check whether the variable matches a condition
+    if (whichThreat == "sanctions"){
+      //res.redirect('/prototype-5/sanctions')
+      res.redirect('https://spotlight-2021-v3.herokuapp.com/v14.5/engagement')
+    } else if (whichThreat == "economic-crime"){
+      res.redirect('/prototype-7/results-history')
+    } else {
+      res.redirect('/prototype-7/threats-error')
+    }
+
   }
 
 })
