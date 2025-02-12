@@ -1,0 +1,153 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <style>
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 45px;
+      height: 25px;
+    }
+
+    .switch input { 
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 19px;
+      width: 19px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(20px);
+      -ms-transform: translateX(20px);
+      transform: translateX(20px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 25px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+  </style>
+
+  <div class="govuk-grid-row">
+
+    <!--        -->
+    <!--        -->
+    <!--        -->
+    <!-- HEADER -->
+     <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+        Organsiation sanctions and adverse media
+      </h1>
+
+      <p class="govuk-body-s govuk-!-margin-bottom-0">Organisations name</p>
+      <h2 class="govuk-heading-m govuk-!-margin-top-0  govuk-!-padding-top-1">{{ data['organisationName'] }}</h2>
+
+    </div>
+
+    <!--         -->
+    <!--         -->
+    <!--         -->
+    <!-- CONTENT -->
+    <div class="govuk-grid-column-full">
+
+      <!--                             -->
+      <!--                             -->
+      <!--                             -->
+      <!-- TOP ROW - DOWNLOAD + SEARCH -->
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half" style="">
+          <p class="govuk-body" style="margin-bottom:0">Your total credits: <strong style="color:#1d70b8">420</strong></p>
+         
+          <p class="govuk-heading-m" style="margin-top:-10px"><strong>This search uses: <span style="color:#00703c">2 credits</span></strong></p>
+    
+        </div>
+      </div>
+
+      <!--                -->
+      <!--                -->
+      <!--                -->
+      <!-- BOTTOM CONTENT -->
+      <div class="govuk-grid-row" >
+
+        <div class="govuk-grid-column-full">
+          <p class="govuk-body">This check will use <strong style="color:#00703c">2 credits</strong> and cost <strong style="color:#00703c">£1.00</strong></p>
+
+          <p class="govuk-body">Contact <a href="#">spotlight@cabinetoffice.gov.uk</a> to purchase credits for your account.</p>
+
+          <p class="govuk-body">I confirm that:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>these checks are being undertaken as part of organisation sanctions and adverse media activity</li>
+            <li>it is appropriate to undertake additional due diligence checks</li>
+            <li>the cost of these checks will be paid by my organisation</li>
+          </ul>
+
+          <div class="govuk-button-group govuk-!-margin-top-7">
+            <form class="form" action="/orgadversemediacheck_v7" method="post">
+              {% from "govuk/components/button/macro.njk" import govukButton %}
+
+              <div class="govuk-button-group">
+                {{ govukButton({
+                  text: "Run check"
+                }) }}
+
+                <a class="govuk-link" href="javascript:window.history.back()">Cancel</a>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <p class="govuk-body-s" style="font-size: 9px; color:	#b1b4b6">PROTOTYPE VERSION: {{ data['which-prototype'] }}</p>
+
+{% endblock %}
