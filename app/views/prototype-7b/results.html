@@ -249,7 +249,6 @@
         </div>
         -->
 
-
           <!--                -->
           <!--                -->
           <!--                -->
@@ -415,7 +414,7 @@
                         <fieldset class="govuk-fieldset">
                           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                             <h1 class="govuk-!-font-weight-bold govuk-body-s govuk-!-margin-bottom-0">
-                              RAG rating
+                              Risk levels
                             </h1>
                           </legend>
                           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -625,7 +624,7 @@
                         <fieldset class="govuk-fieldset">
                           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                             <h1 class="govuk-!-font-weight-bold govuk-body-s govuk-!-margin-bottom-0">
-                              Rag rating
+                              Risk levels
                             </h1>
                           </legend>
                           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -782,15 +781,6 @@
               border-bottom: 5px solid #0b0c0c;
             }
           </style>
-          
-
-
-
-
-
-
-
-
 
           {% if (data['org-location-for-one'] == "uk") or (data['org-location-for-two-or-more'] == "uk") %}
           
@@ -1065,13 +1055,11 @@
               </div>
             </div>
 
-            <!--                                          -->
-            <!--                                          -->
-            <!--                                          -->
-            <!--                                          -->
-            <!-- Organisation sanctions and adverse media -->
-            {% if (data['orgAdverseMediaChecked'] == "Yes") %}
-
+            <!--                                   -->
+            <!--                                   -->
+            <!--                                   -->
+            <!--                                   -->
+            <!-- Sanctions, PEPs and adverse media -->
             <div class="govuk-accordion__section sections">
               <div class="govuk-accordion__section-header">
                 <h2 class="govuk-accordion__section-heading">
@@ -1081,75 +1069,97 @@
                 </h2>
 
                 <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1" style="margin-top:30px">
-                  <h3 class="govuk-heading-m">Overall risk levels</h3>
 
-                  <!-- DATA ITEM -->
-                  <div class="govuk-grid-row" style="margin-bottom: -20px;">
-                    <div class="govuk-grid-column-one-third">
-                      <p class="govuk-heading-s">Organisation sanctions</p>
-                    </div>
+                  <!--                    -->
+                  <!--                    -->
+                  <!-- OVERALL RISK LEVELS -->
+                  <div class="govuk-grid-row" style="margin-top:-15px">
                     <div class="govuk-grid-column-two-thirds">
-                      <strong class="govuk-tag govuk-tag--red" style="font-size:16px;font-weight:600">HIGH</strong><br/>
-                    </div>
-                  </div>
+                      
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          <p class="govuk-caption-l" style="margin-bottom:">Overall risk levels</p>
+                        </div>
+                      </div>  
+                      
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          <p class="govuk-heading-s">Organisation sanctions</p>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          {{govukTag({
+                            text: "HIGH RISK",
+                            classes: "govuk-tag--red"
+                          })}}
+                          <!--<p class="govuk-body" style="margin-top:10px">Additional text about this RAG rating</p>-->
+                        </div>
+                      </div>
+                      
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          <p class="govuk-heading-s">Organisation adverse media</p>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          {{govukTag({
+                            text: "LOW RISK",
+                            classes: "govuk-tag--green"
+                          })}}
+                          <!--<p class="govuk-body" style="margin-top:10px">Additional text about this RAG rating</p>-->
+                        </div>
+                      </div>
 
-                  <!-- DATA ITEM -->
-                  <div class="govuk-grid-row" style="margin-bottom: -20px;">
-                    <div class="govuk-grid-column-one-third">
-                      <p class="govuk-heading-s">Organisation adverse media</p>
-                    </div>
-                    <div class="govuk-grid-column-two-thirds">
-                      <strong class="govuk-tag govuk-tag--green" style="font-size:16px;font-weight:600">LOW</strong><br/>
-                    </div>
-                  </div>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
-                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="width:55%; margin-top:0">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          <p class="govuk-heading-s">People sanctions</p>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          {{govukTag({
+                            text: "1 HIGH RISK",
+                            classes: "govuk-tag--red"
+                          })}}
+                          &nbsp;
+                          {{govukTag({ 
+                            text: "2 LOW RISK",
+                            classes: "govuk-tag--green"
+                          })}}
+                          <!--<p class="govuk-body" style="margin-top:10px">Additional text about this RAG rating</p>-->
+                        </div>
+                      </div>
+                      
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          <p class="govuk-heading-s">People sanctions</p>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          {{govukTag({
+                            text: "3 LOW RISK",
+                            classes: "govuk-tag--green"
+                          })}}
+                          <!--<p class="govuk-body" style="margin-top:10px">Additional text about this RAG rating</p>-->
+                        </div>
+                      </div>
 
-                  <!-- DATA ITEM -->
-                  <div class="govuk-grid-row" style="margin-bottom: -20px;">
-                    <div class="govuk-grid-column-one-third">
-                      <p class="govuk-heading-s">Individual sanctions</p>
-                    </div>
-                    <div class="govuk-grid-column-two-thirds">
-                      <strong class="govuk-tag govuk-tag--red" style="font-size:16px;font-weight:600;margin-right:5px">1 HIGH</strong>
-                      <strong class="govuk-tag govuk-tag--green" style="font-size:16px;font-weight:600">2 LOW</strong><br/>
-
-                    </div>
-                  </div>
-
-                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
-
-                  <!-- DATA ITEM -->
-                  <div class="govuk-grid-row" style="margin-bottom: -20px;">
-                    <div class="govuk-grid-column-one-third">
-                      <p class="govuk-heading-s">Individual PEPs
-                    </div>
-                    <div class="govuk-grid-column-two-thirds">
-                      <strong class="govuk-tag govuk-tag--green" style="font-size:16px;font-weight:600">3 LOW</strong><br/>
-                    </div>
-                  </div>
-
-                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
-
-                  <!-- DATA ITEM -->
-                  <div class="govuk-grid-row" style="margin-bottom: -20px;">
-                    <div class="govuk-grid-column-one-third">
-                      <p class="govuk-heading-s">Individual adverse media</p>
-                    </div>
-                    <div class="govuk-grid-column-two-thirds">
-                      <strong class="govuk-tag govuk-tag--green" style="font-size:16px;font-weight:600">3 LOW</strong><br/>
-                    </div>
-                  </div>
-
-                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
-                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="width:55%; margin-top:0">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          <p class="govuk-heading-s">People adverse media</p>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          {{govukTag({
+                            text: "3 LOW RISK",
+                            classes: "govuk-tag--green"
+                          })}}
+                          <!--<p class="govuk-body" style="margin-top:10px">Additional text about this RAG rating</p>-->
+                        </div>
+                      </div>
                   
-                  <a href="peps-adversemedia"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-top:-0; margin-bottom:15px">
-                    Run additional checks
-                  </button></a>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-top:0">
+
+                    </div>
+                  </div>                  
 
                 </div>
               </div>
@@ -1167,22 +1177,6 @@
 
               </div>
             </div> 
- 
-            {% else %}
-
-              <div class="govuk-accordion__section-header" style="margin-bottom:-15px">
-                <h2 class="govuk-accordion__section-heading">
-                  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1" style="">
-                    Sanctions, PEPs and adverse media<br/>
-                    <!--<a href="run-additional-checks"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-top:15px;">-->
-                    <a href="peps-adversemedia"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-top:15px;">
-                      Run additional checks
-                    </button></a>
-                  </span>
-                </h2>
-              </div>
-
-            {% endif %}
 
             <!--                         -->
             <!--                         -->
@@ -1198,7 +1192,6 @@
                   </span>
                 </h2>
                 <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
-                  Hint text to be confirmed.
 
                   <!--                    -->
                   <!--                    -->
@@ -2702,7 +2695,6 @@
                   </span>
                 </h2>
                 <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
-                  Hint text to be confirmed.
 
                   <!--                    -->
                   <!--                    -->
@@ -3301,7 +3293,6 @@
                   </span>
                 </h2>
                 <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
-                  Hint text to be confirmed.
 
                   <!--                    -->
                   <!--                    -->
@@ -3484,7 +3475,6 @@
                   </span>
                 </h2>
                 <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
-                  Hint text to be confirmed.
 
                   <!--                    -->
                   <!--                    -->
@@ -3900,96 +3890,117 @@
               </div>
             </div>
 
-
-
-
-
-
-
             <!--                                          -->
             <!--                                          -->
             <!--                                          -->
             <!--                                          -->
-            <!-- Organisation sanctions and adverse media -->
-            {% if (data['orgAdverseMediaChecked'] == "Yes") %}
-
+            <!-- Sanctions, PEPs and adverse media -->
             <div class="govuk-accordion__section sections">
               <div class="govuk-accordion__section-header">
                 <h2 class="govuk-accordion__section-heading">
                   <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1" style="margin-top:30px">
-                    Organisation sanctions and adverse media
+                    Sanctions, PEPs and adverse media
                   </span>
                 </h2>
 
                 <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1" style="margin-top:30px">
-                  <h3 class="govuk-heading-m">Overall risk levels</h3>
 
-                  <!-- DATA ITEM -->
-                  <div class="govuk-grid-row" style="margin-bottom: -20px;">
-                    <div class="govuk-grid-column-one-third">
-                      <p class="govuk-heading-s">Organisation sanctions</p>
-                    </div>
+
+
+
+
+
+
+
+
+                  <!--                    -->
+                  <!--                    -->
+                  <!-- OVERALL RISK LEVELS -->
+                  <div class="govuk-grid-row" style="margin-top:-15px">
                     <div class="govuk-grid-column-two-thirds">
-                      <strong class="govuk-tag govuk-tag--red" style="font-size:16px;font-weight:600">HIGH</strong><br/>
-                    </div>
-                  </div>
+                      
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          <p class="govuk-caption-l" style="margin-bottom:15px">Overall risk levels</p>
+                        </div>
+                      </div>  
+                      
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          <p class="govuk-heading-s">Organisation sanctions</p>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          {{govukTag({
+                            text: "HIGH RISK",
+                            classes: "govuk-tag--red"
+                          })}}
+                          <!--<p class="govuk-body" style="margin-top:10px">Additional text about this RAG rating</p>-->
+                        </div>
+                      </div>
+                      
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          <p class="govuk-heading-s">Organisation adverse media</p>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          {{govukTag({
+                            text: "LOW RISK",
+                            classes: "govuk-tag--green"
+                          })}}
+                          <!--<p class="govuk-body" style="margin-top:10px">Additional text about this RAG rating</p>-->
+                        </div>
+                      </div>
 
-                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-                  <!-- DATA ITEM -->
-                  <div class="govuk-grid-row" style="margin-bottom: -20px;">
-                    <div class="govuk-grid-column-one-third">
-                      <p class="govuk-heading-s">Organisation adverse media</p>
-                    </div>
-                    <div class="govuk-grid-column-two-thirds">
-                      <strong class="govuk-tag govuk-tag--green" style="font-size:16px;font-weight:600">LOW</strong><br/>
-                    </div>
-                  </div>
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          <p class="govuk-heading-s">People sanctions</p>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          {{govukTag({
+                            text: "1 HIGH RISK",
+                            classes: "govuk-tag--red"
+                          })}}
+                          &nbsp;
+                          {{govukTag({ 
+                            text: "2 LOW RISK",
+                            classes: "govuk-tag--green"
+                          })}}
+                          <!--<p class="govuk-body" style="margin-top:10px">Additional text about this RAG rating</p>-->
+                        </div>
+                      </div>
+                      
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          <p class="govuk-heading-s">People sanctions</p>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          {{govukTag({
+                            text: "3 LOW RISK",
+                            classes: "govuk-tag--green"
+                          })}}
+                          <!--<p class="govuk-body" style="margin-top:10px">Additional text about this RAG rating</p>-->
+                        </div>
+                      </div>
 
-                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
-                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="width:55%; margin-top:0">
-
-                  <!-- DATA ITEM -->
-                  <div class="govuk-grid-row" style="margin-bottom: -20px;">
-                    <div class="govuk-grid-column-one-third">
-                      <p class="govuk-heading-s">Individual sanctions</p>
-                    </div>
-                    <div class="govuk-grid-column-two-thirds" style="margin-bottom: 15px;">
-                      <strong class="govuk-tag govuk-tag--red" style="font-size:16px;font-weight:600;margin-right:5px">1 HIGH</strong>
-                      <strong class="govuk-tag govuk-tag--green" style="font-size:16px;font-weight:600">2 LOW</strong><br/>
-                    </div>
-                  </div>
-
-                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
-
-                  <!-- DATA ITEM -->
-                  <div class="govuk-grid-row" style="margin-bottom: -20px;">
-                    <div class="govuk-grid-column-one-third">
-                      <p class="govuk-heading-s">Individual PEPs
-                    </div>
-                    <div class="govuk-grid-column-two-thirds">
-                      <strong class="govuk-tag govuk-tag--green" style="font-size:16px;font-weight:600">3 LOW</strong><br/>
-                    </div>
-                  </div>
-
-                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
-
-                  <!-- DATA ITEM -->
-                  <div class="govuk-grid-row" style="margin-bottom: -20px;">
-                    <div class="govuk-grid-column-one-third">
-                      <p class="govuk-heading-s">Individual adverse media</p>
-                    </div>
-                    <div class="govuk-grid-column-two-thirds">
-                      <strong class="govuk-tag govuk-tag--green" style="font-size:16px;font-weight:600">3 LOW</strong><br/>
-                    </div>
-                  </div>
-
-                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--invisible" style="margin-top:0">
-                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="width:55%; margin-top:0">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          <p class="govuk-heading-s">People adverse media</p>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          {{govukTag({
+                            text: "3 LOW RISK",
+                            classes: "govuk-tag--green"
+                          })}}
+                          <!--<p class="govuk-body" style="margin-top:10px">Additional text about this RAG rating</p>-->
+                        </div>
+                      </div>
                   
-                  <a href="peps-adversemedia"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-top:-0; margin-bottom:15px">
-                    Run additional checks
-                  </button></a>
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-top:0">
+
+                    </div>
+                  </div>                  
 
                 </div>
               </div>
@@ -4007,32 +4018,6 @@
 
               </div>
             </div> 
- 
-            {% else %}
-
-              <div class="govuk-accordion__section-header" style="margin-bottom:-15px">
-                <h2 class="govuk-accordion__section-heading">
-                  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1" style="">
-                    Sanctions, PEPs and adverse media<br/>
-                    <!--<a href="run-additional-checks"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-top:15px;">-->
-                    <a href="peps-adversemedia"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-top:15px;">
-                      Run additional checks
-                    </button></a>
-                  </span>
-                </h2>
-              </div>
-
-            {% endif %}
-
-
-
-
-
-
-
-
-
-
 
             <!--                         -->
             <!--                         -->
@@ -4048,7 +4033,6 @@
                   </span>
                 </h2>
                 <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
-                  Hint text to be confirmed.
 
                   <!--                    -->
                   <!--                    -->
@@ -5666,7 +5650,6 @@
                   </span>
                 </h2>
                 <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
-                  Hint text to be confirmed.
 
                   <!--                    -->
                   <!--                    -->
@@ -5716,7 +5699,6 @@
                   </span>
                 </h2>
                 <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
-                  Hint text to be confirmed.
 
                   <!--                    -->
                   <!--                    -->
@@ -6360,7 +6342,6 @@
                   </span>
                 </h2>
                 <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
-                  Hint text to be confirmed.
 
                   <!--                    -->
                   <!--                    -->
@@ -6536,7 +6517,6 @@
                   </span>
                 </h2>
                 <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
-                  Hint text to be confirmed.
 
                   <!--                    -->
                   <!--                    -->

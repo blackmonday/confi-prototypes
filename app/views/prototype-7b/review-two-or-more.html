@@ -801,41 +801,46 @@
     </div>
   </div>
 
-  <!--                      -->
-  <!--                      -->
-  <!--                      -->
-  <!-- ROW - CASE REFERENCE -->
-  <!--<div class="govuk-grid-row">                            
+  <!--     -->
+  <!--     -->
+  <!--     -->
+  <!-- ROW -->
+  <div class="govuk-grid-row">                            
     <div class="govuk-grid-column-two-thirds">
-      <label class="govuk-label govuk-!-font-weight-bold" for="reference0-ID">
-        Case reference (optional)
-      </label>
-      <div id="referene-ID-hint" class="govuk-body">
-        A case reference can be used to group different checks together under the same ID.
-      </div>
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="sort">
-          Select an existing case reference (optional)
-        </label>
-        <select class="govuk-select" id="sort" name="sort">
-          <option value="ref-id-0" selected></option>
-          <option value="ref-id-1">[Case reference one xxxxxxxxxxxxxx]</option>
-          <option value="ref-id-2">[Case reference two yyyyyyyyyyyyyyyyyyyyy]</option>
-          <option value="ref-id-3">[Case reference three zzzzzzzz]</option>
-        </select>
+
+      <div class="govuk-form-group" style="margin-bottom:0">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h1 class="govuk-fieldset__heading">
+              Sanctions, PEPs, adverse media and associations
+            </h1>
+          </legend>
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-checkboxes__label" for="contact">
+                Include sanctions, PEPs, adverse media and associations
+              </label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact">
+              <p class="govuk-body">This check will use <strong style="color:#00703c;">3 credits</strong> and cost <strong style="color:#00703c;">&pound;3.00</strong></p>
+              <p class="govuk-body">Your organisation has <strong style="color:#00703c;">300 credits</strong> available</p>
+              <p class="govuk-body">Contact <a href="#">spotlight@cabinetoffice.gov.uk</a> to purchase credits for your account.</p>
+              <p class="govuk-body">I confirm that:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>these checks are being undertaken as part of sanctions, PEPs, adverse media activity and associations</li>
+                <li>it is appropriate to undertake additional due diligence checks</li>
+                <li>the cost of these checks will be paid by my organisation</li>
+              </ul>
+            </div>
+          </div>
+        </fieldset>
       </div>
 
-      <p class="govuk-body" style="margin-top:-10px;margin-bottom:10px">or</p>
-
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="address-line-1">
-          Create a new case reference (optional)
-        </label>
-        <input class="govuk-input govuk-input--width-20" id="address-line-1" name="addressLine1" type="text" autocomplete="address-line1">
-        <p class="govuk-hint">You can enter up to 80 characters - this can be any combination of characters, special characters (for example, hyphens), or numbers</p>
-      </div>
     </div>
-  </div>-->
+  </div>
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
   <div class="govuk-grid-row">                            
     <div class="govuk-grid-column-two-thirds">
