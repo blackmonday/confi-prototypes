@@ -1178,6 +1178,460 @@
               </div>
             </div> 
 
+            <!--                          -->
+            <!--                          -->
+            <!--                          -->
+            <!--                          -->
+            <!-- ASSOCIATIONS - FULL DATA -->
+            <div class="govuk-accordion__section sections">
+              <div class="govuk-accordion__section-header" style="">
+                <h2 class="govuk-accordion__section-heading">
+                  <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
+                    Associations
+                  </span>
+                </h2>
+                <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+
+                  <!--                    -->
+                  <!--                    -->
+                  <!-- OVERALL RAG RATING -->
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          <p class="govuk-caption-l" style="margin-bottom:15px">Overall risk levels</p>
+                        </div>
+                      </div>  
+
+
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          <p class="govuk-heading-s">Organisations</p>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          {{govukTag({
+                            text: "HIGH RISK",
+                            classes: "govuk-tag--red"
+                          })}}
+                          <p class="govuk-body" style="margin-top:10px">There is 1 associated  organisations</p>
+                        </div>
+                      </div>
+
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-top:0px;margin-bottom:30px">
+
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          <p class="govuk-heading-s">People</p>
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          {{govukTag({
+                            text: "HIGH RISK",
+                            classes: "govuk-tag--red"
+                          })}}
+                          <p class="govuk-body" style="margin-top:10px">There are 2 associated people</p>
+                        </div>
+                      </div>
+
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" style="margin-top:0;margin-bottom:0px">
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
+
+                <style>
+                  .data-spacing-top {
+                    margin-top:15px;
+                  }
+                  .data-spacing {
+                    margin-top:-10px;
+                  }
+                </style>
+
+                <!--               -->
+                <!--               -->
+                <!--               -->
+                <!-- ORGANISATIONS -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <p class="govuk-heading-m">Organisations</p>
+                  </div>
+                </div>
+
+                <!-- ORGANISATION DATA -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+
+                  <div class="govuk-grid-column-one-third">
+                    <p class="govuk-heading-s">[Organisation name]<br />
+                    <span class="govuk-body-s" style="color:#505a5f">Checked on DD Month YYYY</span></p>
+                  </div>
+
+                  <div class="govuk-grid-column-two-thirds">
+
+                    {{govukTag({
+                      text: "HIGH RISK",
+                      classes: "govuk-tag--red"
+                    })}}
+                    
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row data-spacing-top">
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body govuk-!-font-weight-bold">Entity (SO)</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body">Yes</p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">State Owned Company (SOC)</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body">Yes</p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Also known as</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body">[AKA Company name<br />[AKA Company name in language]</p>
+                        <p class="govuk-body data-spacing">[AKA Company name<br />[AKA Company name in language]</p>
+                        <p class="govuk-body data-spacing">[AKA Company name<br />[AKA Company name in language]</p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Date of registration</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body">DD Month YYYY</p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Country of registration</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body">[Country]</p>
+                      </div>
+                    </div>
+                    
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Country of current ownership</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body">[Country]</p>
+                      </div>
+                    </div>
+                    
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Country of affiliation</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body">[Country]</p>
+                      </div>
+                    </div>
+                    
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Country of past ownership</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body">[Country]</p>
+                      </div>
+                    </div>
+                    
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Enhanced risk country
+                      </div>
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body">[Country]</p>
+                      </div>
+                    </div>
+                    
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Address references</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body data-spacing">[Address line]<br />[Address locality]<br />[Postal code]<br />[Country]</p>
+                        <p class="govuk-body data-spacing">[Address line]<br />[Address locality]<br />[Postal code]<br />[Country]</p>
+                        <p class="govuk-body data-spacing">[Address line]<br />[Address locality]<br />[Postal code]<br />[Country]</p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Identification references</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body data-spacing">[Reference type]<br />[Reference ID]</p>
+                        <p class="govuk-body data-spacing">[Reference type]<br />[Reference ID]</p>
+                        <p class="govuk-body data-spacing">[Reference type]<br />[Reference ID]</p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Watch list</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body data-spacing">[Sanction reference]<br />[Provider name]<br />[Description]<br />Started on DD Month YYYY<br />Ended on DD Month YYYY]</p>
+                        <p class="govuk-body data-spacing">[Sanction reference]<br />[Provider name]<br />[Description]<br />Started on DD Month YYYY<br />Ended on DD Month YYYY]</p>
+                        <p class="govuk-body data-spacing">[Sanction reference]<br />[Provider name]<br />[Description]<br />Started on DD Month YYYY<br />Ended on DD Month YYYY]</p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Watch list data providers</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body" style="margin-bottom:0"><a href="">[Data source link]</a></p>
+                        <p class="govuk-body" style="margin-top:0;margin-bottom:0"><a href="">[Data source link]</a></p>
+                        <p class="govuk-body" style="margin-top:0"><a href="">[Data source link]</a></p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Risk profiles</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body data-spacing">[Level 1]<br />[Level 2]<br />[Level 3]</p>
+                        <p class="govuk-body data-spacing">[Level 1]<br />[Level 2]<br />[Level 3]</p>
+                        <p class="govuk-body data-spacing">[Level 1]<br />[Level 2]<br />[Level 3]</p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">State ownership</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body data-spacing">[Level 1]<br />[Level 2]</p>
+                        <p class="govuk-body data-spacing">[Industry name]<br />[Industry ID]<br />[Industry description]</p>
+                        <p class="govuk-body data-spacing">Voting control: [Yes/No/Unknown]</p>
+                        <p class="govuk-body data-spacing">Ownership percentage<br />Majority known<br />Past<br />[Notes]</p>
+                        <p class="govuk-body data-spacing">Ownership percentage<br />Majority unknown<br />Past<br />[Notes]</p>
+                        <p class="govuk-body data-spacing">Ownership percentage<br />Majority unknown<br />Past<br />[Notes]</p>
+                      </div>
+                    </div> 
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Associations</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body data-spacing">[Entity name]<br />[Association type]<br />Entity (S0)<br />State Owned Company (SOC)</p>
+                        <p class="govuk-body data-spacing">[Entity name]<br />[Association type]<br />Entity (S0)<br />State Owned Company (SOC)</p>
+                        <p class="govuk-body data-spacing">[Entity name]<br />[Association type]<br />Entity (S0)<br />State Owned Company (SOC)</p>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <!-- DIVIDER --><div class="govuk-grid-row">
+                  <div class="govuk-grid-column-two-thirds">
+                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                  </div>
+                </div>
+
+                <!--         -->
+                <!--         -->
+                <!--         -->
+                <!-- PERSONS -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <p class="govuk-heading-m">Persons</p>
+                  </div>
+                </div>
+  
+                <!-- PERSONS DATA -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+
+                  <div class="govuk-grid-column-one-third">
+                    <p class="govuk-heading-s">[Persons name]<br />
+                    <span class="govuk-body-s" style="color:#505a5f">Checked on DD Month YYYY</span></p>
+                  </div>
+
+                  <div class="govuk-grid-column-two-thirds">
+
+                    {{govukTag({
+                      text: "HIGH RISK",
+                      classes: "govuk-tag--red"
+                    })}}
+                    
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row data-spacing-top">
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body govuk-!-font-weight-bold">Are they still associated</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body">Yes</p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Special Interest Person (SIP)</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body">Yes</p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Gender</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body">Female</p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Date of birth</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body">DD Month YYYY</p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Citizenship</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body">[Country]</p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Resident of</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body">[Country]</p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Watch list</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body data-spacing">[Sanction reference]<br />[Provider name]<br />[Description]<br />Started on DD Month YYYY<br />Ended on DD Month YYYY]</p>
+                        <p class="govuk-body data-spacing">[Sanction reference]<br />[Provider name]<br />[Description]<br />Started on DD Month YYYY<br />Ended on DD Month YYYY]</p>
+                        <p class="govuk-body data-spacing">[Sanction reference]<br />[Provider name]<br />[Description]<br />Started on DD Month YYYY<br />Ended on DD Month YYYY]</p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Watch list data providers</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body" style="margin-bottom:0"><a href="">[Data source link]</a></p>
+                        <p class="govuk-body" style="margin-top:0;margin-bottom:0"><a href="">[Data source link]</a></p>
+                        <p class="govuk-body" style="margin-top:0"><a href="">[Data source link]</a></p>
+                      </div>
+                    </div>
+ 
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Risk profiles</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body data-spacing">[Level 1]<br />[Level 2]<br />[Level 3]</p>
+                        <p class="govuk-body data-spacing">[Level 1]<br />[Level 2]<br />[Level 3]</p>
+                        <p class="govuk-body data-spacing">[Level 1]<br />[Level 2]<br />[Level 3]</p>
+                      </div>
+                    </div>
+ 
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Adverse media</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body data-spacing">[Level 1]<br />[Level 2]</p>
+                        <p class="govuk-body data-spacing">[Level 1]<br />[Level 2]</p>
+                        <p class="govuk-body data-spacing">[Level 1]<br />[Level 2]</p>
+                       </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Adverse media data providers</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body" style="margin-bottom:0"><a href="">[Data source link]</a></p>
+                        <p class="govuk-body" style="margin-top:0;margin-bottom:0"><a href="">[Data source link]</a></p>
+                        <p class="govuk-body" style="margin-top:0"><a href="">[Data source link]</a></p>
+                      </div>
+                    </div>
+ 
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Associations</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body data-spacing">[Entity name]<br />[Association type]<br />Entity (S0)<br />State Owned Company (SOC)</p>
+                        <p class="govuk-body data-spacing">[Entity name]<br />[Association type]<br />Entity (S0)<br />State Owned Company (SOC)</p>
+                        <p class="govuk-body data-spacing">[Entity name]<br />[Association type]<br />Entity (S0)<br />State Owned Company (SOC)</p>
+                      </div>
+                    </div>
+
+                  </div>
+  
+                </div>   
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                
+              </div>
+            </div>
+
             <!--                         -->
             <!--                         -->
             <!--                         -->
@@ -4011,11 +4465,11 @@
               </div>
             </div> 
 
-            <!--              -->
-            <!--              -->
-            <!--              -->
-            <!--              -->
-            <!-- ASSOCIATIONS -->
+            <!--                          -->
+            <!--                          -->
+            <!--                          -->
+            <!--                          -->
+            <!-- ASSOCIATIONS - FULL DATA -->
             <div class="govuk-accordion__section sections">
               <div class="govuk-accordion__section-header" style="">
                 <h2 class="govuk-accordion__section-heading">
@@ -4044,10 +4498,10 @@
                         </div>
                         <div class="govuk-grid-column-one-half">
                           {{govukTag({
-                            text: "LOW RISK",
-                            classes: "govuk-tag--green"
+                            text: "HIGH RISK",
+                            classes: "govuk-tag--red"
                           })}}
-                          <!--<p class="govuk-body" style="margin-top:10px">Additional text about this RAG rating</p>-->
+                          <p class="govuk-body" style="margin-top:10px">There is 1 associated  organisations</p>
                         </div>
                       </div>
 
@@ -4059,10 +4513,10 @@
                         </div>
                         <div class="govuk-grid-column-one-half">
                           {{govukTag({
-                            text: "LOW RISK",
-                            classes: "govuk-tag--green"
+                            text: "HIGH RISK",
+                            classes: "govuk-tag--red"
                           })}}
-                          <!--<p class="govuk-body" style="margin-top:10px">Additional text about this RAG rating</p>-->
+                          <p class="govuk-body" style="margin-top:10px">There are 2 associated people</p>
                         </div>
                       </div>
 
@@ -4076,12 +4530,6 @@
 
               <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
 
-                <div class="govuk-grid-row" style="margin-bottom: -15px;">
-                  <div class="govuk-grid-column-full">
-                    <p class="govuk-heading-m">Organisations</p>
-                  </div>
-                </div>
-
                 <style>
                   .data-spacing-top {
                     margin-top:15px;
@@ -4091,7 +4539,17 @@
                   }
                 </style>
 
-                <!-- DATA ITEM -->
+                <!--               -->
+                <!--               -->
+                <!--               -->
+                <!-- ORGANISATIONS -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <p class="govuk-heading-m">Organisations</p>
+                  </div>
+                </div>
+
+                <!-- ORGANISATION DATA -->
                 <div class="govuk-grid-row" style="margin-bottom: -15px;">
 
                   <div class="govuk-grid-column-one-third">
@@ -4228,16 +4686,16 @@
                         <p class="govuk-body govuk-!-font-weight-bold">Watch list</p>
                       </div>
                       <div class="govuk-grid-column-one-half">
-                        <p class="govuk-body data-spacing">[[Sanction reference]<br />[Provider name]<br />[Description]<br />Started on DD Month YYYY<br />Ended on DD Month YYYY]</p>
-                        <p class="govuk-body data-spacing">[[Sanction reference]<br />[Provider name]<br />[Description]<br />Started on DD Month YYYY<br />Ended on DD Month YYYY]</p>
-                        <p class="govuk-body data-spacing">[[Sanction reference]<br />[Provider name]<br />[Description]<br />Started on DD Month YYYY<br />Ended on DD Month YYYY]</p>
+                        <p class="govuk-body data-spacing">[Sanction reference]<br />[Provider name]<br />[Description]<br />Started on DD Month YYYY<br />Ended on DD Month YYYY]</p>
+                        <p class="govuk-body data-spacing">[Sanction reference]<br />[Provider name]<br />[Description]<br />Started on DD Month YYYY<br />Ended on DD Month YYYY]</p>
+                        <p class="govuk-body data-spacing">[Sanction reference]<br />[Provider name]<br />[Description]<br />Started on DD Month YYYY<br />Ended on DD Month YYYY]</p>
                       </div>
                     </div>
 
                     <!-- DATA ITEM  -->
                     <div class="govuk-grid-row">
                       <div class="govuk-grid-column-one-half data-spacing">
-                        <p class="govuk-body govuk-!-font-weight-bold">Data providers</p>
+                        <p class="govuk-body govuk-!-font-weight-bold">Watch list data providers</p>
                       </div>
                       <div class="govuk-grid-column-one-half">
                         <p class="govuk-body" style="margin-bottom:0"><a href="">[Data source link]</a></p>
@@ -4246,18 +4704,226 @@
                       </div>
                     </div>
 
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Risk profiles</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body data-spacing">[Level 1]<br />[Level 2]<br />[Level 3]</p>
+                        <p class="govuk-body data-spacing">[Level 1]<br />[Level 2]<br />[Level 3]</p>
+                        <p class="govuk-body data-spacing">[Level 1]<br />[Level 2]<br />[Level 3]</p>
+                      </div>
+                    </div>
 
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">State ownership</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body data-spacing">[Level 1]<br />[Level 2]</p>
+                        <p class="govuk-body data-spacing">[Industry name]<br />[Industry ID]<br />[Industry description]</p>
+                        <p class="govuk-body data-spacing">Voting control: [Yes/No/Unknown]</p>
+                        <p class="govuk-body data-spacing">Ownership percentage<br />Majority known<br />Past<br />[Notes]</p>
+                        <p class="govuk-body data-spacing">Ownership percentage<br />Majority unknown<br />Past<br />[Notes]</p>
+                        <p class="govuk-body data-spacing">Ownership percentage<br />Majority unknown<br />Past<br />[Notes]</p>
+                      </div>
+                    </div> 
 
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Associations</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body data-spacing">[Entity name]<br />[Association type]<br />Entity (S0)<br />State Owned Company (SOC)</p>
+                        <p class="govuk-body data-spacing">[Entity name]<br />[Association type]<br />Entity (S0)<br />State Owned Company (SOC)</p>
+                        <p class="govuk-body data-spacing">[Entity name]<br />[Association type]<br />Entity (S0)<br />State Owned Company (SOC)</p>
+                      </div>
+                    </div>
 
+                  </div>
 
+                </div>
 
-
-
-
-                    
+                <!-- DIVIDER --><div class="govuk-grid-row">
+                  <div class="govuk-grid-column-two-thirds">
+                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                   </div>
                 </div>
 
+                <!--         -->
+                <!--         -->
+                <!--         -->
+                <!-- PERSONS -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+                  <div class="govuk-grid-column-full">
+                    <p class="govuk-heading-m">Persons</p>
+                  </div>
+                </div>
+  
+                <!-- PERSONS DATA -->
+                <div class="govuk-grid-row" style="margin-bottom: -15px;">
+
+                  <div class="govuk-grid-column-one-third">
+                    <p class="govuk-heading-s">[Persons name]<br />
+                    <span class="govuk-body-s" style="color:#505a5f">Checked on DD Month YYYY</span></p>
+                  </div>
+
+                  <div class="govuk-grid-column-two-thirds">
+
+                    {{govukTag({
+                      text: "HIGH RISK",
+                      classes: "govuk-tag--red"
+                    })}}
+                    
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row data-spacing-top">
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body govuk-!-font-weight-bold">Are they still associated</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body">Yes</p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Special Interest Person (SIP)</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body">Yes</p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Gender</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body">Female</p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Date of birth</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body">DD Month YYYY</p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Citizenship</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body">[Country]</p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Resident of</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body">[Country]</p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Watch list</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body data-spacing">[Sanction reference]<br />[Provider name]<br />[Description]<br />Started on DD Month YYYY<br />Ended on DD Month YYYY]</p>
+                        <p class="govuk-body data-spacing">[Sanction reference]<br />[Provider name]<br />[Description]<br />Started on DD Month YYYY<br />Ended on DD Month YYYY]</p>
+                        <p class="govuk-body data-spacing">[Sanction reference]<br />[Provider name]<br />[Description]<br />Started on DD Month YYYY<br />Ended on DD Month YYYY]</p>
+                      </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Watch list data providers</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body" style="margin-bottom:0"><a href="">[Data source link]</a></p>
+                        <p class="govuk-body" style="margin-top:0;margin-bottom:0"><a href="">[Data source link]</a></p>
+                        <p class="govuk-body" style="margin-top:0"><a href="">[Data source link]</a></p>
+                      </div>
+                    </div>
+ 
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Risk profiles</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body data-spacing">[Level 1]<br />[Level 2]<br />[Level 3]</p>
+                        <p class="govuk-body data-spacing">[Level 1]<br />[Level 2]<br />[Level 3]</p>
+                        <p class="govuk-body data-spacing">[Level 1]<br />[Level 2]<br />[Level 3]</p>
+                      </div>
+                    </div>
+ 
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Adverse media</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body data-spacing">[Level 1]<br />[Level 2]</p>
+                        <p class="govuk-body data-spacing">[Level 1]<br />[Level 2]</p>
+                        <p class="govuk-body data-spacing">[Level 1]<br />[Level 2]</p>
+                       </div>
+                    </div>
+
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Adverse media data providers</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body" style="margin-bottom:0"><a href="">[Data source link]</a></p>
+                        <p class="govuk-body" style="margin-top:0;margin-bottom:0"><a href="">[Data source link]</a></p>
+                        <p class="govuk-body" style="margin-top:0"><a href="">[Data source link]</a></p>
+                      </div>
+                    </div>
+ 
+                    <!-- DATA ITEM  -->
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half data-spacing">
+                        <p class="govuk-body govuk-!-font-weight-bold">Associations</p>
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+                        <p class="govuk-body data-spacing">[Entity name]<br />[Association type]<br />Entity (S0)<br />State Owned Company (SOC)</p>
+                        <p class="govuk-body data-spacing">[Entity name]<br />[Association type]<br />Entity (S0)<br />State Owned Company (SOC)</p>
+                        <p class="govuk-body data-spacing">[Entity name]<br />[Association type]<br />Entity (S0)<br />State Owned Company (SOC)</p>
+                      </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                  </div>
+  
+                </div>   
+                    
                 <!--
                 <div class="govuk-grid-row" style="margin-bottom: -15px;">
                   <div class="govuk-grid-column-full">
@@ -4276,7 +4942,6 @@
                 -->
 
                 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                
                 
               </div>
             </div>
