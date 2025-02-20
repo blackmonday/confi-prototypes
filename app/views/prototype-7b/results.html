@@ -1291,17 +1291,19 @@
                           <p class="govuk-heading-s">People</p>
                         </div>
                         <div class="govuk-grid-column-one-half">
-                          {{govukTag({
-                            text: "1 HIGH RISK",
-                            classes: "govuk-tag--red"
-                          })}}
-                        </div>
-                        <div style="margin-top:10px; margin-bottom:20px">
-                          {{govukTag({ 
-                            text: "1 LOW RISK",
-                            classes: "govuk-tag--green"
-                          })}}
-                        <p class="govuk-body" style="margin-top:10px">There are 2 associated people</p>
+                          <div>
+                            {{govukTag({
+                              text: "1 HIGH RISK",
+                              classes: "govuk-tag--red"
+                            })}}
+                          </div>
+                          <div style="margin-top:10px; margin-bottom:20px">
+                            {{govukTag({ 
+                              text: "1 LOW RISK",
+                              classes: "govuk-tag--green"
+                            })}}
+                            <p class="govuk-body" style="margin-top:10px">There are 2 associated people</p>
+                          </div>
                         </div>
                       </div>
 
